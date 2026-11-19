@@ -20,6 +20,8 @@ It talks to a Gamecast server (default `https://iflgamecast.colebolebole.xyz`, c
 - **Tablets and foldables:** navigation rail, two-pane Home / Game / Team / Viewer, grid layouts for Games, Standings and Leaders.
 - **Speed:** requests run in parallel, responses are cached briefly, and other tabs and team logos are pre-loaded after launch.
 
+See [CHANGELOG.md](CHANGELOG.md) for what changed in each release.
+
 ## Requirements
 
 - Android 8.0 (API 26) or newer.
