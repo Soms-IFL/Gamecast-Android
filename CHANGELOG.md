@@ -5,12 +5,14 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ## [Unreleased]
 
-### Fixed
-- Player stats showed the raw codes "sk" and "sky"; they now read "Sacks taken" and "Sack yards lost".
+## [0.2.1-alpha] - 2026-11-18
 
 ### Changed
 - **Games screen as a scoreboard:** underlined week tabs (with a "My team" toggle), grey date bands, and rows with the winner's score bold
   and marked with a pointer, the loser dimmed, and a divided status / kick-off column. The same rows are used on Home and Team pages.
+
+### Fixed
+- Player stats showed the raw codes "sk" and "sky"; they now read "Sacks taken" and "Sack yards lost".
 
 ## [0.2.0-alpha] - 2026-11-18
 
@@ -48,6 +50,7 @@ First alpha of the native Android app (Kotlin, Jetpack Compose, Material 3).
 - The viewer reads game seeds from the server's `/api/state` and `/api/history` endpoints, which are not part of the stable `/api/v1` API.
 - The server address must be `https`.
 
-[Unreleased]: https://github.com/Soms-IFL/Gamecast-Android/compare/v0.2.0-alpha...HEAD
+[Unreleased]: https://github.com/Soms-IFL/Gamecast-Android/compare/v0.2.1-alpha...HEAD
+[0.2.1-alpha]: https://github.com/Soms-IFL/Gamecast-Android/compare/v0.2.0-alpha...v0.2.1-alpha
 [0.2.0-alpha]: https://github.com/Soms-IFL/Gamecast-Android/compare/v0.1.0-alpha...v0.2.0-alpha
 [0.1.0-alpha]: https://github.com/Soms-IFL/Gamecast-Android/releases/tag/v0.1.0-alpha
