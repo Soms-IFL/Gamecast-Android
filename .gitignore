@@ -14,3 +14,7 @@ dist/
 *.iml
 __pycache__/
 *.log
+
+# Web version and dev mock server: kept locally, not part of this repo
+/app/
+/dev/
