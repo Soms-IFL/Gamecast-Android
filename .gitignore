@@ -1,0 +1,16 @@
+# Local Android toolchain (JDK, SDK, Gradle) and build output — large and machine-specific
+.android-tools/
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+*.apk
+*.aab
+dist/
+
+# Editor / tool state
+.claude/
+.idea/
+*.iml
+__pycache__/
+*.log

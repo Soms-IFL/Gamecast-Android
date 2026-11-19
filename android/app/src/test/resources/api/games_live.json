@@ -1,0 +1,706 @@
+{
+  "live": true,
+  "game": {
+    "id": "W2G6",
+    "season": 3,
+    "week": 2,
+    "label": null,
+    "stage": "reg",
+    "playoff": false,
+    "status": "live",
+    "startsAt": "2026-11-18T23:50:00.000Z",
+    "startsAtMs": 1795045800000,
+    "home": {
+      "id": "MIS",
+      "abbr": "MIS",
+      "name": "Miskauga Boulders",
+      "city": "Miskauga",
+      "nickname": "Boulders",
+      "colors": [
+        "#5f646c",
+        "#e07b24"
+      ],
+      "logo": "/logos/Miskauga%20Boulders.svg",
+      "score": 7
+    },
+    "away": {
+      "id": "NWT",
+      "abbr": "NWT",
+      "name": "Newtown Knights",
+      "city": "Newtown",
+      "nickname": "Knights",
+      "colors": [
+        "#141414",
+        "#c9a227"
+      ],
+      "logo": "/logos/Newtown%20Knights.png",
+      "score": 7
+    },
+    "overtime": false,
+    "venue": {
+      "name": "Alloy Field",
+      "town": "Miskauga",
+      "host": "MIS"
+    }
+  },
+  "inactive": {
+    "home": [],
+    "away": [
+      {
+        "id": "NWT-RB2",
+        "name": "Jasper Lowry",
+        "short": "J. Lowry",
+        "position": "RB",
+        "number": 33,
+        "team": "NWT"
+      }
+    ]
+  },
+  "venue": {
+    "name": "Alloy Field",
+    "town": "Miskauga",
+    "host": "MIS"
+  },
+  "progress": {
+    "playsAired": 47,
+    "playsTotal": null
+  },
+  "situation": {
+    "quarter": 2,
+    "clock": "9:34",
+    "clockSeconds": 574,
+    "down": 3,
+    "toGo": 4,
+    "possession": "MIS",
+    "phase": "play",
+    "timeouts": {
+      "home": 3,
+      "away": 3
+    }
+  },
+  "quarters": {
+    "home": [
+      7,
+      0,
+      0,
+      0
+    ],
+    "away": [
+      0,
+      7,
+      0,
+      0
+    ]
+  },
+  "winProbability": {
+    "home": 0.661,
+    "basis": "live"
+  },
+  "box": {
+    "home": {
+      "team": {
+        "id": "MIS",
+        "abbr": "MIS",
+        "name": "Miskauga Boulders",
+        "city": "Miskauga",
+        "nickname": "Boulders",
+        "colors": [
+          "#5f646c",
+          "#e07b24"
+        ],
+        "logo": "/logos/Miskauga%20Boulders.svg"
+      },
+      "stats": {
+        "fd": 6,
+        "plays": 18,
+        "yds": 107,
+        "py": 90,
+        "ry": 17,
+        "pen": 3,
+        "peny": 15,
+        "to": 0,
+        "top": 678,
+        "d3a": 2,
+        "d3c": 0,
+        "d4a": 1,
+        "d4c": 1,
+        "sk": 0,
+        "sky": 0,
+        "ra": 7,
+        "pa": 10,
+        "pc": 8
+      },
+      "players": [
+        {
+          "id": "MIS-QB1",
+          "name": "Gage Stiles",
+          "short": "G. Stiles",
+          "position": "QB",
+          "number": 15,
+          "team": "MIS",
+          "stats": {
+            "pa": 10,
+            "pc": 8,
+            "py": 90,
+            "ra": 2,
+            "ry": 7,
+            "rlng": 4,
+            "ptd": 1
+          }
+        },
+        {
+          "id": "MIS-RB3",
+          "name": "Bennett Kessler",
+          "short": "B. Kessler",
+          "position": "RB",
+          "number": 28,
+          "team": "MIS",
+          "stats": {
+            "ra": 1,
+            "ry": 4,
+            "rlng": 4,
+            "tgt": 1,
+            "rec": 1,
+            "recy": 13,
+            "reclng": 13,
+            "rectd": 1
+          }
+        },
+        {
+          "id": "MIS-WR1",
+          "name": "Luca Corbin",
+          "short": "L. Corbin",
+          "position": "WR",
+          "number": 82,
+          "team": "MIS",
+          "stats": {
+            "tgt": 3,
+            "rec": 2,
+            "recy": 16,
+            "reclng": 10
+          }
+        },
+        {
+          "id": "MIS-WR2",
+          "name": "Orlando Barlow",
+          "short": "O. Barlow",
+          "position": "WR",
+          "number": 88,
+          "team": "MIS",
+          "stats": {
+            "tgt": 1,
+            "rec": 1,
+            "recy": 2,
+            "reclng": 2
+          }
+        },
+        {
+          "id": "MIS-WR4",
+          "name": "Nolan Whitaker",
+          "short": "N. Whitaker",
+          "position": "WR",
+          "number": 85,
+          "team": "MIS",
+          "stats": {
+            "tgt": 2,
+            "rec": 2,
+            "recy": 23,
+            "reclng": 19,
+            "pr": 1,
+            "pry": 15
+          }
+        },
+        {
+          "id": "MIS-TE1",
+          "name": "Nash Garrow",
+          "short": "N. Garrow",
+          "position": "TE",
+          "number": 81,
+          "team": "MIS",
+          "stats": {
+            "tgt": 1,
+            "rec": 1,
+            "recy": 11,
+            "reclng": 11
+          }
+        },
+        {
+          "id": "MIS-DL6",
+          "name": "Easton Sutter",
+          "short": "E. Sutter",
+          "position": "DL",
+          "number": 57,
+          "team": "MIS",
+          "stats": {
+            "tk": 1
+          }
+        },
+        {
+          "id": "MIS-LB1",
+          "name": "Jamal Upshaw",
+          "short": "J. Upshaw",
+          "position": "LB",
+          "number": 48,
+          "team": "MIS",
+          "stats": {
+            "tk": 3
+          }
+        },
+        {
+          "id": "MIS-LB2",
+          "name": "Marcus Langford",
+          "short": "M. Langford",
+          "position": "LB",
+          "number": 46,
+          "team": "MIS",
+          "stats": {
+            "sacks": 1,
+            "tk": 2
+          }
+        },
+        {
+          "id": "MIS-LB3",
+          "name": "Trey Pemberton",
+          "short": "T. Pemberton",
+          "position": "LB",
+          "number": 40,
+          "team": "MIS",
+          "stats": {
+            "tk": 1
+          }
+        },
+        {
+          "id": "MIS-S2",
+          "name": "Easton Fitzgerald",
+          "short": "E. Fitzgerald",
+          "position": "S",
+          "number": 29,
+          "team": "MIS",
+          "stats": {
+            "tk": 2
+          }
+        },
+        {
+          "id": "MIS-S3",
+          "name": "Gideon Voss",
+          "short": "G. Voss",
+          "position": "S",
+          "number": 31,
+          "team": "MIS",
+          "stats": {
+            "tk": 1
+          }
+        },
+        {
+          "id": "MIS-K1",
+          "name": "Carter Hargrove",
+          "short": "C. Hargrove",
+          "position": "K",
+          "number": 9,
+          "team": "MIS",
+          "stats": {
+            "fga": 1,
+            "xpa": 1,
+            "xpm": 1
+          }
+        },
+        {
+          "id": "R2-1",
+          "name": "Dorian Fitzgerald",
+          "short": "D. Fitzgerald",
+          "position": "RB",
+          "number": 30,
+          "team": "MIS",
+          "stats": {
+            "tgt": 1,
+            "rec": 1,
+            "recy": 25,
+            "reclng": 25,
+            "ra": 4,
+            "ry": 6,
+            "rlng": 2
+          }
+        },
+        {
+          "id": "R3-24",
+          "name": "Malik Vickers",
+          "short": "M. Vickers",
+          "position": "CB",
+          "number": 23,
+          "team": "MIS",
+          "stats": {
+            "tk": 1
+          }
+        },
+        {
+          "id": "R3-32",
+          "name": "Grant Ridley",
+          "short": "G. Ridley",
+          "position": "CB",
+          "number": 34,
+          "team": "MIS",
+          "stats": {
+            "pd": 1
+          }
+        }
+      ]
+    },
+    "away": {
+      "team": {
+        "id": "NWT",
+        "abbr": "NWT",
+        "name": "Newtown Knights",
+        "city": "Newtown",
+        "nickname": "Knights",
+        "colors": [
+          "#141414",
+          "#c9a227"
+        ],
+        "logo": "/logos/Newtown%20Knights.png"
+      },
+      "stats": {
+        "fd": 6,
+        "plays": 18,
+        "yds": 73,
+        "py": 57,
+        "ry": 25,
+        "pen": 0,
+        "peny": 0,
+        "to": 0,
+        "top": 543,
+        "d3a": 4,
+        "d3c": 3,
+        "d4a": 0,
+        "d4c": 0,
+        "sk": 1,
+        "sky": 9,
+        "ra": 8,
+        "pa": 8,
+        "pc": 5
+      },
+      "players": [
+        {
+          "id": "NWT-RB3",
+          "name": "Deshawn Brennan",
+          "short": "D. Brennan",
+          "position": "RB",
+          "number": 30,
+          "team": "NWT",
+          "stats": {
+            "ra": 6,
+            "ry": 19,
+            "rlng": 10
+          }
+        },
+        {
+          "id": "NWT-WR1",
+          "name": "Thiago Navarro",
+          "short": "T. Navarro",
+          "position": "WR",
+          "number": 87,
+          "team": "NWT",
+          "stats": {
+            "kr": 1,
+            "kry": 12,
+            "tgt": 2,
+            "rec": 1,
+            "recy": 7,
+            "reclng": 7
+          }
+        },
+        {
+          "id": "NWT-WR2",
+          "name": "Roman Vance",
+          "short": "R. Vance",
+          "position": "WR",
+          "number": 19,
+          "team": "NWT",
+          "stats": {
+            "tgt": 2,
+            "rec": 1,
+            "recy": 8,
+            "reclng": 8
+          }
+        },
+        {
+          "id": "NWT-WR5",
+          "name": "Easton Osei",
+          "short": "E. Osei",
+          "position": "WR",
+          "number": 13,
+          "team": "NWT",
+          "stats": {
+            "tgt": 1,
+            "rec": 1,
+            "recy": 22,
+            "reclng": 22
+          }
+        },
+        {
+          "id": "NWT-TE1",
+          "name": "Tobias Ridley",
+          "short": "T. Ridley",
+          "position": "TE",
+          "number": 44,
+          "team": "NWT",
+          "stats": {
+            "tgt": 2,
+            "rec": 2,
+            "recy": 20,
+            "reclng": 19,
+            "rectd": 1
+          }
+        },
+        {
+          "id": "NWT-TE2",
+          "name": "Marlon Hudgins",
+          "short": "M. Hudgins",
+          "position": "TE",
+          "number": 83,
+          "team": "NWT",
+          "stats": {
+            "tgt": 1
+          }
+        },
+        {
+          "id": "NWT-DL1",
+          "name": "Isaiah Hudgins",
+          "short": "I. Hudgins",
+          "position": "DL",
+          "number": 97,
+          "team": "NWT",
+          "stats": {
+            "tk": 1
+          }
+        },
+        {
+          "id": "NWT-DL4",
+          "name": "Ike Mabry",
+          "short": "I. Mabry",
+          "position": "DL",
+          "number": 96,
+          "team": "NWT",
+          "stats": {
+            "tk": 1
+          }
+        },
+        {
+          "id": "NWT-DL6",
+          "name": "Shane Lyle",
+          "short": "S. Lyle",
+          "position": "DL",
+          "number": 94,
+          "team": "NWT",
+          "stats": {
+            "tk": 1
+          }
+        },
+        {
+          "id": "NWT-LB1",
+          "name": "Orlando Ness",
+          "short": "O. Ness",
+          "position": "LB",
+          "number": 41,
+          "team": "NWT",
+          "stats": {
+            "tk": 2
+          }
+        },
+        {
+          "id": "NWT-LB2",
+          "name": "Kobe Draper",
+          "short": "K. Draper",
+          "position": "LB",
+          "number": 57,
+          "team": "NWT",
+          "stats": {
+            "tk": 2
+          }
+        },
+        {
+          "id": "NWT-CB3",
+          "name": "Lamar Quarles",
+          "short": "L. Quarles",
+          "position": "CB",
+          "number": 38,
+          "team": "NWT",
+          "stats": {
+            "tk": 1
+          }
+        },
+        {
+          "id": "NWT-S1",
+          "name": "Kendrick Blackwell",
+          "short": "K. Blackwell",
+          "position": "S",
+          "number": 48,
+          "team": "NWT",
+          "stats": {
+            "tk": 1
+          }
+        },
+        {
+          "id": "NWT-S2",
+          "name": "Malik Underwood",
+          "short": "M. Underwood",
+          "position": "S",
+          "number": 43,
+          "team": "NWT",
+          "stats": {
+            "tk": 4
+          }
+        },
+        {
+          "id": "NWT-K1",
+          "name": "Kellan Coleman",
+          "short": "K. Coleman",
+          "position": "K",
+          "number": 7,
+          "team": "NWT",
+          "stats": {
+            "xpa": 1,
+            "xpm": 1
+          }
+        },
+        {
+          "id": "NWT-P1",
+          "name": "Emmett Kearse",
+          "short": "E. Kearse",
+          "position": "P",
+          "number": 4,
+          "team": "NWT",
+          "stats": {
+            "pn": 1,
+            "pny": 44
+          }
+        },
+        {
+          "id": "R3-45",
+          "name": "Owen Keller",
+          "short": "O. Keller",
+          "position": "QB",
+          "number": 12,
+          "team": "NWT",
+          "stats": {
+            "pa": 8,
+            "sk": 1,
+            "sky": 9,
+            "pc": 5,
+            "py": 57,
+            "ptd": 1
+          }
+        },
+        {
+          "id": "R3-26",
+          "name": "Cruz Castillo",
+          "short": "C. Castillo",
+          "position": "CB",
+          "number": 23,
+          "team": "NWT",
+          "stats": {
+            "tk": 2
+          }
+        },
+        {
+          "id": "R3-17",
+          "name": "Felix Foley",
+          "short": "F. Foley",
+          "position": "RB",
+          "number": 21,
+          "team": "NWT",
+          "stats": {
+            "ra": 2,
+            "ry": 6,
+            "rlng": 4
+          }
+        }
+      ]
+    }
+  },
+  "recentPlays": [
+    {
+      "n": 43,
+      "kind": "pass",
+      "quarter": 2,
+      "clock": "11:02",
+      "situation": "3rd & Goal at MIS 1",
+      "text": "O. Keller pass deep left to T. Ridley for 1 yard, TOUCHDOWN!",
+      "possession": "NWT",
+      "tags": [
+        "TD"
+      ],
+      "banner": "TOUCHDOWN",
+      "scoringTeam": "NWT",
+      "score": {
+        "home": 7,
+        "away": 6
+      }
+    },
+    {
+      "n": 44,
+      "kind": "pat",
+      "quarter": 2,
+      "clock": "10:22",
+      "situation": null,
+      "text": "K. Coleman extra point is GOOD.",
+      "possession": "NWT",
+      "tags": [
+        "XP"
+      ],
+      "banner": null,
+      "scoringTeam": "NWT",
+      "score": {
+        "home": 7,
+        "away": 7
+      }
+    },
+    {
+      "n": 45,
+      "kind": "kickoff",
+      "quarter": 2,
+      "clock": "10:22",
+      "situation": null,
+      "text": "K. Coleman kicks 73 yards from NWT 35, into the end zone. Touchback.",
+      "possession": "NWT",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 7,
+        "away": 7
+      }
+    },
+    {
+      "n": 46,
+      "kind": "pass",
+      "quarter": 2,
+      "clock": "10:22",
+      "situation": "1st & 10 at MIS 35",
+      "text": "G. Stiles pass short middle to L. Corbin to MIS 41 for 6 yards (K. Blackwell).",
+      "possession": "MIS",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 7,
+        "away": 7
+      }
+    },
+    {
+      "n": 47,
+      "kind": "pass",
+      "quarter": 2,
+      "clock": "10:15",
+      "situation": "2nd & 4 at MIS 41",
+      "text": "G. Stiles pass incomplete deep right to L. Corbin.",
+      "possession": "MIS",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 7,
+        "away": 7
+      }
+    }
+  ]
+}

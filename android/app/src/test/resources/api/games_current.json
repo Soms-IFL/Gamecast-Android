@@ -1,0 +1,184 @@
+{
+  "season": 3,
+  "total": 84,
+  "offset": 0,
+  "limit": 4,
+  "games": [
+    {
+      "id": "W1G1",
+      "season": 3,
+      "week": 1,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-18T22:00:00.000Z",
+      "startsAtMs": 1795039200000,
+      "home": {
+        "id": "LAI",
+        "abbr": "LAI",
+        "name": "Laiyford Evergreens",
+        "city": "Laiyford",
+        "nickname": "Evergreens",
+        "colors": [
+          "#1f6b3a",
+          "#d9b23a"
+        ],
+        "logo": "/logos/Laiyford%20Evergreens.png",
+        "score": 24
+      },
+      "away": {
+        "id": "ASH",
+        "abbr": "ASH",
+        "name": "Ashford Smokers",
+        "city": "Ashford",
+        "nickname": "Smokers",
+        "colors": [
+          "#3d3936",
+          "#e2552b"
+        ],
+        "logo": "/logos/Ashford%20Smokers.png",
+        "score": 34
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Maeve Golden Stadium",
+        "town": "New Shelby",
+        "host": "LAI"
+      },
+      "winner": "ASH"
+    },
+    {
+      "id": "W1G2",
+      "season": 3,
+      "week": 1,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-18T22:10:00.000Z",
+      "startsAtMs": 1795039800000,
+      "home": {
+        "id": "NWT",
+        "abbr": "NWT",
+        "name": "Newtown Knights",
+        "city": "Newtown",
+        "nickname": "Knights",
+        "colors": [
+          "#141414",
+          "#c9a227"
+        ],
+        "logo": "/logos/Newtown%20Knights.png",
+        "score": 29
+      },
+      "away": {
+        "id": "DEN",
+        "abbr": "DEN",
+        "name": "Dennison Spears",
+        "city": "Dennison",
+        "nickname": "Spears",
+        "colors": [
+          "#5b2a86",
+          "#c9c9d4"
+        ],
+        "logo": "/logos/Dennison%20Spears.png",
+        "score": 15
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Stoneridge Stadium",
+        "town": "Newtown",
+        "host": "NWT"
+      },
+      "winner": "NWT"
+    },
+    {
+      "id": "W1G3",
+      "season": 3,
+      "week": 1,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-18T22:20:00.000Z",
+      "startsAtMs": 1795040400000,
+      "home": {
+        "id": "BRV",
+        "abbr": "BRV",
+        "name": "Bradyville Beavers",
+        "city": "Bradyville",
+        "nickname": "Beavers",
+        "colors": [
+          "#6b3f1d",
+          "#f28c28"
+        ],
+        "logo": "/logos/Bradyville%20Beavers.png",
+        "score": 30
+      },
+      "away": {
+        "id": "PAR",
+        "abbr": "PAR",
+        "name": "Parikia Poseidons",
+        "city": "Parikia",
+        "nickname": "Poseidons",
+        "colors": [
+          "#0f7c8c",
+          "#0b2545"
+        ],
+        "logo": "/logos/Parikia%20Poseidons.png",
+        "score": 35
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Skyline Stadium",
+        "town": "Kennedy Park",
+        "host": "NSO"
+      },
+      "winner": "PAR"
+    },
+    {
+      "id": "W1G4",
+      "season": 3,
+      "week": 1,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-18T22:30:00.000Z",
+      "startsAtMs": 1795041000000,
+      "home": {
+        "id": "ARG",
+        "abbr": "ARG",
+        "name": "Argiroupolis Silvers",
+        "city": "Argiroupolis",
+        "nickname": "Silvers",
+        "colors": [
+          "#7d8794",
+          "#1d3f8f"
+        ],
+        "logo": "/logos/Argiroupolis%20Silvers.png",
+        "score": 38
+      },
+      "away": {
+        "id": "KYL",
+        "abbr": "KYL",
+        "name": "Kyleton Polar Bears",
+        "city": "Kyleton",
+        "nickname": "Polar Bears",
+        "colors": [
+          "#2f7fc1",
+          "#e8f1f8"
+        ],
+        "logo": "/logos/Kyleton%20Polar%20Bears.png",
+        "score": 20
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Argyros Stadium",
+        "town": "Argiroupolis",
+        "host": "ARG"
+      },
+      "winner": "ARG"
+    }
+  ]
+}

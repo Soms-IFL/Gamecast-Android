@@ -1,0 +1,269 @@
+{
+  "season": 3,
+  "teams": [
+    {
+      "id": "MIS",
+      "abbr": "MIS",
+      "name": "Miskauga Boulders",
+      "city": "Miskauga",
+      "nickname": "Boulders",
+      "colors": [
+        "#5f646c",
+        "#e07b24"
+      ],
+      "logo": "/logos/Miskauga%20Boulders.svg",
+      "division": {
+        "id": "West",
+        "name": "IFL West"
+      },
+      "record": "1-0",
+      "rating": {
+        "ovr": 75,
+        "off": 75,
+        "def": 74
+      }
+    },
+    {
+      "id": "LAI",
+      "abbr": "LAI",
+      "name": "Laiyford Evergreens",
+      "city": "Laiyford",
+      "nickname": "Evergreens",
+      "colors": [
+        "#1f6b3a",
+        "#d9b23a"
+      ],
+      "logo": "/logos/Laiyford%20Evergreens.png",
+      "division": {
+        "id": "West",
+        "name": "IFL West"
+      },
+      "record": "1-1",
+      "rating": {
+        "ovr": 75,
+        "off": 79,
+        "def": 70
+      }
+    },
+    {
+      "id": "GHB",
+      "abbr": "GHB",
+      "name": "Greene Hill Brawlers",
+      "city": "Greene Hill",
+      "nickname": "Brawlers",
+      "colors": [
+        "#b3202a",
+        "#1b1b1b"
+      ],
+      "logo": "/logos/Greene%20Hill%20Brawlers.png",
+      "division": {
+        "id": "East",
+        "name": "IFL East"
+      },
+      "record": "2-0",
+      "rating": {
+        "ovr": 76,
+        "off": 79,
+        "def": 73
+      }
+    },
+    {
+      "id": "PAR",
+      "abbr": "PAR",
+      "name": "Parikia Poseidons",
+      "city": "Parikia",
+      "nickname": "Poseidons",
+      "colors": [
+        "#0f7c8c",
+        "#0b2545"
+      ],
+      "logo": "/logos/Parikia%20Poseidons.png",
+      "division": {
+        "id": "Central",
+        "name": "IFL Central"
+      },
+      "record": "1-1",
+      "rating": {
+        "ovr": 74,
+        "off": 76,
+        "def": 71
+      }
+    },
+    {
+      "id": "DEN",
+      "abbr": "DEN",
+      "name": "Dennison Spears",
+      "city": "Dennison",
+      "nickname": "Spears",
+      "colors": [
+        "#5b2a86",
+        "#c9c9d4"
+      ],
+      "logo": "/logos/Dennison%20Spears.png",
+      "division": {
+        "id": "East",
+        "name": "IFL East"
+      },
+      "record": "0-2",
+      "rating": {
+        "ovr": 80,
+        "off": 81,
+        "def": 79
+      }
+    },
+    {
+      "id": "KYL",
+      "abbr": "KYL",
+      "name": "Kyleton Polar Bears",
+      "city": "Kyleton",
+      "nickname": "Polar Bears",
+      "colors": [
+        "#2f7fc1",
+        "#e8f1f8"
+      ],
+      "logo": "/logos/Kyleton%20Polar%20Bears.png",
+      "division": {
+        "id": "Central",
+        "name": "IFL Central"
+      },
+      "record": "0-2",
+      "rating": {
+        "ovr": 81,
+        "off": 83,
+        "def": 79
+      }
+    },
+    {
+      "id": "ASH",
+      "abbr": "ASH",
+      "name": "Ashford Smokers",
+      "city": "Ashford",
+      "nickname": "Smokers",
+      "colors": [
+        "#3d3936",
+        "#e2552b"
+      ],
+      "logo": "/logos/Ashford%20Smokers.png",
+      "division": {
+        "id": "West",
+        "name": "IFL West"
+      },
+      "record": "2-0",
+      "rating": {
+        "ovr": 81,
+        "off": 81,
+        "def": 80
+      }
+    },
+    {
+      "id": "ARG",
+      "abbr": "ARG",
+      "name": "Argiroupolis Silvers",
+      "city": "Argiroupolis",
+      "nickname": "Silvers",
+      "colors": [
+        "#7d8794",
+        "#1d3f8f"
+      ],
+      "logo": "/logos/Argiroupolis%20Silvers.png",
+      "division": {
+        "id": "Central",
+        "name": "IFL Central"
+      },
+      "record": "2-0",
+      "rating": {
+        "ovr": 81,
+        "off": 82,
+        "def": 79
+      }
+    },
+    {
+      "id": "NSO",
+      "abbr": "NSO",
+      "name": "New Southington Skylines",
+      "city": "New Southington",
+      "nickname": "Skylines",
+      "colors": [
+        "#1f2a5a",
+        "#5bc0eb"
+      ],
+      "logo": "/logos/New%20Southington%20Skylines.png",
+      "division": {
+        "id": "West",
+        "name": "IFL West"
+      },
+      "record": "1-1",
+      "rating": {
+        "ovr": 79,
+        "off": 80,
+        "def": 78
+      }
+    },
+    {
+      "id": "NWT",
+      "abbr": "NWT",
+      "name": "Newtown Knights",
+      "city": "Newtown",
+      "nickname": "Knights",
+      "colors": [
+        "#141414",
+        "#c9a227"
+      ],
+      "logo": "/logos/Newtown%20Knights.png",
+      "division": {
+        "id": "East",
+        "name": "IFL East"
+      },
+      "record": "1-0",
+      "rating": {
+        "ovr": 74,
+        "off": 74,
+        "def": 74
+      }
+    },
+    {
+      "id": "MON",
+      "abbr": "MON",
+      "name": "Montford Monarchs",
+      "city": "Montford",
+      "nickname": "Monarchs",
+      "colors": [
+        "#7b1e3a",
+        "#e0b84c"
+      ],
+      "logo": "/logos/Montford%20Monarchs.png",
+      "division": {
+        "id": "East",
+        "name": "IFL East"
+      },
+      "record": "0-2",
+      "rating": {
+        "ovr": 82,
+        "off": 83,
+        "def": 80
+      }
+    },
+    {
+      "id": "BRV",
+      "abbr": "BRV",
+      "name": "Bradyville Beavers",
+      "city": "Bradyville",
+      "nickname": "Beavers",
+      "colors": [
+        "#6b3f1d",
+        "#f28c28"
+      ],
+      "logo": "/logos/Bradyville%20Beavers.png",
+      "division": {
+        "id": "Central",
+        "name": "IFL Central"
+      },
+      "record": "0-2",
+      "rating": {
+        "ovr": 78,
+        "off": 77,
+        "def": 79
+      }
+    }
+  ]
+}

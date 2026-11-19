@@ -1,0 +1,3836 @@
+{
+  "season": 2,
+  "total": 87,
+  "offset": 0,
+  "limit": 200,
+  "games": [
+    {
+      "id": "W1G1",
+      "season": 2,
+      "week": 1,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-08T22:34:18.222Z",
+      "startsAtMs": 1794177258222,
+      "home": {
+        "id": "ASH",
+        "abbr": "ASH",
+        "name": "Ashford Smokers",
+        "city": "Ashford",
+        "nickname": "Smokers",
+        "colors": [
+          "#3d3936",
+          "#e2552b"
+        ],
+        "logo": "/logos/Ashford%20Smokers.png",
+        "score": 34
+      },
+      "away": {
+        "id": "NSO",
+        "abbr": "NSO",
+        "name": "New Southington Skylines",
+        "city": "New Southington",
+        "nickname": "Skylines",
+        "colors": [
+          "#1f2a5a",
+          "#5bc0eb"
+        ],
+        "logo": "/logos/New%20Southington%20Skylines.png",
+        "score": 36
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Enigma-Turing Field",
+        "town": "Ashford",
+        "host": "ASH"
+      },
+      "winner": "NSO"
+    },
+    {
+      "id": "W1G2",
+      "season": 2,
+      "week": 1,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-08T22:42:24.281Z",
+      "startsAtMs": 1794177744281,
+      "home": {
+        "id": "KYL",
+        "abbr": "KYL",
+        "name": "Kyleton Polar Bears",
+        "city": "Kyleton",
+        "nickname": "Polar Bears",
+        "colors": [
+          "#2f7fc1",
+          "#e8f1f8"
+        ],
+        "logo": "/logos/Kyleton%20Polar%20Bears.png",
+        "score": 40
+      },
+      "away": {
+        "id": "BRV",
+        "abbr": "BRV",
+        "name": "Bradyville Beavers",
+        "city": "Bradyville",
+        "nickname": "Beavers",
+        "colors": [
+          "#6b3f1d",
+          "#f28c28"
+        ],
+        "logo": "/logos/Bradyville%20Beavers.png",
+        "score": 21
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Kyleton Stadium",
+        "town": "Kyleton",
+        "host": "KYL"
+      },
+      "winner": "KYL"
+    },
+    {
+      "id": "W1G3",
+      "season": 2,
+      "week": 1,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-08T22:51:08.254Z",
+      "startsAtMs": 1794178268254,
+      "home": {
+        "id": "PAR",
+        "abbr": "PAR",
+        "name": "Parikia Poseidons",
+        "city": "Parikia",
+        "nickname": "Poseidons",
+        "colors": [
+          "#0f7c8c",
+          "#0b2545"
+        ],
+        "logo": "/logos/Parikia%20Poseidons.png",
+        "score": 21
+      },
+      "away": {
+        "id": "ARG",
+        "abbr": "ARG",
+        "name": "Argiroupolis Silvers",
+        "city": "Argiroupolis",
+        "nickname": "Silvers",
+        "colors": [
+          "#7d8794",
+          "#1d3f8f"
+        ],
+        "logo": "/logos/Argiroupolis%20Silvers.png",
+        "score": 31
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Spearhead-Camdyn Field",
+        "town": "Dennison",
+        "host": "DEN"
+      },
+      "winner": "ARG"
+    },
+    {
+      "id": "W1G4",
+      "season": 2,
+      "week": 1,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-08T22:59:23.780Z",
+      "startsAtMs": 1794178763780,
+      "home": {
+        "id": "MIS",
+        "abbr": "MIS",
+        "name": "Miskauga Boulders",
+        "city": "Miskauga",
+        "nickname": "Boulders",
+        "colors": [
+          "#5f646c",
+          "#e07b24"
+        ],
+        "logo": "/logos/Miskauga%20Boulders.svg",
+        "score": 48
+      },
+      "away": {
+        "id": "LAI",
+        "abbr": "LAI",
+        "name": "Laiyford Evergreens",
+        "city": "Laiyford",
+        "nickname": "Evergreens",
+        "colors": [
+          "#1f6b3a",
+          "#d9b23a"
+        ],
+        "logo": "/logos/Laiyford%20Evergreens.png",
+        "score": 24
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Alloy Field",
+        "town": "Miskauga",
+        "host": "MIS"
+      },
+      "winner": "MIS"
+    },
+    {
+      "id": "W1G5",
+      "season": 2,
+      "week": 1,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-08T23:06:59.880Z",
+      "startsAtMs": 1794179219880,
+      "home": {
+        "id": "MON",
+        "abbr": "MON",
+        "name": "Montford Monarchs",
+        "city": "Montford",
+        "nickname": "Monarchs",
+        "colors": [
+          "#7b1e3a",
+          "#e0b84c"
+        ],
+        "logo": "/logos/Montford%20Monarchs.png",
+        "score": 23
+      },
+      "away": {
+        "id": "DEN",
+        "abbr": "DEN",
+        "name": "Dennison Spears",
+        "city": "Dennison",
+        "nickname": "Spears",
+        "colors": [
+          "#5b2a86",
+          "#c9c9d4"
+        ],
+        "logo": "/logos/Dennison%20Spears.png",
+        "score": 17
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Unicellular Stadium",
+        "town": "Greene Hill",
+        "host": "GHB"
+      },
+      "winner": "MON"
+    },
+    {
+      "id": "W1G6",
+      "season": 2,
+      "week": 1,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-08T23:13:54.149Z",
+      "startsAtMs": 1794179634149,
+      "home": {
+        "id": "GHB",
+        "abbr": "GHB",
+        "name": "Greene Hill Brawlers",
+        "city": "Greene Hill",
+        "nickname": "Brawlers",
+        "colors": [
+          "#b3202a",
+          "#1b1b1b"
+        ],
+        "logo": "/logos/Greene%20Hill%20Brawlers.png",
+        "score": 13
+      },
+      "away": {
+        "id": "NWT",
+        "abbr": "NWT",
+        "name": "Newtown Knights",
+        "city": "Newtown",
+        "nickname": "Knights",
+        "colors": [
+          "#141414",
+          "#c9a227"
+        ],
+        "logo": "/logos/Newtown%20Knights.png",
+        "score": 21
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Unicellular Stadium",
+        "town": "Greene Hill",
+        "host": "GHB"
+      },
+      "winner": "NWT"
+    },
+    {
+      "id": "W2G1",
+      "season": 2,
+      "week": 2,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-08T23:21:34.921Z",
+      "startsAtMs": 1794180094921,
+      "home": {
+        "id": "KYL",
+        "abbr": "KYL",
+        "name": "Kyleton Polar Bears",
+        "city": "Kyleton",
+        "nickname": "Polar Bears",
+        "colors": [
+          "#2f7fc1",
+          "#e8f1f8"
+        ],
+        "logo": "/logos/Kyleton%20Polar%20Bears.png",
+        "score": 27
+      },
+      "away": {
+        "id": "MON",
+        "abbr": "MON",
+        "name": "Montford Monarchs",
+        "city": "Montford",
+        "nickname": "Monarchs",
+        "colors": [
+          "#7b1e3a",
+          "#e0b84c"
+        ],
+        "logo": "/logos/Montford%20Monarchs.png",
+        "score": 26
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Kyleton Stadium",
+        "town": "Kyleton",
+        "host": "KYL"
+      },
+      "winner": "KYL"
+    },
+    {
+      "id": "W2G2",
+      "season": 2,
+      "week": 2,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-08T23:30:33.894Z",
+      "startsAtMs": 1794180633894,
+      "home": {
+        "id": "MIS",
+        "abbr": "MIS",
+        "name": "Miskauga Boulders",
+        "city": "Miskauga",
+        "nickname": "Boulders",
+        "colors": [
+          "#5f646c",
+          "#e07b24"
+        ],
+        "logo": "/logos/Miskauga%20Boulders.svg",
+        "score": 17
+      },
+      "away": {
+        "id": "GHB",
+        "abbr": "GHB",
+        "name": "Greene Hill Brawlers",
+        "city": "Greene Hill",
+        "nickname": "Brawlers",
+        "colors": [
+          "#b3202a",
+          "#1b1b1b"
+        ],
+        "logo": "/logos/Greene%20Hill%20Brawlers.png",
+        "score": 26
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Alloy Field",
+        "town": "Miskauga",
+        "host": "MIS"
+      },
+      "winner": "GHB"
+    },
+    {
+      "id": "W2G3",
+      "season": 2,
+      "week": 2,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-08T23:37:59.755Z",
+      "startsAtMs": 1794181079755,
+      "home": {
+        "id": "LAI",
+        "abbr": "LAI",
+        "name": "Laiyford Evergreens",
+        "city": "Laiyford",
+        "nickname": "Evergreens",
+        "colors": [
+          "#1f6b3a",
+          "#d9b23a"
+        ],
+        "logo": "/logos/Laiyford%20Evergreens.png",
+        "score": 35
+      },
+      "away": {
+        "id": "ARG",
+        "abbr": "ARG",
+        "name": "Argiroupolis Silvers",
+        "city": "Argiroupolis",
+        "nickname": "Silvers",
+        "colors": [
+          "#7d8794",
+          "#1d3f8f"
+        ],
+        "logo": "/logos/Argiroupolis%20Silvers.png",
+        "score": 20
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Maeve Golden Stadium",
+        "town": "New Shelby",
+        "host": "LAI"
+      },
+      "winner": "LAI"
+    },
+    {
+      "id": "W2G4",
+      "season": 2,
+      "week": 2,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-08T23:45:32.356Z",
+      "startsAtMs": 1794181532356,
+      "home": {
+        "id": "NSO",
+        "abbr": "NSO",
+        "name": "New Southington Skylines",
+        "city": "New Southington",
+        "nickname": "Skylines",
+        "colors": [
+          "#1f2a5a",
+          "#5bc0eb"
+        ],
+        "logo": "/logos/New%20Southington%20Skylines.png",
+        "score": 16
+      },
+      "away": {
+        "id": "DEN",
+        "abbr": "DEN",
+        "name": "Dennison Spears",
+        "city": "Dennison",
+        "nickname": "Spears",
+        "colors": [
+          "#5b2a86",
+          "#c9c9d4"
+        ],
+        "logo": "/logos/Dennison%20Spears.png",
+        "score": 19
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Skyline Stadium",
+        "town": "Kennedy Park",
+        "host": "NSO"
+      },
+      "winner": "DEN"
+    },
+    {
+      "id": "W2G5",
+      "season": 2,
+      "week": 2,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-08T23:52:12.442Z",
+      "startsAtMs": 1794181932442,
+      "home": {
+        "id": "BRV",
+        "abbr": "BRV",
+        "name": "Bradyville Beavers",
+        "city": "Bradyville",
+        "nickname": "Beavers",
+        "colors": [
+          "#6b3f1d",
+          "#f28c28"
+        ],
+        "logo": "/logos/Bradyville%20Beavers.png",
+        "score": 19
+      },
+      "away": {
+        "id": "NWT",
+        "abbr": "NWT",
+        "name": "Newtown Knights",
+        "city": "Newtown",
+        "nickname": "Knights",
+        "colors": [
+          "#141414",
+          "#c9a227"
+        ],
+        "logo": "/logos/Newtown%20Knights.png",
+        "score": 9
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Skyline Stadium",
+        "town": "Kennedy Park",
+        "host": "NSO"
+      },
+      "winner": "BRV"
+    },
+    {
+      "id": "W2G6",
+      "season": 2,
+      "week": 2,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-08T23:58:49.560Z",
+      "startsAtMs": 1794182329560,
+      "home": {
+        "id": "ASH",
+        "abbr": "ASH",
+        "name": "Ashford Smokers",
+        "city": "Ashford",
+        "nickname": "Smokers",
+        "colors": [
+          "#3d3936",
+          "#e2552b"
+        ],
+        "logo": "/logos/Ashford%20Smokers.png",
+        "score": 13
+      },
+      "away": {
+        "id": "PAR",
+        "abbr": "PAR",
+        "name": "Parikia Poseidons",
+        "city": "Parikia",
+        "nickname": "Poseidons",
+        "colors": [
+          "#0f7c8c",
+          "#0b2545"
+        ],
+        "logo": "/logos/Parikia%20Poseidons.png",
+        "score": 24
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Enigma-Turing Field",
+        "town": "Ashford",
+        "host": "ASH"
+      },
+      "winner": "PAR"
+    },
+    {
+      "id": "W3G1",
+      "season": 2,
+      "week": 3,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-09T00:06:58.316Z",
+      "startsAtMs": 1794182818316,
+      "home": {
+        "id": "ARG",
+        "abbr": "ARG",
+        "name": "Argiroupolis Silvers",
+        "city": "Argiroupolis",
+        "nickname": "Silvers",
+        "colors": [
+          "#7d8794",
+          "#1d3f8f"
+        ],
+        "logo": "/logos/Argiroupolis%20Silvers.png",
+        "score": 19
+      },
+      "away": {
+        "id": "BRV",
+        "abbr": "BRV",
+        "name": "Bradyville Beavers",
+        "city": "Bradyville",
+        "nickname": "Beavers",
+        "colors": [
+          "#6b3f1d",
+          "#f28c28"
+        ],
+        "logo": "/logos/Bradyville%20Beavers.png",
+        "score": 8
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Argyros Stadium",
+        "town": "Argiroupolis",
+        "host": "ARG"
+      },
+      "winner": "ARG"
+    },
+    {
+      "id": "W3G2",
+      "season": 2,
+      "week": 3,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-09T00:14:33.505Z",
+      "startsAtMs": 1794183273505,
+      "home": {
+        "id": "KYL",
+        "abbr": "KYL",
+        "name": "Kyleton Polar Bears",
+        "city": "Kyleton",
+        "nickname": "Polar Bears",
+        "colors": [
+          "#2f7fc1",
+          "#e8f1f8"
+        ],
+        "logo": "/logos/Kyleton%20Polar%20Bears.png",
+        "score": 31
+      },
+      "away": {
+        "id": "PAR",
+        "abbr": "PAR",
+        "name": "Parikia Poseidons",
+        "city": "Parikia",
+        "nickname": "Poseidons",
+        "colors": [
+          "#0f7c8c",
+          "#0b2545"
+        ],
+        "logo": "/logos/Parikia%20Poseidons.png",
+        "score": 27
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Kyleton Stadium",
+        "town": "Kyleton",
+        "host": "KYL"
+      },
+      "winner": "KYL"
+    },
+    {
+      "id": "W3G3",
+      "season": 2,
+      "week": 3,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-09T00:21:42.341Z",
+      "startsAtMs": 1794183702341,
+      "home": {
+        "id": "DEN",
+        "abbr": "DEN",
+        "name": "Dennison Spears",
+        "city": "Dennison",
+        "nickname": "Spears",
+        "colors": [
+          "#5b2a86",
+          "#c9c9d4"
+        ],
+        "logo": "/logos/Dennison%20Spears.png",
+        "score": 27
+      },
+      "away": {
+        "id": "NWT",
+        "abbr": "NWT",
+        "name": "Newtown Knights",
+        "city": "Newtown",
+        "nickname": "Knights",
+        "colors": [
+          "#141414",
+          "#c9a227"
+        ],
+        "logo": "/logos/Newtown%20Knights.png",
+        "score": 31
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Spearhead-Camdyn Field",
+        "town": "Dennison",
+        "host": "DEN"
+      },
+      "winner": "NWT"
+    },
+    {
+      "id": "W3G4",
+      "season": 2,
+      "week": 3,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-09T00:30:00.000Z",
+      "startsAtMs": 1794184200000,
+      "home": {
+        "id": "ASH",
+        "abbr": "ASH",
+        "name": "Ashford Smokers",
+        "city": "Ashford",
+        "nickname": "Smokers",
+        "colors": [
+          "#3d3936",
+          "#e2552b"
+        ],
+        "logo": "/logos/Ashford%20Smokers.png",
+        "score": 27
+      },
+      "away": {
+        "id": "MIS",
+        "abbr": "MIS",
+        "name": "Miskauga Boulders",
+        "city": "Miskauga",
+        "nickname": "Boulders",
+        "colors": [
+          "#5f646c",
+          "#e07b24"
+        ],
+        "logo": "/logos/Miskauga%20Boulders.svg",
+        "score": 23
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Enigma-Turing Field",
+        "town": "Ashford",
+        "host": "ASH"
+      },
+      "winner": "ASH"
+    },
+    {
+      "id": "W3G5",
+      "season": 2,
+      "week": 3,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-09T00:40:00.000Z",
+      "startsAtMs": 1794184800000,
+      "home": {
+        "id": "GHB",
+        "abbr": "GHB",
+        "name": "Greene Hill Brawlers",
+        "city": "Greene Hill",
+        "nickname": "Brawlers",
+        "colors": [
+          "#b3202a",
+          "#1b1b1b"
+        ],
+        "logo": "/logos/Greene%20Hill%20Brawlers.png",
+        "score": 35
+      },
+      "away": {
+        "id": "MON",
+        "abbr": "MON",
+        "name": "Montford Monarchs",
+        "city": "Montford",
+        "nickname": "Monarchs",
+        "colors": [
+          "#7b1e3a",
+          "#e0b84c"
+        ],
+        "logo": "/logos/Montford%20Monarchs.png",
+        "score": 20
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Unicellular Stadium",
+        "town": "Greene Hill",
+        "host": "GHB"
+      },
+      "winner": "GHB"
+    },
+    {
+      "id": "W3G6",
+      "season": 2,
+      "week": 3,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-09T00:50:00.000Z",
+      "startsAtMs": 1794185400000,
+      "home": {
+        "id": "LAI",
+        "abbr": "LAI",
+        "name": "Laiyford Evergreens",
+        "city": "Laiyford",
+        "nickname": "Evergreens",
+        "colors": [
+          "#1f6b3a",
+          "#d9b23a"
+        ],
+        "logo": "/logos/Laiyford%20Evergreens.png",
+        "score": 20
+      },
+      "away": {
+        "id": "NSO",
+        "abbr": "NSO",
+        "name": "New Southington Skylines",
+        "city": "New Southington",
+        "nickname": "Skylines",
+        "colors": [
+          "#1f2a5a",
+          "#5bc0eb"
+        ],
+        "logo": "/logos/New%20Southington%20Skylines.png",
+        "score": 23
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Maeve Golden Stadium",
+        "town": "New Shelby",
+        "host": "LAI"
+      },
+      "winner": "NSO"
+    },
+    {
+      "id": "W4G1",
+      "season": 2,
+      "week": 4,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-09T22:00:00.000Z",
+      "startsAtMs": 1794261600000,
+      "home": {
+        "id": "GHB",
+        "abbr": "GHB",
+        "name": "Greene Hill Brawlers",
+        "city": "Greene Hill",
+        "nickname": "Brawlers",
+        "colors": [
+          "#b3202a",
+          "#1b1b1b"
+        ],
+        "logo": "/logos/Greene%20Hill%20Brawlers.png",
+        "score": 27
+      },
+      "away": {
+        "id": "LAI",
+        "abbr": "LAI",
+        "name": "Laiyford Evergreens",
+        "city": "Laiyford",
+        "nickname": "Evergreens",
+        "colors": [
+          "#1f6b3a",
+          "#d9b23a"
+        ],
+        "logo": "/logos/Laiyford%20Evergreens.png",
+        "score": 24
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Unicellular Stadium",
+        "town": "Greene Hill",
+        "host": "GHB"
+      },
+      "winner": "GHB"
+    },
+    {
+      "id": "W4G2",
+      "season": 2,
+      "week": 4,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-09T22:10:00.000Z",
+      "startsAtMs": 1794262200000,
+      "home": {
+        "id": "BRV",
+        "abbr": "BRV",
+        "name": "Bradyville Beavers",
+        "city": "Bradyville",
+        "nickname": "Beavers",
+        "colors": [
+          "#6b3f1d",
+          "#f28c28"
+        ],
+        "logo": "/logos/Bradyville%20Beavers.png",
+        "score": 20
+      },
+      "away": {
+        "id": "DEN",
+        "abbr": "DEN",
+        "name": "Dennison Spears",
+        "city": "Dennison",
+        "nickname": "Spears",
+        "colors": [
+          "#5b2a86",
+          "#c9c9d4"
+        ],
+        "logo": "/logos/Dennison%20Spears.png",
+        "score": 15
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Skyline Stadium",
+        "town": "Kennedy Park",
+        "host": "NSO"
+      },
+      "winner": "BRV"
+    },
+    {
+      "id": "W4G3",
+      "season": 2,
+      "week": 4,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-09T22:20:00.000Z",
+      "startsAtMs": 1794262800000,
+      "home": {
+        "id": "NSO",
+        "abbr": "NSO",
+        "name": "New Southington Skylines",
+        "city": "New Southington",
+        "nickname": "Skylines",
+        "colors": [
+          "#1f2a5a",
+          "#5bc0eb"
+        ],
+        "logo": "/logos/New%20Southington%20Skylines.png",
+        "score": 38
+      },
+      "away": {
+        "id": "NWT",
+        "abbr": "NWT",
+        "name": "Newtown Knights",
+        "city": "Newtown",
+        "nickname": "Knights",
+        "colors": [
+          "#141414",
+          "#c9a227"
+        ],
+        "logo": "/logos/Newtown%20Knights.png",
+        "score": 15
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Skyline Stadium",
+        "town": "Kennedy Park",
+        "host": "NSO"
+      },
+      "winner": "NSO"
+    },
+    {
+      "id": "W4G4",
+      "season": 2,
+      "week": 4,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-09T22:30:00.000Z",
+      "startsAtMs": 1794263400000,
+      "home": {
+        "id": "ASH",
+        "abbr": "ASH",
+        "name": "Ashford Smokers",
+        "city": "Ashford",
+        "nickname": "Smokers",
+        "colors": [
+          "#3d3936",
+          "#e2552b"
+        ],
+        "logo": "/logos/Ashford%20Smokers.png",
+        "score": 24
+      },
+      "away": {
+        "id": "KYL",
+        "abbr": "KYL",
+        "name": "Kyleton Polar Bears",
+        "city": "Kyleton",
+        "nickname": "Polar Bears",
+        "colors": [
+          "#2f7fc1",
+          "#e8f1f8"
+        ],
+        "logo": "/logos/Kyleton%20Polar%20Bears.png",
+        "score": 27
+      },
+      "overtime": true,
+      "venue": {
+        "name": "Enigma-Turing Field",
+        "town": "Ashford",
+        "host": "ASH"
+      },
+      "winner": "KYL"
+    },
+    {
+      "id": "W4G5",
+      "season": 2,
+      "week": 4,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-09T22:40:00.000Z",
+      "startsAtMs": 1794264000000,
+      "home": {
+        "id": "MON",
+        "abbr": "MON",
+        "name": "Montford Monarchs",
+        "city": "Montford",
+        "nickname": "Monarchs",
+        "colors": [
+          "#7b1e3a",
+          "#e0b84c"
+        ],
+        "logo": "/logos/Montford%20Monarchs.png",
+        "score": 41
+      },
+      "away": {
+        "id": "ARG",
+        "abbr": "ARG",
+        "name": "Argiroupolis Silvers",
+        "city": "Argiroupolis",
+        "nickname": "Silvers",
+        "colors": [
+          "#7d8794",
+          "#1d3f8f"
+        ],
+        "logo": "/logos/Argiroupolis%20Silvers.png",
+        "score": 17
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Unicellular Stadium",
+        "town": "Greene Hill",
+        "host": "GHB"
+      },
+      "winner": "MON"
+    },
+    {
+      "id": "W4G6",
+      "season": 2,
+      "week": 4,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-09T22:50:00.000Z",
+      "startsAtMs": 1794264600000,
+      "home": {
+        "id": "MIS",
+        "abbr": "MIS",
+        "name": "Miskauga Boulders",
+        "city": "Miskauga",
+        "nickname": "Boulders",
+        "colors": [
+          "#5f646c",
+          "#e07b24"
+        ],
+        "logo": "/logos/Miskauga%20Boulders.svg",
+        "score": 31
+      },
+      "away": {
+        "id": "PAR",
+        "abbr": "PAR",
+        "name": "Parikia Poseidons",
+        "city": "Parikia",
+        "nickname": "Poseidons",
+        "colors": [
+          "#0f7c8c",
+          "#0b2545"
+        ],
+        "logo": "/logos/Parikia%20Poseidons.png",
+        "score": 18
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Alloy Field",
+        "town": "Miskauga",
+        "host": "MIS"
+      },
+      "winner": "MIS"
+    },
+    {
+      "id": "W5G1",
+      "season": 2,
+      "week": 5,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-09T23:00:00.000Z",
+      "startsAtMs": 1794265200000,
+      "home": {
+        "id": "PAR",
+        "abbr": "PAR",
+        "name": "Parikia Poseidons",
+        "city": "Parikia",
+        "nickname": "Poseidons",
+        "colors": [
+          "#0f7c8c",
+          "#0b2545"
+        ],
+        "logo": "/logos/Parikia%20Poseidons.png",
+        "score": 23
+      },
+      "away": {
+        "id": "NSO",
+        "abbr": "NSO",
+        "name": "New Southington Skylines",
+        "city": "New Southington",
+        "nickname": "Skylines",
+        "colors": [
+          "#1f2a5a",
+          "#5bc0eb"
+        ],
+        "logo": "/logos/New%20Southington%20Skylines.png",
+        "score": 29
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Spearhead-Camdyn Field",
+        "town": "Dennison",
+        "host": "DEN"
+      },
+      "winner": "NSO"
+    },
+    {
+      "id": "W5G2",
+      "season": 2,
+      "week": 5,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-09T23:10:00.000Z",
+      "startsAtMs": 1794265800000,
+      "home": {
+        "id": "MIS",
+        "abbr": "MIS",
+        "name": "Miskauga Boulders",
+        "city": "Miskauga",
+        "nickname": "Boulders",
+        "colors": [
+          "#5f646c",
+          "#e07b24"
+        ],
+        "logo": "/logos/Miskauga%20Boulders.svg",
+        "score": 37
+      },
+      "away": {
+        "id": "KYL",
+        "abbr": "KYL",
+        "name": "Kyleton Polar Bears",
+        "city": "Kyleton",
+        "nickname": "Polar Bears",
+        "colors": [
+          "#2f7fc1",
+          "#e8f1f8"
+        ],
+        "logo": "/logos/Kyleton%20Polar%20Bears.png",
+        "score": 34
+      },
+      "overtime": true,
+      "venue": {
+        "name": "Alloy Field",
+        "town": "Miskauga",
+        "host": "MIS"
+      },
+      "winner": "MIS"
+    },
+    {
+      "id": "W5G3",
+      "season": 2,
+      "week": 5,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-09T23:20:00.000Z",
+      "startsAtMs": 1794266400000,
+      "home": {
+        "id": "ASH",
+        "abbr": "ASH",
+        "name": "Ashford Smokers",
+        "city": "Ashford",
+        "nickname": "Smokers",
+        "colors": [
+          "#3d3936",
+          "#e2552b"
+        ],
+        "logo": "/logos/Ashford%20Smokers.png",
+        "score": 37
+      },
+      "away": {
+        "id": "GHB",
+        "abbr": "GHB",
+        "name": "Greene Hill Brawlers",
+        "city": "Greene Hill",
+        "nickname": "Brawlers",
+        "colors": [
+          "#b3202a",
+          "#1b1b1b"
+        ],
+        "logo": "/logos/Greene%20Hill%20Brawlers.png",
+        "score": 40
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Enigma-Turing Field",
+        "town": "Ashford",
+        "host": "ASH"
+      },
+      "winner": "GHB"
+    },
+    {
+      "id": "W5G4",
+      "season": 2,
+      "week": 5,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-09T23:30:00.000Z",
+      "startsAtMs": 1794267000000,
+      "home": {
+        "id": "MON",
+        "abbr": "MON",
+        "name": "Montford Monarchs",
+        "city": "Montford",
+        "nickname": "Monarchs",
+        "colors": [
+          "#7b1e3a",
+          "#e0b84c"
+        ],
+        "logo": "/logos/Montford%20Monarchs.png",
+        "score": 23
+      },
+      "away": {
+        "id": "BRV",
+        "abbr": "BRV",
+        "name": "Bradyville Beavers",
+        "city": "Bradyville",
+        "nickname": "Beavers",
+        "colors": [
+          "#6b3f1d",
+          "#f28c28"
+        ],
+        "logo": "/logos/Bradyville%20Beavers.png",
+        "score": 13
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Unicellular Stadium",
+        "town": "Greene Hill",
+        "host": "GHB"
+      },
+      "winner": "MON"
+    },
+    {
+      "id": "W5G5",
+      "season": 2,
+      "week": 5,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-09T23:40:00.000Z",
+      "startsAtMs": 1794267600000,
+      "home": {
+        "id": "ARG",
+        "abbr": "ARG",
+        "name": "Argiroupolis Silvers",
+        "city": "Argiroupolis",
+        "nickname": "Silvers",
+        "colors": [
+          "#7d8794",
+          "#1d3f8f"
+        ],
+        "logo": "/logos/Argiroupolis%20Silvers.png",
+        "score": 41
+      },
+      "away": {
+        "id": "NWT",
+        "abbr": "NWT",
+        "name": "Newtown Knights",
+        "city": "Newtown",
+        "nickname": "Knights",
+        "colors": [
+          "#141414",
+          "#c9a227"
+        ],
+        "logo": "/logos/Newtown%20Knights.png",
+        "score": 21
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Argyros Stadium",
+        "town": "Argiroupolis",
+        "host": "ARG"
+      },
+      "winner": "ARG"
+    },
+    {
+      "id": "W5G6",
+      "season": 2,
+      "week": 5,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-09T23:50:00.000Z",
+      "startsAtMs": 1794268200000,
+      "home": {
+        "id": "LAI",
+        "abbr": "LAI",
+        "name": "Laiyford Evergreens",
+        "city": "Laiyford",
+        "nickname": "Evergreens",
+        "colors": [
+          "#1f6b3a",
+          "#d9b23a"
+        ],
+        "logo": "/logos/Laiyford%20Evergreens.png",
+        "score": 31
+      },
+      "away": {
+        "id": "DEN",
+        "abbr": "DEN",
+        "name": "Dennison Spears",
+        "city": "Dennison",
+        "nickname": "Spears",
+        "colors": [
+          "#5b2a86",
+          "#c9c9d4"
+        ],
+        "logo": "/logos/Dennison%20Spears.png",
+        "score": 20
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Maeve Golden Stadium",
+        "town": "New Shelby",
+        "host": "LAI"
+      },
+      "winner": "LAI"
+    },
+    {
+      "id": "W6G1",
+      "season": 2,
+      "week": 6,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-10T00:00:00.000Z",
+      "startsAtMs": 1794268800000,
+      "home": {
+        "id": "MIS",
+        "abbr": "MIS",
+        "name": "Miskauga Boulders",
+        "city": "Miskauga",
+        "nickname": "Boulders",
+        "colors": [
+          "#5f646c",
+          "#e07b24"
+        ],
+        "logo": "/logos/Miskauga%20Boulders.svg",
+        "score": 13
+      },
+      "away": {
+        "id": "NSO",
+        "abbr": "NSO",
+        "name": "New Southington Skylines",
+        "city": "New Southington",
+        "nickname": "Skylines",
+        "colors": [
+          "#1f2a5a",
+          "#5bc0eb"
+        ],
+        "logo": "/logos/New%20Southington%20Skylines.png",
+        "score": 38
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Alloy Field",
+        "town": "Miskauga",
+        "host": "MIS"
+      },
+      "winner": "NSO"
+    },
+    {
+      "id": "W6G2",
+      "season": 2,
+      "week": 6,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-10T00:10:00.000Z",
+      "startsAtMs": 1794269400000,
+      "home": {
+        "id": "ARG",
+        "abbr": "ARG",
+        "name": "Argiroupolis Silvers",
+        "city": "Argiroupolis",
+        "nickname": "Silvers",
+        "colors": [
+          "#7d8794",
+          "#1d3f8f"
+        ],
+        "logo": "/logos/Argiroupolis%20Silvers.png",
+        "score": 40
+      },
+      "away": {
+        "id": "KYL",
+        "abbr": "KYL",
+        "name": "Kyleton Polar Bears",
+        "city": "Kyleton",
+        "nickname": "Polar Bears",
+        "colors": [
+          "#2f7fc1",
+          "#e8f1f8"
+        ],
+        "logo": "/logos/Kyleton%20Polar%20Bears.png",
+        "score": 34
+      },
+      "overtime": true,
+      "venue": {
+        "name": "Argyros Stadium",
+        "town": "Argiroupolis",
+        "host": "ARG"
+      },
+      "winner": "ARG"
+    },
+    {
+      "id": "W6G3",
+      "season": 2,
+      "week": 6,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-10T00:20:00.000Z",
+      "startsAtMs": 1794270000000,
+      "home": {
+        "id": "LAI",
+        "abbr": "LAI",
+        "name": "Laiyford Evergreens",
+        "city": "Laiyford",
+        "nickname": "Evergreens",
+        "colors": [
+          "#1f6b3a",
+          "#d9b23a"
+        ],
+        "logo": "/logos/Laiyford%20Evergreens.png",
+        "score": 13
+      },
+      "away": {
+        "id": "ASH",
+        "abbr": "ASH",
+        "name": "Ashford Smokers",
+        "city": "Ashford",
+        "nickname": "Smokers",
+        "colors": [
+          "#3d3936",
+          "#e2552b"
+        ],
+        "logo": "/logos/Ashford%20Smokers.png",
+        "score": 20
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Maeve Golden Stadium",
+        "town": "New Shelby",
+        "host": "LAI"
+      },
+      "winner": "ASH"
+    },
+    {
+      "id": "W6G4",
+      "season": 2,
+      "week": 6,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-10T00:30:00.000Z",
+      "startsAtMs": 1794270600000,
+      "home": {
+        "id": "PAR",
+        "abbr": "PAR",
+        "name": "Parikia Poseidons",
+        "city": "Parikia",
+        "nickname": "Poseidons",
+        "colors": [
+          "#0f7c8c",
+          "#0b2545"
+        ],
+        "logo": "/logos/Parikia%20Poseidons.png",
+        "score": 23
+      },
+      "away": {
+        "id": "BRV",
+        "abbr": "BRV",
+        "name": "Bradyville Beavers",
+        "city": "Bradyville",
+        "nickname": "Beavers",
+        "colors": [
+          "#6b3f1d",
+          "#f28c28"
+        ],
+        "logo": "/logos/Bradyville%20Beavers.png",
+        "score": 37
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Spearhead-Camdyn Field",
+        "town": "Dennison",
+        "host": "DEN"
+      },
+      "winner": "BRV"
+    },
+    {
+      "id": "W6G5",
+      "season": 2,
+      "week": 6,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-10T00:40:00.000Z",
+      "startsAtMs": 1794271200000,
+      "home": {
+        "id": "MON",
+        "abbr": "MON",
+        "name": "Montford Monarchs",
+        "city": "Montford",
+        "nickname": "Monarchs",
+        "colors": [
+          "#7b1e3a",
+          "#e0b84c"
+        ],
+        "logo": "/logos/Montford%20Monarchs.png",
+        "score": 29
+      },
+      "away": {
+        "id": "NWT",
+        "abbr": "NWT",
+        "name": "Newtown Knights",
+        "city": "Newtown",
+        "nickname": "Knights",
+        "colors": [
+          "#141414",
+          "#c9a227"
+        ],
+        "logo": "/logos/Newtown%20Knights.png",
+        "score": 30
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Unicellular Stadium",
+        "town": "Greene Hill",
+        "host": "GHB"
+      },
+      "winner": "NWT"
+    },
+    {
+      "id": "W6G6",
+      "season": 2,
+      "week": 6,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-10T00:50:00.000Z",
+      "startsAtMs": 1794271800000,
+      "home": {
+        "id": "DEN",
+        "abbr": "DEN",
+        "name": "Dennison Spears",
+        "city": "Dennison",
+        "nickname": "Spears",
+        "colors": [
+          "#5b2a86",
+          "#c9c9d4"
+        ],
+        "logo": "/logos/Dennison%20Spears.png",
+        "score": 20
+      },
+      "away": {
+        "id": "GHB",
+        "abbr": "GHB",
+        "name": "Greene Hill Brawlers",
+        "city": "Greene Hill",
+        "nickname": "Brawlers",
+        "colors": [
+          "#b3202a",
+          "#1b1b1b"
+        ],
+        "logo": "/logos/Greene%20Hill%20Brawlers.png",
+        "score": 26
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Spearhead-Camdyn Field",
+        "town": "Dennison",
+        "host": "DEN"
+      },
+      "winner": "GHB"
+    },
+    {
+      "id": "W7G1",
+      "season": 2,
+      "week": 7,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-10T22:00:00.000Z",
+      "startsAtMs": 1794348000000,
+      "home": {
+        "id": "DEN",
+        "abbr": "DEN",
+        "name": "Dennison Spears",
+        "city": "Dennison",
+        "nickname": "Spears",
+        "colors": [
+          "#5b2a86",
+          "#c9c9d4"
+        ],
+        "logo": "/logos/Dennison%20Spears.png",
+        "score": 38
+      },
+      "away": {
+        "id": "KYL",
+        "abbr": "KYL",
+        "name": "Kyleton Polar Bears",
+        "city": "Kyleton",
+        "nickname": "Polar Bears",
+        "colors": [
+          "#2f7fc1",
+          "#e8f1f8"
+        ],
+        "logo": "/logos/Kyleton%20Polar%20Bears.png",
+        "score": 28
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Spearhead-Camdyn Field",
+        "town": "Dennison",
+        "host": "DEN"
+      },
+      "winner": "DEN"
+    },
+    {
+      "id": "W7G2",
+      "season": 2,
+      "week": 7,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-10T22:10:00.000Z",
+      "startsAtMs": 1794348600000,
+      "home": {
+        "id": "GHB",
+        "abbr": "GHB",
+        "name": "Greene Hill Brawlers",
+        "city": "Greene Hill",
+        "nickname": "Brawlers",
+        "colors": [
+          "#b3202a",
+          "#1b1b1b"
+        ],
+        "logo": "/logos/Greene%20Hill%20Brawlers.png",
+        "score": 28
+      },
+      "away": {
+        "id": "NSO",
+        "abbr": "NSO",
+        "name": "New Southington Skylines",
+        "city": "New Southington",
+        "nickname": "Skylines",
+        "colors": [
+          "#1f2a5a",
+          "#5bc0eb"
+        ],
+        "logo": "/logos/New%20Southington%20Skylines.png",
+        "score": 25
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Unicellular Stadium",
+        "town": "Greene Hill",
+        "host": "GHB"
+      },
+      "winner": "GHB"
+    },
+    {
+      "id": "W7G3",
+      "season": 2,
+      "week": 7,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-10T22:20:00.000Z",
+      "startsAtMs": 1794349200000,
+      "home": {
+        "id": "NWT",
+        "abbr": "NWT",
+        "name": "Newtown Knights",
+        "city": "Newtown",
+        "nickname": "Knights",
+        "colors": [
+          "#141414",
+          "#c9a227"
+        ],
+        "logo": "/logos/Newtown%20Knights.png",
+        "score": 38
+      },
+      "away": {
+        "id": "PAR",
+        "abbr": "PAR",
+        "name": "Parikia Poseidons",
+        "city": "Parikia",
+        "nickname": "Poseidons",
+        "colors": [
+          "#0f7c8c",
+          "#0b2545"
+        ],
+        "logo": "/logos/Parikia%20Poseidons.png",
+        "score": 13
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Stoneridge Stadium",
+        "town": "Newtown",
+        "host": "NWT"
+      },
+      "winner": "NWT"
+    },
+    {
+      "id": "W7G4",
+      "season": 2,
+      "week": 7,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-10T22:30:00.000Z",
+      "startsAtMs": 1794349800000,
+      "home": {
+        "id": "MIS",
+        "abbr": "MIS",
+        "name": "Miskauga Boulders",
+        "city": "Miskauga",
+        "nickname": "Boulders",
+        "colors": [
+          "#5f646c",
+          "#e07b24"
+        ],
+        "logo": "/logos/Miskauga%20Boulders.svg",
+        "score": 38
+      },
+      "away": {
+        "id": "MON",
+        "abbr": "MON",
+        "name": "Montford Monarchs",
+        "city": "Montford",
+        "nickname": "Monarchs",
+        "colors": [
+          "#7b1e3a",
+          "#e0b84c"
+        ],
+        "logo": "/logos/Montford%20Monarchs.png",
+        "score": 31
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Alloy Field",
+        "town": "Miskauga",
+        "host": "MIS"
+      },
+      "winner": "MIS"
+    },
+    {
+      "id": "W7G5",
+      "season": 2,
+      "week": 7,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-10T22:40:00.000Z",
+      "startsAtMs": 1794350400000,
+      "home": {
+        "id": "LAI",
+        "abbr": "LAI",
+        "name": "Laiyford Evergreens",
+        "city": "Laiyford",
+        "nickname": "Evergreens",
+        "colors": [
+          "#1f6b3a",
+          "#d9b23a"
+        ],
+        "logo": "/logos/Laiyford%20Evergreens.png",
+        "score": 37
+      },
+      "away": {
+        "id": "BRV",
+        "abbr": "BRV",
+        "name": "Bradyville Beavers",
+        "city": "Bradyville",
+        "nickname": "Beavers",
+        "colors": [
+          "#6b3f1d",
+          "#f28c28"
+        ],
+        "logo": "/logos/Bradyville%20Beavers.png",
+        "score": 19
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Maeve Golden Stadium",
+        "town": "New Shelby",
+        "host": "LAI"
+      },
+      "winner": "LAI"
+    },
+    {
+      "id": "W7G6",
+      "season": 2,
+      "week": 7,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-10T22:50:00.000Z",
+      "startsAtMs": 1794351000000,
+      "home": {
+        "id": "ARG",
+        "abbr": "ARG",
+        "name": "Argiroupolis Silvers",
+        "city": "Argiroupolis",
+        "nickname": "Silvers",
+        "colors": [
+          "#7d8794",
+          "#1d3f8f"
+        ],
+        "logo": "/logos/Argiroupolis%20Silvers.png",
+        "score": 34
+      },
+      "away": {
+        "id": "ASH",
+        "abbr": "ASH",
+        "name": "Ashford Smokers",
+        "city": "Ashford",
+        "nickname": "Smokers",
+        "colors": [
+          "#3d3936",
+          "#e2552b"
+        ],
+        "logo": "/logos/Ashford%20Smokers.png",
+        "score": 31
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Argyros Stadium",
+        "town": "Argiroupolis",
+        "host": "ARG"
+      },
+      "winner": "ARG"
+    },
+    {
+      "id": "W8G1",
+      "season": 2,
+      "week": 8,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-10T23:00:00.000Z",
+      "startsAtMs": 1794351600000,
+      "home": {
+        "id": "NWT",
+        "abbr": "NWT",
+        "name": "Newtown Knights",
+        "city": "Newtown",
+        "nickname": "Knights",
+        "colors": [
+          "#141414",
+          "#c9a227"
+        ],
+        "logo": "/logos/Newtown%20Knights.png",
+        "score": 10
+      },
+      "away": {
+        "id": "KYL",
+        "abbr": "KYL",
+        "name": "Kyleton Polar Bears",
+        "city": "Kyleton",
+        "nickname": "Polar Bears",
+        "colors": [
+          "#2f7fc1",
+          "#e8f1f8"
+        ],
+        "logo": "/logos/Kyleton%20Polar%20Bears.png",
+        "score": 31
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Stoneridge Stadium",
+        "town": "Newtown",
+        "host": "NWT"
+      },
+      "winner": "KYL"
+    },
+    {
+      "id": "W8G2",
+      "season": 2,
+      "week": 8,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-10T23:10:00.000Z",
+      "startsAtMs": 1794352200000,
+      "home": {
+        "id": "PAR",
+        "abbr": "PAR",
+        "name": "Parikia Poseidons",
+        "city": "Parikia",
+        "nickname": "Poseidons",
+        "colors": [
+          "#0f7c8c",
+          "#0b2545"
+        ],
+        "logo": "/logos/Parikia%20Poseidons.png",
+        "score": 6
+      },
+      "away": {
+        "id": "LAI",
+        "abbr": "LAI",
+        "name": "Laiyford Evergreens",
+        "city": "Laiyford",
+        "nickname": "Evergreens",
+        "colors": [
+          "#1f6b3a",
+          "#d9b23a"
+        ],
+        "logo": "/logos/Laiyford%20Evergreens.png",
+        "score": 26
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Spearhead-Camdyn Field",
+        "town": "Dennison",
+        "host": "DEN"
+      },
+      "winner": "LAI"
+    },
+    {
+      "id": "W8G3",
+      "season": 2,
+      "week": 8,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-10T23:20:00.000Z",
+      "startsAtMs": 1794352800000,
+      "home": {
+        "id": "GHB",
+        "abbr": "GHB",
+        "name": "Greene Hill Brawlers",
+        "city": "Greene Hill",
+        "nickname": "Brawlers",
+        "colors": [
+          "#b3202a",
+          "#1b1b1b"
+        ],
+        "logo": "/logos/Greene%20Hill%20Brawlers.png",
+        "score": 27
+      },
+      "away": {
+        "id": "ARG",
+        "abbr": "ARG",
+        "name": "Argiroupolis Silvers",
+        "city": "Argiroupolis",
+        "nickname": "Silvers",
+        "colors": [
+          "#7d8794",
+          "#1d3f8f"
+        ],
+        "logo": "/logos/Argiroupolis%20Silvers.png",
+        "score": 34
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Unicellular Stadium",
+        "town": "Greene Hill",
+        "host": "GHB"
+      },
+      "winner": "ARG"
+    },
+    {
+      "id": "W8G4",
+      "season": 2,
+      "week": 8,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-10T23:30:00.000Z",
+      "startsAtMs": 1794353400000,
+      "home": {
+        "id": "DEN",
+        "abbr": "DEN",
+        "name": "Dennison Spears",
+        "city": "Dennison",
+        "nickname": "Spears",
+        "colors": [
+          "#5b2a86",
+          "#c9c9d4"
+        ],
+        "logo": "/logos/Dennison%20Spears.png",
+        "score": 27
+      },
+      "away": {
+        "id": "MIS",
+        "abbr": "MIS",
+        "name": "Miskauga Boulders",
+        "city": "Miskauga",
+        "nickname": "Boulders",
+        "colors": [
+          "#5f646c",
+          "#e07b24"
+        ],
+        "logo": "/logos/Miskauga%20Boulders.svg",
+        "score": 13
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Spearhead-Camdyn Field",
+        "town": "Dennison",
+        "host": "DEN"
+      },
+      "winner": "DEN"
+    },
+    {
+      "id": "W8G5",
+      "season": 2,
+      "week": 8,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-10T23:40:00.000Z",
+      "startsAtMs": 1794354000000,
+      "home": {
+        "id": "NSO",
+        "abbr": "NSO",
+        "name": "New Southington Skylines",
+        "city": "New Southington",
+        "nickname": "Skylines",
+        "colors": [
+          "#1f2a5a",
+          "#5bc0eb"
+        ],
+        "logo": "/logos/New%20Southington%20Skylines.png",
+        "score": 20
+      },
+      "away": {
+        "id": "BRV",
+        "abbr": "BRV",
+        "name": "Bradyville Beavers",
+        "city": "Bradyville",
+        "nickname": "Beavers",
+        "colors": [
+          "#6b3f1d",
+          "#f28c28"
+        ],
+        "logo": "/logos/Bradyville%20Beavers.png",
+        "score": 40
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Skyline Stadium",
+        "town": "Kennedy Park",
+        "host": "NSO"
+      },
+      "winner": "BRV"
+    },
+    {
+      "id": "W8G6",
+      "season": 2,
+      "week": 8,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-10T23:50:00.000Z",
+      "startsAtMs": 1794354600000,
+      "home": {
+        "id": "ASH",
+        "abbr": "ASH",
+        "name": "Ashford Smokers",
+        "city": "Ashford",
+        "nickname": "Smokers",
+        "colors": [
+          "#3d3936",
+          "#e2552b"
+        ],
+        "logo": "/logos/Ashford%20Smokers.png",
+        "score": 32
+      },
+      "away": {
+        "id": "MON",
+        "abbr": "MON",
+        "name": "Montford Monarchs",
+        "city": "Montford",
+        "nickname": "Monarchs",
+        "colors": [
+          "#7b1e3a",
+          "#e0b84c"
+        ],
+        "logo": "/logos/Montford%20Monarchs.png",
+        "score": 27
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Enigma-Turing Field",
+        "town": "Ashford",
+        "host": "ASH"
+      },
+      "winner": "ASH"
+    },
+    {
+      "id": "W9G1",
+      "season": 2,
+      "week": 9,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-11T00:00:00.000Z",
+      "startsAtMs": 1794355200000,
+      "home": {
+        "id": "BRV",
+        "abbr": "BRV",
+        "name": "Bradyville Beavers",
+        "city": "Bradyville",
+        "nickname": "Beavers",
+        "colors": [
+          "#6b3f1d",
+          "#f28c28"
+        ],
+        "logo": "/logos/Bradyville%20Beavers.png",
+        "score": 20
+      },
+      "away": {
+        "id": "KYL",
+        "abbr": "KYL",
+        "name": "Kyleton Polar Bears",
+        "city": "Kyleton",
+        "nickname": "Polar Bears",
+        "colors": [
+          "#2f7fc1",
+          "#e8f1f8"
+        ],
+        "logo": "/logos/Kyleton%20Polar%20Bears.png",
+        "score": 17
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Skyline Stadium",
+        "town": "Kennedy Park",
+        "host": "NSO"
+      },
+      "winner": "BRV"
+    },
+    {
+      "id": "W9G2",
+      "season": 2,
+      "week": 9,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-11T00:10:00.000Z",
+      "startsAtMs": 1794355800000,
+      "home": {
+        "id": "ARG",
+        "abbr": "ARG",
+        "name": "Argiroupolis Silvers",
+        "city": "Argiroupolis",
+        "nickname": "Silvers",
+        "colors": [
+          "#7d8794",
+          "#1d3f8f"
+        ],
+        "logo": "/logos/Argiroupolis%20Silvers.png",
+        "score": 34
+      },
+      "away": {
+        "id": "PAR",
+        "abbr": "PAR",
+        "name": "Parikia Poseidons",
+        "city": "Parikia",
+        "nickname": "Poseidons",
+        "colors": [
+          "#0f7c8c",
+          "#0b2545"
+        ],
+        "logo": "/logos/Parikia%20Poseidons.png",
+        "score": 15
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Argyros Stadium",
+        "town": "Argiroupolis",
+        "host": "ARG"
+      },
+      "winner": "ARG"
+    },
+    {
+      "id": "W9G3",
+      "season": 2,
+      "week": 9,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-11T00:20:00.000Z",
+      "startsAtMs": 1794356400000,
+      "home": {
+        "id": "DEN",
+        "abbr": "DEN",
+        "name": "Dennison Spears",
+        "city": "Dennison",
+        "nickname": "Spears",
+        "colors": [
+          "#5b2a86",
+          "#c9c9d4"
+        ],
+        "logo": "/logos/Dennison%20Spears.png",
+        "score": 27
+      },
+      "away": {
+        "id": "MON",
+        "abbr": "MON",
+        "name": "Montford Monarchs",
+        "city": "Montford",
+        "nickname": "Monarchs",
+        "colors": [
+          "#7b1e3a",
+          "#e0b84c"
+        ],
+        "logo": "/logos/Montford%20Monarchs.png",
+        "score": 31
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Spearhead-Camdyn Field",
+        "town": "Dennison",
+        "host": "DEN"
+      },
+      "winner": "MON"
+    },
+    {
+      "id": "W9G4",
+      "season": 2,
+      "week": 9,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-11T00:30:00.000Z",
+      "startsAtMs": 1794357000000,
+      "home": {
+        "id": "LAI",
+        "abbr": "LAI",
+        "name": "Laiyford Evergreens",
+        "city": "Laiyford",
+        "nickname": "Evergreens",
+        "colors": [
+          "#1f6b3a",
+          "#d9b23a"
+        ],
+        "logo": "/logos/Laiyford%20Evergreens.png",
+        "score": 44
+      },
+      "away": {
+        "id": "MIS",
+        "abbr": "MIS",
+        "name": "Miskauga Boulders",
+        "city": "Miskauga",
+        "nickname": "Boulders",
+        "colors": [
+          "#5f646c",
+          "#e07b24"
+        ],
+        "logo": "/logos/Miskauga%20Boulders.svg",
+        "score": 40
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Maeve Golden Stadium",
+        "town": "New Shelby",
+        "host": "LAI"
+      },
+      "winner": "LAI"
+    },
+    {
+      "id": "W9G5",
+      "season": 2,
+      "week": 9,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-11T00:40:00.000Z",
+      "startsAtMs": 1794357600000,
+      "home": {
+        "id": "NSO",
+        "abbr": "NSO",
+        "name": "New Southington Skylines",
+        "city": "New Southington",
+        "nickname": "Skylines",
+        "colors": [
+          "#1f2a5a",
+          "#5bc0eb"
+        ],
+        "logo": "/logos/New%20Southington%20Skylines.png",
+        "score": 12
+      },
+      "away": {
+        "id": "ASH",
+        "abbr": "ASH",
+        "name": "Ashford Smokers",
+        "city": "Ashford",
+        "nickname": "Smokers",
+        "colors": [
+          "#3d3936",
+          "#e2552b"
+        ],
+        "logo": "/logos/Ashford%20Smokers.png",
+        "score": 9
+      },
+      "overtime": true,
+      "venue": {
+        "name": "Skyline Stadium",
+        "town": "Kennedy Park",
+        "host": "NSO"
+      },
+      "winner": "NSO"
+    },
+    {
+      "id": "W9G6",
+      "season": 2,
+      "week": 9,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-11T00:50:00.000Z",
+      "startsAtMs": 1794358200000,
+      "home": {
+        "id": "NWT",
+        "abbr": "NWT",
+        "name": "Newtown Knights",
+        "city": "Newtown",
+        "nickname": "Knights",
+        "colors": [
+          "#141414",
+          "#c9a227"
+        ],
+        "logo": "/logos/Newtown%20Knights.png",
+        "score": 33
+      },
+      "away": {
+        "id": "GHB",
+        "abbr": "GHB",
+        "name": "Greene Hill Brawlers",
+        "city": "Greene Hill",
+        "nickname": "Brawlers",
+        "colors": [
+          "#b3202a",
+          "#1b1b1b"
+        ],
+        "logo": "/logos/Greene%20Hill%20Brawlers.png",
+        "score": 30
+      },
+      "overtime": true,
+      "venue": {
+        "name": "Stoneridge Stadium",
+        "town": "Newtown",
+        "host": "NWT"
+      },
+      "winner": "NWT"
+    },
+    {
+      "id": "W10G1",
+      "season": 2,
+      "week": 10,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-11T22:00:00.000Z",
+      "startsAtMs": 1794434400000,
+      "home": {
+        "id": "KYL",
+        "abbr": "KYL",
+        "name": "Kyleton Polar Bears",
+        "city": "Kyleton",
+        "nickname": "Polar Bears",
+        "colors": [
+          "#2f7fc1",
+          "#e8f1f8"
+        ],
+        "logo": "/logos/Kyleton%20Polar%20Bears.png",
+        "score": 36
+      },
+      "away": {
+        "id": "NSO",
+        "abbr": "NSO",
+        "name": "New Southington Skylines",
+        "city": "New Southington",
+        "nickname": "Skylines",
+        "colors": [
+          "#1f2a5a",
+          "#5bc0eb"
+        ],
+        "logo": "/logos/New%20Southington%20Skylines.png",
+        "score": 13
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Kyleton Stadium",
+        "town": "Kyleton",
+        "host": "KYL"
+      },
+      "winner": "KYL"
+    },
+    {
+      "id": "W10G2",
+      "season": 2,
+      "week": 10,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-11T22:10:00.000Z",
+      "startsAtMs": 1794435000000,
+      "home": {
+        "id": "ARG",
+        "abbr": "ARG",
+        "name": "Argiroupolis Silvers",
+        "city": "Argiroupolis",
+        "nickname": "Silvers",
+        "colors": [
+          "#7d8794",
+          "#1d3f8f"
+        ],
+        "logo": "/logos/Argiroupolis%20Silvers.png",
+        "score": 30
+      },
+      "away": {
+        "id": "MIS",
+        "abbr": "MIS",
+        "name": "Miskauga Boulders",
+        "city": "Miskauga",
+        "nickname": "Boulders",
+        "colors": [
+          "#5f646c",
+          "#e07b24"
+        ],
+        "logo": "/logos/Miskauga%20Boulders.svg",
+        "score": 20
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Argyros Stadium",
+        "town": "Argiroupolis",
+        "host": "ARG"
+      },
+      "winner": "ARG"
+    },
+    {
+      "id": "W10G3",
+      "season": 2,
+      "week": 10,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-11T22:20:00.000Z",
+      "startsAtMs": 1794435600000,
+      "home": {
+        "id": "PAR",
+        "abbr": "PAR",
+        "name": "Parikia Poseidons",
+        "city": "Parikia",
+        "nickname": "Poseidons",
+        "colors": [
+          "#0f7c8c",
+          "#0b2545"
+        ],
+        "logo": "/logos/Parikia%20Poseidons.png",
+        "score": 17
+      },
+      "away": {
+        "id": "MON",
+        "abbr": "MON",
+        "name": "Montford Monarchs",
+        "city": "Montford",
+        "nickname": "Monarchs",
+        "colors": [
+          "#7b1e3a",
+          "#e0b84c"
+        ],
+        "logo": "/logos/Montford%20Monarchs.png",
+        "score": 34
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Spearhead-Camdyn Field",
+        "town": "Dennison",
+        "host": "DEN"
+      },
+      "winner": "MON"
+    },
+    {
+      "id": "W10G4",
+      "season": 2,
+      "week": 10,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-11T22:30:00.000Z",
+      "startsAtMs": 1794436200000,
+      "home": {
+        "id": "DEN",
+        "abbr": "DEN",
+        "name": "Dennison Spears",
+        "city": "Dennison",
+        "nickname": "Spears",
+        "colors": [
+          "#5b2a86",
+          "#c9c9d4"
+        ],
+        "logo": "/logos/Dennison%20Spears.png",
+        "score": 31
+      },
+      "away": {
+        "id": "ASH",
+        "abbr": "ASH",
+        "name": "Ashford Smokers",
+        "city": "Ashford",
+        "nickname": "Smokers",
+        "colors": [
+          "#3d3936",
+          "#e2552b"
+        ],
+        "logo": "/logos/Ashford%20Smokers.png",
+        "score": 34
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Spearhead-Camdyn Field",
+        "town": "Dennison",
+        "host": "DEN"
+      },
+      "winner": "ASH"
+    },
+    {
+      "id": "W10G5",
+      "season": 2,
+      "week": 10,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-11T22:40:00.000Z",
+      "startsAtMs": 1794436800000,
+      "home": {
+        "id": "GHB",
+        "abbr": "GHB",
+        "name": "Greene Hill Brawlers",
+        "city": "Greene Hill",
+        "nickname": "Brawlers",
+        "colors": [
+          "#b3202a",
+          "#1b1b1b"
+        ],
+        "logo": "/logos/Greene%20Hill%20Brawlers.png",
+        "score": 17
+      },
+      "away": {
+        "id": "BRV",
+        "abbr": "BRV",
+        "name": "Bradyville Beavers",
+        "city": "Bradyville",
+        "nickname": "Beavers",
+        "colors": [
+          "#6b3f1d",
+          "#f28c28"
+        ],
+        "logo": "/logos/Bradyville%20Beavers.png",
+        "score": 24
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Unicellular Stadium",
+        "town": "Greene Hill",
+        "host": "GHB"
+      },
+      "winner": "BRV"
+    },
+    {
+      "id": "W10G6",
+      "season": 2,
+      "week": 10,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-11T22:50:00.000Z",
+      "startsAtMs": 1794437400000,
+      "home": {
+        "id": "LAI",
+        "abbr": "LAI",
+        "name": "Laiyford Evergreens",
+        "city": "Laiyford",
+        "nickname": "Evergreens",
+        "colors": [
+          "#1f6b3a",
+          "#d9b23a"
+        ],
+        "logo": "/logos/Laiyford%20Evergreens.png",
+        "score": 20
+      },
+      "away": {
+        "id": "NWT",
+        "abbr": "NWT",
+        "name": "Newtown Knights",
+        "city": "Newtown",
+        "nickname": "Knights",
+        "colors": [
+          "#141414",
+          "#c9a227"
+        ],
+        "logo": "/logos/Newtown%20Knights.png",
+        "score": 13
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Maeve Golden Stadium",
+        "town": "New Shelby",
+        "host": "LAI"
+      },
+      "winner": "LAI"
+    },
+    {
+      "id": "W11G1",
+      "season": 2,
+      "week": 11,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-11T23:00:00.000Z",
+      "startsAtMs": 1794438000000,
+      "home": {
+        "id": "ARG",
+        "abbr": "ARG",
+        "name": "Argiroupolis Silvers",
+        "city": "Argiroupolis",
+        "nickname": "Silvers",
+        "colors": [
+          "#7d8794",
+          "#1d3f8f"
+        ],
+        "logo": "/logos/Argiroupolis%20Silvers.png",
+        "score": 27
+      },
+      "away": {
+        "id": "DEN",
+        "abbr": "DEN",
+        "name": "Dennison Spears",
+        "city": "Dennison",
+        "nickname": "Spears",
+        "colors": [
+          "#5b2a86",
+          "#c9c9d4"
+        ],
+        "logo": "/logos/Dennison%20Spears.png",
+        "score": 33
+      },
+      "overtime": true,
+      "venue": {
+        "name": "Argyros Stadium",
+        "town": "Argiroupolis",
+        "host": "ARG"
+      },
+      "winner": "DEN"
+    },
+    {
+      "id": "W11G2",
+      "season": 2,
+      "week": 11,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-11T23:10:00.000Z",
+      "startsAtMs": 1794438600000,
+      "home": {
+        "id": "NWT",
+        "abbr": "NWT",
+        "name": "Newtown Knights",
+        "city": "Newtown",
+        "nickname": "Knights",
+        "colors": [
+          "#141414",
+          "#c9a227"
+        ],
+        "logo": "/logos/Newtown%20Knights.png",
+        "score": 32
+      },
+      "away": {
+        "id": "ASH",
+        "abbr": "ASH",
+        "name": "Ashford Smokers",
+        "city": "Ashford",
+        "nickname": "Smokers",
+        "colors": [
+          "#3d3936",
+          "#e2552b"
+        ],
+        "logo": "/logos/Ashford%20Smokers.png",
+        "score": 13
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Stoneridge Stadium",
+        "town": "Newtown",
+        "host": "NWT"
+      },
+      "winner": "NWT"
+    },
+    {
+      "id": "W11G3",
+      "season": 2,
+      "week": 11,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-11T23:20:00.000Z",
+      "startsAtMs": 1794439200000,
+      "home": {
+        "id": "BRV",
+        "abbr": "BRV",
+        "name": "Bradyville Beavers",
+        "city": "Bradyville",
+        "nickname": "Beavers",
+        "colors": [
+          "#6b3f1d",
+          "#f28c28"
+        ],
+        "logo": "/logos/Bradyville%20Beavers.png",
+        "score": 16
+      },
+      "away": {
+        "id": "MIS",
+        "abbr": "MIS",
+        "name": "Miskauga Boulders",
+        "city": "Miskauga",
+        "nickname": "Boulders",
+        "colors": [
+          "#5f646c",
+          "#e07b24"
+        ],
+        "logo": "/logos/Miskauga%20Boulders.svg",
+        "score": 13
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Skyline Stadium",
+        "town": "Kennedy Park",
+        "host": "NSO"
+      },
+      "winner": "BRV"
+    },
+    {
+      "id": "W11G4",
+      "season": 2,
+      "week": 11,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-11T23:30:00.000Z",
+      "startsAtMs": 1794439800000,
+      "home": {
+        "id": "PAR",
+        "abbr": "PAR",
+        "name": "Parikia Poseidons",
+        "city": "Parikia",
+        "nickname": "Poseidons",
+        "colors": [
+          "#0f7c8c",
+          "#0b2545"
+        ],
+        "logo": "/logos/Parikia%20Poseidons.png",
+        "score": 20
+      },
+      "away": {
+        "id": "GHB",
+        "abbr": "GHB",
+        "name": "Greene Hill Brawlers",
+        "city": "Greene Hill",
+        "nickname": "Brawlers",
+        "colors": [
+          "#b3202a",
+          "#1b1b1b"
+        ],
+        "logo": "/logos/Greene%20Hill%20Brawlers.png",
+        "score": 10
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Spearhead-Camdyn Field",
+        "town": "Dennison",
+        "host": "DEN"
+      },
+      "winner": "PAR"
+    },
+    {
+      "id": "W11G5",
+      "season": 2,
+      "week": 11,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-11T23:40:00.000Z",
+      "startsAtMs": 1794440400000,
+      "home": {
+        "id": "MON",
+        "abbr": "MON",
+        "name": "Montford Monarchs",
+        "city": "Montford",
+        "nickname": "Monarchs",
+        "colors": [
+          "#7b1e3a",
+          "#e0b84c"
+        ],
+        "logo": "/logos/Montford%20Monarchs.png",
+        "score": 38
+      },
+      "away": {
+        "id": "NSO",
+        "abbr": "NSO",
+        "name": "New Southington Skylines",
+        "city": "New Southington",
+        "nickname": "Skylines",
+        "colors": [
+          "#1f2a5a",
+          "#5bc0eb"
+        ],
+        "logo": "/logos/New%20Southington%20Skylines.png",
+        "score": 24
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Unicellular Stadium",
+        "town": "Greene Hill",
+        "host": "GHB"
+      },
+      "winner": "MON"
+    },
+    {
+      "id": "W11G6",
+      "season": 2,
+      "week": 11,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-11T23:50:00.000Z",
+      "startsAtMs": 1794441000000,
+      "home": {
+        "id": "KYL",
+        "abbr": "KYL",
+        "name": "Kyleton Polar Bears",
+        "city": "Kyleton",
+        "nickname": "Polar Bears",
+        "colors": [
+          "#2f7fc1",
+          "#e8f1f8"
+        ],
+        "logo": "/logos/Kyleton%20Polar%20Bears.png",
+        "score": 22
+      },
+      "away": {
+        "id": "LAI",
+        "abbr": "LAI",
+        "name": "Laiyford Evergreens",
+        "city": "Laiyford",
+        "nickname": "Evergreens",
+        "colors": [
+          "#1f6b3a",
+          "#d9b23a"
+        ],
+        "logo": "/logos/Laiyford%20Evergreens.png",
+        "score": 17
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Kyleton Stadium",
+        "town": "Kyleton",
+        "host": "KYL"
+      },
+      "winner": "KYL"
+    },
+    {
+      "id": "W12G1",
+      "season": 2,
+      "week": 12,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-12T00:00:00.000Z",
+      "startsAtMs": 1794441600000,
+      "home": {
+        "id": "PAR",
+        "abbr": "PAR",
+        "name": "Parikia Poseidons",
+        "city": "Parikia",
+        "nickname": "Poseidons",
+        "colors": [
+          "#0f7c8c",
+          "#0b2545"
+        ],
+        "logo": "/logos/Parikia%20Poseidons.png",
+        "score": 6
+      },
+      "away": {
+        "id": "KYL",
+        "abbr": "KYL",
+        "name": "Kyleton Polar Bears",
+        "city": "Kyleton",
+        "nickname": "Polar Bears",
+        "colors": [
+          "#2f7fc1",
+          "#e8f1f8"
+        ],
+        "logo": "/logos/Kyleton%20Polar%20Bears.png",
+        "score": 42
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Spearhead-Camdyn Field",
+        "town": "Dennison",
+        "host": "DEN"
+      },
+      "winner": "KYL"
+    },
+    {
+      "id": "W12G2",
+      "season": 2,
+      "week": 12,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-12T00:10:00.000Z",
+      "startsAtMs": 1794442200000,
+      "home": {
+        "id": "NSO",
+        "abbr": "NSO",
+        "name": "New Southington Skylines",
+        "city": "New Southington",
+        "nickname": "Skylines",
+        "colors": [
+          "#1f2a5a",
+          "#5bc0eb"
+        ],
+        "logo": "/logos/New%20Southington%20Skylines.png",
+        "score": 21
+      },
+      "away": {
+        "id": "LAI",
+        "abbr": "LAI",
+        "name": "Laiyford Evergreens",
+        "city": "Laiyford",
+        "nickname": "Evergreens",
+        "colors": [
+          "#1f6b3a",
+          "#d9b23a"
+        ],
+        "logo": "/logos/Laiyford%20Evergreens.png",
+        "score": 16
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Skyline Stadium",
+        "town": "Kennedy Park",
+        "host": "NSO"
+      },
+      "winner": "NSO"
+    },
+    {
+      "id": "W12G3",
+      "season": 2,
+      "week": 12,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-12T00:20:00.000Z",
+      "startsAtMs": 1794442800000,
+      "home": {
+        "id": "MON",
+        "abbr": "MON",
+        "name": "Montford Monarchs",
+        "city": "Montford",
+        "nickname": "Monarchs",
+        "colors": [
+          "#7b1e3a",
+          "#e0b84c"
+        ],
+        "logo": "/logos/Montford%20Monarchs.png",
+        "score": 37
+      },
+      "away": {
+        "id": "GHB",
+        "abbr": "GHB",
+        "name": "Greene Hill Brawlers",
+        "city": "Greene Hill",
+        "nickname": "Brawlers",
+        "colors": [
+          "#b3202a",
+          "#1b1b1b"
+        ],
+        "logo": "/logos/Greene%20Hill%20Brawlers.png",
+        "score": 20
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Unicellular Stadium",
+        "town": "Greene Hill",
+        "host": "GHB"
+      },
+      "winner": "MON"
+    },
+    {
+      "id": "W12G4",
+      "season": 2,
+      "week": 12,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-12T00:30:00.000Z",
+      "startsAtMs": 1794443400000,
+      "home": {
+        "id": "NWT",
+        "abbr": "NWT",
+        "name": "Newtown Knights",
+        "city": "Newtown",
+        "nickname": "Knights",
+        "colors": [
+          "#141414",
+          "#c9a227"
+        ],
+        "logo": "/logos/Newtown%20Knights.png",
+        "score": 28
+      },
+      "away": {
+        "id": "DEN",
+        "abbr": "DEN",
+        "name": "Dennison Spears",
+        "city": "Dennison",
+        "nickname": "Spears",
+        "colors": [
+          "#5b2a86",
+          "#c9c9d4"
+        ],
+        "logo": "/logos/Dennison%20Spears.png",
+        "score": 18
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Stoneridge Stadium",
+        "town": "Newtown",
+        "host": "NWT"
+      },
+      "winner": "NWT"
+    },
+    {
+      "id": "W12G5",
+      "season": 2,
+      "week": 12,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-12T00:40:00.000Z",
+      "startsAtMs": 1794444000000,
+      "home": {
+        "id": "MIS",
+        "abbr": "MIS",
+        "name": "Miskauga Boulders",
+        "city": "Miskauga",
+        "nickname": "Boulders",
+        "colors": [
+          "#5f646c",
+          "#e07b24"
+        ],
+        "logo": "/logos/Miskauga%20Boulders.svg",
+        "score": 13
+      },
+      "away": {
+        "id": "ASH",
+        "abbr": "ASH",
+        "name": "Ashford Smokers",
+        "city": "Ashford",
+        "nickname": "Smokers",
+        "colors": [
+          "#3d3936",
+          "#e2552b"
+        ],
+        "logo": "/logos/Ashford%20Smokers.png",
+        "score": 41
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Alloy Field",
+        "town": "Miskauga",
+        "host": "MIS"
+      },
+      "winner": "ASH"
+    },
+    {
+      "id": "W12G6",
+      "season": 2,
+      "week": 12,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-12T00:50:00.000Z",
+      "startsAtMs": 1794444600000,
+      "home": {
+        "id": "BRV",
+        "abbr": "BRV",
+        "name": "Bradyville Beavers",
+        "city": "Bradyville",
+        "nickname": "Beavers",
+        "colors": [
+          "#6b3f1d",
+          "#f28c28"
+        ],
+        "logo": "/logos/Bradyville%20Beavers.png",
+        "score": 31
+      },
+      "away": {
+        "id": "ARG",
+        "abbr": "ARG",
+        "name": "Argiroupolis Silvers",
+        "city": "Argiroupolis",
+        "nickname": "Silvers",
+        "colors": [
+          "#7d8794",
+          "#1d3f8f"
+        ],
+        "logo": "/logos/Argiroupolis%20Silvers.png",
+        "score": 20
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Skyline Stadium",
+        "town": "Kennedy Park",
+        "host": "NSO"
+      },
+      "winner": "BRV"
+    },
+    {
+      "id": "W13G1",
+      "season": 2,
+      "week": 13,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-12T22:00:00.000Z",
+      "startsAtMs": 1794520800000,
+      "home": {
+        "id": "DEN",
+        "abbr": "DEN",
+        "name": "Dennison Spears",
+        "city": "Dennison",
+        "nickname": "Spears",
+        "colors": [
+          "#5b2a86",
+          "#c9c9d4"
+        ],
+        "logo": "/logos/Dennison%20Spears.png",
+        "score": 20
+      },
+      "away": {
+        "id": "PAR",
+        "abbr": "PAR",
+        "name": "Parikia Poseidons",
+        "city": "Parikia",
+        "nickname": "Poseidons",
+        "colors": [
+          "#0f7c8c",
+          "#0b2545"
+        ],
+        "logo": "/logos/Parikia%20Poseidons.png",
+        "score": 14
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Spearhead-Camdyn Field",
+        "town": "Dennison",
+        "host": "DEN"
+      },
+      "winner": "DEN"
+    },
+    {
+      "id": "W13G2",
+      "season": 2,
+      "week": 13,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-12T22:10:00.000Z",
+      "startsAtMs": 1794521400000,
+      "home": {
+        "id": "NSO",
+        "abbr": "NSO",
+        "name": "New Southington Skylines",
+        "city": "New Southington",
+        "nickname": "Skylines",
+        "colors": [
+          "#1f2a5a",
+          "#5bc0eb"
+        ],
+        "logo": "/logos/New%20Southington%20Skylines.png",
+        "score": 29
+      },
+      "away": {
+        "id": "ARG",
+        "abbr": "ARG",
+        "name": "Argiroupolis Silvers",
+        "city": "Argiroupolis",
+        "nickname": "Silvers",
+        "colors": [
+          "#7d8794",
+          "#1d3f8f"
+        ],
+        "logo": "/logos/Argiroupolis%20Silvers.png",
+        "score": 32
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Skyline Stadium",
+        "town": "Kennedy Park",
+        "host": "NSO"
+      },
+      "winner": "ARG"
+    },
+    {
+      "id": "W13G3",
+      "season": 2,
+      "week": 13,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-12T22:20:00.000Z",
+      "startsAtMs": 1794522000000,
+      "home": {
+        "id": "BRV",
+        "abbr": "BRV",
+        "name": "Bradyville Beavers",
+        "city": "Bradyville",
+        "nickname": "Beavers",
+        "colors": [
+          "#6b3f1d",
+          "#f28c28"
+        ],
+        "logo": "/logos/Bradyville%20Beavers.png",
+        "score": 23
+      },
+      "away": {
+        "id": "ASH",
+        "abbr": "ASH",
+        "name": "Ashford Smokers",
+        "city": "Ashford",
+        "nickname": "Smokers",
+        "colors": [
+          "#3d3936",
+          "#e2552b"
+        ],
+        "logo": "/logos/Ashford%20Smokers.png",
+        "score": 25
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Skyline Stadium",
+        "town": "Kennedy Park",
+        "host": "NSO"
+      },
+      "winner": "ASH"
+    },
+    {
+      "id": "W13G4",
+      "season": 2,
+      "week": 13,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-12T22:30:00.000Z",
+      "startsAtMs": 1794522600000,
+      "home": {
+        "id": "MON",
+        "abbr": "MON",
+        "name": "Montford Monarchs",
+        "city": "Montford",
+        "nickname": "Monarchs",
+        "colors": [
+          "#7b1e3a",
+          "#e0b84c"
+        ],
+        "logo": "/logos/Montford%20Monarchs.png",
+        "score": 22
+      },
+      "away": {
+        "id": "LAI",
+        "abbr": "LAI",
+        "name": "Laiyford Evergreens",
+        "city": "Laiyford",
+        "nickname": "Evergreens",
+        "colors": [
+          "#1f6b3a",
+          "#d9b23a"
+        ],
+        "logo": "/logos/Laiyford%20Evergreens.png",
+        "score": 17
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Unicellular Stadium",
+        "town": "Greene Hill",
+        "host": "GHB"
+      },
+      "winner": "MON"
+    },
+    {
+      "id": "W13G5",
+      "season": 2,
+      "week": 13,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-12T22:40:00.000Z",
+      "startsAtMs": 1794523200000,
+      "home": {
+        "id": "KYL",
+        "abbr": "KYL",
+        "name": "Kyleton Polar Bears",
+        "city": "Kyleton",
+        "nickname": "Polar Bears",
+        "colors": [
+          "#2f7fc1",
+          "#e8f1f8"
+        ],
+        "logo": "/logos/Kyleton%20Polar%20Bears.png",
+        "score": 37
+      },
+      "away": {
+        "id": "GHB",
+        "abbr": "GHB",
+        "name": "Greene Hill Brawlers",
+        "city": "Greene Hill",
+        "nickname": "Brawlers",
+        "colors": [
+          "#b3202a",
+          "#1b1b1b"
+        ],
+        "logo": "/logos/Greene%20Hill%20Brawlers.png",
+        "score": 30
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Kyleton Stadium",
+        "town": "Kyleton",
+        "host": "KYL"
+      },
+      "winner": "KYL"
+    },
+    {
+      "id": "W13G6",
+      "season": 2,
+      "week": 13,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-12T22:50:00.000Z",
+      "startsAtMs": 1794523800000,
+      "home": {
+        "id": "NWT",
+        "abbr": "NWT",
+        "name": "Newtown Knights",
+        "city": "Newtown",
+        "nickname": "Knights",
+        "colors": [
+          "#141414",
+          "#c9a227"
+        ],
+        "logo": "/logos/Newtown%20Knights.png",
+        "score": 14
+      },
+      "away": {
+        "id": "MIS",
+        "abbr": "MIS",
+        "name": "Miskauga Boulders",
+        "city": "Miskauga",
+        "nickname": "Boulders",
+        "colors": [
+          "#5f646c",
+          "#e07b24"
+        ],
+        "logo": "/logos/Miskauga%20Boulders.svg",
+        "score": 21
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Stoneridge Stadium",
+        "town": "Newtown",
+        "host": "NWT"
+      },
+      "winner": "MIS"
+    },
+    {
+      "id": "W14G1",
+      "season": 2,
+      "week": 14,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-12T23:00:00.000Z",
+      "startsAtMs": 1794524400000,
+      "home": {
+        "id": "NSO",
+        "abbr": "NSO",
+        "name": "New Southington Skylines",
+        "city": "New Southington",
+        "nickname": "Skylines",
+        "colors": [
+          "#1f2a5a",
+          "#5bc0eb"
+        ],
+        "logo": "/logos/New%20Southington%20Skylines.png",
+        "score": 27
+      },
+      "away": {
+        "id": "MIS",
+        "abbr": "MIS",
+        "name": "Miskauga Boulders",
+        "city": "Miskauga",
+        "nickname": "Boulders",
+        "colors": [
+          "#5f646c",
+          "#e07b24"
+        ],
+        "logo": "/logos/Miskauga%20Boulders.svg",
+        "score": 26
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Skyline Stadium",
+        "town": "Kennedy Park",
+        "host": "NSO"
+      },
+      "winner": "NSO"
+    },
+    {
+      "id": "W14G2",
+      "season": 2,
+      "week": 14,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-12T23:10:00.000Z",
+      "startsAtMs": 1794525000000,
+      "home": {
+        "id": "BRV",
+        "abbr": "BRV",
+        "name": "Bradyville Beavers",
+        "city": "Bradyville",
+        "nickname": "Beavers",
+        "colors": [
+          "#6b3f1d",
+          "#f28c28"
+        ],
+        "logo": "/logos/Bradyville%20Beavers.png",
+        "score": 34
+      },
+      "away": {
+        "id": "PAR",
+        "abbr": "PAR",
+        "name": "Parikia Poseidons",
+        "city": "Parikia",
+        "nickname": "Poseidons",
+        "colors": [
+          "#0f7c8c",
+          "#0b2545"
+        ],
+        "logo": "/logos/Parikia%20Poseidons.png",
+        "score": 27
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Skyline Stadium",
+        "town": "Kennedy Park",
+        "host": "NSO"
+      },
+      "winner": "BRV"
+    },
+    {
+      "id": "W14G3",
+      "season": 2,
+      "week": 14,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-12T23:20:00.000Z",
+      "startsAtMs": 1794525600000,
+      "home": {
+        "id": "GHB",
+        "abbr": "GHB",
+        "name": "Greene Hill Brawlers",
+        "city": "Greene Hill",
+        "nickname": "Brawlers",
+        "colors": [
+          "#b3202a",
+          "#1b1b1b"
+        ],
+        "logo": "/logos/Greene%20Hill%20Brawlers.png",
+        "score": 24
+      },
+      "away": {
+        "id": "DEN",
+        "abbr": "DEN",
+        "name": "Dennison Spears",
+        "city": "Dennison",
+        "nickname": "Spears",
+        "colors": [
+          "#5b2a86",
+          "#c9c9d4"
+        ],
+        "logo": "/logos/Dennison%20Spears.png",
+        "score": 31
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Unicellular Stadium",
+        "town": "Greene Hill",
+        "host": "GHB"
+      },
+      "winner": "DEN"
+    },
+    {
+      "id": "W14G4",
+      "season": 2,
+      "week": 14,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-12T23:30:00.000Z",
+      "startsAtMs": 1794526200000,
+      "home": {
+        "id": "KYL",
+        "abbr": "KYL",
+        "name": "Kyleton Polar Bears",
+        "city": "Kyleton",
+        "nickname": "Polar Bears",
+        "colors": [
+          "#2f7fc1",
+          "#e8f1f8"
+        ],
+        "logo": "/logos/Kyleton%20Polar%20Bears.png",
+        "score": 36
+      },
+      "away": {
+        "id": "ARG",
+        "abbr": "ARG",
+        "name": "Argiroupolis Silvers",
+        "city": "Argiroupolis",
+        "nickname": "Silvers",
+        "colors": [
+          "#7d8794",
+          "#1d3f8f"
+        ],
+        "logo": "/logos/Argiroupolis%20Silvers.png",
+        "score": 3
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Kyleton Stadium",
+        "town": "Kyleton",
+        "host": "KYL"
+      },
+      "winner": "KYL"
+    },
+    {
+      "id": "W14G5",
+      "season": 2,
+      "week": 14,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-12T23:40:00.000Z",
+      "startsAtMs": 1794526800000,
+      "home": {
+        "id": "NWT",
+        "abbr": "NWT",
+        "name": "Newtown Knights",
+        "city": "Newtown",
+        "nickname": "Knights",
+        "colors": [
+          "#141414",
+          "#c9a227"
+        ],
+        "logo": "/logos/Newtown%20Knights.png",
+        "score": 27
+      },
+      "away": {
+        "id": "MON",
+        "abbr": "MON",
+        "name": "Montford Monarchs",
+        "city": "Montford",
+        "nickname": "Monarchs",
+        "colors": [
+          "#7b1e3a",
+          "#e0b84c"
+        ],
+        "logo": "/logos/Montford%20Monarchs.png",
+        "score": 22
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Stoneridge Stadium",
+        "town": "Newtown",
+        "host": "NWT"
+      },
+      "winner": "NWT"
+    },
+    {
+      "id": "W14G6",
+      "season": 2,
+      "week": 14,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-12T23:50:00.000Z",
+      "startsAtMs": 1794527400000,
+      "home": {
+        "id": "ASH",
+        "abbr": "ASH",
+        "name": "Ashford Smokers",
+        "city": "Ashford",
+        "nickname": "Smokers",
+        "colors": [
+          "#3d3936",
+          "#e2552b"
+        ],
+        "logo": "/logos/Ashford%20Smokers.png",
+        "score": 44
+      },
+      "away": {
+        "id": "LAI",
+        "abbr": "LAI",
+        "name": "Laiyford Evergreens",
+        "city": "Laiyford",
+        "nickname": "Evergreens",
+        "colors": [
+          "#1f6b3a",
+          "#d9b23a"
+        ],
+        "logo": "/logos/Laiyford%20Evergreens.png",
+        "score": 24
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Enigma-Turing Field",
+        "town": "Ashford",
+        "host": "ASH"
+      },
+      "winner": "ASH"
+    },
+    {
+      "id": "P-SF1",
+      "season": 2,
+      "week": "P",
+      "label": "Semifinal",
+      "stage": "semi",
+      "playoff": true,
+      "status": "final",
+      "startsAt": "2026-11-15T03:17:37.952Z",
+      "startsAtMs": 1794712657952,
+      "home": {
+        "id": "KYL",
+        "abbr": "KYL",
+        "name": "Kyleton Polar Bears",
+        "city": "Kyleton",
+        "nickname": "Polar Bears",
+        "colors": [
+          "#2f7fc1",
+          "#e8f1f8"
+        ],
+        "logo": "/logos/Kyleton%20Polar%20Bears.png",
+        "score": 21
+      },
+      "away": {
+        "id": "BRV",
+        "abbr": "BRV",
+        "name": "Bradyville Beavers",
+        "city": "Bradyville",
+        "nickname": "Beavers",
+        "colors": [
+          "#6b3f1d",
+          "#f28c28"
+        ],
+        "logo": "/logos/Bradyville%20Beavers.png",
+        "score": 22
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Kyleton Stadium",
+        "town": "Kyleton",
+        "host": "KYL"
+      },
+      "winner": "BRV"
+    },
+    {
+      "id": "P-SF2",
+      "season": 2,
+      "week": "P",
+      "label": "Semifinal",
+      "stage": "semi",
+      "playoff": true,
+      "status": "final",
+      "startsAt": "2026-11-16T22:10:00.000Z",
+      "startsAtMs": 1794867000000,
+      "home": {
+        "id": "MON",
+        "abbr": "MON",
+        "name": "Montford Monarchs",
+        "city": "Montford",
+        "nickname": "Monarchs",
+        "colors": [
+          "#7b1e3a",
+          "#e0b84c"
+        ],
+        "logo": "/logos/Montford%20Monarchs.png",
+        "score": 48
+      },
+      "away": {
+        "id": "NSO",
+        "abbr": "NSO",
+        "name": "New Southington Skylines",
+        "city": "New Southington",
+        "nickname": "Skylines",
+        "colors": [
+          "#1f2a5a",
+          "#5bc0eb"
+        ],
+        "logo": "/logos/New%20Southington%20Skylines.png",
+        "score": 24
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Unicellular Stadium",
+        "town": "Greene Hill",
+        "host": "GHB"
+      },
+      "winner": "MON"
+    },
+    {
+      "id": "P-F",
+      "season": 2,
+      "week": "P",
+      "label": "IFL Bowl",
+      "stage": "bowl",
+      "playoff": true,
+      "status": "final",
+      "startsAt": "2026-11-16T22:24:55.494Z",
+      "startsAtMs": 1794867895494,
+      "home": {
+        "id": "MON",
+        "abbr": "MON",
+        "name": "Montford Monarchs",
+        "city": "Montford",
+        "nickname": "Monarchs",
+        "colors": [
+          "#7b1e3a",
+          "#e0b84c"
+        ],
+        "logo": "/logos/Montford%20Monarchs.png",
+        "score": 40
+      },
+      "away": {
+        "id": "BRV",
+        "abbr": "BRV",
+        "name": "Bradyville Beavers",
+        "city": "Bradyville",
+        "nickname": "Beavers",
+        "colors": [
+          "#6b3f1d",
+          "#f28c28"
+        ],
+        "logo": "/logos/Bradyville%20Beavers.png",
+        "score": 27
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Argyros Stadium",
+        "town": "Argiroupolis",
+        "host": "ARG"
+      },
+      "winner": "MON"
+    }
+  ]
+}

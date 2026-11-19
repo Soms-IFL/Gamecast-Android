@@ -1,0 +1,75 @@
+{
+  "seasons": [
+    {
+      "number": 3,
+      "current": true,
+      "done": false,
+      "champion": null,
+      "runnerUp": null,
+      "startedAt": "2026-11-16T23:09:29.696Z",
+      "endedAt": null
+    },
+    {
+      "number": 2,
+      "current": false,
+      "done": true,
+      "champion": {
+        "id": "MON",
+        "abbr": "MON",
+        "name": "Montford Monarchs",
+        "city": "Montford",
+        "nickname": "Monarchs",
+        "colors": [
+          "#7b1e3a",
+          "#e0b84c"
+        ],
+        "logo": "/logos/Montford%20Monarchs.png"
+      },
+      "runnerUp": {
+        "id": "BRV",
+        "abbr": "BRV",
+        "name": "Bradyville Beavers",
+        "city": "Bradyville",
+        "nickname": "Beavers",
+        "colors": [
+          "#6b3f1d",
+          "#f28c28"
+        ],
+        "logo": "/logos/Bradyville%20Beavers.png"
+      },
+      "startedAt": "2026-11-07T01:03:48.246Z",
+      "endedAt": "2026-11-16T23:09:29.234Z"
+    },
+    {
+      "number": 1,
+      "current": false,
+      "done": true,
+      "champion": {
+        "id": "ARG",
+        "abbr": "ARG",
+        "name": "Argiroupolis Silvers",
+        "city": "Argiroupolis",
+        "nickname": "Silvers",
+        "colors": [
+          "#7d8794",
+          "#1d3f8f"
+        ],
+        "logo": "/logos/Argiroupolis%20Silvers.png"
+      },
+      "runnerUp": {
+        "id": "ASH",
+        "abbr": "ASH",
+        "name": "Ashford Smokers",
+        "city": "Ashford",
+        "nickname": "Smokers",
+        "colors": [
+          "#3d3936",
+          "#e2552b"
+        ],
+        "logo": "/logos/Ashford%20Smokers.png"
+      },
+      "startedAt": "2026-11-04T21:15:10.713Z",
+      "endedAt": "2026-11-07T01:03:48.044Z"
+    }
+  ]
+}

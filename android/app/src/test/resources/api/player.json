@@ -1,0 +1,39 @@
+{
+  "id": "KYL-QB1",
+  "name": "Kendrick Corbin",
+  "short": "K. Corbin",
+  "position": "QB",
+  "number": 19,
+  "team": {
+    "id": "KYL",
+    "abbr": "KYL",
+    "name": "Kyleton Polar Bears",
+    "city": "Kyleton",
+    "nickname": "Polar Bears",
+    "colors": [
+      "#2f7fc1",
+      "#e8f1f8"
+    ],
+    "logo": "/logos/Kyleton%20Polar%20Bears.png"
+  },
+  "season": 2,
+  "rating": 88,
+  "age": 27,
+  "yearsPro": 5,
+  "injury": null,
+  "seasonStats": {
+    "gp": 15,
+    "pa": 608,
+    "pc": 395,
+    "py": 4475,
+    "ra": 54,
+    "ry": 135,
+    "rlng": 24,
+    "ptd": 38,
+    "sk": 27,
+    "sky": 175,
+    "fum": 1,
+    "pint": 10,
+    "rtd": 1
+  }
+}

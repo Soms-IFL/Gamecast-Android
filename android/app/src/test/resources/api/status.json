@@ -1,0 +1,103 @@
+{
+  "now": "2026-11-18T23:51:44.629Z",
+  "nowMs": 1795045904629,
+  "timezone": "America/New_York",
+  "engineVersion": 5,
+  "season": {
+    "number": 3,
+    "champion": null,
+    "gamesPlayed": 11,
+    "gamesTotal": 84,
+    "playoffsStarted": false,
+    "done": false
+  },
+  "paused": false,
+  "live": {
+    "id": "W2G6",
+    "season": 3,
+    "week": 2,
+    "label": null,
+    "stage": "reg",
+    "playoff": false,
+    "status": "live",
+    "startsAt": "2026-11-18T23:50:00.000Z",
+    "startsAtMs": 1795045800000,
+    "home": {
+      "id": "MIS",
+      "abbr": "MIS",
+      "name": "Miskauga Boulders",
+      "city": "Miskauga",
+      "nickname": "Boulders",
+      "colors": [
+        "#5f646c",
+        "#e07b24"
+      ],
+      "logo": "/logos/Miskauga%20Boulders.svg",
+      "score": 7
+    },
+    "away": {
+      "id": "NWT",
+      "abbr": "NWT",
+      "name": "Newtown Knights",
+      "city": "Newtown",
+      "nickname": "Knights",
+      "colors": [
+        "#141414",
+        "#c9a227"
+      ],
+      "logo": "/logos/Newtown%20Knights.png",
+      "score": 7
+    },
+    "overtime": false,
+    "venue": {
+      "name": "Alloy Field",
+      "town": "Miskauga",
+      "host": "MIS"
+    }
+  },
+  "next": {
+    "id": "W3G1",
+    "season": 3,
+    "week": 3,
+    "label": null,
+    "stage": "reg",
+    "playoff": false,
+    "status": "scheduled",
+    "startsAt": "2026-11-19T00:00:00.000Z",
+    "startsAtMs": 1795046400000,
+    "home": {
+      "id": "BRV",
+      "abbr": "BRV",
+      "name": "Bradyville Beavers",
+      "city": "Bradyville",
+      "nickname": "Beavers",
+      "colors": [
+        "#6b3f1d",
+        "#f28c28"
+      ],
+      "logo": "/logos/Bradyville%20Beavers.png",
+      "score": null
+    },
+    "away": {
+      "id": "ARG",
+      "abbr": "ARG",
+      "name": "Argiroupolis Silvers",
+      "city": "Argiroupolis",
+      "nickname": "Silvers",
+      "colors": [
+        "#7d8794",
+        "#1d3f8f"
+      ],
+      "logo": "/logos/Argiroupolis%20Silvers.png",
+      "score": null
+    },
+    "overtime": false,
+    "venue": {
+      "name": "Skyline Stadium",
+      "town": "Kennedy Park",
+      "host": "NSO"
+    }
+  },
+  "nextSeasonStartsAt": null,
+  "estimatedSeasonEnd": "2026-11-23T22:27:30.000Z"
+}

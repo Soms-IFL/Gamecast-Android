@@ -1,0 +1,2956 @@
+{
+  "game": "P-F",
+  "season": 2,
+  "status": "final",
+  "total": 179,
+  "since": 0,
+  "next": 179,
+  "plays": [
+    {
+      "n": 1,
+      "kind": "info",
+      "quarter": 1,
+      "clock": "15:00",
+      "situation": null,
+      "text": "Bradyville Beavers win the coin toss (called tails) and defer to the second half. Montford Monarchs will receive.",
+      "possession": "MON",
+      "tags": [],
+      "banner": "KICKOFF",
+      "scoringTeam": null,
+      "score": {
+        "home": 0,
+        "away": 0
+      }
+    },
+    {
+      "n": 2,
+      "kind": "kickoff",
+      "quarter": 1,
+      "clock": "15:00",
+      "situation": null,
+      "text": "X. Brandt kicks 64 yards from BRV 35 to the MON 1. P. Gentry returns to the MON 21 for 20 yards (K. Pace).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 0,
+        "away": 0
+      }
+    },
+    {
+      "n": 3,
+      "kind": "run",
+      "quarter": 1,
+      "clock": "14:54",
+      "situation": "1st & 10 at MON 21",
+      "text": "W. Holloway left guard to MON 27 for 6 yards (S. Garland).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 0,
+        "away": 0
+      }
+    },
+    {
+      "n": 4,
+      "kind": "run",
+      "quarter": 1,
+      "clock": "14:47",
+      "situation": "2nd & 4 at MON 27",
+      "text": "PS QB1 keeps it up the middle to MON 32 for 5 yards (S. Tate).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 0,
+        "away": 0
+      }
+    },
+    {
+      "n": 5,
+      "kind": "run",
+      "quarter": 1,
+      "clock": "14:07",
+      "situation": "1st & 10 at MON 32",
+      "text": "W. Holloway left end to MON 33 for 1 yard, ran ob.",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 0,
+        "away": 0
+      }
+    },
+    {
+      "n": 6,
+      "kind": "run",
+      "quarter": 1,
+      "clock": "13:28",
+      "situation": "2nd & 9 at MON 33",
+      "text": "W. Holloway right tackle to MON 40 for 7 yards (J. Fenwick).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 0,
+        "away": 0
+      }
+    },
+    {
+      "n": 7,
+      "kind": "run",
+      "quarter": 1,
+      "clock": "13:07",
+      "situation": "3rd & 2 at MON 40",
+      "text": "P. Gentry left guard to MON 49 for 9 yards (K. Pace).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 0,
+        "away": 0
+      }
+    },
+    {
+      "n": 8,
+      "kind": "run",
+      "quarter": 1,
+      "clock": "12:27",
+      "situation": "1st & 10 at MON 49",
+      "text": "P. Gentry left guard to BRV 28 for 23 yards (K. Pace).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 0,
+        "away": 0
+      }
+    },
+    {
+      "n": 9,
+      "kind": "run",
+      "quarter": 1,
+      "clock": "11:49",
+      "situation": "1st & 10 at BRV 28",
+      "text": "W. Holloway left guard to BRV 26 for 2 yards (K. Pace).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 0,
+        "away": 0
+      }
+    },
+    {
+      "n": 10,
+      "kind": "run",
+      "quarter": 1,
+      "clock": "11:03",
+      "situation": "2nd & 8 at BRV 26",
+      "text": "R. Sandoval right end to BRV 25 for 1 yard (S. Garland).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 0,
+        "away": 0
+      }
+    },
+    {
+      "n": 11,
+      "kind": "pass",
+      "quarter": 1,
+      "clock": "10:20",
+      "situation": "3rd & 7 at BRV 25",
+      "text": "PS QB1 pass incomplete short right to W. Holloway (H. Keller).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 0,
+        "away": 0
+      }
+    },
+    {
+      "n": 12,
+      "kind": "fg",
+      "quarter": 1,
+      "clock": "9:37",
+      "situation": "4th & 7 at BRV 25",
+      "text": "L. Oakes 42 yard field goal is GOOD.",
+      "possession": "MON",
+      "tags": [
+        "FG"
+      ],
+      "banner": "FIELD GOAL",
+      "scoringTeam": "MON",
+      "score": {
+        "home": 3,
+        "away": 0
+      }
+    },
+    {
+      "n": 13,
+      "kind": "kickoff",
+      "quarter": 1,
+      "clock": "9:33",
+      "situation": null,
+      "text": "L. Oakes kicks 68 yards from MON 35, into the end zone. Touchback.",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 3,
+        "away": 0
+      }
+    },
+    {
+      "n": 14,
+      "kind": "pass",
+      "quarter": 1,
+      "clock": "9:33",
+      "situation": "1st & 10 at BRV 35",
+      "text": "M. Tate pass short right to R. Garrow to BRV 40 for 5 yards, ran ob.",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 3,
+        "away": 0
+      }
+    },
+    {
+      "n": 15,
+      "kind": "run",
+      "quarter": 1,
+      "clock": "9:28",
+      "situation": "2nd & 5 at BRV 40",
+      "text": "R. Fenwick right end to BRV 45 for 5 yards (P. Grimes).",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 3,
+        "away": 0
+      }
+    },
+    {
+      "n": 16,
+      "kind": "pass",
+      "quarter": 1,
+      "clock": "9:04",
+      "situation": "1st & 10 at BRV 45",
+      "text": "M. Tate pass deep middle to R. Garrow to MON 39 for 16 yards, ran ob.",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 3,
+        "away": 0
+      }
+    },
+    {
+      "n": 17,
+      "kind": "run",
+      "quarter": 1,
+      "clock": "8:20",
+      "situation": "1st & 10 at MON 39",
+      "text": "K. Rollins left end to MON 38 for 1 yard (T. Ingram).",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 3,
+        "away": 0
+      }
+    },
+    {
+      "n": 18,
+      "kind": "run",
+      "quarter": 1,
+      "clock": "7:54",
+      "situation": "2nd & 9 at MON 38",
+      "text": "K. Rollins right end to MON 35 for 3 yards (A. Grimes).",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 3,
+        "away": 0
+      }
+    },
+    {
+      "n": 19,
+      "kind": "pass",
+      "quarter": 1,
+      "clock": "7:15",
+      "situation": "3rd & 6 at MON 35",
+      "text": "M. Tate pass incomplete deep right to K. Rollins.",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 3,
+        "away": 0
+      }
+    },
+    {
+      "n": 20,
+      "kind": "fg",
+      "quarter": 1,
+      "clock": "6:29",
+      "situation": "4th & 6 at MON 35",
+      "text": "X. Brandt 52 yard field goal is GOOD.",
+      "possession": "BRV",
+      "tags": [
+        "FG"
+      ],
+      "banner": "FIELD GOAL",
+      "scoringTeam": "BRV",
+      "score": {
+        "home": 3,
+        "away": 3
+      }
+    },
+    {
+      "n": 21,
+      "kind": "kickoff",
+      "quarter": 1,
+      "clock": "6:23",
+      "situation": null,
+      "text": "X. Brandt kicks 63 yards from BRV 35 to the MON 2. M. Easley returns to the MON 29 for 27 yards (T. Oakes).",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 3,
+        "away": 3
+      }
+    },
+    {
+      "n": 22,
+      "kind": "run",
+      "quarter": 1,
+      "clock": "6:18",
+      "situation": "1st & 10 at MON 29",
+      "text": "W. Holloway right tackle to MON 32 for 3 yards (I. Iverson).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 3,
+        "away": 3
+      }
+    },
+    {
+      "n": 23,
+      "kind": "run",
+      "quarter": 1,
+      "clock": "6:13",
+      "situation": "2nd & 7 at MON 32",
+      "text": "W. Holloway left tackle to MON 33 for 1 yard (K. Pace).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 3,
+        "away": 3
+      }
+    },
+    {
+      "n": 24,
+      "kind": "pass",
+      "quarter": 1,
+      "clock": "5:31",
+      "situation": "3rd & 6 at MON 33",
+      "text": "PS QB1 pass deep left to M. Easley to MON 46 for 13 yards, ran ob.",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 3,
+        "away": 3
+      }
+    },
+    {
+      "n": 25,
+      "kind": "run",
+      "quarter": 1,
+      "clock": "4:43",
+      "situation": "1st & 10 at MON 46",
+      "text": "W. Holloway left guard to BRV 44 for 10 yards (J. Fenwick).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 3,
+        "away": 3
+      }
+    },
+    {
+      "n": 26,
+      "kind": "sack",
+      "quarter": 1,
+      "clock": "4:16",
+      "situation": "1st & 10 at BRV 44",
+      "text": "PS QB1 sacked at BRV 46 for -2 yards (M. Tillman).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 3,
+        "away": 3
+      }
+    },
+    {
+      "n": 27,
+      "kind": "run",
+      "quarter": 1,
+      "clock": "3:32",
+      "situation": "2nd & 12 at BRV 46",
+      "text": "W. Holloway up the middle to BRV 43 for 3 yards, ran ob.",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 3,
+        "away": 3
+      }
+    },
+    {
+      "n": 28,
+      "kind": "run",
+      "quarter": 1,
+      "clock": "2:50",
+      "situation": "3rd & 9 at BRV 43",
+      "text": "P. Gentry left tackle to BRV 38 for 5 yards (J. Fenwick).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 3,
+        "away": 3
+      }
+    },
+    {
+      "n": 29,
+      "kind": "fg",
+      "quarter": 1,
+      "clock": "2:29",
+      "situation": "4th & 4 at BRV 38",
+      "text": "L. Oakes 55 yard field goal is GOOD.",
+      "possession": "MON",
+      "tags": [
+        "FG"
+      ],
+      "banner": "FIELD GOAL",
+      "scoringTeam": "MON",
+      "score": {
+        "home": 6,
+        "away": 3
+      }
+    },
+    {
+      "n": 30,
+      "kind": "kickoff",
+      "quarter": 1,
+      "clock": "1:49",
+      "situation": null,
+      "text": "L. Oakes kicks 64 yards from MON 35 to the BRV 1. S. Vance returns to the BRV 32 for 31 yards (T. Kessler).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 6,
+        "away": 3
+      }
+    },
+    {
+      "n": 31,
+      "kind": "pass",
+      "quarter": 1,
+      "clock": "1:44",
+      "situation": "1st & 10 at BRV 32",
+      "text": "M. Tate pass incomplete short right to K. Rollins.",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 6,
+        "away": 3
+      }
+    },
+    {
+      "n": 32,
+      "kind": "run",
+      "quarter": 1,
+      "clock": "1:38",
+      "situation": "2nd & 10 at BRV 32",
+      "text": "K. Rollins right tackle to BRV 33 for 1 yard (P. Grimes).",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 6,
+        "away": 3
+      }
+    },
+    {
+      "n": 33,
+      "kind": "pass",
+      "quarter": 1,
+      "clock": "1:32",
+      "situation": "3rd & 9 at BRV 33",
+      "text": "M. Tate pass short left to R. Garrow to BRV 40 for 7 yards (PS CB1).",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 6,
+        "away": 3
+      }
+    },
+    {
+      "n": 34,
+      "kind": "punt",
+      "quarter": 1,
+      "clock": "0:48",
+      "situation": "4th & 2 at BRV 40",
+      "text": "B. Talbot punts 51 yards to MON 9, out of bounds.",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 6,
+        "away": 3
+      }
+    },
+    {
+      "n": 35,
+      "kind": "run",
+      "quarter": 1,
+      "clock": "0:03",
+      "situation": "1st & 10 at MON 9",
+      "text": "R. Sandoval right end to MON 42 for 33 yards (H. Keller).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 6,
+        "away": 3
+      }
+    },
+    {
+      "n": 36,
+      "kind": "period",
+      "quarter": 1,
+      "clock": "0:00",
+      "situation": null,
+      "text": "End of 1st quarter. Teams change ends.",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 6,
+        "away": 3
+      }
+    },
+    {
+      "n": 37,
+      "kind": "run",
+      "quarter": 2,
+      "clock": "15:00",
+      "situation": "1st & 10 at MON 42",
+      "text": "W. Holloway left end to MON 47 for 5 yards, ran ob.",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 6,
+        "away": 3
+      }
+    },
+    {
+      "n": 38,
+      "kind": "pass",
+      "quarter": 2,
+      "clock": "14:16",
+      "situation": "2nd & 5 at MON 47",
+      "text": "PS QB1 pass short left to P. Gentry to BRV 24 for 29 yards (C. Mabry).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 6,
+        "away": 3
+      }
+    },
+    {
+      "n": 39,
+      "kind": "run",
+      "quarter": 2,
+      "clock": "13:47",
+      "situation": "1st & 10 at BRV 24",
+      "text": "W. Holloway up the middle to BRV 14 for 10 yards (M. Ingram). INJURY: BRV-I. Iverson (DL, hamstring) is out for the rest of the game.",
+      "possession": "MON",
+      "tags": [
+        "INJ"
+      ],
+      "banner": "INJURY",
+      "scoringTeam": null,
+      "score": {
+        "home": 6,
+        "away": 3
+      }
+    },
+    {
+      "n": 40,
+      "kind": "sack",
+      "quarter": 2,
+      "clock": "13:09",
+      "situation": "1st & 10 at BRV 14",
+      "text": "PS QB1 sacked at BRV 21 for -7 yards (N. Rourke).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 6,
+        "away": 3
+      }
+    },
+    {
+      "n": 41,
+      "kind": "penalty",
+      "quarter": 2,
+      "clock": "12:26",
+      "situation": "2nd & 17 at BRV 21",
+      "text": "PENALTY on MON-R. Sandoval, False Start, 5 yards, enforced at BRV 21. No Play.",
+      "possession": "MON",
+      "tags": [
+        "FLAG"
+      ],
+      "banner": "FLAG",
+      "scoringTeam": null,
+      "score": {
+        "home": 6,
+        "away": 3
+      }
+    },
+    {
+      "n": 42,
+      "kind": "run",
+      "quarter": 2,
+      "clock": "11:53",
+      "situation": "2nd & 22 at BRV 26",
+      "text": "W. Holloway up the middle for 2 yards. PENALTY on MON-N. Crowder, Illegal Block Above the Waist, 10 yards, enforced at BRV 26. NULLIFIED Play.",
+      "possession": "MON",
+      "tags": [
+        "FLAG"
+      ],
+      "banner": "FLAG",
+      "scoringTeam": null,
+      "score": {
+        "home": 6,
+        "away": 3
+      }
+    },
+    {
+      "n": 43,
+      "kind": "pass",
+      "quarter": 2,
+      "clock": "11:08",
+      "situation": "2nd & 32 at BRV 36",
+      "text": "PS QB1 pass short right to J. Navarro to BRV 28 for 8 yards (C. Mabry).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 6,
+        "away": 3
+      }
+    },
+    {
+      "n": 44,
+      "kind": "pass",
+      "quarter": 2,
+      "clock": "10:59",
+      "situation": "3rd & 24 at BRV 28",
+      "text": "PS QB1 pass incomplete short right to R. Sandoval.",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 6,
+        "away": 3
+      }
+    },
+    {
+      "n": 45,
+      "kind": "fg",
+      "quarter": 2,
+      "clock": "10:18",
+      "situation": "4th & 24 at BRV 28",
+      "text": "L. Oakes 45 yard field goal is GOOD.",
+      "possession": "MON",
+      "tags": [
+        "FG"
+      ],
+      "banner": "FIELD GOAL",
+      "scoringTeam": "MON",
+      "score": {
+        "home": 9,
+        "away": 3
+      }
+    },
+    {
+      "n": 46,
+      "kind": "kickoff",
+      "quarter": 2,
+      "clock": "10:12",
+      "situation": null,
+      "text": "L. Oakes kicks 65 yards from MON 35 to the BRV goal line. R. Garrow returns to the BRV 28 for 28 yards (E. Whitaker).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 9,
+        "away": 3
+      }
+    },
+    {
+      "n": 47,
+      "kind": "run",
+      "quarter": 2,
+      "clock": "10:08",
+      "situation": "1st & 10 at BRV 28",
+      "text": "K. Rollins right tackle to BRV 31 for 3 yards (N. Ness).",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 9,
+        "away": 3
+      }
+    },
+    {
+      "n": 48,
+      "kind": "pass",
+      "quarter": 2,
+      "clock": "10:04",
+      "situation": "2nd & 7 at BRV 31",
+      "text": "M. Tate pass short right to S. Vance to BRV 34 for 3 yards, ran ob.",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 9,
+        "away": 3
+      }
+    },
+    {
+      "n": 49,
+      "kind": "pass",
+      "quarter": 2,
+      "clock": "9:21",
+      "situation": "3rd & 4 at BRV 34",
+      "text": "M. Tate pass short right to S. Vance to BRV 44 for 10 yards (P. Grimes). PENALTY on MON-J. Abernathy, Unnecessary Roughness, 15 yards, enforced at BRV 44.",
+      "possession": "BRV",
+      "tags": [
+        "FLAG"
+      ],
+      "banner": "FLAG",
+      "scoringTeam": null,
+      "score": {
+        "home": 9,
+        "away": 3
+      }
+    },
+    {
+      "n": 50,
+      "kind": "pass",
+      "quarter": 2,
+      "clock": "9:00",
+      "situation": "1st & 10 at MON 41",
+      "text": "M. Tate pass incomplete short middle to B. Fitzgerald.",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 9,
+        "away": 3
+      }
+    },
+    {
+      "n": 51,
+      "kind": "run",
+      "quarter": 2,
+      "clock": "8:52",
+      "situation": "2nd & 10 at MON 41",
+      "text": "K. Rollins left guard for 6 yards. PENALTY on BRV-Z. Holloway, Offensive Holding, 10 yards, enforced at MON 41. NULLIFIED Play.",
+      "possession": "BRV",
+      "tags": [
+        "FLAG"
+      ],
+      "banner": "FLAG",
+      "scoringTeam": null,
+      "score": {
+        "home": 9,
+        "away": 3
+      }
+    },
+    {
+      "n": 52,
+      "kind": "pass",
+      "quarter": 2,
+      "clock": "8:47",
+      "situation": "2nd & 20 at BRV 49",
+      "text": "M. Tate pass deep left to Z. Holloway to MON 35 for 16 yards (PS CB1).",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 9,
+        "away": 3
+      }
+    },
+    {
+      "n": 53,
+      "kind": "pass",
+      "quarter": 2,
+      "clock": "8:38",
+      "situation": "3rd & 4 at MON 35",
+      "text": "M. Tate pass incomplete deep right to S. Vance.",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 9,
+        "away": 3
+      }
+    },
+    {
+      "n": 54,
+      "kind": "fg",
+      "quarter": 2,
+      "clock": "7:57",
+      "situation": "4th & 4 at MON 35",
+      "text": "X. Brandt 52 yard field goal is GOOD.",
+      "possession": "BRV",
+      "tags": [
+        "FG"
+      ],
+      "banner": "FIELD GOAL",
+      "scoringTeam": "BRV",
+      "score": {
+        "home": 9,
+        "away": 6
+      }
+    },
+    {
+      "n": 55,
+      "kind": "kickoff",
+      "quarter": 2,
+      "clock": "7:52",
+      "situation": null,
+      "text": "X. Brandt kicks 68 yards from BRV 35, into the end zone. Touchback.",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 9,
+        "away": 6
+      }
+    },
+    {
+      "n": 56,
+      "kind": "run",
+      "quarter": 2,
+      "clock": "7:52",
+      "situation": "1st & 10 at MON 35",
+      "text": "W. Holloway left end to MON 37 for 2 yards (M. Ingram).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 9,
+        "away": 6
+      }
+    },
+    {
+      "n": 57,
+      "kind": "run",
+      "quarter": 2,
+      "clock": "7:46",
+      "situation": "2nd & 8 at MON 37",
+      "text": "W. Holloway left guard to MON 41 for 4 yards (M. Tillman).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 9,
+        "away": 6
+      }
+    },
+    {
+      "n": 58,
+      "kind": "pass",
+      "quarter": 2,
+      "clock": "7:04",
+      "situation": "3rd & 4 at MON 41",
+      "text": "PS QB1 pass incomplete short right to J. Garrow.",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 9,
+        "away": 6
+      }
+    },
+    {
+      "n": 59,
+      "kind": "punt",
+      "quarter": 2,
+      "clock": "6:19",
+      "situation": "4th & 4 at MON 41",
+      "text": "V. Castillo punts 53 yards to BRV 6. R. Pace returns to the BRV 21 for 15 yards (T. Kessler).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 9,
+        "away": 6
+      }
+    },
+    {
+      "n": 60,
+      "kind": "pass",
+      "quarter": 2,
+      "clock": "6:11",
+      "situation": "1st & 10 at BRV 21",
+      "text": "M. Tate pass incomplete, thrown away.",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 9,
+        "away": 6
+      }
+    },
+    {
+      "n": 61,
+      "kind": "pass",
+      "quarter": 2,
+      "clock": "6:05",
+      "situation": "2nd & 10 at BRV 21",
+      "text": "M. Tate pass short right to R. Garrow to BRV 32 for 11 yards (F. Sexton).",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 9,
+        "away": 6
+      }
+    },
+    {
+      "n": 62,
+      "kind": "run",
+      "quarter": 2,
+      "clock": "5:58",
+      "situation": "1st & 10 at BRV 32",
+      "text": "K. Rollins left end to BRV 42 for 10 yards (P. Grimes).",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 9,
+        "away": 6
+      }
+    },
+    {
+      "n": 63,
+      "kind": "pass",
+      "quarter": 2,
+      "clock": "5:19",
+      "situation": "1st & 10 at BRV 42",
+      "text": "M. Tate pass short middle to Z. Holloway to MON 44 for 14 yards, ran ob.",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 9,
+        "away": 6
+      }
+    },
+    {
+      "n": 64,
+      "kind": "run",
+      "quarter": 2,
+      "clock": "4:33",
+      "situation": "1st & 10 at MON 44",
+      "text": "M. Tate keeps it left end to MON 40 for 4 yards (W. Ortega).",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 9,
+        "away": 6
+      }
+    },
+    {
+      "n": 65,
+      "kind": "pass",
+      "quarter": 2,
+      "clock": "4:14",
+      "situation": "2nd & 6 at MON 40",
+      "text": "M. Tate pass short middle to R. Garrow to MON 32 for 8 yards (T. Kessler). PENALTY on MON-T. Ingram, Illegal Use of Hands, declined.",
+      "possession": "BRV",
+      "tags": [
+        "FLAG"
+      ],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 9,
+        "away": 6
+      }
+    },
+    {
+      "n": 66,
+      "kind": "pass",
+      "quarter": 2,
+      "clock": "3:28",
+      "situation": "1st & 10 at MON 32",
+      "text": "M. Tate pass incomplete short middle to S. Vance (PS CB1). PENALTY on MON-F. Sexton, Roughing the Passer, 15 yards, enforced at MON 32.",
+      "possession": "BRV",
+      "tags": [
+        "FLAG"
+      ],
+      "banner": "FLAG",
+      "scoringTeam": null,
+      "score": {
+        "home": 9,
+        "away": 6
+      }
+    },
+    {
+      "n": 67,
+      "kind": "pass",
+      "quarter": 2,
+      "clock": "3:23",
+      "situation": "1st & 10 at MON 17",
+      "text": "M. Tate pass short middle to K. Rollins to MON 14 for 3 yards (E. Whitaker).",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 9,
+        "away": 6
+      }
+    },
+    {
+      "n": 68,
+      "kind": "run",
+      "quarter": 2,
+      "clock": "3:17",
+      "situation": "2nd & 7 at MON 14",
+      "text": "M. Tate scrambles left end to MON 13 for 1 yard, ran ob.",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 9,
+        "away": 6
+      }
+    },
+    {
+      "n": 69,
+      "kind": "pass",
+      "quarter": 2,
+      "clock": "2:40",
+      "situation": "3rd & 6 at MON 13",
+      "text": "M. Tate pass incomplete short left to K. Rollins.",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 9,
+        "away": 6
+      }
+    },
+    {
+      "n": 70,
+      "kind": "fg",
+      "quarter": 2,
+      "clock": "2:14",
+      "situation": "4th & 6 at MON 13",
+      "text": "X. Brandt 30 yard field goal is GOOD.",
+      "possession": "BRV",
+      "tags": [
+        "FG"
+      ],
+      "banner": "FIELD GOAL",
+      "scoringTeam": "BRV",
+      "score": {
+        "home": 9,
+        "away": 9
+      }
+    },
+    {
+      "n": 71,
+      "kind": "kickoff",
+      "quarter": 2,
+      "clock": "2:10",
+      "situation": null,
+      "text": "X. Brandt kicks 69 yards from BRV 35 to the MON end zone. R. Sandoval returns to the MON 28 for 28 yards (H. Keller).",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 9,
+        "away": 9
+      }
+    },
+    {
+      "n": 72,
+      "kind": "pass",
+      "quarter": 2,
+      "clock": "2:04",
+      "situation": "1st & 10 at MON 28",
+      "text": "PS QB1 pass short left to R. Sandoval to MON 35 for 7 yards (H. Keller). Two-Minute Warning.",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 9,
+        "away": 9
+      }
+    },
+    {
+      "n": 73,
+      "kind": "run",
+      "quarter": 2,
+      "clock": "1:57",
+      "situation": "2nd & 3 at MON 35",
+      "text": "P. Gentry right tackle to BRV 40 for 25 yards (I. Whitaker).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 9,
+        "away": 9
+      }
+    },
+    {
+      "n": 74,
+      "kind": "run",
+      "quarter": 2,
+      "clock": "1:51",
+      "situation": "1st & 10 at BRV 40",
+      "text": "W. Holloway left tackle to BRV 36 for 4 yards (C. Mabry).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 9,
+        "away": 9
+      }
+    },
+    {
+      "n": 75,
+      "kind": "run",
+      "quarter": 2,
+      "clock": "1:38",
+      "situation": "2nd & 6 at BRV 36",
+      "text": "W. Holloway up the middle to BRV 16 for 20 yards (T. Oakes).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 9,
+        "away": 9
+      }
+    },
+    {
+      "n": 76,
+      "kind": "run",
+      "quarter": 2,
+      "clock": "1:24",
+      "situation": "1st & 10 at BRV 16",
+      "text": "W. Holloway left end to BRV 15 for 1 yard (K. Pace).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 9,
+        "away": 9
+      }
+    },
+    {
+      "n": 77,
+      "kind": "run",
+      "quarter": 2,
+      "clock": "1:11",
+      "situation": "2nd & 9 at BRV 15",
+      "text": "PS QB1 scrambles right end to BRV 7 for 8 yards, ran ob.",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 9,
+        "away": 9
+      }
+    },
+    {
+      "n": 78,
+      "kind": "penalty",
+      "quarter": 2,
+      "clock": "0:56",
+      "situation": "3rd & 1 at BRV 7",
+      "text": "PENALTY on BRV-M. Ingram, Encroachment, 3 yards, enforced at BRV 7. No Play. First down.",
+      "possession": "MON",
+      "tags": [
+        "FLAG"
+      ],
+      "banner": "FLAG",
+      "scoringTeam": null,
+      "score": {
+        "home": 9,
+        "away": 9
+      }
+    },
+    {
+      "n": 79,
+      "kind": "run",
+      "quarter": 2,
+      "clock": "0:56",
+      "situation": "1st & Goal at BRV 4",
+      "text": "W. Holloway left tackle to BRV 1 for 3 yards (T. Oakes).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 9,
+        "away": 9
+      }
+    },
+    {
+      "n": 80,
+      "kind": "pass",
+      "quarter": 2,
+      "clock": "0:50",
+      "situation": "2nd & Goal at BRV 1",
+      "text": "PS QB1 pass short left to M. Easley for 1 yard, TOUCHDOWN!",
+      "possession": "MON",
+      "tags": [
+        "TD"
+      ],
+      "banner": "TOUCHDOWN",
+      "scoringTeam": "MON",
+      "score": {
+        "home": 15,
+        "away": 9
+      }
+    },
+    {
+      "n": 81,
+      "kind": "pat",
+      "quarter": 2,
+      "clock": "0:32",
+      "situation": null,
+      "text": "L. Oakes extra point is GOOD.",
+      "possession": "MON",
+      "tags": [
+        "XP"
+      ],
+      "banner": null,
+      "scoringTeam": "MON",
+      "score": {
+        "home": 16,
+        "away": 9
+      }
+    },
+    {
+      "n": 82,
+      "kind": "kickoff",
+      "quarter": 2,
+      "clock": "0:32",
+      "situation": null,
+      "text": "L. Oakes kicks 62 yards from MON 35 to the BRV 3. R. Garrow returns to the BRV 38 for 35 yards (PS CB1).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 16,
+        "away": 9
+      }
+    },
+    {
+      "n": 83,
+      "kind": "pass",
+      "quarter": 2,
+      "clock": "0:27",
+      "situation": "1st & 10 at BRV 38",
+      "text": "M. Tate pass short middle to Z. Holloway to BRV 38 for no gain (C. Ashby).",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 16,
+        "away": 9
+      }
+    },
+    {
+      "n": 84,
+      "kind": "pass",
+      "quarter": 2,
+      "clock": "0:19",
+      "situation": "2nd & 10 at BRV 38",
+      "text": "M. Tate pass incomplete deep left to S. Vance.",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 16,
+        "away": 9
+      }
+    },
+    {
+      "n": 85,
+      "kind": "pass",
+      "quarter": 2,
+      "clock": "0:02",
+      "situation": "3rd & 10 at BRV 38",
+      "text": "M. Tate pass incomplete deep left to S. Vance.",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 16,
+        "away": 9
+      }
+    },
+    {
+      "n": 86,
+      "kind": "period",
+      "quarter": 2,
+      "clock": "0:00",
+      "situation": null,
+      "text": "End of first half — BRV 9, MON 16.",
+      "possession": "BRV",
+      "tags": [],
+      "banner": "HALFTIME",
+      "scoringTeam": null,
+      "score": {
+        "home": 16,
+        "away": 9
+      }
+    },
+    {
+      "n": 87,
+      "kind": "kickoff",
+      "quarter": 3,
+      "clock": "15:00",
+      "situation": null,
+      "text": "X. Brandt kicks 68 yards from BRV 35 to the MON end zone. R. Sandoval returns to the MON 30 for 30 yards (H. Keller).",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 16,
+        "away": 9
+      }
+    },
+    {
+      "n": 88,
+      "kind": "run",
+      "quarter": 3,
+      "clock": "14:53",
+      "situation": "1st & 10 at MON 30",
+      "text": "W. Holloway left guard to MON 32 for 2 yards (K. Pace).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 16,
+        "away": 9
+      }
+    },
+    {
+      "n": 89,
+      "kind": "pass",
+      "quarter": 3,
+      "clock": "14:49",
+      "situation": "2nd & 8 at MON 32",
+      "text": "PS QB1 pass deep left to M. Easley to MON 48 for 16 yards (K. Pace).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 16,
+        "away": 9
+      }
+    },
+    {
+      "n": 90,
+      "kind": "run",
+      "quarter": 3,
+      "clock": "14:09",
+      "situation": "1st & 10 at MON 48",
+      "text": "W. Holloway right end to BRV 48 for 4 yards (K. Pemberton).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 16,
+        "away": 9
+      }
+    },
+    {
+      "n": 91,
+      "kind": "run",
+      "quarter": 3,
+      "clock": "13:30",
+      "situation": "2nd & 6 at BRV 48",
+      "text": "W. Holloway up the middle to BRV 42 for 6 yards (S. Garland).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 16,
+        "away": 9
+      }
+    },
+    {
+      "n": 92,
+      "kind": "run",
+      "quarter": 3,
+      "clock": "12:48",
+      "situation": "1st & 10 at BRV 42",
+      "text": "P. Gentry left guard to BRV 37 for 5 yards (J. Fenwick).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 16,
+        "away": 9
+      }
+    },
+    {
+      "n": 93,
+      "kind": "run",
+      "quarter": 3,
+      "clock": "12:11",
+      "situation": "2nd & 5 at BRV 37",
+      "text": "P. Gentry left end to BRV 37 for no gain (C. Mabry).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 16,
+        "away": 9
+      }
+    },
+    {
+      "n": 94,
+      "kind": "run",
+      "quarter": 3,
+      "clock": "11:34",
+      "situation": "3rd & 5 at BRV 37",
+      "text": "W. Holloway right end to BRV 18 for 19 yards (I. Whitaker).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 16,
+        "away": 9
+      }
+    },
+    {
+      "n": 95,
+      "kind": "run",
+      "quarter": 3,
+      "clock": "10:51",
+      "situation": "1st & 10 at BRV 18",
+      "text": "W. Holloway left guard to BRV 14 for 4 yards (K. Pace). W. Holloway FUMBLES (I. Whitaker), recovered by MON-W. Holloway. INJURY: BRV-M. Ingram (DL, ankle) is out for the rest of the game.",
+      "possession": "MON",
+      "tags": [
+        "INJ"
+      ],
+      "banner": "INJURY",
+      "scoringTeam": null,
+      "score": {
+        "home": 16,
+        "away": 9
+      }
+    },
+    {
+      "n": 96,
+      "kind": "run",
+      "quarter": 3,
+      "clock": "10:11",
+      "situation": "2nd & 6 at BRV 14",
+      "text": "P. Gentry left tackle to BRV 13 for 1 yard (T. Waller).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 16,
+        "away": 9
+      }
+    },
+    {
+      "n": 97,
+      "kind": "pass",
+      "quarter": 3,
+      "clock": "9:28",
+      "situation": "3rd & 5 at BRV 13",
+      "text": "PS QB1 pass incomplete short middle to J. Navarro (H. Keller). PENALTY on BRV-S. Tate, Illegal Use of Hands, 5 yards, enforced at BRV 13. NULLIFIED Play. Automatic first down.",
+      "possession": "MON",
+      "tags": [
+        "FLAG"
+      ],
+      "banner": "FLAG",
+      "scoringTeam": null,
+      "score": {
+        "home": 16,
+        "away": 9
+      }
+    },
+    {
+      "n": 98,
+      "kind": "pass",
+      "quarter": 3,
+      "clock": "8:41",
+      "situation": "1st & Goal at BRV 8",
+      "text": "PS QB1 pass short right to W. Holloway to BRV 2 for 6 yards (K. Pemberton).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 16,
+        "away": 9
+      }
+    },
+    {
+      "n": 99,
+      "kind": "run",
+      "quarter": 3,
+      "clock": "8:35",
+      "situation": "2nd & Goal at BRV 2",
+      "text": "W. Holloway left end to BRV 1 for 1 yard, ran ob.",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 16,
+        "away": 9
+      }
+    },
+    {
+      "n": 100,
+      "kind": "pass",
+      "quarter": 3,
+      "clock": "7:50",
+      "situation": "3rd & Goal at BRV 1",
+      "text": "PS QB1 pass deep right to W. Holloway for 1 yard, TOUCHDOWN!",
+      "possession": "MON",
+      "tags": [
+        "TD"
+      ],
+      "banner": "TOUCHDOWN",
+      "scoringTeam": "MON",
+      "score": {
+        "home": 22,
+        "away": 9
+      }
+    },
+    {
+      "n": 101,
+      "kind": "pat",
+      "quarter": 3,
+      "clock": "7:26",
+      "situation": null,
+      "text": "L. Oakes extra point is GOOD.",
+      "possession": "MON",
+      "tags": [
+        "XP"
+      ],
+      "banner": null,
+      "scoringTeam": "MON",
+      "score": {
+        "home": 23,
+        "away": 9
+      }
+    },
+    {
+      "n": 102,
+      "kind": "kickoff",
+      "quarter": 3,
+      "clock": "7:26",
+      "situation": null,
+      "text": "L. Oakes kicks 73 yards from MON 35, into the end zone. Touchback.",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 9
+      }
+    },
+    {
+      "n": 103,
+      "kind": "pass",
+      "quarter": 3,
+      "clock": "7:26",
+      "situation": "1st & 10 at BRV 35",
+      "text": "M. Tate pass short left to S. Vance to BRV 41 for 6 yards (T. Ingram).",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 9
+      }
+    },
+    {
+      "n": 104,
+      "kind": "run",
+      "quarter": 3,
+      "clock": "7:19",
+      "situation": "2nd & 4 at BRV 41",
+      "text": "K. Rollins left tackle to BRV 48 for 7 yards (P. Grimes).",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 9
+      }
+    },
+    {
+      "n": 105,
+      "kind": "run",
+      "quarter": 3,
+      "clock": "6:42",
+      "situation": "1st & 10 at BRV 48",
+      "text": "R. Fenwick left guard to MON 46 for 6 yards (W. Ortega).",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 9
+      }
+    },
+    {
+      "n": 106,
+      "kind": "pass",
+      "quarter": 3,
+      "clock": "6:03",
+      "situation": "2nd & 4 at MON 46",
+      "text": "M. Tate pass incomplete deep left to K. Rollins (T. Kessler). INJURY: BRV-S. Vance (WR, knee) is out for the rest of the game.",
+      "possession": "BRV",
+      "tags": [
+        "INJ"
+      ],
+      "banner": "INJURY",
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 9
+      }
+    },
+    {
+      "n": 107,
+      "kind": "sack",
+      "quarter": 3,
+      "clock": "5:22",
+      "situation": "3rd & 4 at MON 46",
+      "text": "M. Tate sacked at BRV 47 for -7 yards (N. Ness).",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 9
+      }
+    },
+    {
+      "n": 108,
+      "kind": "punt",
+      "quarter": 3,
+      "clock": "5:15",
+      "situation": "4th & 11 at BRV 47",
+      "text": "B. Talbot punts 45 yards to MON 8, fair catch by C. Garland.",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 9
+      }
+    },
+    {
+      "n": 109,
+      "kind": "run",
+      "quarter": 3,
+      "clock": "4:28",
+      "situation": "1st & 10 at MON 8",
+      "text": "W. Holloway right tackle to MON 15 for 7 yards (N. Rourke).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 9
+      }
+    },
+    {
+      "n": 110,
+      "kind": "run",
+      "quarter": 3,
+      "clock": "4:24",
+      "situation": "2nd & 3 at MON 15",
+      "text": "P. Gentry left tackle to MON 18 for 3 yards (I. Whitaker).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 9
+      }
+    },
+    {
+      "n": 111,
+      "kind": "pass",
+      "quarter": 3,
+      "clock": "3:40",
+      "situation": "1st & 10 at MON 18",
+      "text": "PS QB1 pass short left to M. Easley to MON 24 for 6 yards (S. Tate).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 9
+      }
+    },
+    {
+      "n": 112,
+      "kind": "pass",
+      "quarter": 3,
+      "clock": "3:00",
+      "situation": "2nd & 4 at MON 24",
+      "text": "PS QB1 pass deep middle to J. Navarro to MON 44 for 20 yards (H. Keller).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 9
+      }
+    },
+    {
+      "n": 113,
+      "kind": "run",
+      "quarter": 3,
+      "clock": "2:17",
+      "situation": "1st & 10 at MON 44",
+      "text": "W. Holloway right end to MON 44 for no gain, ran ob. INJURY: BRV-S. Garland (DL, groin) is out for the rest of the game.",
+      "possession": "MON",
+      "tags": [
+        "INJ"
+      ],
+      "banner": "INJURY",
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 9
+      }
+    },
+    {
+      "n": 114,
+      "kind": "run",
+      "quarter": 3,
+      "clock": "1:34",
+      "situation": "2nd & 10 at MON 44",
+      "text": "W. Holloway right end to MON 45 for 1 yard, ran ob.",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 9
+      }
+    },
+    {
+      "n": 115,
+      "kind": "run",
+      "quarter": 3,
+      "clock": "1:07",
+      "situation": "3rd & 9 at MON 45",
+      "text": "W. Holloway right tackle to MON 43 for -2 yards (PS DL1).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 9
+      }
+    },
+    {
+      "n": 116,
+      "kind": "punt",
+      "quarter": 3,
+      "clock": "0:41",
+      "situation": "4th & 11 at MON 43",
+      "text": "V. Castillo punts 40 yards to BRV 17, fair catch by R. Pace.",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 9
+      }
+    },
+    {
+      "n": 117,
+      "kind": "period",
+      "quarter": 3,
+      "clock": "0:00",
+      "situation": null,
+      "text": "End of 3rd quarter. Teams change ends.",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 9
+      }
+    },
+    {
+      "n": 118,
+      "kind": "run",
+      "quarter": 4,
+      "clock": "15:00",
+      "situation": "1st & 10 at BRV 17",
+      "text": "R. Fenwick left tackle to BRV 15 for -2 yards (Z. Prescott).",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 9
+      }
+    },
+    {
+      "n": 119,
+      "kind": "run",
+      "quarter": 4,
+      "clock": "14:55",
+      "situation": "2nd & 12 at BRV 15",
+      "text": "K. Rollins up the middle to BRV 12 for -3 yards, ran ob.",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 9
+      }
+    },
+    {
+      "n": 120,
+      "kind": "pass",
+      "quarter": 4,
+      "clock": "14:12",
+      "situation": "3rd & 15 at BRV 12",
+      "text": "M. Tate pass deep middle to R. Fenwick to BRV 32 for 20 yards (E. Whitaker).",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 9
+      }
+    },
+    {
+      "n": 121,
+      "kind": "pass",
+      "quarter": 4,
+      "clock": "13:50",
+      "situation": "1st & 10 at BRV 32",
+      "text": "M. Tate pass deep right to R. Garrow to MON 23 for 45 yards (F. Sexton). INJURY: MON-W. Ortega (LB, foot) is out for the rest of the game.",
+      "possession": "BRV",
+      "tags": [
+        "INJ"
+      ],
+      "banner": "INJURY",
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 9
+      }
+    },
+    {
+      "n": 122,
+      "kind": "pass",
+      "quarter": 4,
+      "clock": "13:13",
+      "situation": "1st & 10 at MON 23",
+      "text": "M. Tate pass incomplete deep left to R. Pace.",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 9
+      }
+    },
+    {
+      "n": 123,
+      "kind": "pass",
+      "quarter": 4,
+      "clock": "12:31",
+      "situation": "2nd & 10 at MON 23",
+      "text": "M. Tate pass incomplete deep middle to R. Pace.",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 9
+      }
+    },
+    {
+      "n": 124,
+      "kind": "pass",
+      "quarter": 4,
+      "clock": "12:23",
+      "situation": "3rd & 10 at MON 23",
+      "text": "M. Tate pass short middle to R. Pace to MON 11 for 12 yards (A. Grimes).",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 9
+      }
+    },
+    {
+      "n": 125,
+      "kind": "pass",
+      "quarter": 4,
+      "clock": "12:16",
+      "situation": "1st & 10 at MON 11",
+      "text": "M. Tate pass incomplete short right to R. Garrow (A. Grimes).",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 9
+      }
+    },
+    {
+      "n": 126,
+      "kind": "run",
+      "quarter": 4,
+      "clock": "11:35",
+      "situation": "2nd & 10 at MON 11",
+      "text": "M. Tate scrambles right tackle to MON 13 for -2 yards, ran ob.",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 9
+      }
+    },
+    {
+      "n": 127,
+      "kind": "pass",
+      "quarter": 4,
+      "clock": "11:29",
+      "situation": "3rd & 12 at MON 13",
+      "text": "M. Tate pass incomplete deep left to Z. Holloway.",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 9
+      }
+    },
+    {
+      "n": 128,
+      "kind": "fg",
+      "quarter": 4,
+      "clock": "11:04",
+      "situation": "4th & 12 at MON 13",
+      "text": "X. Brandt 30 yard field goal is GOOD.",
+      "possession": "BRV",
+      "tags": [
+        "FG"
+      ],
+      "banner": "FIELD GOAL",
+      "scoringTeam": "BRV",
+      "score": {
+        "home": 23,
+        "away": 12
+      }
+    },
+    {
+      "n": 129,
+      "kind": "kickoff",
+      "quarter": 4,
+      "clock": "11:00",
+      "situation": null,
+      "text": "X. Brandt kicks 60 yards from BRV 35 to the MON 5. M. Easley returns to the MON 44 for 39 yards (K. Pemberton).",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 12
+      }
+    },
+    {
+      "n": 130,
+      "kind": "run",
+      "quarter": 4,
+      "clock": "10:56",
+      "situation": "1st & 10 at MON 44",
+      "text": "W. Holloway right guard to MON 45 for 1 yard (C. Mabry).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 12
+      }
+    },
+    {
+      "n": 131,
+      "kind": "run",
+      "quarter": 4,
+      "clock": "10:50",
+      "situation": "2nd & 9 at MON 45",
+      "text": "P. Gentry right end to BRV 41 for 14 yards (H. Keller).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 12
+      }
+    },
+    {
+      "n": 132,
+      "kind": "run",
+      "quarter": 4,
+      "clock": "10:07",
+      "situation": "1st & 10 at BRV 41",
+      "text": "W. Holloway right end for 1 yards. PENALTY on MON-T. Osei, Offensive Holding, 10 yards, enforced at BRV 41. NULLIFIED Play.",
+      "possession": "MON",
+      "tags": [
+        "FLAG"
+      ],
+      "banner": "FLAG",
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 12
+      }
+    },
+    {
+      "n": 133,
+      "kind": "run",
+      "quarter": 4,
+      "clock": "9:22",
+      "situation": "1st & 20 at MON 49",
+      "text": "W. Holloway left guard to BRV 47 for 4 yards (PS DL1).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 12
+      }
+    },
+    {
+      "n": 134,
+      "kind": "run",
+      "quarter": 4,
+      "clock": "9:16",
+      "situation": "2nd & 16 at BRV 47",
+      "text": "R. Sandoval left end to MON 49 for -4 yards (J. Fenwick).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 12
+      }
+    },
+    {
+      "n": 135,
+      "kind": "pass",
+      "quarter": 4,
+      "clock": "8:31",
+      "situation": "3rd & 20 at MON 49",
+      "text": "PS QB1 pass short middle to J. Garrow to BRV 49 for 2 yards (S. Tate).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 12
+      }
+    },
+    {
+      "n": 136,
+      "kind": "punt",
+      "quarter": 4,
+      "clock": "7:45",
+      "situation": "4th & 18 at BRV 49",
+      "text": "V. Castillo punts 46 yards to BRV 3, fair catch by M. Rourke.",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 12
+      }
+    },
+    {
+      "n": 137,
+      "kind": "pass",
+      "quarter": 4,
+      "clock": "7:00",
+      "situation": "1st & 10 at BRV 3",
+      "text": "M. Tate pass incomplete deep left to R. Fenwick (E. Whitaker).",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 12
+      }
+    },
+    {
+      "n": 138,
+      "kind": "pass",
+      "quarter": 4,
+      "clock": "6:52",
+      "situation": "2nd & 10 at BRV 3",
+      "text": "M. Tate pass incomplete deep middle to R. Garrow.",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 12
+      }
+    },
+    {
+      "n": 139,
+      "kind": "pass",
+      "quarter": 4,
+      "clock": "6:47",
+      "situation": "3rd & 10 at BRV 3",
+      "text": "M. Tate pass incomplete deep left to Z. Holloway.",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 12
+      }
+    },
+    {
+      "n": 140,
+      "kind": "pass",
+      "quarter": 4,
+      "clock": "6:41",
+      "situation": "4th & 10 at BRV 3",
+      "text": "M. Tate pass incomplete deep left to R. Pace. Turnover on downs.",
+      "possession": "BRV",
+      "tags": [
+        "DOWNS"
+      ],
+      "banner": "TURNOVER ON DOWNS",
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 12
+      }
+    },
+    {
+      "n": 141,
+      "kind": "run",
+      "quarter": 4,
+      "clock": "6:35",
+      "situation": "1st & Goal at BRV 3",
+      "text": "W. Holloway right end to BRV 3 for no gain (M. Tillman).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 23,
+        "away": 12
+      }
+    },
+    {
+      "n": 142,
+      "kind": "run",
+      "quarter": 4,
+      "clock": "6:31",
+      "situation": "2nd & Goal at BRV 3",
+      "text": "R. Sandoval left end for 3 yards, TOUCHDOWN!",
+      "possession": "MON",
+      "tags": [
+        "TD"
+      ],
+      "banner": "TOUCHDOWN",
+      "scoringTeam": "MON",
+      "score": {
+        "home": 29,
+        "away": 12
+      }
+    },
+    {
+      "n": 143,
+      "kind": "pat",
+      "quarter": 4,
+      "clock": "5:46",
+      "situation": null,
+      "text": "L. Oakes extra point is GOOD.",
+      "possession": "MON",
+      "tags": [
+        "XP"
+      ],
+      "banner": null,
+      "scoringTeam": "MON",
+      "score": {
+        "home": 30,
+        "away": 12
+      }
+    },
+    {
+      "n": 144,
+      "kind": "kickoff",
+      "quarter": 4,
+      "clock": "5:46",
+      "situation": null,
+      "text": "L. Oakes kicks 66 yards from MON 35, into the end zone. Touchback.",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 30,
+        "away": 12
+      }
+    },
+    {
+      "n": 145,
+      "kind": "pass",
+      "quarter": 4,
+      "clock": "5:46",
+      "situation": "1st & 10 at BRV 35",
+      "text": "M. Tate pass deep middle to M. Rourke to MON 47 for 18 yards (PS CB1).",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 30,
+        "away": 12
+      }
+    },
+    {
+      "n": 146,
+      "kind": "pass",
+      "quarter": 4,
+      "clock": "5:37",
+      "situation": "1st & 10 at MON 47",
+      "text": "M. Tate pass incomplete deep middle to R. Pace. PENALTY on MON-A. Grimes, Defensive Pass Interference, 37 yards, enforced at MON 47. NULLIFIED Play. Automatic first down.",
+      "possession": "BRV",
+      "tags": [
+        "FLAG"
+      ],
+      "banner": "FLAG",
+      "scoringTeam": null,
+      "score": {
+        "home": 30,
+        "away": 12
+      }
+    },
+    {
+      "n": 147,
+      "kind": "pass",
+      "quarter": 4,
+      "clock": "5:21",
+      "situation": "1st & Goal at MON 10",
+      "text": "M. Tate pass deep middle to K. Crowder for 10 yards, TOUCHDOWN!",
+      "possession": "BRV",
+      "tags": [
+        "TD"
+      ],
+      "banner": "TOUCHDOWN",
+      "scoringTeam": "BRV",
+      "score": {
+        "home": 30,
+        "away": 18
+      }
+    },
+    {
+      "n": 148,
+      "kind": "pat",
+      "quarter": 4,
+      "clock": "5:12",
+      "situation": null,
+      "text": "X. Brandt extra point is GOOD.",
+      "possession": "BRV",
+      "tags": [
+        "XP"
+      ],
+      "banner": null,
+      "scoringTeam": "BRV",
+      "score": {
+        "home": 30,
+        "away": 19
+      }
+    },
+    {
+      "n": 149,
+      "kind": "kickoff",
+      "quarter": 4,
+      "clock": "5:12",
+      "situation": null,
+      "text": "X. Brandt kicks 60 yards from BRV 35 to the MON 5. R. Sandoval returns to the MON 34 for 29 yards (K. Pemberton).",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 30,
+        "away": 19
+      }
+    },
+    {
+      "n": 150,
+      "kind": "run",
+      "quarter": 4,
+      "clock": "5:06",
+      "situation": "1st & 10 at MON 34",
+      "text": "W. Holloway left guard to MON 37 for 3 yards, ran ob.",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 30,
+        "away": 19
+      }
+    },
+    {
+      "n": 151,
+      "kind": "run",
+      "quarter": 4,
+      "clock": "5:00",
+      "situation": "2nd & 7 at MON 37",
+      "text": "W. Holloway right guard to BRV 6 for 57 yards (I. Whitaker).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 30,
+        "away": 19
+      }
+    },
+    {
+      "n": 152,
+      "kind": "run",
+      "quarter": 4,
+      "clock": "4:55",
+      "situation": "1st & Goal at BRV 6",
+      "text": "W. Holloway up the middle to BRV 5 for 1 yard (K. Pemberton).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 30,
+        "away": 19
+      }
+    },
+    {
+      "n": 153,
+      "kind": "run",
+      "quarter": 4,
+      "clock": "4:11",
+      "situation": "2nd & Goal at BRV 5",
+      "text": "W. Holloway up the middle for 5 yards, TOUCHDOWN!",
+      "possession": "MON",
+      "tags": [
+        "TD"
+      ],
+      "banner": "TOUCHDOWN",
+      "scoringTeam": "MON",
+      "score": {
+        "home": 36,
+        "away": 19
+      }
+    },
+    {
+      "n": 154,
+      "kind": "pat",
+      "quarter": 4,
+      "clock": "3:29",
+      "situation": null,
+      "text": "L. Oakes extra point is GOOD.",
+      "possession": "MON",
+      "tags": [
+        "XP"
+      ],
+      "banner": null,
+      "scoringTeam": "MON",
+      "score": {
+        "home": 37,
+        "away": 19
+      }
+    },
+    {
+      "n": 155,
+      "kind": "kickoff",
+      "quarter": 4,
+      "clock": "3:29",
+      "situation": null,
+      "text": "L. Oakes kicks 69 yards from MON 35 to the BRV end zone. K. Rollins returns to the BRV 18 for 18 yards (P. Grimes).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 37,
+        "away": 19
+      }
+    },
+    {
+      "n": 156,
+      "kind": "pass",
+      "quarter": 4,
+      "clock": "3:23",
+      "situation": "1st & 10 at BRV 18",
+      "text": "M. Tate pass incomplete deep middle to R. Garrow (T. Kessler).",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 37,
+        "away": 19
+      }
+    },
+    {
+      "n": 157,
+      "kind": "run",
+      "quarter": 4,
+      "clock": "3:14",
+      "situation": "2nd & 10 at BRV 18",
+      "text": "R. Fenwick right tackle to BRV 20 for 2 yards (PS CB1).",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 37,
+        "away": 19
+      }
+    },
+    {
+      "n": 158,
+      "kind": "pass",
+      "quarter": 4,
+      "clock": "3:07",
+      "situation": "3rd & 8 at BRV 20",
+      "text": "M. Tate pass deep left to R. Pace to BRV 42 for 22 yards, ran ob.",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 37,
+        "away": 19
+      }
+    },
+    {
+      "n": 159,
+      "kind": "penalty",
+      "quarter": 4,
+      "clock": "2:50",
+      "situation": "1st & 10 at BRV 42",
+      "text": "PENALTY on BRV-Z. Holloway, False Start, 5 yards, enforced at BRV 42. No Play.",
+      "possession": "BRV",
+      "tags": [
+        "FLAG"
+      ],
+      "banner": "FLAG",
+      "scoringTeam": null,
+      "score": {
+        "home": 37,
+        "away": 19
+      }
+    },
+    {
+      "n": 160,
+      "kind": "pass",
+      "quarter": 4,
+      "clock": "2:50",
+      "situation": "1st & 15 at BRV 37",
+      "text": "M. Tate pass incomplete short left to M. Rourke (P. Grimes).",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 37,
+        "away": 19
+      }
+    },
+    {
+      "n": 161,
+      "kind": "run",
+      "quarter": 4,
+      "clock": "2:41",
+      "situation": "2nd & 15 at BRV 37",
+      "text": "K. Rollins right guard to BRV 43 for 6 yards (PS LB1).",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 37,
+        "away": 19
+      }
+    },
+    {
+      "n": 162,
+      "kind": "pass",
+      "quarter": 4,
+      "clock": "2:35",
+      "situation": "3rd & 9 at BRV 43",
+      "text": "M. Tate pass deep right to Z. Holloway to MON 22 for 35 yards, ran ob.",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 37,
+        "away": 19
+      }
+    },
+    {
+      "n": 163,
+      "kind": "pass",
+      "quarter": 4,
+      "clock": "2:20",
+      "situation": "1st & 10 at MON 22",
+      "text": "M. Tate pass incomplete deep right to R. Garrow (E. Whitaker).",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 37,
+        "away": 19
+      }
+    },
+    {
+      "n": 164,
+      "kind": "pass",
+      "quarter": 4,
+      "clock": "2:14",
+      "situation": "2nd & 10 at MON 22",
+      "text": "M. Tate pass incomplete, thrown away.",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 37,
+        "away": 19
+      }
+    },
+    {
+      "n": 165,
+      "kind": "pass",
+      "quarter": 4,
+      "clock": "2:07",
+      "situation": "3rd & 10 at MON 22",
+      "text": "M. Tate pass deep right to R. Garrow for 22 yards, TOUCHDOWN! Two-Minute Warning.",
+      "possession": "BRV",
+      "tags": [
+        "TD"
+      ],
+      "banner": "TOUCHDOWN",
+      "scoringTeam": "BRV",
+      "score": {
+        "home": 37,
+        "away": 25
+      }
+    },
+    {
+      "n": 166,
+      "kind": "pat",
+      "quarter": 4,
+      "clock": "1:58",
+      "situation": null,
+      "text": "TWO-POINT CONVERSION ATTEMPT. K. Rollins rush. ATTEMPT SUCCEEDS.",
+      "possession": "BRV",
+      "tags": [
+        "2PT"
+      ],
+      "banner": "2-PT GOOD",
+      "scoringTeam": "BRV",
+      "score": {
+        "home": 37,
+        "away": 27
+      }
+    },
+    {
+      "n": 167,
+      "kind": "kickoff",
+      "quarter": 4,
+      "clock": "1:58",
+      "situation": null,
+      "text": "X. Brandt onside kick is recovered by MON at the BRV 46.",
+      "possession": "BRV",
+      "tags": [
+        "ONSIDE"
+      ],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 37,
+        "away": 27
+      }
+    },
+    {
+      "n": 168,
+      "kind": "run",
+      "quarter": 4,
+      "clock": "1:56",
+      "situation": "1st & 10 at BRV 46",
+      "text": "W. Holloway left end to BRV 42 for 4 yards (K. Pace).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 37,
+        "away": 27
+      }
+    },
+    {
+      "n": 169,
+      "kind": "timeout",
+      "quarter": 4,
+      "clock": "1:52",
+      "situation": "2nd & 6 at BRV 42",
+      "text": "Timeout #1 by Bradyville Beavers at 1:52.",
+      "possession": "MON",
+      "tags": [
+        "TIMEOUT"
+      ],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 37,
+        "away": 27
+      }
+    },
+    {
+      "n": 170,
+      "kind": "run",
+      "quarter": 4,
+      "clock": "1:52",
+      "situation": "2nd & 6 at BRV 42",
+      "text": "W. Holloway right end to BRV 35 for 7 yards (N. Rourke).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 37,
+        "away": 27
+      }
+    },
+    {
+      "n": 171,
+      "kind": "timeout",
+      "quarter": 4,
+      "clock": "1:48",
+      "situation": "1st & 10 at BRV 35",
+      "text": "Timeout #2 by Bradyville Beavers at 1:48.",
+      "possession": "MON",
+      "tags": [
+        "TIMEOUT"
+      ],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 37,
+        "away": 27
+      }
+    },
+    {
+      "n": 172,
+      "kind": "run",
+      "quarter": 4,
+      "clock": "1:48",
+      "situation": "1st & 10 at BRV 35",
+      "text": "P. Gentry left guard to BRV 38 for -3 yards (C. Mabry).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 37,
+        "away": 27
+      }
+    },
+    {
+      "n": 173,
+      "kind": "timeout",
+      "quarter": 4,
+      "clock": "1:43",
+      "situation": "2nd & 13 at BRV 38",
+      "text": "Timeout #3 by Bradyville Beavers at 1:43.",
+      "possession": "MON",
+      "tags": [
+        "TIMEOUT"
+      ],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 37,
+        "away": 27
+      }
+    },
+    {
+      "n": 174,
+      "kind": "run",
+      "quarter": 4,
+      "clock": "1:43",
+      "situation": "2nd & 13 at BRV 38",
+      "text": "W. Holloway up the middle to BRV 34 for 4 yards (M. Tillman).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 37,
+        "away": 27
+      }
+    },
+    {
+      "n": 175,
+      "kind": "run",
+      "quarter": 4,
+      "clock": "1:39",
+      "situation": "3rd & 9 at BRV 34",
+      "text": "PS QB1 scrambles right guard to BRV 32 for 2 yards (H. Keller).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 37,
+        "away": 27
+      }
+    },
+    {
+      "n": 176,
+      "kind": "fg",
+      "quarter": 4,
+      "clock": "0:55",
+      "situation": "4th & 7 at BRV 32",
+      "text": "L. Oakes 49 yard field goal is GOOD.",
+      "possession": "MON",
+      "tags": [
+        "FG"
+      ],
+      "banner": "FIELD GOAL",
+      "scoringTeam": "MON",
+      "score": {
+        "home": 40,
+        "away": 27
+      }
+    },
+    {
+      "n": 177,
+      "kind": "kickoff",
+      "quarter": 4,
+      "clock": "0:11",
+      "situation": null,
+      "text": "L. Oakes kicks 64 yards from MON 35 to the BRV 1. R. Fenwick returns to the BRV 26 for 25 yards (E. Whitaker).",
+      "possession": "MON",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 40,
+        "away": 27
+      }
+    },
+    {
+      "n": 178,
+      "kind": "pass",
+      "quarter": 4,
+      "clock": "0:05",
+      "situation": "1st & 10 at BRV 26",
+      "text": "M. Tate pass deep left to R. Pace to BRV 43 for 17 yards (P. Grimes).",
+      "possession": "BRV",
+      "tags": [],
+      "banner": null,
+      "scoringTeam": null,
+      "score": {
+        "home": 40,
+        "away": 27
+      }
+    },
+    {
+      "n": 179,
+      "kind": "period",
+      "quarter": 4,
+      "clock": "0:00",
+      "situation": null,
+      "text": "Final: Montford Monarchs win 40–27.",
+      "possession": "BRV",
+      "tags": [],
+      "banner": "FINAL",
+      "scoringTeam": null,
+      "score": {
+        "home": 40,
+        "away": 27
+      }
+    }
+  ]
+}

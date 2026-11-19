@@ -1,0 +1,1144 @@
+{
+  "game": {
+    "id": "P-F",
+    "season": 2,
+    "week": "P",
+    "label": "IFL Bowl",
+    "stage": "bowl",
+    "playoff": true,
+    "status": "final",
+    "startsAt": "2026-11-16T22:24:55.494Z",
+    "startsAtMs": 1794867895494,
+    "home": {
+      "id": "MON",
+      "abbr": "MON",
+      "name": "Montford Monarchs",
+      "city": "Montford",
+      "nickname": "Monarchs",
+      "colors": [
+        "#7b1e3a",
+        "#e0b84c"
+      ],
+      "logo": "/logos/Montford%20Monarchs.png",
+      "score": 40
+    },
+    "away": {
+      "id": "BRV",
+      "abbr": "BRV",
+      "name": "Bradyville Beavers",
+      "city": "Bradyville",
+      "nickname": "Beavers",
+      "colors": [
+        "#6b3f1d",
+        "#f28c28"
+      ],
+      "logo": "/logos/Bradyville%20Beavers.png",
+      "score": 27
+    },
+    "overtime": false,
+    "venue": {
+      "name": "Argyros Stadium",
+      "town": "Argiroupolis",
+      "host": "ARG"
+    },
+    "winner": "MON"
+  },
+  "inactive": {
+    "home": [
+      {
+        "id": "MON-QB1",
+        "name": "Terrell Mercer",
+        "short": "T. Mercer",
+        "position": "QB",
+        "number": 10,
+        "team": "MON"
+      },
+      {
+        "id": "MON-QB2",
+        "name": "Terrell Upshaw",
+        "short": "T. Upshaw",
+        "position": "QB",
+        "number": 5,
+        "team": "MON"
+      },
+      {
+        "id": "MON-WR3",
+        "name": "Victor Blackwell",
+        "short": "V. Blackwell",
+        "position": "WR",
+        "number": 11,
+        "team": "MON"
+      },
+      {
+        "id": "MON-LB2",
+        "name": "Quinn Sexton",
+        "short": "Q. Sexton",
+        "position": "LB",
+        "number": 55,
+        "team": "MON"
+      },
+      {
+        "id": "MON-CB1",
+        "name": "Luca Ellison",
+        "short": "L. Ellison",
+        "position": "CB",
+        "number": 24,
+        "team": "MON"
+      },
+      {
+        "id": "MON-CB2",
+        "name": "Elijah Hargrove",
+        "short": "E. Hargrove",
+        "position": "CB",
+        "number": 39,
+        "team": "MON"
+      }
+    ],
+    "away": []
+  },
+  "venue": {
+    "name": "Argyros Stadium",
+    "town": "Argiroupolis",
+    "host": "ARG"
+  },
+  "quarters": {
+    "home": [
+      6,
+      10,
+      7,
+      17
+    ],
+    "away": [
+      3,
+      6,
+      0,
+      18
+    ]
+  },
+  "progress": {
+    "playsAired": 179,
+    "playsTotal": 179
+  },
+  "box": {
+    "home": {
+      "team": {
+        "id": "MON",
+        "abbr": "MON",
+        "name": "Montford Monarchs",
+        "city": "Montford",
+        "nickname": "Monarchs",
+        "colors": [
+          "#7b1e3a",
+          "#e0b84c"
+        ],
+        "logo": "/logos/Montford%20Monarchs.png"
+      },
+      "stats": {
+        "fd": 24,
+        "plays": 79,
+        "yds": 440,
+        "py": 109,
+        "ry": 340,
+        "pen": 6,
+        "peny": 92,
+        "to": 0,
+        "top": 2276,
+        "d3a": 12,
+        "d3c": 4,
+        "d4a": 0,
+        "d4c": 0,
+        "sk": 2,
+        "sky": 9,
+        "ra": 53,
+        "pa": 14,
+        "pc": 11
+      },
+      "players": [
+        {
+          "id": "MON-RB1",
+          "name": "Wyatt Holloway",
+          "short": "W. Holloway",
+          "position": "RB",
+          "number": 23,
+          "team": "MON",
+          "stats": {
+            "ra": 36,
+            "ry": 210,
+            "rlng": 57,
+            "tgt": 3,
+            "fum": 1,
+            "rec": 2,
+            "recy": 7,
+            "reclng": 6,
+            "rectd": 1,
+            "rtd": 1
+          }
+        },
+        {
+          "id": "MON-RB3",
+          "name": "Pierce Gentry",
+          "short": "P. Gentry",
+          "position": "RB",
+          "number": 21,
+          "team": "MON",
+          "stats": {
+            "kr": 1,
+            "kry": 20,
+            "ra": 10,
+            "ry": 82,
+            "rlng": 25,
+            "tgt": 1,
+            "rec": 1,
+            "recy": 29,
+            "reclng": 29
+          }
+        },
+        {
+          "id": "MON-WR1",
+          "name": "Mateo Easley",
+          "short": "M. Easley",
+          "position": "WR",
+          "number": 12,
+          "team": "MON",
+          "stats": {
+            "kr": 2,
+            "kry": 66,
+            "tgt": 4,
+            "rec": 4,
+            "recy": 36,
+            "reclng": 16,
+            "rectd": 1
+          }
+        },
+        {
+          "id": "MON-WR2",
+          "name": "Reid Sandoval",
+          "short": "R. Sandoval",
+          "position": "WR",
+          "number": 87,
+          "team": "MON",
+          "stats": {
+            "ra": 4,
+            "ry": 33,
+            "rlng": 33,
+            "tgt": 2,
+            "kr": 3,
+            "kry": 87,
+            "rec": 1,
+            "recy": 7,
+            "reclng": 7,
+            "rtd": 1
+          }
+        },
+        {
+          "id": "MON-WR4",
+          "name": "Javon Garrow",
+          "short": "J. Garrow",
+          "position": "WR",
+          "number": 84,
+          "team": "MON",
+          "stats": {
+            "tgt": 2,
+            "rec": 1,
+            "recy": 2,
+            "reclng": 2
+          }
+        },
+        {
+          "id": "MON-TE1",
+          "name": "Jasper Navarro",
+          "short": "J. Navarro",
+          "position": "TE",
+          "number": 49,
+          "team": "MON",
+          "stats": {
+            "tgt": 2,
+            "rec": 2,
+            "recy": 28,
+            "reclng": 20
+          }
+        },
+        {
+          "id": "MON-DL2",
+          "name": "Nash Ness",
+          "short": "N. Ness",
+          "position": "DL",
+          "number": 54,
+          "team": "MON",
+          "stats": {
+            "tk": 2,
+            "sacks": 1
+          }
+        },
+        {
+          "id": "MON-DL4",
+          "name": "Zane Prescott",
+          "short": "Z. Prescott",
+          "position": "DL",
+          "number": 93,
+          "team": "MON",
+          "stats": {
+            "tk": 1
+          }
+        },
+        {
+          "id": "MON-DL5",
+          "name": "Trey Ingram",
+          "short": "T. Ingram",
+          "position": "DL",
+          "number": 95,
+          "team": "MON",
+          "stats": {
+            "tk": 2
+          }
+        },
+        {
+          "id": "MON-LB1",
+          "name": "Cyrus Ashby",
+          "short": "C. Ashby",
+          "position": "LB",
+          "number": 43,
+          "team": "MON",
+          "stats": {
+            "tk": 1
+          }
+        },
+        {
+          "id": "MON-LB3",
+          "name": "Wes Ortega",
+          "short": "W. Ortega",
+          "position": "LB",
+          "number": 53,
+          "team": "MON",
+          "stats": {
+            "tk": 2
+          }
+        },
+        {
+          "id": "MON-LB4",
+          "name": "Flynn Sexton",
+          "short": "F. Sexton",
+          "position": "LB",
+          "number": 50,
+          "team": "MON",
+          "stats": {
+            "tk": 2
+          }
+        },
+        {
+          "id": "MON-CB3",
+          "name": "Aiden Grimes",
+          "short": "A. Grimes",
+          "position": "CB",
+          "number": 38,
+          "team": "MON",
+          "stats": {
+            "tk": 2
+          }
+        },
+        {
+          "id": "MON-CB4",
+          "name": "Tristan Kessler",
+          "short": "T. Kessler",
+          "position": "CB",
+          "number": 25,
+          "team": "MON",
+          "stats": {
+            "tk": 3
+          }
+        },
+        {
+          "id": "MON-S1",
+          "name": "Easton Whitaker",
+          "short": "E. Whitaker",
+          "position": "S",
+          "number": 31,
+          "team": "MON",
+          "stats": {
+            "tk": 4
+          }
+        },
+        {
+          "id": "MON-S2",
+          "name": "Pierce Grimes",
+          "short": "P. Grimes",
+          "position": "S",
+          "number": 29,
+          "team": "MON",
+          "stats": {
+            "tk": 9
+          }
+        },
+        {
+          "id": "MON-K1",
+          "name": "Lamar Oakes",
+          "short": "L. Oakes",
+          "position": "K",
+          "number": 6,
+          "team": "MON",
+          "stats": {
+            "fga": 4,
+            "fgm": 4,
+            "fglng": 55,
+            "xpa": 4,
+            "xpm": 4
+          }
+        },
+        {
+          "id": "MON-P1",
+          "name": "Vince Castillo",
+          "short": "V. Castillo",
+          "position": "P",
+          "number": 2,
+          "team": "MON",
+          "stats": {
+            "pn": 3,
+            "pny": 139
+          }
+        }
+      ]
+    },
+    "away": {
+      "team": {
+        "id": "BRV",
+        "abbr": "BRV",
+        "name": "Bradyville Beavers",
+        "city": "Bradyville",
+        "nickname": "Beavers",
+        "colors": [
+          "#6b3f1d",
+          "#f28c28"
+        ],
+        "logo": "/logos/Bradyville%20Beavers.png"
+      },
+      "stats": {
+        "fd": 19,
+        "plays": 67,
+        "yds": 335,
+        "py": 300,
+        "ry": 42,
+        "pen": 4,
+        "peny": 23,
+        "to": 0,
+        "top": 1262,
+        "d3a": 14,
+        "d3c": 6,
+        "d4a": 1,
+        "d4c": 0,
+        "sk": 1,
+        "sky": 7,
+        "ra": 15,
+        "pa": 43,
+        "pc": 21
+      },
+      "players": [
+        {
+          "id": "BRV-QB1",
+          "name": "Mason Tate",
+          "short": "M. Tate",
+          "position": "QB",
+          "number": 15,
+          "team": "BRV",
+          "stats": {
+            "pa": 43,
+            "pc": 21,
+            "py": 300,
+            "ra": 3,
+            "ry": 3,
+            "rlng": 4,
+            "sk": 1,
+            "sky": 7,
+            "ptd": 2
+          }
+        },
+        {
+          "id": "BRV-RB1",
+          "name": "Kendrick Rollins",
+          "short": "K. Rollins",
+          "position": "RB",
+          "number": 22,
+          "team": "BRV",
+          "stats": {
+            "ra": 8,
+            "ry": 28,
+            "rlng": 10,
+            "tgt": 5,
+            "rec": 1,
+            "recy": 3,
+            "reclng": 3,
+            "kr": 1,
+            "kry": 18
+          }
+        },
+        {
+          "id": "BRV-RB2",
+          "name": "Rhett Fenwick",
+          "short": "R. Fenwick",
+          "position": "RB",
+          "number": 38,
+          "team": "BRV",
+          "stats": {
+            "ra": 4,
+            "ry": 11,
+            "rlng": 6,
+            "tgt": 2,
+            "rec": 1,
+            "recy": 20,
+            "reclng": 20,
+            "kr": 1,
+            "kry": 25
+          }
+        },
+        {
+          "id": "BRV-WR1",
+          "name": "Sterling Vance",
+          "short": "S. Vance",
+          "position": "WR",
+          "number": 13,
+          "team": "BRV",
+          "stats": {
+            "kr": 1,
+            "kry": 31,
+            "tgt": 7,
+            "rec": 3,
+            "recy": 19,
+            "reclng": 10
+          }
+        },
+        {
+          "id": "BRV-WR2",
+          "name": "Rhett Garrow",
+          "short": "R. Garrow",
+          "position": "WR",
+          "number": 81,
+          "team": "BRV",
+          "stats": {
+            "tgt": 11,
+            "rec": 7,
+            "recy": 114,
+            "reclng": 45,
+            "kr": 2,
+            "kry": 63,
+            "rectd": 1
+          }
+        },
+        {
+          "id": "BRV-WR3",
+          "name": "Roman Pace",
+          "short": "R. Pace",
+          "position": "WR",
+          "number": 83,
+          "team": "BRV",
+          "stats": {
+            "pr": 1,
+            "pry": 15,
+            "tgt": 6,
+            "rec": 3,
+            "recy": 51,
+            "reclng": 22
+          }
+        },
+        {
+          "id": "BRV-WR4",
+          "name": "Kendrick Crowder",
+          "short": "K. Crowder",
+          "position": "WR",
+          "number": 14,
+          "team": "BRV",
+          "stats": {
+            "tgt": 1,
+            "rec": 1,
+            "recy": 10,
+            "reclng": 10,
+            "rectd": 1
+          }
+        },
+        {
+          "id": "BRV-WR5",
+          "name": "Mateo Rourke",
+          "short": "M. Rourke",
+          "position": "WR",
+          "number": 11,
+          "team": "BRV",
+          "stats": {
+            "tgt": 2,
+            "rec": 1,
+            "recy": 18,
+            "reclng": 18
+          }
+        },
+        {
+          "id": "BRV-TE1",
+          "name": "Zane Holloway",
+          "short": "Z. Holloway",
+          "position": "TE",
+          "number": 49,
+          "team": "BRV",
+          "stats": {
+            "tgt": 6,
+            "rec": 4,
+            "recy": 65,
+            "reclng": 35
+          }
+        },
+        {
+          "id": "BRV-TE2",
+          "name": "Beau Fitzgerald",
+          "short": "B. Fitzgerald",
+          "position": "TE",
+          "number": 85,
+          "team": "BRV",
+          "stats": {
+            "tgt": 1
+          }
+        },
+        {
+          "id": "BRV-DL1",
+          "name": "Marcus Tillman",
+          "short": "M. Tillman",
+          "position": "DL",
+          "number": 56,
+          "team": "BRV",
+          "stats": {
+            "sacks": 1,
+            "tk": 4
+          }
+        },
+        {
+          "id": "BRV-DL2",
+          "name": "Sterling Garland",
+          "short": "S. Garland",
+          "position": "DL",
+          "number": 57,
+          "team": "BRV",
+          "stats": {
+            "tk": 3
+          }
+        },
+        {
+          "id": "BRV-DL3",
+          "name": "Isaiah Iverson",
+          "short": "I. Iverson",
+          "position": "DL",
+          "number": 51,
+          "team": "BRV",
+          "stats": {
+            "tk": 1
+          }
+        },
+        {
+          "id": "BRV-DL4",
+          "name": "Marcus Ingram",
+          "short": "M. Ingram",
+          "position": "DL",
+          "number": 97,
+          "team": "BRV",
+          "stats": {
+            "tk": 2
+          }
+        },
+        {
+          "id": "BRV-DL5",
+          "name": "Nolan Rourke",
+          "short": "N. Rourke",
+          "position": "DL",
+          "number": 50,
+          "team": "BRV",
+          "stats": {
+            "sacks": 1,
+            "tk": 3
+          }
+        },
+        {
+          "id": "BRV-DL6",
+          "name": "Tyrell Waller",
+          "short": "T. Waller",
+          "position": "DL",
+          "number": 98,
+          "team": "BRV",
+          "stats": {
+            "tk": 1
+          }
+        },
+        {
+          "id": "BRV-LB1",
+          "name": "Cyrus Mabry",
+          "short": "C. Mabry",
+          "position": "LB",
+          "number": 42,
+          "team": "BRV",
+          "stats": {
+            "tk": 6
+          }
+        },
+        {
+          "id": "BRV-LB2",
+          "name": "Jamal Fenwick",
+          "short": "J. Fenwick",
+          "position": "LB",
+          "number": 43,
+          "team": "BRV",
+          "stats": {
+            "tk": 7
+          }
+        },
+        {
+          "id": "BRV-LB3",
+          "name": "Kobe Pace",
+          "short": "K. Pace",
+          "position": "LB",
+          "number": 58,
+          "team": "BRV",
+          "stats": {
+            "tk": 10
+          }
+        },
+        {
+          "id": "BRV-CB1",
+          "name": "Thiago Oakes",
+          "short": "T. Oakes",
+          "position": "CB",
+          "number": 36,
+          "team": "BRV",
+          "stats": {
+            "tk": 3
+          }
+        },
+        {
+          "id": "BRV-CB2",
+          "name": "Hayes Keller",
+          "short": "H. Keller",
+          "position": "CB",
+          "number": 31,
+          "team": "BRV",
+          "stats": {
+            "tk": 7
+          }
+        },
+        {
+          "id": "BRV-CB3",
+          "name": "Silas Tate",
+          "short": "S. Tate",
+          "position": "CB",
+          "number": 26,
+          "team": "BRV",
+          "stats": {
+            "tk": 3
+          }
+        },
+        {
+          "id": "BRV-S1",
+          "name": "Isaiah Whitaker",
+          "short": "I. Whitaker",
+          "position": "S",
+          "number": 27,
+          "team": "BRV",
+          "stats": {
+            "tk": 5,
+            "ff": 1
+          }
+        },
+        {
+          "id": "BRV-S2",
+          "name": "Kellan Pemberton",
+          "short": "K. Pemberton",
+          "position": "S",
+          "number": 47,
+          "team": "BRV",
+          "stats": {
+            "tk": 5
+          }
+        },
+        {
+          "id": "BRV-K1",
+          "name": "Xavier Brandt",
+          "short": "X. Brandt",
+          "position": "K",
+          "number": 5,
+          "team": "BRV",
+          "stats": {
+            "fga": 4,
+            "fgm": 4,
+            "fglng": 52,
+            "xpa": 1,
+            "xpm": 1
+          }
+        },
+        {
+          "id": "BRV-P1",
+          "name": "Boone Talbot",
+          "short": "B. Talbot",
+          "position": "P",
+          "number": 7,
+          "team": "BRV",
+          "stats": {
+            "pn": 2,
+            "pny": 96
+          }
+        }
+      ]
+    }
+  },
+  "scoring": [
+    {
+      "n": 12,
+      "kind": "fg",
+      "quarter": 1,
+      "clock": "9:37",
+      "situation": "4th & 7 at BRV 25",
+      "text": "L. Oakes 42 yard field goal is GOOD.",
+      "possession": "MON",
+      "tags": [
+        "FG"
+      ],
+      "banner": "FIELD GOAL",
+      "scoringTeam": "MON",
+      "score": {
+        "home": 3,
+        "away": 0
+      }
+    },
+    {
+      "n": 20,
+      "kind": "fg",
+      "quarter": 1,
+      "clock": "6:29",
+      "situation": "4th & 6 at MON 35",
+      "text": "X. Brandt 52 yard field goal is GOOD.",
+      "possession": "BRV",
+      "tags": [
+        "FG"
+      ],
+      "banner": "FIELD GOAL",
+      "scoringTeam": "BRV",
+      "score": {
+        "home": 3,
+        "away": 3
+      }
+    },
+    {
+      "n": 29,
+      "kind": "fg",
+      "quarter": 1,
+      "clock": "2:29",
+      "situation": "4th & 4 at BRV 38",
+      "text": "L. Oakes 55 yard field goal is GOOD.",
+      "possession": "MON",
+      "tags": [
+        "FG"
+      ],
+      "banner": "FIELD GOAL",
+      "scoringTeam": "MON",
+      "score": {
+        "home": 6,
+        "away": 3
+      }
+    },
+    {
+      "n": 45,
+      "kind": "fg",
+      "quarter": 2,
+      "clock": "10:18",
+      "situation": "4th & 24 at BRV 28",
+      "text": "L. Oakes 45 yard field goal is GOOD.",
+      "possession": "MON",
+      "tags": [
+        "FG"
+      ],
+      "banner": "FIELD GOAL",
+      "scoringTeam": "MON",
+      "score": {
+        "home": 9,
+        "away": 3
+      }
+    },
+    {
+      "n": 54,
+      "kind": "fg",
+      "quarter": 2,
+      "clock": "7:57",
+      "situation": "4th & 4 at MON 35",
+      "text": "X. Brandt 52 yard field goal is GOOD.",
+      "possession": "BRV",
+      "tags": [
+        "FG"
+      ],
+      "banner": "FIELD GOAL",
+      "scoringTeam": "BRV",
+      "score": {
+        "home": 9,
+        "away": 6
+      }
+    },
+    {
+      "n": 70,
+      "kind": "fg",
+      "quarter": 2,
+      "clock": "2:14",
+      "situation": "4th & 6 at MON 13",
+      "text": "X. Brandt 30 yard field goal is GOOD.",
+      "possession": "BRV",
+      "tags": [
+        "FG"
+      ],
+      "banner": "FIELD GOAL",
+      "scoringTeam": "BRV",
+      "score": {
+        "home": 9,
+        "away": 9
+      }
+    },
+    {
+      "n": 80,
+      "kind": "pass",
+      "quarter": 2,
+      "clock": "0:50",
+      "situation": "2nd & Goal at BRV 1",
+      "text": "PS QB1 pass short left to M. Easley for 1 yard, TOUCHDOWN!",
+      "possession": "MON",
+      "tags": [
+        "TD"
+      ],
+      "banner": "TOUCHDOWN",
+      "scoringTeam": "MON",
+      "score": {
+        "home": 15,
+        "away": 9
+      }
+    },
+    {
+      "n": 81,
+      "kind": "pat",
+      "quarter": 2,
+      "clock": "0:32",
+      "situation": null,
+      "text": "L. Oakes extra point is GOOD.",
+      "possession": "MON",
+      "tags": [
+        "XP"
+      ],
+      "banner": null,
+      "scoringTeam": "MON",
+      "score": {
+        "home": 16,
+        "away": 9
+      }
+    },
+    {
+      "n": 100,
+      "kind": "pass",
+      "quarter": 3,
+      "clock": "7:50",
+      "situation": "3rd & Goal at BRV 1",
+      "text": "PS QB1 pass deep right to W. Holloway for 1 yard, TOUCHDOWN!",
+      "possession": "MON",
+      "tags": [
+        "TD"
+      ],
+      "banner": "TOUCHDOWN",
+      "scoringTeam": "MON",
+      "score": {
+        "home": 22,
+        "away": 9
+      }
+    },
+    {
+      "n": 101,
+      "kind": "pat",
+      "quarter": 3,
+      "clock": "7:26",
+      "situation": null,
+      "text": "L. Oakes extra point is GOOD.",
+      "possession": "MON",
+      "tags": [
+        "XP"
+      ],
+      "banner": null,
+      "scoringTeam": "MON",
+      "score": {
+        "home": 23,
+        "away": 9
+      }
+    },
+    {
+      "n": 128,
+      "kind": "fg",
+      "quarter": 4,
+      "clock": "11:04",
+      "situation": "4th & 12 at MON 13",
+      "text": "X. Brandt 30 yard field goal is GOOD.",
+      "possession": "BRV",
+      "tags": [
+        "FG"
+      ],
+      "banner": "FIELD GOAL",
+      "scoringTeam": "BRV",
+      "score": {
+        "home": 23,
+        "away": 12
+      }
+    },
+    {
+      "n": 142,
+      "kind": "run",
+      "quarter": 4,
+      "clock": "6:31",
+      "situation": "2nd & Goal at BRV 3",
+      "text": "R. Sandoval left end for 3 yards, TOUCHDOWN!",
+      "possession": "MON",
+      "tags": [
+        "TD"
+      ],
+      "banner": "TOUCHDOWN",
+      "scoringTeam": "MON",
+      "score": {
+        "home": 29,
+        "away": 12
+      }
+    },
+    {
+      "n": 143,
+      "kind": "pat",
+      "quarter": 4,
+      "clock": "5:46",
+      "situation": null,
+      "text": "L. Oakes extra point is GOOD.",
+      "possession": "MON",
+      "tags": [
+        "XP"
+      ],
+      "banner": null,
+      "scoringTeam": "MON",
+      "score": {
+        "home": 30,
+        "away": 12
+      }
+    },
+    {
+      "n": 147,
+      "kind": "pass",
+      "quarter": 4,
+      "clock": "5:21",
+      "situation": "1st & Goal at MON 10",
+      "text": "M. Tate pass deep middle to K. Crowder for 10 yards, TOUCHDOWN!",
+      "possession": "BRV",
+      "tags": [
+        "TD"
+      ],
+      "banner": "TOUCHDOWN",
+      "scoringTeam": "BRV",
+      "score": {
+        "home": 30,
+        "away": 18
+      }
+    },
+    {
+      "n": 148,
+      "kind": "pat",
+      "quarter": 4,
+      "clock": "5:12",
+      "situation": null,
+      "text": "X. Brandt extra point is GOOD.",
+      "possession": "BRV",
+      "tags": [
+        "XP"
+      ],
+      "banner": null,
+      "scoringTeam": "BRV",
+      "score": {
+        "home": 30,
+        "away": 19
+      }
+    },
+    {
+      "n": 153,
+      "kind": "run",
+      "quarter": 4,
+      "clock": "4:11",
+      "situation": "2nd & Goal at BRV 5",
+      "text": "W. Holloway up the middle for 5 yards, TOUCHDOWN!",
+      "possession": "MON",
+      "tags": [
+        "TD"
+      ],
+      "banner": "TOUCHDOWN",
+      "scoringTeam": "MON",
+      "score": {
+        "home": 36,
+        "away": 19
+      }
+    },
+    {
+      "n": 154,
+      "kind": "pat",
+      "quarter": 4,
+      "clock": "3:29",
+      "situation": null,
+      "text": "L. Oakes extra point is GOOD.",
+      "possession": "MON",
+      "tags": [
+        "XP"
+      ],
+      "banner": null,
+      "scoringTeam": "MON",
+      "score": {
+        "home": 37,
+        "away": 19
+      }
+    },
+    {
+      "n": 165,
+      "kind": "pass",
+      "quarter": 4,
+      "clock": "2:07",
+      "situation": "3rd & 10 at MON 22",
+      "text": "M. Tate pass deep right to R. Garrow for 22 yards, TOUCHDOWN! Two-Minute Warning.",
+      "possession": "BRV",
+      "tags": [
+        "TD"
+      ],
+      "banner": "TOUCHDOWN",
+      "scoringTeam": "BRV",
+      "score": {
+        "home": 37,
+        "away": 25
+      }
+    },
+    {
+      "n": 166,
+      "kind": "pat",
+      "quarter": 4,
+      "clock": "1:58",
+      "situation": null,
+      "text": "TWO-POINT CONVERSION ATTEMPT. K. Rollins rush. ATTEMPT SUCCEEDS.",
+      "possession": "BRV",
+      "tags": [
+        "2PT"
+      ],
+      "banner": "2-PT GOOD",
+      "scoringTeam": "BRV",
+      "score": {
+        "home": 37,
+        "away": 27
+      }
+    },
+    {
+      "n": 176,
+      "kind": "fg",
+      "quarter": 4,
+      "clock": "0:55",
+      "situation": "4th & 7 at BRV 32",
+      "text": "L. Oakes 49 yard field goal is GOOD.",
+      "possession": "MON",
+      "tags": [
+        "FG"
+      ],
+      "banner": "FIELD GOAL",
+      "scoringTeam": "MON",
+      "score": {
+        "home": 40,
+        "away": 27
+      }
+    }
+  ]
+}

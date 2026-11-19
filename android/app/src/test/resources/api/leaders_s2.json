@@ -1,0 +1,745 @@
+{
+  "season": 2,
+  "categories": {
+    "passingYards": {
+      "label": "Passing Yards",
+      "leaders": [
+        {
+          "rank": 1,
+          "value": 4493,
+          "id": "MON-QB1",
+          "name": "Terrell Mercer",
+          "short": "T. Mercer",
+          "position": "QB",
+          "number": 10,
+          "team": "MON",
+          "teamInfo": {
+            "id": "MON",
+            "abbr": "MON",
+            "name": "Montford Monarchs",
+            "city": "Montford",
+            "nickname": "Monarchs",
+            "colors": [
+              "#7b1e3a",
+              "#e0b84c"
+            ],
+            "logo": "/logos/Montford%20Monarchs.png"
+          },
+          "gamesPlayed": 15
+        },
+        {
+          "rank": 2,
+          "value": 4484,
+          "id": "LAI-QB1",
+          "name": "Zion Ness",
+          "short": "Z. Ness",
+          "position": "QB",
+          "number": 3,
+          "team": "LAI",
+          "teamInfo": {
+            "id": "LAI",
+            "abbr": "LAI",
+            "name": "Laiyford Evergreens",
+            "city": "Laiyford",
+            "nickname": "Evergreens",
+            "colors": [
+              "#1f6b3a",
+              "#d9b23a"
+            ],
+            "logo": "/logos/Laiyford%20Evergreens.png"
+          },
+          "gamesPlayed": 14
+        },
+        {
+          "rank": 3,
+          "value": 4475,
+          "id": "KYL-QB1",
+          "name": "Kendrick Corbin",
+          "short": "K. Corbin",
+          "position": "QB",
+          "number": 19,
+          "team": "KYL",
+          "teamInfo": {
+            "id": "KYL",
+            "abbr": "KYL",
+            "name": "Kyleton Polar Bears",
+            "city": "Kyleton",
+            "nickname": "Polar Bears",
+            "colors": [
+              "#2f7fc1",
+              "#e8f1f8"
+            ],
+            "logo": "/logos/Kyleton%20Polar%20Bears.png"
+          },
+          "gamesPlayed": 15
+        }
+      ]
+    },
+    "passingTD": {
+      "label": "Passing TD",
+      "leaders": [
+        {
+          "rank": 1,
+          "value": 38,
+          "id": "KYL-QB1",
+          "name": "Kendrick Corbin",
+          "short": "K. Corbin",
+          "position": "QB",
+          "number": 19,
+          "team": "KYL",
+          "teamInfo": {
+            "id": "KYL",
+            "abbr": "KYL",
+            "name": "Kyleton Polar Bears",
+            "city": "Kyleton",
+            "nickname": "Polar Bears",
+            "colors": [
+              "#2f7fc1",
+              "#e8f1f8"
+            ],
+            "logo": "/logos/Kyleton%20Polar%20Bears.png"
+          },
+          "gamesPlayed": 15
+        },
+        {
+          "rank": 2,
+          "value": 30,
+          "id": "MON-QB1",
+          "name": "Terrell Mercer",
+          "short": "T. Mercer",
+          "position": "QB",
+          "number": 10,
+          "team": "MON",
+          "teamInfo": {
+            "id": "MON",
+            "abbr": "MON",
+            "name": "Montford Monarchs",
+            "city": "Montford",
+            "nickname": "Monarchs",
+            "colors": [
+              "#7b1e3a",
+              "#e0b84c"
+            ],
+            "logo": "/logos/Montford%20Monarchs.png"
+          },
+          "gamesPlayed": 15
+        },
+        {
+          "rank": 3,
+          "value": 28,
+          "id": "MIS-QB1",
+          "name": "Gage Stiles",
+          "short": "G. Stiles",
+          "position": "QB",
+          "number": 15,
+          "team": "MIS",
+          "teamInfo": {
+            "id": "MIS",
+            "abbr": "MIS",
+            "name": "Miskauga Boulders",
+            "city": "Miskauga",
+            "nickname": "Boulders",
+            "colors": [
+              "#5f646c",
+              "#e07b24"
+            ],
+            "logo": "/logos/Miskauga%20Boulders.svg"
+          },
+          "gamesPlayed": 14
+        }
+      ]
+    },
+    "rushingYards": {
+      "label": "Rushing Yards",
+      "leaders": [
+        {
+          "rank": 1,
+          "value": 1007,
+          "id": "DEN-RB2",
+          "name": "Hunter Mabry",
+          "short": "H. Mabry",
+          "position": "RB",
+          "number": 39,
+          "team": "DEN",
+          "teamInfo": {
+            "id": "DEN",
+            "abbr": "DEN",
+            "name": "Dennison Spears",
+            "city": "Dennison",
+            "nickname": "Spears",
+            "colors": [
+              "#5b2a86",
+              "#c9c9d4"
+            ],
+            "logo": "/logos/Dennison%20Spears.png"
+          },
+          "gamesPlayed": 13
+        },
+        {
+          "rank": 2,
+          "value": 900,
+          "id": "MON-RB1",
+          "name": "Wyatt Holloway",
+          "short": "W. Holloway",
+          "position": "RB",
+          "number": 23,
+          "team": "MON",
+          "teamInfo": {
+            "id": "MON",
+            "abbr": "MON",
+            "name": "Montford Monarchs",
+            "city": "Montford",
+            "nickname": "Monarchs",
+            "colors": [
+              "#7b1e3a",
+              "#e0b84c"
+            ],
+            "logo": "/logos/Montford%20Monarchs.png"
+          },
+          "gamesPlayed": 9
+        },
+        {
+          "rank": 3,
+          "value": 739,
+          "id": "PAR-RB1",
+          "name": "Malik Gentry",
+          "short": "M. Gentry",
+          "position": "RB",
+          "number": 30,
+          "team": "PAR",
+          "teamInfo": {
+            "id": "PAR",
+            "abbr": "PAR",
+            "name": "Parikia Poseidons",
+            "city": "Parikia",
+            "nickname": "Poseidons",
+            "colors": [
+              "#0f7c8c",
+              "#0b2545"
+            ],
+            "logo": "/logos/Parikia%20Poseidons.png"
+          },
+          "gamesPlayed": 12
+        }
+      ]
+    },
+    "receivingYards": {
+      "label": "Receiving Yards",
+      "leaders": [
+        {
+          "rank": 1,
+          "value": 1544,
+          "id": "ASH-WR3",
+          "name": "Harlan Moreau",
+          "short": "H. Moreau",
+          "position": "WR",
+          "number": 81,
+          "team": "ASH",
+          "teamInfo": {
+            "id": "ASH",
+            "abbr": "ASH",
+            "name": "Ashford Smokers",
+            "city": "Ashford",
+            "nickname": "Smokers",
+            "colors": [
+              "#3d3936",
+              "#e2552b"
+            ],
+            "logo": "/logos/Ashford%20Smokers.png"
+          },
+          "gamesPlayed": 14
+        },
+        {
+          "rank": 2,
+          "value": 1350,
+          "id": "LAI-WR2",
+          "name": "Luca Ashby",
+          "short": "L. Ashby",
+          "position": "WR",
+          "number": 84,
+          "team": "LAI",
+          "teamInfo": {
+            "id": "LAI",
+            "abbr": "LAI",
+            "name": "Laiyford Evergreens",
+            "city": "Laiyford",
+            "nickname": "Evergreens",
+            "colors": [
+              "#1f6b3a",
+              "#d9b23a"
+            ],
+            "logo": "/logos/Laiyford%20Evergreens.png"
+          },
+          "gamesPlayed": 14
+        },
+        {
+          "rank": 3,
+          "value": 1263,
+          "id": "NWT-WR2",
+          "name": "Roman Vance",
+          "short": "R. Vance",
+          "position": "WR",
+          "number": 19,
+          "team": "NWT",
+          "teamInfo": {
+            "id": "NWT",
+            "abbr": "NWT",
+            "name": "Newtown Knights",
+            "city": "Newtown",
+            "nickname": "Knights",
+            "colors": [
+              "#141414",
+              "#c9a227"
+            ],
+            "logo": "/logos/Newtown%20Knights.png"
+          },
+          "gamesPlayed": 14
+        }
+      ]
+    },
+    "receptions": {
+      "label": "Receptions",
+      "leaders": [
+        {
+          "rank": 1,
+          "value": 125,
+          "id": "ASH-WR3",
+          "name": "Harlan Moreau",
+          "short": "H. Moreau",
+          "position": "WR",
+          "number": 81,
+          "team": "ASH",
+          "teamInfo": {
+            "id": "ASH",
+            "abbr": "ASH",
+            "name": "Ashford Smokers",
+            "city": "Ashford",
+            "nickname": "Smokers",
+            "colors": [
+              "#3d3936",
+              "#e2552b"
+            ],
+            "logo": "/logos/Ashford%20Smokers.png"
+          },
+          "gamesPlayed": 14
+        },
+        {
+          "rank": 2,
+          "value": 104,
+          "id": "NWT-WR2",
+          "name": "Roman Vance",
+          "short": "R. Vance",
+          "position": "WR",
+          "number": 19,
+          "team": "NWT",
+          "teamInfo": {
+            "id": "NWT",
+            "abbr": "NWT",
+            "name": "Newtown Knights",
+            "city": "Newtown",
+            "nickname": "Knights",
+            "colors": [
+              "#141414",
+              "#c9a227"
+            ],
+            "logo": "/logos/Newtown%20Knights.png"
+          },
+          "gamesPlayed": 14
+        },
+        {
+          "rank": 3,
+          "value": 96,
+          "id": "KYL-WR3",
+          "name": "Brody Mabry",
+          "short": "B. Mabry",
+          "position": "WR",
+          "number": 89,
+          "team": "KYL",
+          "teamInfo": {
+            "id": "KYL",
+            "abbr": "KYL",
+            "name": "Kyleton Polar Bears",
+            "city": "Kyleton",
+            "nickname": "Polar Bears",
+            "colors": [
+              "#2f7fc1",
+              "#e8f1f8"
+            ],
+            "logo": "/logos/Kyleton%20Polar%20Bears.png"
+          },
+          "gamesPlayed": 14
+        }
+      ]
+    },
+    "totalTD": {
+      "label": "Total TD",
+      "leaders": [
+        {
+          "rank": 1,
+          "value": 15,
+          "id": "DEN-RB2",
+          "name": "Hunter Mabry",
+          "short": "H. Mabry",
+          "position": "RB",
+          "number": 39,
+          "team": "DEN",
+          "teamInfo": {
+            "id": "DEN",
+            "abbr": "DEN",
+            "name": "Dennison Spears",
+            "city": "Dennison",
+            "nickname": "Spears",
+            "colors": [
+              "#5b2a86",
+              "#c9c9d4"
+            ],
+            "logo": "/logos/Dennison%20Spears.png"
+          },
+          "gamesPlayed": 13
+        },
+        {
+          "rank": 2,
+          "value": 13,
+          "id": "ASH-WR3",
+          "name": "Harlan Moreau",
+          "short": "H. Moreau",
+          "position": "WR",
+          "number": 81,
+          "team": "ASH",
+          "teamInfo": {
+            "id": "ASH",
+            "abbr": "ASH",
+            "name": "Ashford Smokers",
+            "city": "Ashford",
+            "nickname": "Smokers",
+            "colors": [
+              "#3d3936",
+              "#e2552b"
+            ],
+            "logo": "/logos/Ashford%20Smokers.png"
+          },
+          "gamesPlayed": 14
+        },
+        {
+          "rank": 3,
+          "value": 12,
+          "id": "MON-RB1",
+          "name": "Wyatt Holloway",
+          "short": "W. Holloway",
+          "position": "RB",
+          "number": 23,
+          "team": "MON",
+          "teamInfo": {
+            "id": "MON",
+            "abbr": "MON",
+            "name": "Montford Monarchs",
+            "city": "Montford",
+            "nickname": "Monarchs",
+            "colors": [
+              "#7b1e3a",
+              "#e0b84c"
+            ],
+            "logo": "/logos/Montford%20Monarchs.png"
+          },
+          "gamesPlayed": 9
+        }
+      ]
+    },
+    "sacks": {
+      "label": "Sacks",
+      "leaders": [
+        {
+          "rank": 1,
+          "value": 14,
+          "id": "NSO-DL4",
+          "name": "Mason Pruitt",
+          "short": "M. Pruitt",
+          "position": "DL",
+          "number": 91,
+          "team": "NSO",
+          "teamInfo": {
+            "id": "NSO",
+            "abbr": "NSO",
+            "name": "New Southington Skylines",
+            "city": "New Southington",
+            "nickname": "Skylines",
+            "colors": [
+              "#1f2a5a",
+              "#5bc0eb"
+            ],
+            "logo": "/logos/New%20Southington%20Skylines.png"
+          },
+          "gamesPlayed": 13
+        },
+        {
+          "rank": 2,
+          "value": 13,
+          "id": "ASH-DL2",
+          "name": "Darius Waller",
+          "short": "D. Waller",
+          "position": "DL",
+          "number": 51,
+          "team": "ASH",
+          "teamInfo": {
+            "id": "ASH",
+            "abbr": "ASH",
+            "name": "Ashford Smokers",
+            "city": "Ashford",
+            "nickname": "Smokers",
+            "colors": [
+              "#3d3936",
+              "#e2552b"
+            ],
+            "logo": "/logos/Ashford%20Smokers.png"
+          },
+          "gamesPlayed": 12
+        },
+        {
+          "rank": 3,
+          "value": 13,
+          "id": "KYL-DL3",
+          "name": "Bennett Hale",
+          "short": "B. Hale",
+          "position": "DL",
+          "number": 93,
+          "team": "KYL",
+          "teamInfo": {
+            "id": "KYL",
+            "abbr": "KYL",
+            "name": "Kyleton Polar Bears",
+            "city": "Kyleton",
+            "nickname": "Polar Bears",
+            "colors": [
+              "#2f7fc1",
+              "#e8f1f8"
+            ],
+            "logo": "/logos/Kyleton%20Polar%20Bears.png"
+          },
+          "gamesPlayed": 15
+        }
+      ]
+    },
+    "interceptions": {
+      "label": "Interceptions",
+      "leaders": [
+        {
+          "rank": 1,
+          "value": 6,
+          "id": "MIS-CB4",
+          "name": "Miles Navarro",
+          "short": "M. Navarro",
+          "position": "CB",
+          "number": 27,
+          "team": "MIS",
+          "teamInfo": {
+            "id": "MIS",
+            "abbr": "MIS",
+            "name": "Miskauga Boulders",
+            "city": "Miskauga",
+            "nickname": "Boulders",
+            "colors": [
+              "#5f646c",
+              "#e07b24"
+            ],
+            "logo": "/logos/Miskauga%20Boulders.svg"
+          },
+          "gamesPlayed": 14
+        },
+        {
+          "rank": 2,
+          "value": 6,
+          "id": "MON-S2",
+          "name": "Pierce Grimes",
+          "short": "P. Grimes",
+          "position": "S",
+          "number": 29,
+          "team": "MON",
+          "teamInfo": {
+            "id": "MON",
+            "abbr": "MON",
+            "name": "Montford Monarchs",
+            "city": "Montford",
+            "nickname": "Monarchs",
+            "colors": [
+              "#7b1e3a",
+              "#e0b84c"
+            ],
+            "logo": "/logos/Montford%20Monarchs.png"
+          },
+          "gamesPlayed": 15
+        },
+        {
+          "rank": 3,
+          "value": 5,
+          "id": "ARG-S1",
+          "name": "Grant Stroud",
+          "short": "G. Stroud",
+          "position": "S",
+          "number": 37,
+          "team": "ARG",
+          "teamInfo": {
+            "id": "ARG",
+            "abbr": "ARG",
+            "name": "Argiroupolis Silvers",
+            "city": "Argiroupolis",
+            "nickname": "Silvers",
+            "colors": [
+              "#7d8794",
+              "#1d3f8f"
+            ],
+            "logo": "/logos/Argiroupolis%20Silvers.png"
+          },
+          "gamesPlayed": 14
+        }
+      ]
+    },
+    "tackles": {
+      "label": "Tackles",
+      "leaders": [
+        {
+          "rank": 1,
+          "value": 102,
+          "id": "NSO-S2",
+          "name": "Emmett Garrow",
+          "short": "E. Garrow",
+          "position": "S",
+          "number": 44,
+          "team": "NSO",
+          "teamInfo": {
+            "id": "NSO",
+            "abbr": "NSO",
+            "name": "New Southington Skylines",
+            "city": "New Southington",
+            "nickname": "Skylines",
+            "colors": [
+              "#1f2a5a",
+              "#5bc0eb"
+            ],
+            "logo": "/logos/New%20Southington%20Skylines.png"
+          },
+          "gamesPlayed": 15
+        },
+        {
+          "rank": 2,
+          "value": 99,
+          "id": "GHB-S1",
+          "name": "Caleb Hollis",
+          "short": "C. Hollis",
+          "position": "S",
+          "number": 36,
+          "team": "GHB",
+          "teamInfo": {
+            "id": "GHB",
+            "abbr": "GHB",
+            "name": "Greene Hill Brawlers",
+            "city": "Greene Hill",
+            "nickname": "Brawlers",
+            "colors": [
+              "#b3202a",
+              "#1b1b1b"
+            ],
+            "logo": "/logos/Greene%20Hill%20Brawlers.png"
+          },
+          "gamesPlayed": 14
+        },
+        {
+          "rank": 3,
+          "value": 97,
+          "id": "LAI-S3",
+          "name": "Javon Coleman",
+          "short": "J. Coleman",
+          "position": "S",
+          "number": 27,
+          "team": "LAI",
+          "teamInfo": {
+            "id": "LAI",
+            "abbr": "LAI",
+            "name": "Laiyford Evergreens",
+            "city": "Laiyford",
+            "nickname": "Evergreens",
+            "colors": [
+              "#1f6b3a",
+              "#d9b23a"
+            ],
+            "logo": "/logos/Laiyford%20Evergreens.png"
+          },
+          "gamesPlayed": 14
+        }
+      ]
+    },
+    "fieldGoals": {
+      "label": "Field Goals Made",
+      "leaders": [
+        {
+          "rank": 1,
+          "value": 43,
+          "id": "MON-K1",
+          "name": "Lamar Oakes",
+          "short": "L. Oakes",
+          "position": "K",
+          "number": 6,
+          "team": "MON",
+          "teamInfo": {
+            "id": "MON",
+            "abbr": "MON",
+            "name": "Montford Monarchs",
+            "city": "Montford",
+            "nickname": "Monarchs",
+            "colors": [
+              "#7b1e3a",
+              "#e0b84c"
+            ],
+            "logo": "/logos/Montford%20Monarchs.png"
+          },
+          "gamesPlayed": 16
+        },
+        {
+          "rank": 2,
+          "value": 32,
+          "id": "ARG-K1",
+          "name": "Sterling Lockhart",
+          "short": "S. Lockhart",
+          "position": "K",
+          "number": 9,
+          "team": "ARG",
+          "teamInfo": {
+            "id": "ARG",
+            "abbr": "ARG",
+            "name": "Argiroupolis Silvers",
+            "city": "Argiroupolis",
+            "nickname": "Silvers",
+            "colors": [
+              "#7d8794",
+              "#1d3f8f"
+            ],
+            "logo": "/logos/Argiroupolis%20Silvers.png"
+          },
+          "gamesPlayed": 14
+        },
+        {
+          "rank": 3,
+          "value": 32,
+          "id": "KYL-K1",
+          "name": "Grant Whitlock",
+          "short": "G. Whitlock",
+          "position": "K",
+          "number": 2,
+          "team": "KYL",
+          "teamInfo": {
+            "id": "KYL",
+            "abbr": "KYL",
+            "name": "Kyleton Polar Bears",
+            "city": "Kyleton",
+            "nickname": "Polar Bears",
+            "colors": [
+              "#2f7fc1",
+              "#e8f1f8"
+            ],
+            "logo": "/logos/Kyleton%20Polar%20Bears.png"
+          },
+          "gamesPlayed": 15
+        }
+      ]
+    }
+  }
+}

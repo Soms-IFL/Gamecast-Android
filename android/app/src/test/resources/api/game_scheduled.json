@@ -1,0 +1,75 @@
+{
+  "game": {
+    "id": "W3G1",
+    "season": 3,
+    "week": 3,
+    "label": null,
+    "stage": "reg",
+    "playoff": false,
+    "status": "scheduled",
+    "startsAt": "2026-11-19T00:00:00.000Z",
+    "startsAtMs": 1795046400000,
+    "home": {
+      "id": "BRV",
+      "abbr": "BRV",
+      "name": "Bradyville Beavers",
+      "city": "Bradyville",
+      "nickname": "Beavers",
+      "colors": [
+        "#6b3f1d",
+        "#f28c28"
+      ],
+      "logo": "/logos/Bradyville%20Beavers.png",
+      "score": null
+    },
+    "away": {
+      "id": "ARG",
+      "abbr": "ARG",
+      "name": "Argiroupolis Silvers",
+      "city": "Argiroupolis",
+      "nickname": "Silvers",
+      "colors": [
+        "#7d8794",
+        "#1d3f8f"
+      ],
+      "logo": "/logos/Argiroupolis%20Silvers.png",
+      "score": null
+    },
+    "overtime": false,
+    "venue": {
+      "name": "Skyline Stadium",
+      "town": "Kennedy Park",
+      "host": "NSO"
+    }
+  },
+  "inactive": {
+    "home": [
+      {
+        "id": "BRV-OL1",
+        "name": "Victor Underwood",
+        "short": "V. Underwood",
+        "position": "OL",
+        "number": 63,
+        "team": "BRV"
+      },
+      {
+        "id": "BRV-OL4",
+        "name": "Bryce Pemberton",
+        "short": "B. Pemberton",
+        "position": "OL",
+        "number": 75,
+        "team": "BRV"
+      }
+    ],
+    "away": []
+  },
+  "venue": {
+    "name": "Skyline Stadium",
+    "town": "Kennedy Park",
+    "host": "NSO"
+  },
+  "winProbability": {
+    "home": 0.417,
+    "basis": "pregame"
+  }
+}

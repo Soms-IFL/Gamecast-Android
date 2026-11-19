@@ -1,0 +1,1441 @@
+{
+  "id": "KYL",
+  "abbr": "KYL",
+  "name": "Kyleton Polar Bears",
+  "city": "Kyleton",
+  "nickname": "Polar Bears",
+  "colors": [
+    "#2f7fc1",
+    "#e8f1f8"
+  ],
+  "logo": "/logos/Kyleton%20Polar%20Bears.png",
+  "season": 2,
+  "division": {
+    "id": "Central",
+    "name": "IFL Central"
+  },
+  "rating": {
+    "ovr": 81,
+    "off": 82,
+    "def": 80
+  },
+  "stadium": {
+    "name": "Kyleton Stadium",
+    "town": "Kyleton"
+  },
+  "record": {
+    "team": {
+      "id": "KYL",
+      "abbr": "KYL",
+      "name": "Kyleton Polar Bears",
+      "city": "Kyleton",
+      "nickname": "Polar Bears",
+      "colors": [
+        "#2f7fc1",
+        "#e8f1f8"
+      ],
+      "logo": "/logos/Kyleton%20Polar%20Bears.png"
+    },
+    "division": "Central",
+    "wins": 10,
+    "losses": 4,
+    "ties": 0,
+    "pct": 0.714,
+    "pointsFor": 442,
+    "pointsAgainst": 312,
+    "differential": 130,
+    "home": "7-0",
+    "away": "3-4",
+    "divisionRecord": "4-2",
+    "streak": "W5"
+  },
+  "roster": [
+    {
+      "id": "KYL-QB1",
+      "name": "Kendrick Corbin",
+      "short": "K. Corbin",
+      "position": "QB",
+      "number": 19,
+      "team": "KYL",
+      "rating": 88,
+      "age": 27,
+      "yearsPro": 5,
+      "injury": null,
+      "stats": {
+        "gp": 15,
+        "pa": 608,
+        "pc": 395,
+        "py": 4475,
+        "ra": 54,
+        "ry": 135,
+        "rlng": 24,
+        "ptd": 38,
+        "sk": 27,
+        "sky": 175,
+        "fum": 1,
+        "pint": 10,
+        "rtd": 1
+      }
+    },
+    {
+      "id": "KYL-QB2",
+      "name": "Devin Hale",
+      "short": "D. Hale",
+      "position": "QB",
+      "number": 15,
+      "team": "KYL",
+      "rating": 66,
+      "age": 27,
+      "yearsPro": 5,
+      "injury": null,
+      "stats": {
+        "gp": 1,
+        "pa": 21,
+        "pc": 11,
+        "py": 156,
+        "ra": 5,
+        "ry": 16,
+        "rlng": 8,
+        "sk": 1,
+        "sky": 5,
+        "ptd": 1
+      }
+    },
+    {
+      "id": "KYL-RB1",
+      "name": "Gage McCrae",
+      "short": "G. McCrae",
+      "position": "RB",
+      "number": 32,
+      "team": "KYL",
+      "rating": 70,
+      "age": 29,
+      "yearsPro": 7,
+      "injury": null,
+      "stats": {
+        "gp": 7,
+        "kr": 10,
+        "kry": 243,
+        "tgt": 27,
+        "rec": 18,
+        "recy": 81,
+        "reclng": 19,
+        "ra": 81,
+        "ry": 349,
+        "rlng": 29,
+        "fum": 1,
+        "rectd": 2,
+        "rtd": 4
+      }
+    },
+    {
+      "id": "KYL-RB2",
+      "name": "Felix Ashby",
+      "short": "F. Ashby",
+      "position": "RB",
+      "number": 26,
+      "team": "KYL",
+      "rating": 74,
+      "age": 22,
+      "yearsPro": 1,
+      "injury": null,
+      "stats": {
+        "gp": 9,
+        "ra": 131,
+        "ry": 516,
+        "rlng": 18,
+        "tgt": 38,
+        "rec": 23,
+        "recy": 234,
+        "reclng": 24,
+        "rectd": 2,
+        "kr": 4,
+        "kry": 120,
+        "rtd": 5
+      }
+    },
+    {
+      "id": "KYL-RB3",
+      "name": "Yusuf Delacroix",
+      "short": "Y. Delacroix",
+      "position": "RB",
+      "number": 36,
+      "team": "KYL",
+      "rating": 73,
+      "age": 27,
+      "yearsPro": 5,
+      "injury": null,
+      "stats": {
+        "gp": 12,
+        "ra": 100,
+        "ry": 384,
+        "rlng": 29,
+        "tgt": 26,
+        "rec": 15,
+        "recy": 140,
+        "reclng": 28,
+        "rtd": 3,
+        "kr": 8,
+        "kry": 199,
+        "rectd": 3,
+        "fum": 1
+      }
+    },
+    {
+      "id": "KYL-WR1",
+      "name": "Thiago Lowry",
+      "short": "T. Lowry",
+      "position": "WR",
+      "number": 88,
+      "team": "KYL",
+      "rating": 78,
+      "age": 28,
+      "yearsPro": 6,
+      "injury": null,
+      "stats": {
+        "gp": 15,
+        "tgt": 146,
+        "rec": 93,
+        "recy": 1190,
+        "reclng": 42,
+        "pr": 4,
+        "pry": 33,
+        "kr": 23,
+        "kry": 646,
+        "rectd": 8,
+        "ra": 5,
+        "ry": 19,
+        "rlng": 8
+      }
+    },
+    {
+      "id": "KYL-WR2",
+      "name": "Jasper Everhart",
+      "short": "J. Everhart",
+      "position": "WR",
+      "number": 16,
+      "team": "KYL",
+      "rating": 78,
+      "age": 27,
+      "yearsPro": 5,
+      "injury": null,
+      "stats": {
+        "gp": 15,
+        "tgt": 83,
+        "rec": 52,
+        "recy": 516,
+        "reclng": 24,
+        "rectd": 7,
+        "pr": 9,
+        "pry": 79,
+        "kr": 5,
+        "kry": 140,
+        "fum": 1,
+        "ra": 2,
+        "ry": 10,
+        "rlng": 7
+      }
+    },
+    {
+      "id": "KYL-WR3",
+      "name": "Brody Mabry",
+      "short": "B. Mabry",
+      "position": "WR",
+      "number": 89,
+      "team": "KYL",
+      "rating": 81,
+      "age": 28,
+      "yearsPro": 6,
+      "injury": null,
+      "stats": {
+        "gp": 14,
+        "tgt": 143,
+        "rec": 96,
+        "recy": 1201,
+        "reclng": 49,
+        "rectd": 10,
+        "kr": 7,
+        "kry": 176
+      }
+    },
+    {
+      "id": "KYL-WR4",
+      "name": "Emmett Brandt",
+      "short": "E. Brandt",
+      "position": "WR",
+      "number": 80,
+      "team": "KYL",
+      "rating": 74,
+      "age": 23,
+      "yearsPro": 1,
+      "injury": null,
+      "stats": {
+        "gp": 11,
+        "tgt": 30,
+        "rec": 25,
+        "recy": 235,
+        "reclng": 23,
+        "rectd": 2
+      }
+    },
+    {
+      "id": "KYL-TE1",
+      "name": "Nico Ashby",
+      "short": "N. Ashby",
+      "position": "TE",
+      "number": 40,
+      "team": "KYL",
+      "rating": 72,
+      "age": 30,
+      "yearsPro": 8,
+      "injury": null,
+      "stats": {
+        "gp": 14,
+        "tgt": 94,
+        "rec": 67,
+        "recy": 782,
+        "reclng": 44,
+        "rectd": 5
+      }
+    },
+    {
+      "id": "KYL-TE2",
+      "name": "Quinn Lyle",
+      "short": "Q. Lyle",
+      "position": "TE",
+      "number": 82,
+      "team": "KYL",
+      "rating": 64,
+      "age": 25,
+      "yearsPro": 3,
+      "injury": null,
+      "stats": {
+        "gp": 12,
+        "tgt": 21,
+        "rec": 15,
+        "recy": 226,
+        "reclng": 34
+      }
+    },
+    {
+      "id": "KYL-OL1",
+      "name": "Dorian Osei",
+      "short": "D. Osei",
+      "position": "OL",
+      "number": 78,
+      "team": "KYL",
+      "rating": 82,
+      "age": 24,
+      "yearsPro": 2,
+      "injury": null,
+      "stats": null
+    },
+    {
+      "id": "KYL-OL3",
+      "name": "Miles Brennan",
+      "short": "M. Brennan",
+      "position": "OL",
+      "number": 67,
+      "team": "KYL",
+      "rating": 80,
+      "age": 31,
+      "yearsPro": 9,
+      "injury": null,
+      "stats": null
+    },
+    {
+      "id": "KYL-OL4",
+      "name": "Kendrick Brennan",
+      "short": "K. Brennan",
+      "position": "OL",
+      "number": 62,
+      "team": "KYL",
+      "rating": 87,
+      "age": 28,
+      "yearsPro": 6,
+      "injury": null,
+      "stats": null
+    },
+    {
+      "id": "KYL-OL5",
+      "name": "Jalen Barlow",
+      "short": "J. Barlow",
+      "position": "OL",
+      "number": 71,
+      "team": "KYL",
+      "rating": 81,
+      "age": 23,
+      "yearsPro": 1,
+      "injury": null,
+      "stats": null
+    },
+    {
+      "id": "KYL-OL6",
+      "name": "Zane Oakes",
+      "short": "Z. Oakes",
+      "position": "OL",
+      "number": 60,
+      "team": "KYL",
+      "rating": 66,
+      "age": 22,
+      "yearsPro": 1,
+      "injury": null,
+      "stats": null
+    },
+    {
+      "id": "KYL-OL7",
+      "name": "Ike Foley",
+      "short": "I. Foley",
+      "position": "OL",
+      "number": 63,
+      "team": "KYL",
+      "rating": 71,
+      "age": 27,
+      "yearsPro": 5,
+      "injury": null,
+      "stats": null
+    },
+    {
+      "id": "KYL-DL1",
+      "name": "Mason Adeyemi",
+      "short": "M. Adeyemi",
+      "position": "DL",
+      "number": 54,
+      "team": "KYL",
+      "rating": 83,
+      "age": 27,
+      "yearsPro": 5,
+      "injury": null,
+      "stats": {
+        "gp": 11,
+        "tk": 19,
+        "sacks": 7
+      }
+    },
+    {
+      "id": "KYL-DL2",
+      "name": "Nico McCrae",
+      "short": "N. McCrae",
+      "position": "DL",
+      "number": 92,
+      "team": "KYL",
+      "rating": 81,
+      "age": 30,
+      "yearsPro": 8,
+      "injury": null,
+      "stats": {
+        "gp": 10,
+        "tk": 25,
+        "sacks": 3
+      }
+    },
+    {
+      "id": "KYL-DL3",
+      "name": "Bennett Hale",
+      "short": "B. Hale",
+      "position": "DL",
+      "number": 93,
+      "team": "KYL",
+      "rating": 75,
+      "age": 29,
+      "yearsPro": 7,
+      "injury": null,
+      "stats": {
+        "gp": 15,
+        "tk": 39,
+        "sacks": 13,
+        "ff": 2
+      }
+    },
+    {
+      "id": "KYL-DL4",
+      "name": "Lamar Fitzgerald",
+      "short": "L. Fitzgerald",
+      "position": "DL",
+      "number": 52,
+      "team": "KYL",
+      "rating": 78,
+      "age": 32,
+      "yearsPro": 10,
+      "injury": null,
+      "stats": {
+        "gp": 13,
+        "sacks": 7,
+        "tk": 27,
+        "ff": 1
+      }
+    },
+    {
+      "id": "KYL-DL5",
+      "name": "Jace Harrow",
+      "short": "J. Harrow",
+      "position": "DL",
+      "number": 94,
+      "team": "KYL",
+      "rating": 70,
+      "age": 30,
+      "yearsPro": 8,
+      "injury": null,
+      "stats": {
+        "gp": 2,
+        "sacks": 4,
+        "tk": 5,
+        "ff": 1
+      }
+    },
+    {
+      "id": "KYL-DL6",
+      "name": "Jasper Vickers",
+      "short": "J. Vickers",
+      "position": "DL",
+      "number": 91,
+      "team": "KYL",
+      "rating": 61,
+      "age": 28,
+      "yearsPro": 6,
+      "injury": null,
+      "stats": {
+        "gp": 1,
+        "tk": 2
+      }
+    },
+    {
+      "id": "KYL-LB1",
+      "name": "Zane Ingram",
+      "short": "Z. Ingram",
+      "position": "LB",
+      "number": 48,
+      "team": "KYL",
+      "rating": 78,
+      "age": 28,
+      "yearsPro": 6,
+      "injury": null,
+      "stats": {
+        "gp": 15,
+        "tk": 58,
+        "sacks": 4,
+        "fr": 1,
+        "ff": 1
+      }
+    },
+    {
+      "id": "KYL-LB2",
+      "name": "Zane Draper",
+      "short": "Z. Draper",
+      "position": "LB",
+      "number": 45,
+      "team": "KYL",
+      "rating": 79,
+      "age": 30,
+      "yearsPro": 8,
+      "injury": null,
+      "stats": {
+        "gp": 15,
+        "sacks": 6,
+        "tk": 74,
+        "fr": 1,
+        "ff": 2
+      }
+    },
+    {
+      "id": "KYL-LB3",
+      "name": "Mason Ellison",
+      "short": "M. Ellison",
+      "position": "LB",
+      "number": 42,
+      "team": "KYL",
+      "rating": 86,
+      "age": 29,
+      "yearsPro": 7,
+      "injury": null,
+      "stats": {
+        "gp": 15,
+        "tk": 80,
+        "sacks": 8,
+        "ints": 1,
+        "intyds": 0,
+        "fr": 1,
+        "ff": 4
+      }
+    },
+    {
+      "id": "KYL-LB4",
+      "name": "Jasper Garland",
+      "short": "J. Garland",
+      "position": "LB",
+      "number": 59,
+      "team": "KYL",
+      "rating": 75,
+      "age": 24,
+      "yearsPro": 2,
+      "injury": null,
+      "stats": null
+    },
+    {
+      "id": "KYL-CB1",
+      "name": "Jace Dunmore",
+      "short": "J. Dunmore",
+      "position": "CB",
+      "number": 30,
+      "team": "KYL",
+      "rating": 71,
+      "age": 30,
+      "yearsPro": 8,
+      "injury": null,
+      "stats": {
+        "gp": 15,
+        "tk": 65,
+        "ints": 1,
+        "intyds": 6,
+        "pd": 2,
+        "fr": 1,
+        "ff": 1
+      }
+    },
+    {
+      "id": "KYL-CB2",
+      "name": "Hunter Osei",
+      "short": "H. Osei",
+      "position": "CB",
+      "number": 27,
+      "team": "KYL",
+      "rating": 82,
+      "age": 28,
+      "yearsPro": 6,
+      "injury": null,
+      "stats": {
+        "gp": 12,
+        "tk": 46,
+        "pd": 3,
+        "ints": 4,
+        "intyds": 0,
+        "fr": 2
+      }
+    },
+    {
+      "id": "KYL-CB3",
+      "name": "Boone Overton",
+      "short": "B. Overton",
+      "position": "CB",
+      "number": 21,
+      "team": "KYL",
+      "rating": 71,
+      "age": 29,
+      "yearsPro": 7,
+      "injury": null,
+      "stats": {
+        "gp": 15,
+        "tk": 60,
+        "ff": 1,
+        "pd": 2,
+        "ints": 2,
+        "intyds": 4
+      }
+    },
+    {
+      "id": "KYL-CB4",
+      "name": "Andre Corbin",
+      "short": "A. Corbin",
+      "position": "CB",
+      "number": 25,
+      "team": "KYL",
+      "rating": 71,
+      "age": 26,
+      "yearsPro": 4,
+      "injury": null,
+      "stats": {
+        "gp": 4,
+        "tk": 7,
+        "pd": 3
+      }
+    },
+    {
+      "id": "KYL-S1",
+      "name": "Quinn Hargrove",
+      "short": "Q. Hargrove",
+      "position": "S",
+      "number": 33,
+      "team": "KYL",
+      "rating": 81,
+      "age": 27,
+      "yearsPro": 5,
+      "injury": null,
+      "stats": {
+        "gp": 12,
+        "tk": 66,
+        "pd": 3,
+        "ff": 1,
+        "fr": 2,
+        "ints": 1,
+        "intyds": 7
+      }
+    },
+    {
+      "id": "KYL-S2",
+      "name": "Tobias Holloway",
+      "short": "T. Holloway",
+      "position": "S",
+      "number": 23,
+      "team": "KYL",
+      "rating": 94,
+      "age": 28,
+      "yearsPro": 6,
+      "injury": null,
+      "stats": {
+        "gp": 14,
+        "tk": 71,
+        "pd": 5,
+        "ints": 5,
+        "intyds": 22,
+        "fr": 2
+      }
+    },
+    {
+      "id": "KYL-S3",
+      "name": "Cyrus Harrow",
+      "short": "C. Harrow",
+      "position": "S",
+      "number": 34,
+      "team": "KYL",
+      "rating": 65,
+      "age": 26,
+      "yearsPro": 4,
+      "injury": null,
+      "stats": {
+        "gp": 4,
+        "tk": 18
+      }
+    },
+    {
+      "id": "KYL-K1",
+      "name": "Grant Whitlock",
+      "short": "G. Whitlock",
+      "position": "K",
+      "number": 2,
+      "team": "KYL",
+      "rating": 77,
+      "age": 27,
+      "yearsPro": 5,
+      "injury": null,
+      "stats": {
+        "gp": 15,
+        "xpa": 51,
+        "fga": 35,
+        "fgm": 32,
+        "fglng": 54,
+        "xpm": 49
+      }
+    },
+    {
+      "id": "KYL-P1",
+      "name": "Kellan Fairbanks",
+      "short": "K. Fairbanks",
+      "position": "P",
+      "number": 7,
+      "team": "KYL",
+      "rating": 81,
+      "age": 26,
+      "yearsPro": 4,
+      "injury": null,
+      "stats": {
+        "gp": 15,
+        "pn": 50,
+        "pny": 2294
+      }
+    },
+    {
+      "id": "R2-13",
+      "name": "Ronan Crowder",
+      "short": "R. Crowder",
+      "position": "OL",
+      "number": 73,
+      "team": "KYL",
+      "rating": 76,
+      "age": 21,
+      "yearsPro": 0,
+      "injury": null,
+      "stats": null
+    },
+    {
+      "id": "R2-12",
+      "name": "Marcus Sexton",
+      "short": "M. Sexton",
+      "position": "WR",
+      "number": 81,
+      "team": "KYL",
+      "rating": 67,
+      "age": 21,
+      "yearsPro": 0,
+      "injury": null,
+      "stats": {
+        "gp": 4,
+        "tgt": 6,
+        "rec": 2,
+        "recy": 26,
+        "reclng": 16
+      }
+    }
+  ],
+  "schedule": [
+    {
+      "id": "W1G2",
+      "season": 2,
+      "week": 1,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-08T22:42:24.281Z",
+      "startsAtMs": 1794177744281,
+      "home": {
+        "id": "KYL",
+        "abbr": "KYL",
+        "name": "Kyleton Polar Bears",
+        "city": "Kyleton",
+        "nickname": "Polar Bears",
+        "colors": [
+          "#2f7fc1",
+          "#e8f1f8"
+        ],
+        "logo": "/logos/Kyleton%20Polar%20Bears.png",
+        "score": 40
+      },
+      "away": {
+        "id": "BRV",
+        "abbr": "BRV",
+        "name": "Bradyville Beavers",
+        "city": "Bradyville",
+        "nickname": "Beavers",
+        "colors": [
+          "#6b3f1d",
+          "#f28c28"
+        ],
+        "logo": "/logos/Bradyville%20Beavers.png",
+        "score": 21
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Kyleton Stadium",
+        "town": "Kyleton",
+        "host": "KYL"
+      },
+      "winner": "KYL"
+    },
+    {
+      "id": "W2G1",
+      "season": 2,
+      "week": 2,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-08T23:21:34.921Z",
+      "startsAtMs": 1794180094921,
+      "home": {
+        "id": "KYL",
+        "abbr": "KYL",
+        "name": "Kyleton Polar Bears",
+        "city": "Kyleton",
+        "nickname": "Polar Bears",
+        "colors": [
+          "#2f7fc1",
+          "#e8f1f8"
+        ],
+        "logo": "/logos/Kyleton%20Polar%20Bears.png",
+        "score": 27
+      },
+      "away": {
+        "id": "MON",
+        "abbr": "MON",
+        "name": "Montford Monarchs",
+        "city": "Montford",
+        "nickname": "Monarchs",
+        "colors": [
+          "#7b1e3a",
+          "#e0b84c"
+        ],
+        "logo": "/logos/Montford%20Monarchs.png",
+        "score": 26
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Kyleton Stadium",
+        "town": "Kyleton",
+        "host": "KYL"
+      },
+      "winner": "KYL"
+    },
+    {
+      "id": "W3G2",
+      "season": 2,
+      "week": 3,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-09T00:14:33.505Z",
+      "startsAtMs": 1794183273505,
+      "home": {
+        "id": "KYL",
+        "abbr": "KYL",
+        "name": "Kyleton Polar Bears",
+        "city": "Kyleton",
+        "nickname": "Polar Bears",
+        "colors": [
+          "#2f7fc1",
+          "#e8f1f8"
+        ],
+        "logo": "/logos/Kyleton%20Polar%20Bears.png",
+        "score": 31
+      },
+      "away": {
+        "id": "PAR",
+        "abbr": "PAR",
+        "name": "Parikia Poseidons",
+        "city": "Parikia",
+        "nickname": "Poseidons",
+        "colors": [
+          "#0f7c8c",
+          "#0b2545"
+        ],
+        "logo": "/logos/Parikia%20Poseidons.png",
+        "score": 27
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Kyleton Stadium",
+        "town": "Kyleton",
+        "host": "KYL"
+      },
+      "winner": "KYL"
+    },
+    {
+      "id": "W4G4",
+      "season": 2,
+      "week": 4,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-09T22:30:00.000Z",
+      "startsAtMs": 1794263400000,
+      "home": {
+        "id": "ASH",
+        "abbr": "ASH",
+        "name": "Ashford Smokers",
+        "city": "Ashford",
+        "nickname": "Smokers",
+        "colors": [
+          "#3d3936",
+          "#e2552b"
+        ],
+        "logo": "/logos/Ashford%20Smokers.png",
+        "score": 24
+      },
+      "away": {
+        "id": "KYL",
+        "abbr": "KYL",
+        "name": "Kyleton Polar Bears",
+        "city": "Kyleton",
+        "nickname": "Polar Bears",
+        "colors": [
+          "#2f7fc1",
+          "#e8f1f8"
+        ],
+        "logo": "/logos/Kyleton%20Polar%20Bears.png",
+        "score": 27
+      },
+      "overtime": true,
+      "venue": {
+        "name": "Enigma-Turing Field",
+        "town": "Ashford",
+        "host": "ASH"
+      },
+      "winner": "KYL"
+    },
+    {
+      "id": "W5G2",
+      "season": 2,
+      "week": 5,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-09T23:10:00.000Z",
+      "startsAtMs": 1794265800000,
+      "home": {
+        "id": "MIS",
+        "abbr": "MIS",
+        "name": "Miskauga Boulders",
+        "city": "Miskauga",
+        "nickname": "Boulders",
+        "colors": [
+          "#5f646c",
+          "#e07b24"
+        ],
+        "logo": "/logos/Miskauga%20Boulders.svg",
+        "score": 37
+      },
+      "away": {
+        "id": "KYL",
+        "abbr": "KYL",
+        "name": "Kyleton Polar Bears",
+        "city": "Kyleton",
+        "nickname": "Polar Bears",
+        "colors": [
+          "#2f7fc1",
+          "#e8f1f8"
+        ],
+        "logo": "/logos/Kyleton%20Polar%20Bears.png",
+        "score": 34
+      },
+      "overtime": true,
+      "venue": {
+        "name": "Alloy Field",
+        "town": "Miskauga",
+        "host": "MIS"
+      },
+      "winner": "MIS"
+    },
+    {
+      "id": "W6G2",
+      "season": 2,
+      "week": 6,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-10T00:10:00.000Z",
+      "startsAtMs": 1794269400000,
+      "home": {
+        "id": "ARG",
+        "abbr": "ARG",
+        "name": "Argiroupolis Silvers",
+        "city": "Argiroupolis",
+        "nickname": "Silvers",
+        "colors": [
+          "#7d8794",
+          "#1d3f8f"
+        ],
+        "logo": "/logos/Argiroupolis%20Silvers.png",
+        "score": 40
+      },
+      "away": {
+        "id": "KYL",
+        "abbr": "KYL",
+        "name": "Kyleton Polar Bears",
+        "city": "Kyleton",
+        "nickname": "Polar Bears",
+        "colors": [
+          "#2f7fc1",
+          "#e8f1f8"
+        ],
+        "logo": "/logos/Kyleton%20Polar%20Bears.png",
+        "score": 34
+      },
+      "overtime": true,
+      "venue": {
+        "name": "Argyros Stadium",
+        "town": "Argiroupolis",
+        "host": "ARG"
+      },
+      "winner": "ARG"
+    },
+    {
+      "id": "W7G1",
+      "season": 2,
+      "week": 7,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-10T22:00:00.000Z",
+      "startsAtMs": 1794348000000,
+      "home": {
+        "id": "DEN",
+        "abbr": "DEN",
+        "name": "Dennison Spears",
+        "city": "Dennison",
+        "nickname": "Spears",
+        "colors": [
+          "#5b2a86",
+          "#c9c9d4"
+        ],
+        "logo": "/logos/Dennison%20Spears.png",
+        "score": 38
+      },
+      "away": {
+        "id": "KYL",
+        "abbr": "KYL",
+        "name": "Kyleton Polar Bears",
+        "city": "Kyleton",
+        "nickname": "Polar Bears",
+        "colors": [
+          "#2f7fc1",
+          "#e8f1f8"
+        ],
+        "logo": "/logos/Kyleton%20Polar%20Bears.png",
+        "score": 28
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Spearhead-Camdyn Field",
+        "town": "Dennison",
+        "host": "DEN"
+      },
+      "winner": "DEN"
+    },
+    {
+      "id": "W8G1",
+      "season": 2,
+      "week": 8,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-10T23:00:00.000Z",
+      "startsAtMs": 1794351600000,
+      "home": {
+        "id": "NWT",
+        "abbr": "NWT",
+        "name": "Newtown Knights",
+        "city": "Newtown",
+        "nickname": "Knights",
+        "colors": [
+          "#141414",
+          "#c9a227"
+        ],
+        "logo": "/logos/Newtown%20Knights.png",
+        "score": 10
+      },
+      "away": {
+        "id": "KYL",
+        "abbr": "KYL",
+        "name": "Kyleton Polar Bears",
+        "city": "Kyleton",
+        "nickname": "Polar Bears",
+        "colors": [
+          "#2f7fc1",
+          "#e8f1f8"
+        ],
+        "logo": "/logos/Kyleton%20Polar%20Bears.png",
+        "score": 31
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Stoneridge Stadium",
+        "town": "Newtown",
+        "host": "NWT"
+      },
+      "winner": "KYL"
+    },
+    {
+      "id": "W9G1",
+      "season": 2,
+      "week": 9,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-11T00:00:00.000Z",
+      "startsAtMs": 1794355200000,
+      "home": {
+        "id": "BRV",
+        "abbr": "BRV",
+        "name": "Bradyville Beavers",
+        "city": "Bradyville",
+        "nickname": "Beavers",
+        "colors": [
+          "#6b3f1d",
+          "#f28c28"
+        ],
+        "logo": "/logos/Bradyville%20Beavers.png",
+        "score": 20
+      },
+      "away": {
+        "id": "KYL",
+        "abbr": "KYL",
+        "name": "Kyleton Polar Bears",
+        "city": "Kyleton",
+        "nickname": "Polar Bears",
+        "colors": [
+          "#2f7fc1",
+          "#e8f1f8"
+        ],
+        "logo": "/logos/Kyleton%20Polar%20Bears.png",
+        "score": 17
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Skyline Stadium",
+        "town": "Kennedy Park",
+        "host": "NSO"
+      },
+      "winner": "BRV"
+    },
+    {
+      "id": "W10G1",
+      "season": 2,
+      "week": 10,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-11T22:00:00.000Z",
+      "startsAtMs": 1794434400000,
+      "home": {
+        "id": "KYL",
+        "abbr": "KYL",
+        "name": "Kyleton Polar Bears",
+        "city": "Kyleton",
+        "nickname": "Polar Bears",
+        "colors": [
+          "#2f7fc1",
+          "#e8f1f8"
+        ],
+        "logo": "/logos/Kyleton%20Polar%20Bears.png",
+        "score": 36
+      },
+      "away": {
+        "id": "NSO",
+        "abbr": "NSO",
+        "name": "New Southington Skylines",
+        "city": "New Southington",
+        "nickname": "Skylines",
+        "colors": [
+          "#1f2a5a",
+          "#5bc0eb"
+        ],
+        "logo": "/logos/New%20Southington%20Skylines.png",
+        "score": 13
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Kyleton Stadium",
+        "town": "Kyleton",
+        "host": "KYL"
+      },
+      "winner": "KYL"
+    },
+    {
+      "id": "W11G6",
+      "season": 2,
+      "week": 11,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-11T23:50:00.000Z",
+      "startsAtMs": 1794441000000,
+      "home": {
+        "id": "KYL",
+        "abbr": "KYL",
+        "name": "Kyleton Polar Bears",
+        "city": "Kyleton",
+        "nickname": "Polar Bears",
+        "colors": [
+          "#2f7fc1",
+          "#e8f1f8"
+        ],
+        "logo": "/logos/Kyleton%20Polar%20Bears.png",
+        "score": 22
+      },
+      "away": {
+        "id": "LAI",
+        "abbr": "LAI",
+        "name": "Laiyford Evergreens",
+        "city": "Laiyford",
+        "nickname": "Evergreens",
+        "colors": [
+          "#1f6b3a",
+          "#d9b23a"
+        ],
+        "logo": "/logos/Laiyford%20Evergreens.png",
+        "score": 17
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Kyleton Stadium",
+        "town": "Kyleton",
+        "host": "KYL"
+      },
+      "winner": "KYL"
+    },
+    {
+      "id": "W12G1",
+      "season": 2,
+      "week": 12,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-12T00:00:00.000Z",
+      "startsAtMs": 1794441600000,
+      "home": {
+        "id": "PAR",
+        "abbr": "PAR",
+        "name": "Parikia Poseidons",
+        "city": "Parikia",
+        "nickname": "Poseidons",
+        "colors": [
+          "#0f7c8c",
+          "#0b2545"
+        ],
+        "logo": "/logos/Parikia%20Poseidons.png",
+        "score": 6
+      },
+      "away": {
+        "id": "KYL",
+        "abbr": "KYL",
+        "name": "Kyleton Polar Bears",
+        "city": "Kyleton",
+        "nickname": "Polar Bears",
+        "colors": [
+          "#2f7fc1",
+          "#e8f1f8"
+        ],
+        "logo": "/logos/Kyleton%20Polar%20Bears.png",
+        "score": 42
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Spearhead-Camdyn Field",
+        "town": "Dennison",
+        "host": "DEN"
+      },
+      "winner": "KYL"
+    },
+    {
+      "id": "W13G5",
+      "season": 2,
+      "week": 13,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-12T22:40:00.000Z",
+      "startsAtMs": 1794523200000,
+      "home": {
+        "id": "KYL",
+        "abbr": "KYL",
+        "name": "Kyleton Polar Bears",
+        "city": "Kyleton",
+        "nickname": "Polar Bears",
+        "colors": [
+          "#2f7fc1",
+          "#e8f1f8"
+        ],
+        "logo": "/logos/Kyleton%20Polar%20Bears.png",
+        "score": 37
+      },
+      "away": {
+        "id": "GHB",
+        "abbr": "GHB",
+        "name": "Greene Hill Brawlers",
+        "city": "Greene Hill",
+        "nickname": "Brawlers",
+        "colors": [
+          "#b3202a",
+          "#1b1b1b"
+        ],
+        "logo": "/logos/Greene%20Hill%20Brawlers.png",
+        "score": 30
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Kyleton Stadium",
+        "town": "Kyleton",
+        "host": "KYL"
+      },
+      "winner": "KYL"
+    },
+    {
+      "id": "W14G4",
+      "season": 2,
+      "week": 14,
+      "label": null,
+      "stage": "reg",
+      "playoff": false,
+      "status": "final",
+      "startsAt": "2026-11-12T23:30:00.000Z",
+      "startsAtMs": 1794526200000,
+      "home": {
+        "id": "KYL",
+        "abbr": "KYL",
+        "name": "Kyleton Polar Bears",
+        "city": "Kyleton",
+        "nickname": "Polar Bears",
+        "colors": [
+          "#2f7fc1",
+          "#e8f1f8"
+        ],
+        "logo": "/logos/Kyleton%20Polar%20Bears.png",
+        "score": 36
+      },
+      "away": {
+        "id": "ARG",
+        "abbr": "ARG",
+        "name": "Argiroupolis Silvers",
+        "city": "Argiroupolis",
+        "nickname": "Silvers",
+        "colors": [
+          "#7d8794",
+          "#1d3f8f"
+        ],
+        "logo": "/logos/Argiroupolis%20Silvers.png",
+        "score": 3
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Kyleton Stadium",
+        "town": "Kyleton",
+        "host": "KYL"
+      },
+      "winner": "KYL"
+    },
+    {
+      "id": "P-SF1",
+      "season": 2,
+      "week": "P",
+      "label": "Semifinal",
+      "stage": "semi",
+      "playoff": true,
+      "status": "final",
+      "startsAt": "2026-11-15T03:17:37.952Z",
+      "startsAtMs": 1794712657952,
+      "home": {
+        "id": "KYL",
+        "abbr": "KYL",
+        "name": "Kyleton Polar Bears",
+        "city": "Kyleton",
+        "nickname": "Polar Bears",
+        "colors": [
+          "#2f7fc1",
+          "#e8f1f8"
+        ],
+        "logo": "/logos/Kyleton%20Polar%20Bears.png",
+        "score": 21
+      },
+      "away": {
+        "id": "BRV",
+        "abbr": "BRV",
+        "name": "Bradyville Beavers",
+        "city": "Bradyville",
+        "nickname": "Beavers",
+        "colors": [
+          "#6b3f1d",
+          "#f28c28"
+        ],
+        "logo": "/logos/Bradyville%20Beavers.png",
+        "score": 22
+      },
+      "overtime": false,
+      "venue": {
+        "name": "Kyleton Stadium",
+        "town": "Kyleton",
+        "host": "KYL"
+      },
+      "winner": "BRV"
+    }
+  ]
+}
