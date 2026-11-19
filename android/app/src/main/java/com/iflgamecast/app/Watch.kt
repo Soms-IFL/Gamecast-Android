@@ -359,11 +359,11 @@ private fun ScoreBar(v: VState, compact: Boolean) {
     val home: @Composable () -> Unit = { side(sim.home, v.g.home, snap.scoreHome, snap.poss == 0 && snap.phase != "coin" && !snap.over, snap.toHome, false) }
     if (compact) {
         Row(
-            Modifier.fillMaxWidth().clip(RoundedCornerShape(16.dp)).background(Color(0xFF1B1B22)).padding(horizontal = 14.dp, vertical = 6.dp),
+            Modifier.fillMaxWidth().clip(RoundedCornerShape(6.dp)).background(Color(0xFF1B1B22)).padding(horizontal = 14.dp, vertical = 6.dp),
             verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.SpaceBetween,
         ) { away(); mid(); home() }
     } else {
-        Card(shape = RoundedCornerShape(28.dp), colors = CardDefaults.cardColors(containerColor = c.surfaceContainer), modifier = Modifier.fillMaxWidth()) {
+        Card(shape = CardShape, colors = CardDefaults.cardColors(containerColor = c.surfaceContainerLow), modifier = Modifier.fillMaxWidth()) {
             Column(Modifier.padding(16.dp)) {
                 Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
                     if (v.live) LiveBadge("LIVE · SYNCED") else Tag("REPLAY")
@@ -386,7 +386,7 @@ private fun PlayText(v: VState, compact: Boolean) {
     val text = prev?.text ?: if (v.live) "Waiting for the next play…" else "Press play to kick off."
     val c = MaterialTheme.colorScheme
     Column(
-        Modifier.fillMaxWidth().clip(RoundedCornerShape(12.dp)).background(if (compact) Color(0xFF1B1B22) else c.surfaceContainerHighest).padding(horizontal = 12.dp, vertical = if (compact) 6.dp else 12.dp),
+        Modifier.fillMaxWidth().clip(RoundedCornerShape(6.dp)).background(if (compact) Color(0xFF1B1B22) else c.surfaceContainerHighest).padding(horizontal = 12.dp, vertical = if (compact) 6.dp else 12.dp),
     ) {
         Text(sit, style = MaterialTheme.typography.labelMedium, color = if (compact) Color(0xFFCFD0FF) else c.onSurfaceVariant, maxLines = 1)
         Text(text, style = if (compact) MaterialTheme.typography.bodyMedium else MaterialTheme.typography.bodyLarge, color = if (compact) Color.White else c.onSurface, maxLines = if (compact) 2 else 4)
@@ -620,7 +620,7 @@ private fun FieldBox(v: VState, modifier: Modifier) {
     val gb = if (dark) Color(0xFF28632C) else Color(0xFF347D39)
     val paints = remember { ScenePaints() }
     val logo = v.g.home.logoUrl
-    Box(modifier.clip(RoundedCornerShape(12.dp)).background(Color.Black)) {
+    Box(modifier.clip(RoundedCornerShape(6.dp)).background(Color.Black)) {
         BoxWithConstraints(Modifier.fillMaxSize()) {
             val scale = min(maxWidth.value / FW, maxHeight.value / FH)
             Canvas(Modifier.fillMaxSize()) {

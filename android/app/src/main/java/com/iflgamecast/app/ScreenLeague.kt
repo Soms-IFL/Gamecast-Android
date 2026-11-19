@@ -370,7 +370,7 @@ fun TeamScreen(id: String) {
     }
 }
 
-private fun Modifier.clip28() = this.then(Modifier.clip(RoundedCornerShape(28.dp)))
+private fun Modifier.clip28() = this.then(Modifier.clip(CardShape))
 
 @Composable
 private fun Pill(text: String) {

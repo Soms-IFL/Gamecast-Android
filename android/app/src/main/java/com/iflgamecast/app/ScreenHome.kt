@@ -1,7 +1,13 @@
 package com.iflgamecast.app
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.VerticalDivider
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -72,7 +78,7 @@ private fun HeroSide(t: Team, score: Int?, hasBall: Boolean, modifier: Modifier 
     Column(modifier, horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(4.dp)) {
         TeamBadge(t, 72.dp)
         Text(t.nickname, style = MaterialTheme.typography.titleSmall, maxLines = 1)
-        if (score != null) Text("$score", style = MaterialTheme.typography.displayMedium, fontWeight = FontWeight.Normal)
+        if (score != null) Text("$score", style = MaterialTheme.typography.displayMedium)
         Box(Modifier.height(20.dp)) { if (hasBall) Icon(Icons.Filled.SportsFootball, null, Modifier.size(18.dp), tint = MaterialTheme.colorScheme.primary) }
     }
 }
@@ -84,8 +90,8 @@ fun LiveHero(det: JSONObject, onOpen: () -> Unit, onWatch: () -> Unit) {
     val wp = det.o("winProbability")?.d("home", 0.5)?.toFloat()
     val c = MaterialTheme.colorScheme
     Card(
-        onClick = onOpen, shape = RoundedCornerShape(28.dp), modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = c.surfaceContainer),
+        onClick = onOpen, shape = CardShape, modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = c.surfaceContainerLow), border = BorderStroke(1.dp, c.outlineVariant),
     ) {
         Column(Modifier.background(Brush.verticalGradient(listOf(c.errorContainer.copy(alpha = 0.7f), c.surfaceContainer))).padding(16.dp)) {
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
@@ -116,7 +122,7 @@ fun LiveHero(det: JSONObject, onOpen: () -> Unit, onWatch: () -> Unit) {
 fun NextHero(g: Game, paused: Boolean, onOpen: () -> Unit) {
     val c = MaterialTheme.colorScheme
     val now by tickingNow()
-    Card(onClick = onOpen, shape = RoundedCornerShape(28.dp), modifier = Modifier.fillMaxWidth(), colors = CardDefaults.cardColors(containerColor = c.surfaceContainer)) {
+    Card(onClick = onOpen, shape = CardShape, modifier = Modifier.fillMaxWidth(), colors = CardDefaults.cardColors(containerColor = c.surfaceContainerLow), border = BorderStroke(1.dp, c.outlineVariant)) {
         Column(Modifier.padding(16.dp)) {
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
                 Tag("UP NEXT")
@@ -147,7 +153,7 @@ fun NextHero(g: Game, paused: Boolean, onOpen: () -> Unit) {
 @Composable
 fun ChampionCard(team: Team, season: Int, onClick: () -> Unit) {
     val c = MaterialTheme.colorScheme
-    Card(onClick = onClick, Modifier.fillMaxWidth(), colors = CardDefaults.cardColors(containerColor = c.primaryContainer, contentColor = c.onPrimaryContainer), shape = RoundedCornerShape(16.dp)) {
+    Card(onClick = onClick, Modifier.fillMaxWidth(), colors = CardDefaults.cardColors(containerColor = c.primaryContainer, contentColor = c.onPrimaryContainer), shape = CardShape) {
         Row(Modifier.padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
             TeamBadge(team, 56.dp)
             Spacer(Modifier.width(16.dp))
@@ -234,6 +240,64 @@ fun FavoriteOddsCard(gamesPlayed: Int) {
         }
         is Load.Ok -> st.v?.let { TeamOddsCard(it, fav, true) { nav.team(fav) } }
         is Load.Err -> Unit
+    }
+}
+
+/* ---------------------------------------------------------------- score strip */
+
+private class StripItem(val game: Game, val label: String, val live: Boolean)
+
+/** One compact scoreboard cell: status line, then both teams with their scores. */
+@Composable
+private fun StripCard(it: StripItem, onClick: () -> Unit) {
+    val g = it.game
+    val c = MaterialTheme.colorScheme
+    val favId = LocalSettings.current.favId
+    Column(Modifier.width(150.dp).clickable(onClick = onClick).padding(horizontal = 12.dp, vertical = 8.dp), verticalArrangement = Arrangement.spacedBy(5.dp)) {
+        Text(it.label, style = MaterialTheme.typography.labelSmall, color = if (it.live) LiveRed else c.onSurfaceVariant, maxLines = 1)
+        for (t in listOf(g.away, g.home)) {
+            val lost = g.isFinal && g.winner != null && g.winner != t.id
+            val tone = if (lost) c.onSurfaceVariant else c.onSurface
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                TeamBadge(t, 22.dp)
+                Spacer(Modifier.width(8.dp))
+                Text(t.abbr + if (favId == t.id) " ★" else "", Modifier.weight(1f), style = MaterialTheme.typography.titleSmall, color = tone, maxLines = 1)
+                if (t.score != null) Text("${t.score}", style = MaterialTheme.typography.titleMedium, color = tone)
+            }
+        }
+    }
+}
+
+/** The horizontal scoreboard across the top of Home: recent results, the live game, then what's next. Starts at the live / next game. */
+@Composable
+private fun ScoreStrip(d: HomeData, onGame: (String) -> Unit) {
+    val items = ArrayList<StripItem>()
+    for (g in d.finals.reversed()) items.add(StripItem(g, if (g.overtime) "FINAL/OT" else "FINAL", false))
+    val firstCurrent = items.size
+    d.live?.let { det ->
+        val g = gameOf(det.obj("game"))
+        val sit = det.o("situation")
+        val q = sit?.i("quarter") ?: 0
+        items.add(StripItem(g, "LIVE" + if (q > 0) " · ${qLabel(q)} ${sit?.s("clock") ?: ""}" else "", true))
+    }
+    for (g in d.upcoming) {
+        if (d.live != null && g.id == d.live.o("game")?.s("id")) continue
+        val ms = g.startsAtMs
+        items.add(StripItem(g, if (ms != null) "${dayLabel(ms).uppercase()} ${fmtTime(ms)}" else "TBD", false))
+    }
+    if (items.isEmpty()) return
+    val state = rememberLazyListState(initialFirstVisibleItemIndex = firstCurrent.coerceAtMost(items.size - 1))
+    val c = MaterialTheme.colorScheme
+    Column(Modifier.fillMaxWidth().background(c.surfaceContainerLow)) {
+        LazyRow(Modifier.fillMaxWidth(), state = state) {
+            itemsIndexed(items, key = { _, it -> it.game.id }) { _, it ->
+                Row {
+                    StripCard(it) { onGame(it.game.id) }
+                    VerticalDivider(Modifier.height(76.dp), color = c.outlineVariant)
+                }
+            }
+        }
+        HorizontalDivider(color = c.outlineVariant)
     }
 }
 
@@ -340,11 +404,16 @@ fun HomeScreen() {
                     Column(verticalArrangement = Arrangement.spacedBy(8.dp)) { SectionHeader("Latest results", "All games", nav.toGames); GameList(d.finals) { nav.game(it.id) } }
                 }
             }
-            if (size == WinSize.Expanded) Row(Modifier.fillMaxSize()) {
-                LazyColumn(Modifier.weight(1.1f).fillMaxHeight(), contentPadding = PaddingValues(start = 24.dp, top = 24.dp, end = 12.dp, bottom = 24.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) { left() }
-                LazyColumn(Modifier.weight(0.9f).fillMaxHeight(), contentPadding = PaddingValues(start = 12.dp, top = 24.dp, end = 24.dp, bottom = 24.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) { right() }
-            } else CenteredContent(if (size == WinSize.Medium) 720.dp else 900.dp) {
-                LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(pagePadding()), verticalArrangement = Arrangement.spacedBy(16.dp)) { left(); right() }
+            Column(Modifier.fillMaxSize()) {
+                ScoreStrip(d) { nav.game(it) }
+                Box(Modifier.weight(1f).fillMaxWidth()) {
+                    if (size == WinSize.Expanded) Row(Modifier.fillMaxSize()) {
+                        LazyColumn(Modifier.weight(1.1f).fillMaxHeight(), contentPadding = PaddingValues(start = 24.dp, top = 24.dp, end = 12.dp, bottom = 24.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) { left() }
+                        LazyColumn(Modifier.weight(0.9f).fillMaxHeight(), contentPadding = PaddingValues(start = 12.dp, top = 24.dp, end = 24.dp, bottom = 24.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) { right() }
+                    } else CenteredContent(if (size == WinSize.Medium) 720.dp else 900.dp) {
+                        LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(pagePadding()), verticalArrangement = Arrangement.spacedBy(16.dp)) { left(); right() }
+                    }
+                }
             }
         }
     }

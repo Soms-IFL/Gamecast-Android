@@ -36,13 +36,21 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.NavigationRail
 import androidx.compose.material3.NavigationRailItem
+import androidx.compose.material3.NavigationRailItemDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.material3.VerticalDivider
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.ui.graphics.Color
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
@@ -139,7 +147,7 @@ private val DESTS = listOf(
 private fun NavLabel(text: String) {
     val d = LocalDensity.current
     CompositionLocalProvider(LocalDensity provides Density(d.density, minOf(d.fontScale, 1f))) {
-        Text(text, maxLines = 1, softWrap = false, overflow = TextOverflow.Clip, fontSize = 12.sp)
+        Text(text.uppercase(), maxLines = 1, softWrap = false, overflow = TextOverflow.Clip, style = MaterialTheme.typography.labelSmall, fontSize = 11.sp)
     }
 }
 
@@ -165,7 +173,7 @@ fun IflRoot(settings: AppSettings, pendingGame: String?, onConsumed: () -> Unit)
             SideEffect {
                 ctx.findActivity()?.window?.let {
                     val c = WindowCompat.getInsetsController(it, view)
-                    c.isAppearanceLightStatusBars = !dark
+                    c.isAppearanceLightStatusBars = false      // the header is dark in both themes
                     c.isAppearanceLightNavigationBars = !dark
                 }
             }
@@ -204,21 +212,30 @@ fun IflRoot(settings: AppSettings, pendingGame: String?, onConsumed: () -> Unit)
                 BoxWithConstraints(Modifier.background(MaterialTheme.colorScheme.background)) {
                     val wide = maxWidth >= 600.dp
                     Row {
-                        if (wide && !chrome.fullscreen) NavigationRail(containerColor = MaterialTheme.colorScheme.background) {
+                        if (wide && !chrome.fullscreen) Row {
+                          NavigationRail(containerColor = MaterialTheme.colorScheme.surfaceContainerLow) {
                             Image(painterResource(R.drawable.ifl_logo), "IFL", Modifier.padding(top = 8.dp, bottom = 8.dp).height(52.dp))
                             val navRoute = when (route) { "game/{id}", "watch/{id}" -> "games"; "team/{id}" -> "teams"; else -> route }
-                            for (d in DESTS) NavigationRailItem(
-                                selected = navRoute == d.route, onClick = { navController.goTop(d.route) },
-                                icon = { Icon(if (route == d.route) d.icon else d.iconOff, d.label) }, label = { NavLabel(d.label) },
+                            val itemColors = NavigationRailItemDefaults.colors(
+                                selectedIconColor = MaterialTheme.colorScheme.primary, selectedTextColor = MaterialTheme.colorScheme.primary,
+                                indicatorColor = Color.Transparent,
+                                unselectedIconColor = MaterialTheme.colorScheme.onSurfaceVariant, unselectedTextColor = MaterialTheme.colorScheme.onSurfaceVariant,
                             )
+                            for (d in DESTS) NavigationRailItem(
+                                selected = navRoute == d.route, onClick = { navController.goTop(d.route) }, colors = itemColors,
+                                icon = { Icon(if (navRoute == d.route) d.icon else d.iconOff, d.label) }, label = { NavLabel(d.label) },
+                            )
+                          }
+                          VerticalDivider(color = MaterialTheme.colorScheme.outlineVariant)
                         }
                         Scaffold(
                             topBar = {
-                                if (!chrome.fullscreen) TopAppBar(
+                                if (!chrome.fullscreen) Column {
+                                TopAppBar(
                                     title = {
                                         Text(
-                                            when (route) { "home" -> "IFL Gamecast"; "games" -> "Games"; "standings" -> "Standings"; "teams" -> "Teams"; "leaders" -> "Leaders"; else -> chrome.detailTitle },
-                                            maxLines = 1,
+                                            when (route) { "home" -> "IFL GAMECAST"; "games" -> "GAMES"; "standings" -> "STANDINGS"; "teams" -> "TEAMS"; "leaders" -> "LEADERS"; else -> chrome.detailTitle },
+                                            maxLines = 1, overflow = TextOverflow.Ellipsis, style = MaterialTheme.typography.titleLarge,
                                         )
                                     },
                                     navigationIcon = {
@@ -228,18 +245,32 @@ fun IflRoot(settings: AppSettings, pendingGame: String?, onConsumed: () -> Unit)
                                     actions = {
                                         IconButton(
                                             onClick = { showSeasons = true },
-                                            colors = if (settings.season != null) IconButtonDefaults.filledTonalIconButtonColors() else IconButtonDefaults.iconButtonColors(),
+                                            colors = if (settings.season != null) IconButtonDefaults.iconButtonColors(containerColor = MaterialTheme.colorScheme.primary, contentColor = MaterialTheme.colorScheme.onPrimary) else IconButtonDefaults.iconButtonColors(),
                                         ) { Icon(Icons.Filled.History, if (settings.season != null) "Season ${settings.season} (archived). Choose season" else "Choose season") }
                                         IconButton(onClick = { showSettings = true }) { Icon(Icons.Filled.Settings, "Settings") }
                                     },
+                                    colors = TopAppBarDefaults.topAppBarColors(
+                                        containerColor = TopBarColor, titleContentColor = Color.White,
+                                        navigationIconContentColor = Color.White, actionIconContentColor = Color.White,
+                                    ),
                                 )
+                                Box(Modifier.fillMaxWidth().height(3.dp).background(MaterialTheme.colorScheme.primary))
+                                }
                             },
                             bottomBar = {
-                                if (!wide && top && !chrome.fullscreen) NavigationBar {
-                                    for (d in DESTS) NavigationBarItem(
-                                        selected = route == d.route, onClick = { navController.goTop(d.route) },
-                                        icon = { Icon(if (route == d.route) d.icon else d.iconOff, d.label) }, label = { NavLabel(d.label) },
-                                    )
+                                if (!wide && top && !chrome.fullscreen) Column {
+                                    HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant)
+                                    NavigationBar(containerColor = MaterialTheme.colorScheme.surfaceContainerLow, tonalElevation = 0.dp) {
+                                        val itemColors = NavigationBarItemDefaults.colors(
+                                            selectedIconColor = MaterialTheme.colorScheme.primary, selectedTextColor = MaterialTheme.colorScheme.primary,
+                                            indicatorColor = Color.Transparent,
+                                            unselectedIconColor = MaterialTheme.colorScheme.onSurfaceVariant, unselectedTextColor = MaterialTheme.colorScheme.onSurfaceVariant,
+                                        )
+                                        for (d in DESTS) NavigationBarItem(
+                                            selected = route == d.route, onClick = { navController.goTop(d.route) }, colors = itemColors,
+                                            icon = { Icon(if (route == d.route) d.icon else d.iconOff, d.label) }, label = { NavLabel(d.label) },
+                                        )
+                                    }
                                 }
                             },
                             containerColor = MaterialTheme.colorScheme.background,

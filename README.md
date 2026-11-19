@@ -15,8 +15,8 @@ It talks to a Gamecast server (default `https://iflgamecast.colebolebole.xyz`, c
 - **Playoff odds:** each team's chance to make the playoffs, reach the IFL Bowl and win it, simulated from the engine's pre-game win
   model over the rest of the season (`assets/sim/glue.js`); the last result is cached on the phone.
 - **Game-start notifications:** one alarm per upcoming game (all games or just your team), restored after a reboot.
-- **My team:** pick a team and the whole app takes its colours (a full Material 3 scheme generated from one seed colour); its games are
-  highlighted and its title chances show on Home.
+- **Look:** a sports-network style: dark header, scoreboard strip on Home, white cards, bold condensed type, one accent colour.
+- **My team:** pick a team and its colour becomes the app's accent; its games are highlighted and its title chances show on Home.
 - **Tablets and foldables:** navigation rail, two-pane Home / Game / Team / Viewer, grid layouts for Games, Standings and Leaders.
 - **Speed:** requests run in parallel, responses are cached briefly, and other tabs and team logos are pre-loaded after launch.
 

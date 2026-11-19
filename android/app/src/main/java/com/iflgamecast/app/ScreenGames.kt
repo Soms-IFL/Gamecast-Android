@@ -216,7 +216,7 @@ private fun GameBoard(detail: JSONObject, g: Game, onWatch: () -> Unit) {
     val wp = detail.o("winProbability")
     val h = wp?.d("home", 0.5)?.toFloat()
     val nav = LocalNav.current
-    Card(shape = RoundedCornerShape(28.dp), colors = CardDefaults.cardColors(containerColor = c.surfaceContainer), modifier = Modifier.fillMaxWidth()) {
+    Card(shape = CardShape, colors = CardDefaults.cardColors(containerColor = c.surfaceContainerLow), modifier = Modifier.fillMaxWidth()) {
         Column(Modifier.padding(16.dp)) {
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
                 when { g.isLive -> LiveBadge(); g.isFinal -> Tag("FINAL", c.primaryContainer, c.onPrimaryContainer); else -> Tag("SCHEDULED") }

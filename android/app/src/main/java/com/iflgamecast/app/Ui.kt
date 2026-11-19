@@ -205,36 +205,42 @@ fun TeamBadge(t: Team, size: Dp) {
 
 @Composable
 fun Tag(text: String, container: Color = MaterialTheme.colorScheme.surfaceContainerHigh, content: Color = MaterialTheme.colorScheme.onSurfaceVariant) {
-    Surface(color = container, contentColor = content, shape = RoundedCornerShape(8.dp)) {
-        Text(text, Modifier.padding(horizontal = 8.dp, vertical = 3.dp), style = MaterialTheme.typography.labelSmall, maxLines = 1)
+    Surface(color = container, contentColor = content, shape = RoundedCornerShape(3.dp)) {
+        Text(text, Modifier.padding(horizontal = 6.dp, vertical = 2.dp), style = MaterialTheme.typography.labelSmall, maxLines = 1)
     }
 }
 
+/** Solid red broadcast-style "LIVE" tag. */
 @Composable
 fun LiveBadge(text: String = "LIVE") {
-    val c = MaterialTheme.colorScheme
-    Surface(color = c.errorContainer, contentColor = c.onErrorContainer, shape = RoundedCornerShape(50)) {
-        Row(Modifier.padding(horizontal = 10.dp, vertical = 4.dp), verticalAlignment = Alignment.CenterVertically) {
-            Box(Modifier.size(8.dp).clip(CircleShape).background(c.error))
+    Surface(color = LiveRed, contentColor = Color.White, shape = RoundedCornerShape(3.dp)) {
+        Row(Modifier.padding(horizontal = 8.dp, vertical = 3.dp), verticalAlignment = Alignment.CenterVertically) {
+            Box(Modifier.size(6.dp).clip(CircleShape).background(Color.White))
             Spacer(Modifier.width(6.dp))
-            Text(text, style = MaterialTheme.typography.labelMedium, fontWeight = FontWeight.Medium)
+            Text(text, style = MaterialTheme.typography.labelMedium)
         }
     }
 }
 
+/** Section title: accent bar, bold condensed capitals, optional action link. */
 @Composable
 fun SectionHeader(title: String, actionLabel: String? = null, onAction: (() -> Unit)? = null) {
     Row(Modifier.fillMaxWidth().padding(top = 8.dp), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
-        Text(title, style = MaterialTheme.typography.titleMedium)
-        if (actionLabel != null && onAction != null) TextButton(onClick = onAction) { Text(actionLabel) }
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Box(Modifier.width(4.dp).height(18.dp).background(MaterialTheme.colorScheme.primary))
+            Spacer(Modifier.width(8.dp))
+            Text(title.uppercase(), style = MaterialTheme.typography.titleMedium)
+        }
+        if (actionLabel != null && onAction != null) TextButton(onClick = onAction) { Text(actionLabel.uppercase(), style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary) }
     }
 }
 
 @Composable
-fun FilledCard(modifier: Modifier = Modifier, onClick: (() -> Unit)? = null, color: Color = MaterialTheme.colorScheme.surfaceContainerHighest, content: @Composable () -> Unit) {
+fun FilledCard(modifier: Modifier = Modifier, onClick: (() -> Unit)? = null, color: Color = MaterialTheme.colorScheme.surfaceContainerLow, content: @Composable () -> Unit) {
     val colors = CardDefaults.cardColors(containerColor = color)
-    if (onClick != null) Card(onClick, modifier.fillMaxWidth(), colors = colors, shape = RoundedCornerShape(12.dp)) { content() }
-    else Card(modifier.fillMaxWidth(), colors = colors, shape = RoundedCornerShape(12.dp)) { content() }
+    val border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant)
+    if (onClick != null) Card(onClick, modifier.fillMaxWidth(), colors = colors, shape = CardShape, border = border) { content() }
+    else Card(modifier.fillMaxWidth(), colors = colors, shape = CardShape, border = border) { content() }
 }
 
 /** A compact game row: both teams with scores on the left, status/time on the right. */
@@ -314,7 +320,7 @@ fun WinProbBar(away: Team, home: Team, homeProb: Float, label: String = "Win pro
 fun PlayItem(p: Play, game: Game?, highlight: Boolean = p.scoringTeam != null) {
     val c = MaterialTheme.colorScheme
     Row(
-        Modifier.fillMaxWidth().then(if (highlight) Modifier.background(c.primaryContainer.copy(alpha = 0.55f), RoundedCornerShape(12.dp)) else Modifier).padding(horizontal = 12.dp, vertical = 10.dp),
+        Modifier.fillMaxWidth().then(if (highlight) Modifier.background(c.primaryContainer.copy(alpha = 0.55f), RoundedCornerShape(4.dp)) else Modifier).padding(horizontal = 12.dp, vertical = 10.dp),
     ) {
         Column(Modifier.width(52.dp)) {
             Text(qLabel(p.quarter), style = MaterialTheme.typography.labelMedium, color = c.onSurfaceVariant)

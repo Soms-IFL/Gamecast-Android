@@ -5,6 +5,12 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ## [Unreleased]
 
+### Changed
+- **Sports-network look:** near-black header with a coloured accent line, white cards on a light grey page (near-black in dark mode),
+  bold condensed headings and scores, squarer corners, red "LIVE" tags, and a bottom bar / rail that highlights the current tab in the accent colour.
+- **Scoreboard strip** across the top of Home: recent results, the live game and upcoming games, starting at the live or next game.
+- **My team** now sets the accent colour (header line, tabs, links, highlights) instead of re-colouring every surface.
+
 ## [0.1.0-alpha] - 2026-11-18
 
 First alpha of the native Android app (Kotlin, Jetpack Compose, Material 3).

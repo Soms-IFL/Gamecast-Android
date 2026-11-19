@@ -202,8 +202,8 @@ fun SettingsSheet(onDismiss: () -> Unit) {
             }
 
             Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                Text("My team & colours", style = MaterialTheme.typography.titleSmall)
-                Text("Pick a team to colour the whole app with its palette, highlight its games and see its title chances on Home.", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                Text("My team & accent colour", style = MaterialTheme.typography.titleSmall)
+                Text("Pick a team to use its colour as the app accent, highlight its games and see its title chances on Home.", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
                 FlowRow(horizontalArrangement = Arrangement.spacedBy(12.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
                     @Composable
                     fun swatch(color: androidx.compose.ui.graphics.Color, selected: Boolean, label: String, onClick: () -> Unit) {
