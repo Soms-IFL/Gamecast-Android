@@ -58,6 +58,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
@@ -90,17 +91,33 @@ fun GamesScreen() {
         val chipState = rememberLazyListState()
         LaunchedEffect(week) { chipState.animateScrollToItem(maxOf(0, keys.indexOf(week) - 1)) }
         Column(Modifier.fillMaxSize()) {
-            LazyRow(state = chipState, contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                items(keys) { k ->
-                    FilterChip(
-                        selected = k == week, onClick = { selected = k }, label = { Text(if (k == "P") "Playoffs" else "Week $k") },
-                        leadingIcon = if (k == week) ({ Icon(Icons.Filled.Check, null, Modifier.size(18.dp)) }) else null,
-                    )
+            // week selector: underlined tabs like a scoreboard date bar
+            Column(Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.surfaceContainerLow)) {
+                LazyRow(state = chipState, contentPadding = PaddingValues(horizontal = 8.dp)) {
+                    items(keys) { k ->
+                        val on = k == week
+                        Column(Modifier.clickable { selected = k }.padding(horizontal = 12.dp).height(44.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+                            Box(Modifier.weight(1f), contentAlignment = Alignment.Center) {
+                                Text(
+                                    (if (k == "P") "Playoffs" else "Week $k").uppercase(), style = MaterialTheme.typography.labelLarge,
+                                    color = if (on) MaterialTheme.colorScheme.onSurface else MaterialTheme.colorScheme.onSurfaceVariant, maxLines = 1,
+                                )
+                            }
+                            Box(Modifier.width(36.dp).height(3.dp).background(if (on) MaterialTheme.colorScheme.primary else Color.Transparent))
+                        }
+                    }
+                    if (s.favId != null) item {
+                        Column(Modifier.clickable { onlyFav = !onlyFav }.padding(horizontal = 12.dp).height(44.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+                            Row(Modifier.weight(1f), verticalAlignment = Alignment.CenterVertically) {
+                                Icon(Icons.Filled.Star, null, Modifier.size(14.dp), tint = if (onlyFav) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant)
+                                Spacer(Modifier.width(4.dp))
+                                Text("MY TEAM", style = MaterialTheme.typography.labelLarge, color = if (onlyFav) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant)
+                            }
+                            Box(Modifier.width(36.dp).height(3.dp).background(if (onlyFav) MaterialTheme.colorScheme.primary else Color.Transparent))
+                        }
+                    }
                 }
-                if (s.favId != null) item {
-                    FilterChip(selected = onlyFav, onClick = { onlyFav = !onlyFav }, label = { Text("My team") },
-                        leadingIcon = { Icon(if (onlyFav) Icons.Filled.Check else Icons.Filled.Star, null, Modifier.size(18.dp)) })
-                }
+                HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant)
             }
             val size = LocalWinSize.current
             if (days.isEmpty()) EmptyState(Icons.Filled.EventBusy, "No games match")
@@ -109,13 +126,7 @@ fun GamesScreen() {
                 horizontalArrangement = Arrangement.spacedBy(16.dp), verticalArrangement = Arrangement.spacedBy(16.dp),
             ) {
                 for ((day, gs) in days) item(key = day?.toString() ?: "tbd") {
-                    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                        Text(
-                            gs.first().startsAtMs?.let { dayLabel(it, long = true) } ?: "Time to be announced",
-                            style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.padding(horizontal = 4.dp),
-                        )
-                        GameList(gs) { nav.game(it.id) }
-                    }
+                    GameList(gs, header = gs.first().startsAtMs?.let { dayLabel(it, long = true) } ?: "Time to be announced") { nav.game(it.id) }
                 }
             }
         }

@@ -5,6 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -29,6 +30,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
+import androidx.compose.material3.VerticalDivider
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.State
@@ -243,43 +245,44 @@ fun FilledCard(modifier: Modifier = Modifier, onClick: (() -> Unit)? = null, col
     else Card(modifier.fillMaxWidth(), colors = colors, shape = CardShape, border = border) { content() }
 }
 
-/** A compact game row: both teams with scores on the left, status/time on the right. */
+/** A scoreboard row: both teams with scores on the left (winner bold with a pointer, loser dimmed), a divider, then status / time. */
 @Composable
 fun GameRow(g: Game, onClick: () -> Unit) {
     val s = LocalSettings.current
-    Row(Modifier.fillMaxWidth().clickable(onClick = onClick).padding(horizontal = 16.dp, vertical = 12.dp), verticalAlignment = Alignment.CenterVertically) {
-        Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+    val c = MaterialTheme.colorScheme
+    Row(Modifier.fillMaxWidth().height(IntrinsicSize.Min).clickable(onClick = onClick), verticalAlignment = Alignment.CenterVertically) {
+        Column(Modifier.weight(1f).padding(start = 16.dp, top = 12.dp, bottom = 12.dp, end = 12.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
             for (t in listOf(g.away, g.home)) {
                 val won = g.isFinal && g.winner == t.id
                 val lost = g.isFinal && g.winner != null && g.winner != t.id
+                val tone = if (lost) c.onSurfaceVariant else c.onSurface
                 Row(verticalAlignment = Alignment.CenterVertically) {
-                    TeamBadge(t, 32.dp)
+                    TeamBadge(t, 30.dp)
                     Spacer(Modifier.width(12.dp))
                     Text(
                         t.name + if (s.favId == t.id) "  ★" else "", Modifier.weight(1f), maxLines = 1, overflow = TextOverflow.Ellipsis,
-                        style = MaterialTheme.typography.bodyLarge, fontWeight = if (won) FontWeight.Bold else FontWeight.Normal,
-                        color = if (lost) MaterialTheme.colorScheme.onSurfaceVariant else MaterialTheme.colorScheme.onSurface,
+                        style = MaterialTheme.typography.bodyLarge, fontWeight = if (lost) FontWeight.Normal else FontWeight.SemiBold, color = tone,
                     )
-                    if (t.score != null) Text(
-                        "${t.score}", style = MaterialTheme.typography.titleMedium, fontWeight = if (won) FontWeight.Bold else FontWeight.Medium,
-                        color = if (lost) MaterialTheme.colorScheme.onSurfaceVariant else MaterialTheme.colorScheme.onSurface,
-                    )
+                    if (t.score != null) {
+                        Text(if (won) "◀" else "", Modifier.padding(end = 6.dp), fontSize = 9.sp, color = c.onSurface)
+                        Text("${t.score}", Modifier.width(34.dp), style = MaterialTheme.typography.titleLarge, color = tone, textAlign = TextAlign.End)
+                    }
                 }
             }
         }
-        Spacer(Modifier.width(12.dp))
-        Column(Modifier.width(92.dp), horizontalAlignment = Alignment.End) {
+        VerticalDivider(Modifier.padding(vertical = 8.dp), color = c.outlineVariant)
+        Column(Modifier.width(88.dp).padding(horizontal = 6.dp), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(2.dp)) {
             when {
-                g.isLive -> { LiveBadge(); Text(g.weekLabel, style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant) }
+                g.isLive -> { LiveBadge(); Text(g.weekLabel, style = MaterialTheme.typography.labelSmall, color = c.onSurfaceVariant, maxLines = 1) }
                 g.isFinal -> {
-                    Text(if (g.overtime) "FINAL / OT" else "FINAL", style = MaterialTheme.typography.labelMedium)
-                    Text(g.weekLabel, style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                    Text(if (g.overtime) "FINAL/OT" else "FINAL", style = MaterialTheme.typography.labelLarge)
+                    Text(g.weekLabel, style = MaterialTheme.typography.labelSmall, color = c.onSurfaceVariant, maxLines = 1)
                 }
                 else -> {
                     val ms = g.startsAtMs
                     if (ms != null) {
                         Text(fmtTime(ms), style = MaterialTheme.typography.labelLarge)
-                        Text(dayLabel(ms), style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                        Text(dayLabel(ms), style = MaterialTheme.typography.labelSmall, color = c.onSurfaceVariant, maxLines = 1)
                     } else Text("TBD", style = MaterialTheme.typography.labelLarge)
                 }
             }
@@ -287,10 +290,17 @@ fun GameRow(g: Game, onClick: () -> Unit) {
     }
 }
 
+/** A list of scoreboard rows in one card, optionally under a grey date band. */
 @Composable
-fun GameList(games: List<Game>, onGame: (Game) -> Unit) {
+fun GameList(games: List<Game>, header: String? = null, onGame: (Game) -> Unit) {
     FilledCard(color = MaterialTheme.colorScheme.surfaceContainerLow) {
         Column {
+            if (header != null) {
+                Text(
+                    header.uppercase(), Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.surfaceContainerHighest).padding(horizontal = 16.dp, vertical = 6.dp),
+                    style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            }
             games.forEachIndexed { i, g ->
                 if (i > 0) androidx.compose.material3.HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant)
                 GameRow(g) { onGame(g) }

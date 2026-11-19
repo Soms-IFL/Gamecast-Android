@@ -5,6 +5,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ## [Unreleased]
 
+### Changed
+- **Games screen as a scoreboard:** underlined week tabs (with a "My team" toggle), grey date bands, and rows with the winner's score bold
+  and marked with a pointer, the loser dimmed, and a divided status / kick-off column. The same rows are used on Home and Team pages.
+
 ## [0.2.0-alpha] - 2026-11-18
 
 ### Changed
