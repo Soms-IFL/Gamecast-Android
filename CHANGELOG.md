@@ -5,6 +5,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ## [Unreleased]
 
+## [0.2.0-alpha] - 2026-11-18
+
 ### Changed
 - **Sports-network look:** near-black header with a coloured accent line, white cards on a light grey page (near-black in dark mode),
   bold condensed headings and scores, squarer corners, red "LIVE" tags, and a bottom bar / rail that highlights the current tab in the accent colour.
@@ -39,5 +41,6 @@ First alpha of the native Android app (Kotlin, Jetpack Compose, Material 3).
 - The viewer reads game seeds from the server's `/api/state` and `/api/history` endpoints, which are not part of the stable `/api/v1` API.
 - The server address must be `https`.
 
-[Unreleased]: https://github.com/Soms-IFL/Gamecast-Android/compare/v0.1.0-alpha...HEAD
+[Unreleased]: https://github.com/Soms-IFL/Gamecast-Android/compare/v0.2.0-alpha...HEAD
+[0.2.0-alpha]: https://github.com/Soms-IFL/Gamecast-Android/compare/v0.1.0-alpha...v0.2.0-alpha
 [0.1.0-alpha]: https://github.com/Soms-IFL/Gamecast-Android/releases/tag/v0.1.0-alpha
