@@ -5,6 +5,9 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ## [Unreleased]
 
+### Fixed
+- Player stats showed the raw codes "sk" and "sky"; they now read "Sacks taken" and "Sack yards lost".
+
 ### Changed
 - **Games screen as a scoreboard:** underlined week tabs (with a "My team" toggle), grey date bands, and rows with the winner's score bold
   and marked with a pointer, the loser dimmed, and a divided status / kick-off column. The same rows are used on Home and Team pages.

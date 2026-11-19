@@ -68,6 +68,7 @@ private val STAT_LABEL = mapOf(
     "gp" to "Games", "pa" to "Pass attempts", "pc" to "Completions", "py" to "Passing yards", "ptd" to "Passing TD", "pint" to "Interceptions thrown",
     "ra" to "Rushes", "ry" to "Rushing yards", "rlng" to "Longest rush", "rtd" to "Rushing TD", "tgt" to "Targets", "rec" to "Receptions",
     "recy" to "Receiving yards", "reclng" to "Longest reception", "rectd" to "Receiving TD", "fum" to "Fumbles", "tk" to "Tackles", "sacks" to "Sacks",
+    "sk" to "Sacks taken", "sky" to "Sack yards lost",
     "ints" to "Interceptions", "intyds" to "INT return yards", "deftd" to "Defensive TD", "pd" to "Passes defended", "ff" to "Forced fumbles",
     "fr" to "Fumble recoveries", "kr" to "Kick returns", "kry" to "KR yards", "pr" to "Punt returns", "pry" to "PR yards", "krtd" to "KR TD", "prtd" to "PR TD",
     "fga" to "FG attempts", "fgm" to "FG made", "fglng" to "Longest FG", "xpa" to "XP attempts", "xpm" to "XP made", "pn" to "Punts", "pny" to "Punt yards",
