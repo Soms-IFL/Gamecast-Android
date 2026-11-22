@@ -156,16 +156,36 @@ object Notify {
 /* ---------------------------------------------------------------- startup warm-up */
 
 object Prefetch {
-    /** Loads what the other tabs will ask for (and the team logos) in the background, so switching tabs is instant. */
-    suspend fun warm(ctx: Context) = coroutineScope {
-        val teams = async { runCatching { Api.v1("teams") }.getOrNull() }
+    private val scope = kotlinx.coroutines.CoroutineScope(kotlinx.coroutines.SupervisorJob() + kotlinx.coroutines.Dispatchers.Default)
+
+    private fun enqueueLogos(ctx: Context, teams: JSONObject) {
+        val loader = coil.Coil.imageLoader(ctx)
+        for (team in teams.a("teams").mapObjs { teamOf(it) }) team.logoUrl?.let {
+            loader.enqueue(Logos.request(ctx, it, false))
+            loader.enqueue(Logos.request(ctx, it, true))
+        }
+    }
+
+    /**
+     * Called as the app process starts: begins the first screen's requests (the same ones Home makes, which then join them
+     * instead of repeating them) and loads the team logos, from the stored team list first so they appear without waiting for the network.
+     */
+    fun early(ctx: Context) {
+        val app = ctx.applicationContext
+        scope.launch {
+            launch { runCatching { Api.v1("status") } }
+            launch { runCatching { Api.v1("games/live", null, "plays" to 8) } }
+            launch { runCatching { Api.v1("games", null, "status" to "scheduled", "limit" to 5) } }
+            launch { runCatching { recentFinals(4) } }
+            runCatching { withContext(cacheOnly) { Api.v1("teams") } }.onSuccess { enqueueLogos(app, it) }
+            runCatching { Api.v1("teams") }.onSuccess { enqueueLogos(app, it) }
+        }
+    }
+
+    /** Loads what the other tabs will ask for in the background, so switching tabs is instant. */
+    suspend fun warm() = coroutineScope {
         launch { runCatching { Api.v1("standings") } }
         launch { runCatching { Api.allGames(null) } }
         launch { runCatching { Api.v1("leaders", null, "limit" to 5) } }
-        val t = teams.await() ?: return@coroutineScope
-        val loader = coil.Coil.imageLoader(ctx)
-        for (team in t.a("teams").mapObjs { teamOf(it) }) {
-            team.logoUrl?.let { loader.enqueue(coil.request.ImageRequest.Builder(ctx).data(it).build()) }
-        }
     }
 }

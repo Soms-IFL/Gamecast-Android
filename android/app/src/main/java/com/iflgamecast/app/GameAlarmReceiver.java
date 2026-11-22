@@ -49,7 +49,7 @@ public class GameAlarmReceiver extends BroadcastReceiver {
                 if (g.isNull("startsAtMs")) return;                              // schedule paused / unset
                 long startsAt = g.getLong("startsAtMs");
                 if (startsAt > System.currentTimeMillis() + 120_000) {           // moved later: try again then
-                    GameAlarms.schedule(c, id, label == null ? "" : label, startsAt);
+                    GameAlarms.reschedule(c, id, label == null ? "" : label, startsAt);
                     return;
                 }
             }

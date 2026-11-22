@@ -76,7 +76,7 @@ import java.time.ZoneId
 fun GamesScreen() {
     val s = LocalSettings.current
     val nav = LocalNav.current
-    val loader = rememberLoad(s.season, s.base, pollMs = 20_000L) { Api.allGames(s.season) }
+    val loader = rememberLoad(s.season, s.base, pollMs = 20_000L, staleFirst = true) { Api.allGames(s.season) }
     var selected by rememberSaveable(s.season) { mutableStateOf<String?>(null) }
     var onlyFav by rememberSaveable { mutableStateOf(false) }
     LoadView(loader) { games ->
@@ -126,7 +126,7 @@ fun GamesScreen() {
                 horizontalArrangement = Arrangement.spacedBy(16.dp), verticalArrangement = Arrangement.spacedBy(16.dp),
             ) {
                 for ((day, gs) in days) item(key = day?.toString() ?: "tbd") {
-                    GameList(gs, header = gs.first().startsAtMs?.let { dayLabel(it, long = true) } ?: "Time to be announced") { nav.game(it.id) }
+                    GameList(gs, header = gs.first().startsAtMs?.let { dayLabel(it, long = true) } ?: "Time to be announced", detail = false) { nav.game(it.id) }
                 }
             }
         }
@@ -177,7 +177,7 @@ fun GameScreen(id: String) {
     }
 
     when (val st = state) {
-        is Load.Loading -> LoadingBox()
+        is Load.Loading -> ScreenSkeleton()
         is Load.Err -> ErrorState(st.e) { state = Load.Loading; tick++ }
         is Load.Ok -> {
             val data = st.v; val g = data.game

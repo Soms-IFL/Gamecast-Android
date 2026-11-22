@@ -198,7 +198,7 @@ fun IflRoot(settings: AppSettings, pendingGame: String?, onConsumed: () -> Unit)
             LaunchedEffect(pendingGame) {
                 if (pendingGame != null) { navController.navigate("game/$pendingGame"); onConsumed() }
             }
-            LaunchedEffect(settings.base) { delay(1500); Prefetch.warm(ctx.applicationContext) }
+            LaunchedEffect(settings.base) { delay(600); Prefetch.warm() }
             // keep the game-start alarms in step with the schedule (cheap: one request, only when alerts are on)
             LaunchedEffect(settings.notifyOn, settings.notifyTeamOnly, settings.favId, settings.base) {
                 while (true) { Notify.sync(ctx.applicationContext, settings); delay(15 * 60_000L) }

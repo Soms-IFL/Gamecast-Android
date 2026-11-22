@@ -1,11 +1,20 @@
 package com.iflgamecast.app
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.animation.core.RepeatMode
+import androidx.compose.animation.core.animateFloat
+import androidx.compose.animation.core.infiniteRepeatable
+import androidx.compose.animation.core.rememberInfiniteTransition
+import androidx.compose.animation.core.tween
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.platform.LocalContext
+import kotlinx.coroutines.withContext
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -30,7 +39,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
-import androidx.compose.material3.VerticalDivider
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.State
@@ -122,10 +130,14 @@ class Loader<T>(val state: State<Load<T>>, val reload: () -> Unit)
 
 /** Runs [block] when [keys] change (and every [pollMs] if > 0), exposing Loading / Ok / Err. A failed refresh keeps the last good value. */
 @Composable
-fun <T> rememberLoad(vararg keys: Any?, pollMs: Long = 0L, block: suspend () -> T): Loader<T> {
+fun <T> rememberLoad(vararg keys: Any?, pollMs: Long = 0L, staleFirst: Boolean = false, block: suspend () -> T): Loader<T> {
     val state = remember(*keys) { mutableStateOf<Load<T>>(Load.Loading) }
     var tick by remember(*keys) { mutableIntStateOf(0) }
     LaunchedEffect(*keys, tick) {
+        if (staleFirst) {
+            // show what was stored last time straight away (if it's all there), then refresh below
+            try { state.value = Load.Ok(withContext(cacheOnly) { block() }) } catch (e: CancellationException) { throw e } catch (e: Throwable) { }
+        }
         while (true) {
             try {
                 state.value = Load.Ok(block())
@@ -144,9 +156,23 @@ fun <T> rememberLoad(vararg keys: Any?, pollMs: Long = 0L, block: suspend () -> 
 @Composable
 fun <T> LoadView(loader: Loader<T>, content: @Composable (T) -> Unit) {
     when (val st = loader.state.value) {
-        is Load.Loading -> LoadingBox()
+        is Load.Loading -> ScreenSkeleton()
         is Load.Err -> ErrorState(st.e, loader.reload)
         is Load.Ok -> content(st.v)
+    }
+}
+
+/** Grey placeholder rows that pulse while a screen loads, so the page has its shape before the data arrives. */
+@Composable
+fun ScreenSkeleton(rows: Int = 6) {
+    val alpha by rememberInfiniteTransition(label = "skeleton").animateFloat(
+        0.35f, 0.9f, infiniteRepeatable(tween(800), RepeatMode.Reverse), label = "alpha",
+    )
+    val tone = MaterialTheme.colorScheme.surfaceContainerHighest
+    Column(Modifier.fillMaxSize().padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+        repeat(rows) {
+            Box(Modifier.fillMaxWidth().height(if (it == 0) 96.dp else 64.dp).graphicsLayer { this.alpha = alpha }.background(tone, CardShape))
+        }
     }
 }
 
@@ -190,7 +216,10 @@ fun EmptyState(icon: ImageVector, title: String, subtitle: String? = null, modif
 
 @Composable
 fun TeamBadge(t: Team, size: Dp) {
-    var loaded by remember(t.logoUrl) { mutableStateOf(false) }
+    val ctx = LocalContext.current
+    val big = size > 40.dp
+    val logoUrl = t.logoUrl
+    var loaded by remember(logoUrl, big) { mutableStateOf(logoUrl != null && Logos.isCached(ctx, logoUrl, big)) }
     Box(
         Modifier.size(size).clip(CircleShape).background(t.c1).border(BorderStroke(size.value.coerceAtMost(40f).div(16f).dp.coerceAtLeast(1.5.dp), t.c2), CircleShape),
         contentAlignment = Alignment.Center,
@@ -198,7 +227,7 @@ fun TeamBadge(t: Team, size: Dp) {
         Text(t.abbr, color = readableOn(t.c1), fontSize = (size.value * 0.3f).sp, fontWeight = FontWeight.Bold, maxLines = 1)
         val url = t.logoUrl
         if (url != null) AsyncImage(
-            model = url, contentDescription = null, contentScale = ContentScale.Fit,
+            model = remember(url, big) { Logos.request(ctx, url, big) }, contentDescription = null, contentScale = ContentScale.Fit,
             onSuccess = { loaded = true },
             modifier = Modifier.fillMaxSize().background(if (loaded) Color.White else Color.Transparent).padding(size * 0.12f),
         )
@@ -247,10 +276,18 @@ fun FilledCard(modifier: Modifier = Modifier, onClick: (() -> Unit)? = null, col
 
 /** A scoreboard row: both teams with scores on the left (winner bold with a pointer, loser dimmed), a divider, then status / time. */
 @Composable
-fun GameRow(g: Game, onClick: () -> Unit) {
+fun GameRow(g: Game, detail: Boolean = true, onClick: () -> Unit) {
     val s = LocalSettings.current
     val c = MaterialTheme.colorScheme
-    Row(Modifier.fillMaxWidth().height(IntrinsicSize.Min).clickable(onClick = onClick), verticalAlignment = Alignment.CenterVertically) {
+    val line = c.outlineVariant
+    Row(
+        Modifier.fillMaxWidth().clickable(onClick = onClick).drawBehind {
+            // the divider before the status column, drawn directly instead of measuring the row twice
+            val x = size.width - 88.dp.toPx()
+            drawLine(line, Offset(x, 8.dp.toPx()), Offset(x, size.height - 8.dp.toPx()), 1.dp.toPx())
+        },
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
         Column(Modifier.weight(1f).padding(start = 16.dp, top = 12.dp, bottom = 12.dp, end = 12.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
             for (t in listOf(g.away, g.home)) {
                 val won = g.isFinal && g.winner == t.id
@@ -270,19 +307,19 @@ fun GameRow(g: Game, onClick: () -> Unit) {
                 }
             }
         }
-        VerticalDivider(Modifier.padding(vertical = 8.dp), color = c.outlineVariant)
         Column(Modifier.width(88.dp).padding(horizontal = 6.dp), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(2.dp)) {
+            // [detail] adds the week / day under the status; the Games tab already shows both in its tabs and date bands
             when {
-                g.isLive -> { LiveBadge(); Text(g.weekLabel, style = MaterialTheme.typography.labelSmall, color = c.onSurfaceVariant, maxLines = 1) }
+                g.isLive -> { LiveBadge(); if (detail) Text(g.weekLabel, style = MaterialTheme.typography.labelSmall, color = c.onSurfaceVariant, maxLines = 1) }
                 g.isFinal -> {
                     Text(if (g.overtime) "FINAL/OT" else "FINAL", style = MaterialTheme.typography.labelLarge)
-                    Text(g.weekLabel, style = MaterialTheme.typography.labelSmall, color = c.onSurfaceVariant, maxLines = 1)
+                    if (detail) Text(g.weekLabel, style = MaterialTheme.typography.labelSmall, color = c.onSurfaceVariant, maxLines = 1)
                 }
                 else -> {
                     val ms = g.startsAtMs
                     if (ms != null) {
                         Text(fmtTime(ms), style = MaterialTheme.typography.labelLarge)
-                        Text(dayLabel(ms), style = MaterialTheme.typography.labelSmall, color = c.onSurfaceVariant, maxLines = 1)
+                        if (detail) Text(dayLabel(ms), style = MaterialTheme.typography.labelSmall, color = c.onSurfaceVariant, maxLines = 1)
                     } else Text("TBD", style = MaterialTheme.typography.labelLarge)
                 }
             }
@@ -292,7 +329,7 @@ fun GameRow(g: Game, onClick: () -> Unit) {
 
 /** A list of scoreboard rows in one card, optionally under a grey date band. */
 @Composable
-fun GameList(games: List<Game>, header: String? = null, onGame: (Game) -> Unit) {
+fun GameList(games: List<Game>, header: String? = null, detail: Boolean = true, onGame: (Game) -> Unit) {
     FilledCard(color = MaterialTheme.colorScheme.surfaceContainerLow) {
         Column {
             if (header != null) {
@@ -303,7 +340,7 @@ fun GameList(games: List<Game>, header: String? = null, onGame: (Game) -> Unit) 
             }
             games.forEachIndexed { i, g ->
                 if (i > 0) androidx.compose.material3.HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant)
-                GameRow(g) { onGame(g) }
+                GameRow(g, detail) { onGame(g) }
             }
         }
     }

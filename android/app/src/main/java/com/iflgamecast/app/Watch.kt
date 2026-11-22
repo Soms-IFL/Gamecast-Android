@@ -12,7 +12,6 @@ import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
@@ -75,6 +74,8 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
+import androidx.compose.ui.geometry.isSpecified
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.PathEffect
@@ -95,7 +96,8 @@ import androidx.compose.ui.unit.dp
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
-import coil.compose.AsyncImage
+import coil.compose.AsyncImagePainter
+import coil.compose.rememberAsyncImagePainter
 import kotlin.math.PI
 import kotlin.math.atan2
 import kotlin.math.max
@@ -240,14 +242,15 @@ private fun Viewer(g: Game, rd: ReplayData) {
     DisposableEffect(v.fs) {
         val window = activity?.window
         val ctrl = window?.let { WindowCompat.getInsetsController(it, it.decorView) }
-        chrome.fullscreen = v.fs
-        if (v.fs) {
+        val on = v.fs          // captured: when this effect is disposed v.fs has already changed, so it can't be re-read there
+        chrome.fullscreen = on
+        if (on) {
             activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_USER_LANDSCAPE
             ctrl?.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
             ctrl?.hide(WindowInsetsCompat.Type.systemBars())
         }
         onDispose {
-            if (v.fs) { ctrl?.show(WindowInsetsCompat.Type.systemBars()); activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED }
+            if (on) { ctrl?.show(WindowInsetsCompat.Type.systemBars()); activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED }
             chrome.fullscreen = false
         }
     }
@@ -500,7 +503,7 @@ private fun DrawScope.ball(x: Float, y: Float, h: Float, ang: Float) {
     }
 }
 
-private fun DrawScope.scene(v: VState, t: Float, grassA: Color, grassB: Color, paints: ScenePaints, hasLogo: Boolean) {
+private fun DrawScope.scene(v: VState, t: Float, grassA: Color, grassB: Color, paints: ScenePaints, logo: Painter?) {
     val sim = v.sim; val n = sim.events.size
     val idx = sim.completed(t)
     val prev = if (idx > 0) sim.events[idx - 1] else null
@@ -550,7 +553,16 @@ private fun DrawScope.scene(v: VState, t: Float, grassA: Color, grassB: Color, p
     }
     drawCircle(white, 74f, Offset(fx(50f), fy(26.65f)))
     drawCircle(sim.home.c1, 74f, Offset(fx(50f), fy(26.65f)), style = Stroke(5f))
-    if (!hasLogo) { paints.mid.color = sim.home.c1.toArgb(); text(sim.home.abbr, fx(50f), fy(26.65f), paints.mid) }
+    if (logo == null) { paints.mid.color = sim.home.c1.toArgb(); text(sim.home.abbr, fx(50f), fy(26.65f), paints.mid) }
+    else {
+        // the home logo is part of the turf, so it is drawn here, before the players and the ball
+        val box = 116f
+        val iw = logo.intrinsicSize
+        val k = if (iw.isSpecified && iw.width > 0f && iw.height > 0f) min(box / iw.width, box / iw.height) else 0f
+        val w = if (k > 0f) iw.width * k else box
+        val h = if (k > 0f) iw.height * k else box
+        translate(fx(50f) - w / 2f, fy(26.65f) - h / 2f) { with(logo) { draw(Size(w, h)) } }
+    }
 
     // route trail of the current drive
     val trailFrom = if (cur != null) cur.trailFrom else prev?.trailFrom ?: 0
@@ -619,17 +631,17 @@ private fun FieldBox(v: VState, modifier: Modifier) {
     val ga = if (dark) Color(0xFF2C6C31) else Color(0xFF3A8A3F)
     val gb = if (dark) Color(0xFF28632C) else Color(0xFF347D39)
     val paints = remember { ScenePaints() }
-    val logo = v.g.home.logoUrl
+    val ctx = androidx.compose.ui.platform.LocalContext.current
+    val logoUrl = v.g.home.logoUrl
+    // the logo is loaded as a painter and drawn inside the canvas (under the players and ball), not as a view on top of it
+    val painter = if (logoUrl != null) rememberAsyncImagePainter(remember(logoUrl) { Logos.request(ctx, logoUrl, true) }) else null
+    val logo = painter?.takeIf { it.state is AsyncImagePainter.State.Success }
     Box(modifier.clip(RoundedCornerShape(6.dp)).background(Color.Black)) {
-        BoxWithConstraints(Modifier.fillMaxSize()) {
-            val scale = min(maxWidth.value / FW, maxHeight.value / FH)
+        Box(Modifier.fillMaxSize()) {
             Canvas(Modifier.fillMaxSize()) {
                 val t = v.vt.floatValue                       // read while drawing, so only the canvas redraws each frame
                 val sc = min(size.width / FW, size.height / FH)
-                translate((size.width - FW * sc) / 2f, (size.height - FH * sc) / 2f) { scale(sc, sc, Offset.Zero) { scene(v, t, ga, gb, paints, logo != null) } }
-            }
-            if (logo != null) Box(Modifier.align(Alignment.Center).size((116f * scale).dp)) {
-                AsyncImage(model = logo, contentDescription = null, modifier = Modifier.fillMaxSize())
+                translate((size.width - FW * sc) / 2f, (size.height - FH * sc) / 2f) { scale(sc, sc, Offset.Zero) { scene(v, t, ga, gb, paints, logo) } }
             }
         }
         // big-play banner

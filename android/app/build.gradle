@@ -56,6 +56,7 @@ dependencies {
     implementation 'androidx.compose.material3:material3'
     implementation 'androidx.compose.material:material-icons-extended'
 
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'   // already pulled in by Coil; the API client shares its connection with the logo downloads
     implementation 'io.coil-kt:coil-compose:2.6.0'
     implementation 'io.coil-kt:coil-svg:2.6.0'
 

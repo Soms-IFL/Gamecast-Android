@@ -5,6 +5,30 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ## [Unreleased]
 
+### Fixed
+- **Stuck in landscape:** leaving the viewer's fullscreen mode left the screen locked to landscape and the system bars hidden; both are now restored.
+- **Players and ball behind the logo:** the home logo in the middle of the field was a view drawn on top of the field; it is now painted on the
+  turf, so the players, routes and ball pass over it.
+- A game that moved to a later start time lost its alert after a reboot (the old time was restored); the new time is now stored.
+- The check mark on a light team colour in Settings was invisible (white on yellow); it now picks a readable colour.
+- The Home scoreboard strip could crash if a game that had just gone live was briefly in two of its lists.
+
+### Performance
+- **Instant screens:** Games, Standings, Teams, a team page and Leaders now open with what was stored last time and refresh in the background,
+  instead of showing a spinner; they also open offline.
+- **Earlier start:** the first screen's requests and the team-logo downloads begin as the app process starts, and identical requests made at
+  the same moment share one network call.
+- **One connection:** the API and the logo downloads share a single HTTP/2 connection (OkHttp), and extra pages of a long game list load in parallel.
+- **Faster logos:** logos are kept on disk regardless of the server's cache headers (refreshed weekly), decoded once per size and reused by
+  every badge, and no longer fade in; a logo that is already in memory is drawn on the first frame.
+- **Baseline profile:** the app's start-up code is pre-compiled when installed, so the first screens draw sooner.
+
+### Changed
+- Loading screens show pulsing placeholder blocks instead of a spinner.
+- Tidier lists: the Games tab no longer repeats the week and day on every row (they are already in the tabs and date bands), Home shows
+  three upcoming and three recent games under the scoreboard strip, and the status divider is drawn rather than measured.
+- Player stats are ordered by type (passing, rushing, receiving, defence, kicking) with dividers, instead of the server's order.
+
 ## [0.2.1-alpha] - 2026-11-18
 
 ### Changed

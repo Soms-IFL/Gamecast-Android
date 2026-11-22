@@ -286,6 +286,9 @@ private fun ScoreStrip(d: HomeData, onGame: (String) -> Unit) {
         items.add(StripItem(g, if (ms != null) "${dayLabel(ms).uppercase()} ${fmtTime(ms)}" else "TBD", false))
     }
     if (items.isEmpty()) return
+    // a game can briefly sit in two of the cached lists (e.g. just went live); the list keys must be unique
+    val seen = HashSet<String>()
+    items.retainAll { seen.add(it.game.id) }
     val state = rememberLazyListState(initialFirstVisibleItemIndex = firstCurrent.coerceAtMost(items.size - 1))
     val c = MaterialTheme.colorScheme
     Column(Modifier.fillMaxWidth().background(c.surfaceContainerLow)) {
@@ -304,7 +307,7 @@ private fun ScoreStrip(d: HomeData, onGame: (String) -> Unit) {
 /* ---------------------------------------------------------------- home */
 
 /** The last [n] finished games, newest first (the API lists soonest first, so ask for the total and then the tail). */
-private suspend fun recentFinals(n: Int): List<Game> {
+internal suspend fun recentFinals(n: Int): List<Game> {
     val total = Api.v1("games", null, "status" to "final", "limit" to 1).i("total")
     if (total == 0) return emptyList()
     return Api.v1("games", null, "status" to "final", "limit" to n, "offset" to maxOf(0, total - n)).a("games").mapObjs { gameOf(it) }.reversed()
@@ -353,7 +356,7 @@ fun HomeScreen() {
     }
 
     when (val st = state) {
-        is Load.Loading -> LoadingBox()
+        is Load.Loading -> ScreenSkeleton()
         is Load.Err -> ErrorState(st.e) { state = Load.Loading; tick++ }
         is Load.Ok -> {
             val d = st.v
@@ -396,12 +399,12 @@ fun HomeScreen() {
                 if (seasonObj != null) item { SeasonCard(status, seasonObj) }
             }
             val right: LazyListScope.() -> Unit = {
-                val up = d.upcoming.filter { !(next != null && it.id == next.id && d.live == null) }.take(4)
+                val up = d.upcoming.filter { !(next != null && it.id == next.id && d.live == null) }.take(3)
                 if (up.isNotEmpty()) item {
                     Column(verticalArrangement = Arrangement.spacedBy(8.dp)) { SectionHeader("Coming up", "All games", nav.toGames); GameList(up) { nav.game(it.id) } }
                 }
                 if (d.finals.isNotEmpty()) item {
-                    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) { SectionHeader("Latest results", "All games", nav.toGames); GameList(d.finals) { nav.game(it.id) } }
+                    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) { SectionHeader("Latest results", "All games", nav.toGames); GameList(d.finals.take(3)) { nav.game(it.id) } }
                 }
             }
             Column(Modifier.fillMaxSize()) {

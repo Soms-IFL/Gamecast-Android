@@ -63,6 +63,19 @@ final class GameAlarms {
         return ((AlarmManager) c.getSystemService(Context.ALARM_SERVICE)).canScheduleExactAlarms();
     }
 
+    /** A game moved to a new time: re-arm its alarm and remember the new time, so a reboot restores the right one. */
+    static void reschedule(Context c, String id, String label, long ms) {
+        try {
+            JSONArray list = new JSONArray(prefs(c).getString(KEY_LIST, "[]"));
+            for (int i = 0; i < list.length(); i++) {
+                JSONObject o = list.getJSONObject(i);
+                if (id.equals(o.optString("id"))) o.put("ms", ms);
+            }
+            prefs(c).edit().putString(KEY_LIST, list.toString()).apply();
+        } catch (Exception ignored) { }
+        schedule(c, id, label, ms);
+    }
+
     static void schedule(Context c, String id, String label, long ms) {
         AlarmManager am = (AlarmManager) c.getSystemService(Context.ALARM_SERVICE);
         PendingIntent pi = pending(c, id, label, ms);

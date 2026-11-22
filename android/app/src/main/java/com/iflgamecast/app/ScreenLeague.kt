@@ -124,7 +124,7 @@ fun StandingsScreen() {
     val s = LocalSettings.current
     val nav = LocalNav.current
     val ctx = LocalContext.current.applicationContext
-    val loader = rememberLoad(s.season, s.base) { Api.v1("standings", s.season) }
+    val loader = rememberLoad(s.season, s.base, staleFirst = true) { Api.v1("standings", s.season) }
     var mode by rememberSaveable { mutableIntStateOf(0) }
     LoadView(loader) { d ->
         val size = LocalWinSize.current
@@ -227,7 +227,7 @@ fun <T> LoadViewInline(loader: Loader<T>, content: @Composable (T) -> Unit) {
 fun TeamsScreen() {
     val s = LocalSettings.current
     val nav = LocalNav.current
-    val loader = rememberLoad(s.season, s.base) { Api.v1("teams", s.season).a("teams").mapObjs { teamListingOf(it) } }
+    val loader = rememberLoad(s.season, s.base, staleFirst = true) { Api.v1("teams", s.season).a("teams").mapObjs { teamListingOf(it) } }
     var sel by rememberSaveable { mutableStateOf("all") }
     LoadView(loader) { teams ->
         val divs = teams.groupBy { it.division }.toSortedMap(compareBy({ divOrder(it) }, { it }))
@@ -271,7 +271,7 @@ fun TeamScreen(id: String) {
     val s = LocalSettings.current
     val nav = LocalNav.current
     val ctx = LocalContext.current.applicationContext
-    val loader = rememberLoad(id, s.season, s.base) { Api.v1("teams/$id", s.season) }
+    val loader = rememberLoad(id, s.season, s.base, staleFirst = true) { Api.v1("teams/$id", s.season) }
     var tab by rememberSaveable { mutableIntStateOf(0) }
     val st = loader.state.value
     SetTitle((st as? Load.Ok)?.v?.s("name") ?: "Team")
@@ -395,7 +395,7 @@ fun LeadersScreen() {
     val nav = LocalNav.current
     val size = LocalWinSize.current
     var cat by rememberSaveable { mutableStateOf("overview") }
-    val overview = rememberLoad(s.season, s.base) { Api.v1("leaders", s.season, "limit" to 5) }
+    val overview = rememberLoad(s.season, s.base, staleFirst = true) { Api.v1("leaders", s.season, "limit" to 5) }
     LoadView(overview) { ov ->
         val cats = ov.o("categories") ?: JSONObject()
         val keys = cats.keyList()

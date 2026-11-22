@@ -1,0 +1,22 @@
+# Baseline profile: tells Android to pre-compile the app's own code and the Compose / Material 3 / Coil / OkHttp code
+# paths used on start-up, so the first screens draw sooner after install or update (no warm-up interpreting).
+HSPLcom/iflgamecast/app/**;->**(**)**
+Lcom/iflgamecast/app/**;
+HSPLandroidx/compose/runtime/**;->**(**)**
+Landroidx/compose/runtime/**;
+HSPLandroidx/compose/ui/**;->**(**)**
+Landroidx/compose/ui/**;
+HSPLandroidx/compose/foundation/**;->**(**)**
+Landroidx/compose/foundation/**;
+HSPLandroidx/compose/material3/**;->**(**)**
+Landroidx/compose/material3/**;
+HSPLandroidx/compose/animation/**;->**(**)**
+Landroidx/compose/animation/**;
+HSPLandroidx/navigation/**;->**(**)**
+Landroidx/navigation/**;
+HSPLandroidx/lifecycle/**;->**(**)**
+Landroidx/lifecycle/**;
+HSPLcoil/**;->**(**)**
+Lcoil/**;
+HSPLokhttp3/**;->**(**)**
+Lokhttp3/**;

@@ -74,6 +74,8 @@ private val STAT_LABEL = mapOf(
     "fga" to "FG attempts", "fgm" to "FG made", "fglng" to "Longest FG", "xpa" to "XP attempts", "xpm" to "XP made", "pn" to "Punts", "pny" to "Punt yards",
 )
 
+private val STAT_ORDER = STAT_LABEL.keys.toList()
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PlayerSheet(id: String, onDismiss: () -> Unit, onTeam: (String) -> Unit) {
@@ -97,7 +99,7 @@ fun PlayerSheet(id: String, onDismiss: () -> Unit, onTeam: (String) -> Unit) {
                     Spacer(Modifier.height(16.dp))
                     Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                         for ((label, v) in listOf("OVERALL" to p.i("rating"), "AGE" to p.i("age"), "YEARS PRO" to p.i("yearsPro"))) {
-                            Column(Modifier.weight(1f).clip(androidx.compose.foundation.shape.RoundedCornerShape(12.dp)).background(MaterialTheme.colorScheme.surfaceContainerHigh).padding(vertical = 10.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+                            Column(Modifier.weight(1f).clip(CardShape).background(MaterialTheme.colorScheme.surfaceContainerHigh).padding(vertical = 10.dp), horizontalAlignment = Alignment.CenterHorizontally) {
                                 Text("$v", style = MaterialTheme.typography.headlineMedium); Text(label, style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
                             }
                         }
@@ -112,16 +114,20 @@ fun PlayerSheet(id: String, onDismiss: () -> Unit, onTeam: (String) -> Unit) {
                         }
                     }
                     Spacer(Modifier.height(16.dp))
-                    Text("Season ${p.i("season")} stats", style = MaterialTheme.typography.titleMedium)
+                    SectionHeader("Season ${p.i("season")} stats")
                     val stats = p.o("seasonStats")
-                    val keys = stats?.keyList()?.filter { (stats.optDouble(it, 0.0)) != 0.0 }?.sortedBy { if (it == "gp") 0 else 1 }.orEmpty()
+                    // games first, then in the order of STAT_LABEL (passing, rushing, receiving, defence, special teams)
+                    val keys = stats?.keyList()?.filter { (stats.optDouble(it, 0.0)) != 0.0 }?.sortedBy { STAT_ORDER.indexOf(it).let { i -> if (i < 0) Int.MAX_VALUE else i } }.orEmpty()
                     Spacer(Modifier.height(8.dp))
                     if (keys.isEmpty()) Text("No stats recorded yet.", color = MaterialTheme.colorScheme.onSurfaceVariant)
                     else FilledCard {
-                        Column(Modifier.padding(horizontal = 16.dp, vertical = 8.dp)) {
-                            for (k in keys) Row(Modifier.fillMaxWidth().padding(vertical = 5.dp)) {
-                                Text(STAT_LABEL[k] ?: k, Modifier.weight(1f), color = MaterialTheme.colorScheme.onSurfaceVariant)
-                                Text("%,d".format(stats!!.optInt(k)), fontWeight = FontWeight.Medium)
+                        Column(Modifier.padding(horizontal = 16.dp)) {
+                            keys.forEachIndexed { i, k ->
+                                if (i > 0) HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant)
+                                Row(Modifier.fillMaxWidth().padding(vertical = 10.dp)) {
+                                    Text(STAT_LABEL[k] ?: k, Modifier.weight(1f), color = MaterialTheme.colorScheme.onSurfaceVariant)
+                                    Text("%,d".format(stats!!.optInt(k)), style = MaterialTheme.typography.titleSmall)
+                                }
                             }
                         }
                     }
@@ -211,7 +217,7 @@ fun SettingsSheet(onDismiss: () -> Unit) {
                         Box(
                             Modifier.size(44.dp).clip(CircleShape).background(color).border(BorderStroke(if (selected) 3.dp else 0.dp, MaterialTheme.colorScheme.onSurface), CircleShape).clickable(onClick = onClick),
                             contentAlignment = Alignment.Center,
-                        ) { if (selected) Icon(Icons.Filled.Check, label, tint = androidx.compose.ui.graphics.Color.White) }
+                        ) { if (selected) Icon(Icons.Filled.Check, label, tint = readableOn(color)) }
                     }
                     swatch(androidx.compose.ui.graphics.Color(DEFAULT_SEED), s.favId == null, "Default colours") { s.changeFav(null, 0) }
                     val list = (teams.state.value as? Load.Ok)?.v.orEmpty()
