@@ -93,7 +93,9 @@ fun LiveHero(det: JSONObject, onOpen: () -> Unit, onWatch: () -> Unit) {
         onClick = onOpen, shape = CardShape, modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(containerColor = c.surfaceContainerLow), border = BorderStroke(1.dp, c.outlineVariant),
     ) {
-        Column(Modifier.background(Brush.verticalGradient(listOf(c.errorContainer.copy(alpha = 0.7f), c.surfaceContainer))).padding(16.dp)) {
+        Column {
+            Box(Modifier.fillMaxWidth().height(3.dp).background(LiveRed))
+            Column(Modifier.padding(16.dp)) {
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
                 LiveBadge()
                 Text(g.weekLabel + if (g.stage == "bowl") " · IFL Bowl" else "", style = MaterialTheme.typography.labelMedium, color = c.onSurfaceVariant)
@@ -111,8 +113,9 @@ fun LiveHero(det: JSONObject, onOpen: () -> Unit, onWatch: () -> Unit) {
             }
             if (wp != null) { Spacer(Modifier.height(8.dp)); WinProbBar(g.away, g.home, wp) }
             Spacer(Modifier.height(12.dp))
-            Button(onClick = onWatch, Modifier.align(Alignment.CenterHorizontally)) {
+            AppButton(onClick = onWatch, Modifier.align(Alignment.CenterHorizontally)) {
                 Icon(Icons.Filled.LiveTv, null, Modifier.size(18.dp)); Spacer(Modifier.width(8.dp)); Text("Watch live")
+            }
             }
         }
     }

@@ -81,7 +81,7 @@ private val STAT_ORDER = STAT_LABEL.keys.toList()
 fun PlayerSheet(id: String, onDismiss: () -> Unit, onTeam: (String) -> Unit) {
     val s = LocalSettings.current
     val loader = rememberLoad(id, s.season, s.base) { Api.v1("players/$id", s.season) }
-    ModalBottomSheet(onDismissRequest = onDismiss, sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)) {
+    ModalBottomSheet(onDismissRequest = onDismiss, shape = SheetShape, sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)) {
         Column(Modifier.fillMaxWidth().verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).navigationBarsPadding().padding(bottom = 24.dp)) {
             when (val st = loader.state.value) {
                 is Load.Loading -> LoadingBox(Modifier.fillMaxWidth().height(200.dp))
@@ -132,7 +132,7 @@ fun PlayerSheet(id: String, onDismiss: () -> Unit, onTeam: (String) -> Unit) {
                         }
                     }
                     Spacer(Modifier.height(16.dp))
-                    Button(onClick = { onTeam(team.id) }, Modifier.fillMaxWidth()) { Text("Team page") }
+                    AppButton(onClick = { onTeam(team.id) }, Modifier.fillMaxWidth()) { Text("Team page") }
                 }
             }
         }
@@ -146,7 +146,7 @@ fun PlayerSheet(id: String, onDismiss: () -> Unit, onTeam: (String) -> Unit) {
 fun SeasonSheet(onDismiss: () -> Unit, onPicked: () -> Unit) {
     val s = LocalSettings.current
     val loader = rememberLoad(s.base) { Api.v1("seasons").a("seasons").mapObjs { it } }
-    ModalBottomSheet(onDismissRequest = onDismiss) {
+    ModalBottomSheet(onDismissRequest = onDismiss, shape = SheetShape) {
         Column(Modifier.fillMaxWidth().navigationBarsPadding().padding(bottom = 16.dp)) {
             Text("Choose season", style = MaterialTheme.typography.titleLarge, modifier = Modifier.padding(horizontal = 24.dp, vertical = 8.dp))
             LoadViewInline(loader) { seasons ->
@@ -196,12 +196,12 @@ fun SettingsSheet(onDismiss: () -> Unit) {
         else toast("Notifications are blocked — allow them in Android settings")
     }
 
-    ModalBottomSheet(onDismissRequest = onDismiss, sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)) {
+    ModalBottomSheet(onDismissRequest = onDismiss, shape = SheetShape, sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)) {
         Column(Modifier.fillMaxWidth().verticalScroll(rememberScrollState()).padding(horizontal = 24.dp).navigationBarsPadding().padding(bottom = 24.dp), verticalArrangement = Arrangement.spacedBy(20.dp)) {
             Text("Settings", style = MaterialTheme.typography.titleLarge)
 
             Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                Text("Appearance", style = MaterialTheme.typography.titleSmall)
+                CaptionHeader("Appearance")
                 val modes = listOf("auto" to "System", "light" to "Light", "dark" to "Dark")
                 SingleChoiceSegmentedButtonRow(Modifier.fillMaxWidth()) {
                     modes.forEachIndexed { i, (k, label) -> SegmentedButton(selected = s.theme == k, onClick = { s.changeTheme(k) }, shape = SegmentedButtonDefaults.itemShape(i, modes.size)) { Text(label) } }
@@ -209,7 +209,7 @@ fun SettingsSheet(onDismiss: () -> Unit) {
             }
 
             Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                Text("My team & accent colour", style = MaterialTheme.typography.titleSmall)
+                CaptionHeader("My team & accent colour")
                 Text("Pick a team to use its colour as the app accent, highlight its games and see its title chances on Home.", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
                 FlowRow(horizontalArrangement = Arrangement.spacedBy(12.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
                     @Composable
@@ -226,7 +226,7 @@ fun SettingsSheet(onDismiss: () -> Unit) {
             }
 
             Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                Text("Notifications", style = MaterialTheme.typography.titleSmall)
+                CaptionHeader("Notifications")
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Column(Modifier.weight(1f)) {
                         Text("Game-start alerts", style = MaterialTheme.typography.bodyLarge)
@@ -262,10 +262,10 @@ fun SettingsSheet(onDismiss: () -> Unit) {
             }
 
             Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                Text("Server", style = MaterialTheme.typography.titleSmall)
+                CaptionHeader("Server")
                 OutlinedTextField(baseText, { baseText = it }, Modifier.fillMaxWidth(), label = { Text("Gamecast server address") }, singleLine = true)
                 Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    Button(onClick = {
+                    AppButton(onClick = {
                         val v = Api.normalize(baseText)
                         val old = Api.base
                         scope.launch {
@@ -282,7 +282,7 @@ fun SettingsSheet(onDismiss: () -> Unit) {
                 }
                 Text("The app reads /api/v1 on this server (read-only, no key needed).", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
             }
-            Button(onClick = onDismiss, Modifier.fillMaxWidth()) { Text("Done") }
+            AppButton(onClick = onDismiss, Modifier.fillMaxWidth()) { Text("Done") }
         }
     }
 }

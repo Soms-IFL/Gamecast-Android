@@ -9,6 +9,25 @@ import android.graphics.Typeface
 import android.view.WindowManager
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.Canvas
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.scaleIn
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.layout.BoxWithConstraints
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.WindowInsetsSides
+import androidx.compose.foundation.layout.displayCutout
+import androidx.compose.foundation.layout.only
+import androidx.compose.foundation.layout.windowInsetsPadding
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.text.style.TextOverflow
+import kotlinx.coroutines.delay
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -63,6 +82,7 @@ import androidx.compose.runtime.MutableFloatState
 import androidx.compose.runtime.State
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.key
 import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
@@ -177,14 +197,22 @@ private class VState(val sim: SimData, val g: Game, val live: Boolean, val rd: R
         fmtClock(c)
     }
 
+    /** How long (broadcast ms) a play's banner or score celebration stays up; shorter when replaying fast. */
+    fun holdMs(ev: SimEvent): Float {
+        val base = if (ev.scoring != null && ev.banner != null) 3400f else 1900f
+        return if (live) base else base / max(1f, speed / 2f)
+    }
+
     val banner: State<SimEvent?> = derivedStateOf {
         val i = idx.value
         if (i == 0) null else {
             val ev = sim.events[i - 1]
-            val hold = if (live) 1900f else 1900f / max(1f, speed / 2f)
-            if (ev.banner != null && ev.banner != "KICKOFF" && vt.floatValue - ev.endAct < hold) ev else null
+            if (ev.banner != null && ev.banner != "KICKOFF" && vt.floatValue - ev.endAct < holdMs(ev)) ev else null
         }
     }
+
+    /** The final-score panel: once the game is over and the last play's banner has finished (or the clock has run out). */
+    val finalShown: State<Boolean> = derivedStateOf { idx.value >= n && (banner.value == null || vt.floatValue >= sim.totalMs - 1f) }
 
     val started: State<Boolean> = derivedStateOf { vt.floatValue > 0f }
     val etaText: State<String> = derivedStateOf {
@@ -221,12 +249,17 @@ private fun Viewer(g: Game, rd: ReplayData) {
     val activity = LocalContext.current.findActivity()
 
     // clock: live games follow the broadcast; replays advance with the chosen speed
-    LaunchedEffect(v) {
+    // (a paused replay doesn't tick at all: the loop below is only running while there is something to animate)
+    LaunchedEffect(v, v.paused) {
+        if (!v.live && v.paused) return@LaunchedEffect
         var last = 0L
         while (true) {
             androidx.compose.runtime.withFrameNanos { now ->
                 if (v.live) v.vt.floatValue = (System.currentTimeMillis() + rd.offset - rd.airStart).toFloat().coerceIn(0f, v.sim.totalMs)
-                else if (last != 0L && !v.paused) v.vt.floatValue = min(v.sim.totalMs, v.vt.floatValue + min((now - last) / 1_000_000f, 100f) * v.speed)
+                else if (last != 0L) {
+                    v.vt.floatValue = min(v.sim.totalMs, v.vt.floatValue + min((now - last) / 1_000_000f, 100f) * v.speed)
+                    if (v.vt.floatValue >= v.sim.totalMs) v.paused = true       // reached the end: stop ticking
+                }
                 last = now
             }
         }
@@ -257,12 +290,7 @@ private fun Viewer(g: Game, rd: ReplayData) {
     BackHandler(enabled = v.fs) { v.fs = false }
 
     if (v.fs) {
-        Column(Modifier.fillMaxSize().background(Color(0xFF0B0B0E)).padding(horizontal = 12.dp, vertical = 8.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-            ScoreBar(v, compact = true)
-            FieldBox(v, Modifier.weight(1f).fillMaxWidth())
-            PlayText(v, compact = true)
-            Controls(v, compact = true)
-        }
+        FullscreenViewer(v)
     } else {
         val mismatch = g.isFinal && (g.home.score != rd.sim.finalHome || g.away.score != rd.sim.finalAway)
         val size = LocalWinSize.current
@@ -274,10 +302,10 @@ private fun Viewer(g: Game, rd: ReplayData) {
             }
         }
         val gameItems: LazyListScope.() -> Unit = {
-            item { ScoreBar(v, compact = false) }
+            item { ScoreBar(v) }
             item { FieldBox(v, Modifier.fillMaxWidth().aspectRatio(FW / FH)) }
-            item { PlayText(v, compact = false) }
-            item { Controls(v, compact = false) }
+            item { PlayText(v) }
+            item { Controls(v) }
         }
         val logItems: LazyListScope.() -> Unit = {
             item { WinProbCard(v) }
@@ -309,78 +337,53 @@ private fun playFromEvent(ev: SimEvent, n: Int) = Play(
 
 /* ---------------------------------------------------------------- scoreboard, text, controls */
 
+private fun ddTextOf(v: VState, snap: Snap): String = when {
+    snap.over -> if (snap.qtr >= 5) "Overtime" else ""
+    snap.phase == "play" -> v.dd()
+    snap.phase == "kickoff" || snap.phase == "freekick" -> "Kickoff"
+    snap.phase == "pat" -> "Extra point"
+    else -> ""
+}
+
 @Composable
-private fun ScoreBar(v: VState, compact: Boolean) {
+private fun ScoreBar(v: VState) {
     val c = MaterialTheme.colorScheme
     val snap = v.snapshot()
     val sim = v.sim
-    val ddText = when {
-        snap.over -> if (snap.qtr >= 5) "Overtime" else ""
-        snap.phase == "play" -> v.dd()
-        snap.phase == "kickoff" || snap.phase == "freekick" -> "Kickoff"
-        snap.phase == "pat" -> "Extra point"
-        else -> ""
-    }
+    val ddText = ddTextOf(v, snap)
     @Composable
     fun side(t: SimTeam, team: Team, score: Int, hasBall: Boolean, timeouts: Int, away: Boolean) {
-        val won = snap.over && ((away && snap.scoreAway > snap.scoreHome) || (!away && snap.scoreHome > snap.scoreAway))
         val lost = snap.over && ((away && snap.scoreAway < snap.scoreHome) || (!away && snap.scoreHome < snap.scoreAway))
-        val scoreColor = if (compact) Color.White else if (lost) c.onSurfaceVariant else c.onSurface
-        if (compact) {
-            Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                if (away) { TeamBadge(team, 36.dp); Text("$score", style = MaterialTheme.typography.headlineMedium, color = scoreColor, fontWeight = if (won) FontWeight.Bold else FontWeight.Normal) }
-                else { Text("$score", style = MaterialTheme.typography.headlineMedium, color = scoreColor, fontWeight = if (won) FontWeight.Bold else FontWeight.Normal); TeamBadge(team, 36.dp) }
-                if (hasBall) Icon(Icons.Filled.SportsFootball, null, Modifier.size(16.dp), tint = Color(0xFFB8BBFF))
-            }
-        } else {
-            Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(2.dp)) {
-                TeamBadge(team, 64.dp)
-                Text(t.name, style = MaterialTheme.typography.titleSmall, maxLines = 1)
-                Text("$score", style = MaterialTheme.typography.displaySmall, color = scoreColor, fontWeight = if (won) FontWeight.Bold else FontWeight.Normal)
-                Box(Modifier.height(18.dp)) { if (hasBall) Icon(Icons.Filled.SportsFootball, null, Modifier.size(16.dp), tint = c.primary) }
-                Text("●".repeat(timeouts.coerceIn(0, 3)) + "○".repeat((3 - timeouts).coerceIn(0, 3)), style = MaterialTheme.typography.labelSmall, color = c.onSurfaceVariant)
-            }
+        Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(2.dp)) {
+            TeamBadge(team, 64.dp)
+            Text(t.name, style = MaterialTheme.typography.titleSmall, maxLines = 1)
+            Text("$score", style = MaterialTheme.typography.displaySmall, color = if (lost) c.onSurfaceVariant else c.onSurface)
+            Box(Modifier.height(18.dp)) { if (hasBall) Icon(Icons.Filled.SportsFootball, null, Modifier.size(16.dp), tint = c.primary) }
+            Text("●".repeat(timeouts.coerceIn(0, 3)) + "○".repeat((3 - timeouts).coerceIn(0, 3)), style = MaterialTheme.typography.labelSmall, color = c.onSurfaceVariant)
         }
     }
-    val mid: @Composable () -> Unit = {
-        Column(horizontalAlignment = Alignment.CenterHorizontally) {
-            val qText = if (snap.over) "Final" else qLabel(snap.qtr)
-            if (compact) {
-                Row(horizontalArrangement = Arrangement.spacedBy(10.dp), verticalAlignment = Alignment.CenterVertically) {
-                    Text(qText, style = MaterialTheme.typography.titleMedium, color = Color.White)
-                    if (!snap.over) Text(v.clockText.value, style = MaterialTheme.typography.titleMedium, color = Color.White)
-                    if (ddText.isNotEmpty()) Text(ddText, style = MaterialTheme.typography.labelMedium, color = Color(0xFFCFD0FF))
-                }
-            } else {
-                Text(qText, style = MaterialTheme.typography.titleLarge)
-                if (!snap.over) Text(v.clockText.value, style = MaterialTheme.typography.headlineSmall)
-                Text(ddText, style = MaterialTheme.typography.labelLarge, color = c.onSurfaceVariant, textAlign = TextAlign.Center)
+    Card(shape = CardShape, colors = CardDefaults.cardColors(containerColor = c.surfaceContainerLow), modifier = Modifier.fillMaxWidth()) {
+        Column(Modifier.padding(16.dp)) {
+            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
+                if (v.live) LiveBadge("LIVE · SYNCED") else Tag("REPLAY")
+                Text(v.g.weekLabel + if (v.g.stage == "bowl") " · IFL Bowl" else "", style = MaterialTheme.typography.labelMedium, color = c.onSurfaceVariant)
             }
-        }
-    }
-    val away: @Composable () -> Unit = { side(sim.away, v.g.away, snap.scoreAway, snap.poss == 1 && snap.phase != "coin" && !snap.over, snap.toAway, true) }
-    val home: @Composable () -> Unit = { side(sim.home, v.g.home, snap.scoreHome, snap.poss == 0 && snap.phase != "coin" && !snap.over, snap.toHome, false) }
-    if (compact) {
-        Row(
-            Modifier.fillMaxWidth().clip(RoundedCornerShape(6.dp)).background(Color(0xFF1B1B22)).padding(horizontal = 14.dp, vertical = 6.dp),
-            verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.SpaceBetween,
-        ) { away(); mid(); home() }
-    } else {
-        Card(shape = CardShape, colors = CardDefaults.cardColors(containerColor = c.surfaceContainerLow), modifier = Modifier.fillMaxWidth()) {
-            Column(Modifier.padding(16.dp)) {
-                Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
-                    if (v.live) LiveBadge("LIVE · SYNCED") else Tag("REPLAY")
-                    Text(v.g.weekLabel + if (v.g.stage == "bowl") " · IFL Bowl" else "", style = MaterialTheme.typography.labelMedium, color = c.onSurfaceVariant)
+            Spacer(Modifier.height(8.dp))
+            Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.SpaceEvenly) {
+                side(sim.away, v.g.away, snap.scoreAway, snap.poss == 1 && snap.phase != "coin" && !snap.over, snap.toAway, true)
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Text(if (snap.over) "Final" else qLabel(snap.qtr), style = MaterialTheme.typography.titleLarge)
+                    if (!snap.over) Text(v.clockText.value, style = MaterialTheme.typography.headlineSmall)
+                    Text(ddText, style = MaterialTheme.typography.labelLarge, color = c.onSurfaceVariant, textAlign = TextAlign.Center)
                 }
-                Spacer(Modifier.height(8.dp))
-                Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.SpaceEvenly) { away(); mid(); home() }
+                side(sim.home, v.g.home, snap.scoreHome, snap.poss == 0 && snap.phase != "coin" && !snap.over, snap.toHome, false)
             }
         }
     }
 }
 
 @Composable
-private fun PlayText(v: VState, compact: Boolean) {
+private fun PlayText(v: VState) {
     val i = v.idx.value
     val b = v.begun.value
     val prev = if (i > 0) v.sim.events[i - 1] else null
@@ -388,33 +391,131 @@ private fun PlayText(v: VState, compact: Boolean) {
     val sit = sitEv?.let { qLabel(it.qtr) + " " + fmtClock(it.clockStart) + (if (it.preText.isNotEmpty()) " · ${it.preText}" else "") } ?: " "
     val text = prev?.text ?: if (v.live) "Waiting for the next play…" else "Press play to kick off."
     val c = MaterialTheme.colorScheme
-    Column(
-        Modifier.fillMaxWidth().clip(RoundedCornerShape(6.dp)).background(if (compact) Color(0xFF1B1B22) else c.surfaceContainerHighest).padding(horizontal = 12.dp, vertical = if (compact) 6.dp else 12.dp),
-    ) {
-        Text(sit, style = MaterialTheme.typography.labelMedium, color = if (compact) Color(0xFFCFD0FF) else c.onSurfaceVariant, maxLines = 1)
-        Text(text, style = if (compact) MaterialTheme.typography.bodyMedium else MaterialTheme.typography.bodyLarge, color = if (compact) Color.White else c.onSurface, maxLines = if (compact) 2 else 4)
+    Column(Modifier.fillMaxWidth().clip(CardShape).background(c.surfaceContainerHighest).padding(horizontal = 12.dp, vertical = 12.dp)) {
+        Text(sit, style = MaterialTheme.typography.labelMedium, color = c.onSurfaceVariant, maxLines = 1)
+        Text(text, style = MaterialTheme.typography.bodyLarge, color = c.onSurface, maxLines = 4)
     }
 }
 
 @OptIn(ExperimentalLayoutApi::class, ExperimentalMaterial3Api::class)
 @Composable
-private fun Controls(v: VState, compact: Boolean) {
+private fun Controls(v: VState) {
     if (v.live) return
     val done = v.done
-    val etaText = v.etaText.value
-    val light = if (compact) Color(0xFFE4E5FF) else Color.Unspecified
     FlowRow(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
-        Button(onClick = { v.playPause() }, contentPadding = PaddingValues(horizontal = 16.dp)) {
+        AppButton(onClick = { v.playPause() }, contentPadding = PaddingValues(horizontal = 16.dp)) {
             Icon(if (done) Icons.Filled.Replay else if (v.paused) Icons.Filled.PlayArrow else Icons.Filled.Pause, null, Modifier.size(18.dp)); Spacer(Modifier.width(6.dp))
             Text(if (done) "Replay" else if (v.paused) (if (v.idx.value == 0 && !v.started.value) "Play" else "Resume") else "Pause")
         }
-        FilledTonalButton(onClick = { v.next() }, enabled = !done, contentPadding = PaddingValues(horizontal = 16.dp)) { Icon(Icons.Filled.SkipNext, null, Modifier.size(18.dp)); Spacer(Modifier.width(6.dp)); Text("Next play") }
+        AppTonalButton(onClick = { v.next() }, enabled = !done, contentPadding = PaddingValues(horizontal = 16.dp)) { Icon(Icons.Filled.SkipNext, null, Modifier.size(18.dp)); Spacer(Modifier.width(6.dp)); Text("Next play") }
         SingleChoiceSegmentedButtonRow {
             val speeds = listOf(1, 2, 4, 10)
             speeds.forEachIndexed { i, sp -> SegmentedButton(selected = v.speed == sp, onClick = { v.speed = sp }, shape = SegmentedButtonDefaults.itemShape(i, speeds.size)) { Text("$sp×", maxLines = 1) } }
         }
-        TextButton(onClick = { v.skipEnd() }, enabled = !done) { Icon(Icons.Filled.FastForward, null, Modifier.size(18.dp)); Spacer(Modifier.width(6.dp)); Text("Skip to end", color = light) }
-        Text(etaText, style = MaterialTheme.typography.labelMedium, color = if (compact) Color(0xFFCFD0FF) else MaterialTheme.colorScheme.onSurfaceVariant)
+        TextButton(onClick = { v.skipEnd() }, enabled = !done) { Icon(Icons.Filled.FastForward, null, Modifier.size(18.dp)); Spacer(Modifier.width(6.dp)); Text("Skip to end") }
+        Text(v.etaText.value, style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+    }
+}
+
+/* ---------------------------------------------------------------- fullscreen */
+
+private val HudBg = Color(0xB3000000)
+
+/** Broadcast-style score bug: both teams, scores, quarter / clock and down & distance in one small pill. */
+@Composable
+private fun ScoreBug(v: VState, modifier: Modifier = Modifier) {
+    val snap = v.snapshot()
+    val sim = v.sim
+    val dd = ddTextOf(v, snap)
+    @Composable
+    fun team(t: SimTeam, team: Team, score: Int, hasBall: Boolean, away: Boolean) {
+        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            if (away) TeamBadge(team, 24.dp)
+            Column(horizontalAlignment = if (away) Alignment.Start else Alignment.End) {
+                Text(t.abbr, style = MaterialTheme.typography.labelMedium, color = Color.White.copy(alpha = 0.8f), maxLines = 1)
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    if (hasBall && away) Icon(Icons.Filled.SportsFootball, null, Modifier.size(12.dp).padding(end = 2.dp), tint = Color.White)
+                    Text("$score", style = MaterialTheme.typography.titleLarge, color = Color.White)
+                    if (hasBall && !away) Icon(Icons.Filled.SportsFootball, null, Modifier.size(12.dp).padding(start = 2.dp), tint = Color.White)
+                }
+            }
+            if (!away) TeamBadge(team, 24.dp)
+        }
+    }
+    Row(
+        modifier.clip(RoundedCornerShape(8.dp)).background(HudBg).padding(horizontal = 14.dp, vertical = 6.dp),
+        verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(16.dp),
+    ) {
+        team(sim.away, v.g.away, snap.scoreAway, snap.poss == 1 && snap.phase != "coin" && !snap.over, true)
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                if (v.live) Box(Modifier.size(6.dp).clip(CircleShape).background(LiveRed))
+                Text(if (snap.over) "FINAL" else qLabel(snap.qtr) + "  " + v.clockText.value, style = MaterialTheme.typography.titleSmall, color = Color.White, maxLines = 1)
+            }
+            if (dd.isNotEmpty()) Text(dd, style = MaterialTheme.typography.labelSmall, color = Color.White.copy(alpha = 0.75f), maxLines = 1)
+        }
+        team(sim.home, v.g.home, snap.scoreHome, snap.poss == 0 && snap.phase != "coin" && !snap.over, false)
+    }
+}
+
+/** The latest play as a caption at the bottom of the field. */
+@Composable
+private fun PlayCaption(v: VState, modifier: Modifier = Modifier) {
+    val i = v.idx.value
+    val b = v.begun.value
+    val prev = if (i > 0) v.sim.events[i - 1] else null
+    val sitEv = if (b >= 0) v.sim.events[b] else prev
+    val sit = sitEv?.let { qLabel(it.qtr) + " " + fmtClock(it.clockStart) + (if (it.preText.isNotEmpty()) " · ${it.preText}" else "") } ?: ""
+    val text = prev?.text ?: if (v.live) "Waiting for the next play…" else "Press play to kick off."
+    Column(modifier.clip(RoundedCornerShape(6.dp)).background(HudBg).padding(horizontal = 12.dp, vertical = 6.dp)) {
+        if (sit.isNotEmpty()) Text(sit, style = MaterialTheme.typography.labelSmall, color = Color.White.copy(alpha = 0.7f), maxLines = 1)
+        Text(text, style = MaterialTheme.typography.bodyMedium, color = Color.White, maxLines = 2, overflow = TextOverflow.Ellipsis)
+    }
+}
+
+@Composable
+private fun HudButton(icon: androidx.compose.ui.graphics.vector.ImageVector, label: String, enabled: Boolean = true, onClick: () -> Unit) {
+    IconButton(onClick = onClick, enabled = enabled, modifier = Modifier.size(44.dp)) {
+        Icon(icon, label, tint = Color.White.copy(alpha = if (enabled) 1f else 0.35f))
+    }
+}
+
+/**
+ * Fullscreen: the field fills the screen and everything else floats over it. The score bug and the latest play are always
+ * there; the controls fade away a few seconds after you stop touching the screen and come back with a tap.
+ */
+@OptIn(ExperimentalLayoutApi::class)
+@Composable
+private fun FullscreenViewer(v: VState) {
+    var controls by remember { mutableStateOf(true) }
+    var touch by remember { mutableIntStateOf(0) }       // bumped on every interaction so the hide timer starts over
+    LaunchedEffect(controls, touch, v.paused, v.live) {
+        if (controls && (v.live || !v.paused)) { delay(3500); controls = false }
+    }
+    Box(Modifier.fillMaxSize().background(Color.Black)) {
+        FieldBox(
+            v, Modifier.fillMaxSize().clickable(interactionSource = remember { MutableInteractionSource() }, indication = null) { controls = !controls; touch++ },
+            fullscreen = true,
+        )
+        Box(Modifier.fillMaxSize().windowInsetsPadding(WindowInsets.displayCutout.only(WindowInsetsSides.Horizontal)).padding(horizontal = 16.dp, vertical = 10.dp)) {
+            ScoreBug(v, Modifier.align(Alignment.TopCenter))
+            AnimatedVisibility(controls, Modifier.align(Alignment.TopEnd), enter = fadeIn(), exit = fadeOut()) {
+                Box(Modifier.clip(CircleShape).background(HudBg)) { HudButton(Icons.Filled.FullscreenExit, "Exit fullscreen") { v.fs = false } }
+            }
+            Row(Modifier.align(Alignment.BottomCenter).fillMaxWidth(), verticalAlignment = Alignment.Bottom, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                PlayCaption(v, Modifier.weight(1f))
+                if (!v.live) AnimatedVisibility(controls, enter = fadeIn(), exit = fadeOut()) {
+                    Row(Modifier.clip(RoundedCornerShape(24.dp)).background(HudBg).padding(horizontal = 4.dp), verticalAlignment = Alignment.CenterVertically) {
+                        HudButton(if (v.done) Icons.Filled.Replay else if (v.paused) Icons.Filled.PlayArrow else Icons.Filled.Pause, if (v.paused) "Play" else "Pause") { v.playPause(); touch++ }
+                        HudButton(Icons.Filled.SkipNext, "Next play", enabled = !v.done) { v.next(); touch++ }
+                        TextButton(onClick = { v.speed = when (v.speed) { 1 -> 2; 2 -> 4; 4 -> 10; else -> 1 }; touch++ }, contentPadding = PaddingValues(horizontal = 8.dp)) {
+                            Text("${v.speed}×", style = MaterialTheme.typography.titleSmall, color = Color.White)
+                        }
+                        HudButton(Icons.Filled.FastForward, "Skip to end", enabled = !v.done) { v.skipEnd(); touch++ }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -626,7 +727,7 @@ private fun DrawScope.scene(v: VState, t: Float, grassA: Color, grassB: Color, p
 }
 
 @Composable
-private fun FieldBox(v: VState, modifier: Modifier) {
+private fun FieldBox(v: VState, modifier: Modifier, fullscreen: Boolean = false) {
     val dark = isDark(LocalSettings.current.theme)
     val ga = if (dark) Color(0xFF2C6C31) else Color(0xFF3A8A3F)
     val gb = if (dark) Color(0xFF28632C) else Color(0xFF347D39)
@@ -636,36 +737,159 @@ private fun FieldBox(v: VState, modifier: Modifier) {
     // the logo is loaded as a painter and drawn inside the canvas (under the players and ball), not as a view on top of it
     val painter = if (logoUrl != null) rememberAsyncImagePainter(remember(logoUrl) { Logos.request(ctx, logoUrl, true) }) else null
     val logo = painter?.takeIf { it.state is AsyncImagePainter.State.Success }
-    Box(modifier.clip(RoundedCornerShape(6.dp)).background(Color.Black)) {
-        Box(Modifier.fillMaxSize()) {
-            Canvas(Modifier.fillMaxSize()) {
-                val t = v.vt.floatValue                       // read while drawing, so only the canvas redraws each frame
-                val sc = min(size.width / FW, size.height / FH)
-                translate((size.width - FW * sc) / 2f, (size.height - FH * sc) / 2f) { scale(sc, sc, Offset.Zero) { scene(v, t, ga, gb, paints, logo) } }
-            }
+    Box(modifier.then(if (fullscreen) Modifier else Modifier.clip(RoundedCornerShape(6.dp))).background(Color.Black)) {
+        Canvas(Modifier.fillMaxSize()) {
+            val t = v.vt.floatValue                       // read while drawing, so only the canvas redraws each frame
+            val sc = min(size.width / FW, size.height / FH)
+            translate((size.width - FW * sc) / 2f, (size.height - FH * sc) / 2f) { scale(sc, sc, Offset.Zero) { scene(v, t, ga, gb, paints, logo) } }
         }
-        // big-play banner
+        // big plays: scores get a full celebration with the scoring team's logo, other calls a small banner
         val ban = v.banner.value
-        if (ban != null) {
-            val good = ban.tags.any { it == "TD" || it == "FG" }; val bad = ban.tags.any { it == "TO" || it == "FLAG" }
-            Surface(
-                Modifier.align(Alignment.TopCenter).padding(top = 12.dp), shape = RoundedCornerShape(50),
-                color = if (good) Color(0xFF1A7F37) else if (bad) Color(0xFFB3261E) else Color(0xCC000000), contentColor = Color.White,
-            ) { Text(ban.banner ?: "", Modifier.padding(horizontal = 18.dp, vertical = 6.dp), style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.ExtraBold) }
+        if (ban != null) key(ban) {
+            if (ban.scoring != null && ban.banner != null) ScoreCelebration(v, ban, Modifier.fillMaxSize())
+            else BannerPill(v, ban, Modifier.align(Alignment.TopCenter).padding(top = if (fullscreen) 60.dp else 12.dp))
         }
-        // final
-        if (v.done) {
+        // final whistle: the winner's logo and the score
+        AnimatedVisibility(v.finalShown.value, enter = fadeIn(tween(350)) + scaleIn(tween(350), 0.92f), exit = fadeOut()) {
             val sim = v.sim
-            val w = if (sim.finalHome > sim.finalAway) sim.home else if (sim.finalAway > sim.finalHome) sim.away else null
-            Column(Modifier.fillMaxSize().background(Color(0xBD000000)), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center) {
-                Text(if (w != null) "${w.full} win" else "Final — tie", style = MaterialTheme.typography.titleLarge, color = Color.White)
+            val homeWon = sim.finalHome > sim.finalAway; val awayWon = sim.finalAway > sim.finalHome
+            val w = if (homeWon) sim.home else if (awayWon) sim.away else null
+            Column(Modifier.fillMaxSize().background(Color(0xCC000000)), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center) {
+                if (homeWon || awayWon) TeamBadge(if (homeWon) v.g.home else v.g.away, if (fullscreen) 56.dp else 64.dp)
+                Text(if (w != null) "${w.full} win" else "Final — tie", Modifier.padding(top = 8.dp), style = MaterialTheme.typography.titleLarge, color = Color.White)
                 Text("${sim.away.abbr} ${sim.finalAway} – ${sim.finalHome} ${sim.home.abbr}", style = MaterialTheme.typography.headlineSmall, color = Color.White)
-                if (!v.live) Button(onClick = { v.restart() }, Modifier.padding(top = 8.dp)) { Icon(Icons.Filled.Replay, null, Modifier.size(18.dp)); Spacer(Modifier.width(8.dp)); Text("Watch again") }
+                if (!v.live) AppButton(onClick = { v.restart() }, Modifier.padding(top = 8.dp)) { Icon(Icons.Filled.Replay, null, Modifier.size(18.dp)); Spacer(Modifier.width(8.dp)); Text("Watch again") }
             }
         }
-        IconButton(
-            onClick = { v.fs = !v.fs }, Modifier.align(Alignment.TopEnd).padding(4.dp),
+        if (!fullscreen) IconButton(
+            onClick = { v.fs = true }, Modifier.align(Alignment.TopEnd).padding(4.dp),
             colors = IconButtonDefaults.iconButtonColors(containerColor = Color(0x8C000000), contentColor = Color.White),
-        ) { Icon(if (v.fs) Icons.Filled.FullscreenExit else Icons.Filled.Fullscreen, if (v.fs) "Exit fullscreen" else "Fullscreen") }
+        ) { Icon(Icons.Filled.Fullscreen, "Fullscreen") }
     }
+}
+
+/* ---------------------------------------------------------------- score celebrations */
+
+// Everything below is a pure function of the playhead (v.vt), so it plays correctly at any speed, pauses with the game and
+// can be scrubbed: progress runs 0..1 over the play's hold time, starting when the play's action ends.
+
+internal fun easeOutCubic(t: Float): Float { val u = 1f - t.coerceIn(0f, 1f); return 1f - u * u * u }
+internal fun easeOutBack(t: Float): Float { val c1 = 1.70158f; val c3 = c1 + 1f; val u = t.coerceIn(0f, 1f) - 1f; return 1f + c3 * u * u * u + c1 * u * u }
+internal fun segment(p: Float, a: Float, b: Float): Float = ((p - a) / (b - a)).coerceIn(0f, 1f)
+internal fun fadeOut(p: Float): Float = 1f - segment(p, 0.84f, 1f)
+
+private class Bit(val angle: Float, val speed: Float, val size: Float, val color: Color, val spin: Float)
+
+private fun confettiFor(seed: Int, colors: List<Color>): List<Bit> {
+    val r = kotlin.random.Random(seed)
+    return List(48) { Bit(r.nextFloat() * 2f * PI.toFloat(), 0.35f + r.nextFloat() * 0.8f, 0.02f + r.nextFloat() * 0.025f, colors[r.nextInt(colors.size)], (r.nextFloat() - 0.5f) * 720f) }
+}
+
+/** Keeps a team colour readable against the band behind it. */
+private fun accentOn(c: Color, band: Color): Color {
+    val lc = c.red * 0.2126f + c.green * 0.7152f + c.blue * 0.0722f
+    val lb = band.red * 0.2126f + band.green * 0.7152f + band.blue * 0.0722f
+    return if (kotlin.math.abs(lc - lb) < 0.25f) (if (lb > 0.5f) Color(0xFF111111) else Color.White) else c
+}
+
+/**
+ * Touchdown / field goal / safety / two-point graphic: the picture dims, a band in the scoring team's colours wipes across the field,
+ * the team's logo pops in with a spin and a ring pulse, the call and the new score slide out beside it and confetti bursts from the logo.
+ */
+@Composable
+private fun ScoreCelebration(v: VState, ev: SimEvent, modifier: Modifier = Modifier) {
+    val homeScored = ev.scoring == 0
+    val tm = if (homeScored) v.sim.home else v.sim.away
+    val team = if (homeScored) v.g.home else v.g.away
+    val hold = v.holdMs(ev)
+    val prog = { ((v.vt.floatValue - ev.endAct) / hold).coerceIn(0f, 1f) }
+    val band = tm.c1
+    val onBand = readableOn(band)
+    val accent = accentOn(tm.c2, band)
+    val confetti = remember(ev) { confettiFor(ev.start.toInt(), listOf(tm.c1, tm.c2, Color.White, Color(0xFFFFD54A))) }
+    val call = (ev.banner ?: "SCORE").uppercase()
+    val line = "${v.sim.away.abbr} ${ev.post.scoreAway} – ${ev.post.scoreHome} ${v.sim.home.abbr}"
+    BoxWithConstraints(modifier) {
+        val h = maxHeight
+        val bandH = (h * 0.5f).coerceIn(56.dp, 150.dp)
+        val logo = bandH * 0.9f
+        val fontPx = with(LocalDensity.current) { (bandH * 0.36f).toSp() }
+        // each half of the band must hold its text on one line: shrink long calls ("KICK RETURN TD") and long score lines to fit
+        val half = (maxWidth - logo).value / 2f - 14f
+        val fit = (half / (call.length * bandH.value * 0.36f * 0.56f)).coerceIn(0.4f, 1f)
+        val fitLine = (half / (line.length * bandH.value * 0.36f * 0.62f * 0.56f)).coerceIn(0.4f, 1f)
+
+        // dim the field
+        Box(Modifier.fillMaxSize().graphicsLayer { alpha = 0.5f * fadeOut(prog()) }.background(Color.Black))
+        // team-colour band, wiping out from the middle
+        Box(
+            Modifier.align(Alignment.Center).fillMaxWidth().height(bandH)
+                .graphicsLayer { val p = prog(); scaleY = easeOutCubic(segment(p, 0f, 0.12f)); alpha = fadeOut(p) }
+                .background(band)
+                .drawBehind { drawRect(accent, Offset.Zero, Size(size.width, 3.dp.toPx())); drawRect(accent, Offset(0f, size.height - 3.dp.toPx()), Size(size.width, 3.dp.toPx())) },
+        )
+        // ring pulses and confetti
+        Canvas(Modifier.fillMaxSize()) {
+            val p = prog()
+            val c = Offset(size.width / 2f, size.height / 2f)
+            val a = fadeOut(p)
+            for (k in 0..1) {
+                val s = segment(p, 0.03f + k * 0.12f, 0.40f + k * 0.12f)
+                if (s > 0f && s < 1f) drawCircle(accent.copy(alpha = 0.8f * (1f - s) * a), size.height * (0.12f + 0.8f * easeOutCubic(s)), c, style = Stroke(3.dp.toPx()))
+            }
+            val fly = easeOutCubic(segment(p, 0.02f, 0.6f))
+            val fall = segment(p, 0.15f, 1f)
+            for (b in confetti) {
+                val r = b.speed * size.height * 0.95f * fly
+                val x = c.x + kotlin.math.cos(b.angle) * r * 1.7f
+                val y = c.y + kotlin.math.sin(b.angle) * r + size.height * 0.55f * fall * fall
+                val alpha = (1f - segment(p, 0.55f, 0.92f)) * (if (p < 0.02f) 0f else 1f)
+                if (alpha <= 0f) continue
+                val s = b.size * size.height
+                rotate(b.spin * p, Offset(x, y)) { drawRect(b.color.copy(alpha = alpha), Offset(x - s / 2f, y - s * 0.3f), Size(s, s * 0.6f)) }
+            }
+        }
+        // call on the left, logo in the middle, score on the right
+        Row(Modifier.align(Alignment.Center).fillMaxWidth().height(bandH), verticalAlignment = Alignment.CenterVertically) {
+            Box(Modifier.weight(1f).padding(end = 10.dp), contentAlignment = Alignment.CenterEnd) {
+                Text(
+                    call, maxLines = 1, softWrap = false, color = onBand, style = MaterialTheme.typography.headlineMedium, fontSize = fontPx * fit,
+                    modifier = Modifier.graphicsLayer { val p = prog(); val s = easeOutCubic(segment(p, 0.08f, 0.30f)); translationX = -(1f - s) * 70.dp.toPx(); alpha = s * fadeOut(p) },
+                )
+            }
+            Box(
+                Modifier.size(logo).graphicsLayer {
+                    val p = prog()
+                    val pop = easeOutBack(segment(p, 0.02f, 0.24f)) * (1f + 0.03f * kotlin.math.sin(p * 18.85f))
+                    scaleX = pop; scaleY = pop
+                    rotationZ = -(1f - easeOutCubic(segment(p, 0.02f, 0.32f))) * 200f
+                    alpha = fadeOut(p)
+                },
+                contentAlignment = Alignment.Center,
+            ) { TeamBadge(team, logo) }
+            Column(
+                Modifier.weight(1f).padding(start = 10.dp)
+                    .graphicsLayer { val p = prog(); val s = easeOutCubic(segment(p, 0.12f, 0.34f)); translationX = (1f - s) * 70.dp.toPx(); alpha = s * fadeOut(p) },
+                verticalArrangement = Arrangement.Center,
+            ) {
+                Text(line, maxLines = 1, softWrap = false, color = onBand, style = MaterialTheme.typography.titleLarge, fontSize = fontPx * 0.62f * fitLine)
+                Text(tm.full, maxLines = 1, color = onBand.copy(alpha = 0.85f), style = MaterialTheme.typography.labelLarge, overflow = TextOverflow.Ellipsis)
+            }
+        }
+    }
+}
+
+/** A turnover, penalty, quarter break and the like: a small banner that drops in from the top and fades out. */
+@Composable
+private fun BannerPill(v: VState, ev: SimEvent, modifier: Modifier = Modifier) {
+    val hold = v.holdMs(ev)
+    val bad = ev.tags.any { it == "TO" || it == "FLAG" }
+    Surface(
+        modifier.graphicsLayer {
+            val p = ((v.vt.floatValue - ev.endAct) / hold).coerceIn(0f, 1f)
+            val s = easeOutCubic(segment(p, 0f, 0.14f))
+            translationY = -(1f - s) * 40.dp.toPx(); alpha = s * fadeOut(p)
+        },
+        shape = RoundedCornerShape(6.dp), color = if (bad) Color(0xFFB3261E) else Color(0xE6000000), contentColor = Color.White,
+    ) { Text((ev.banner ?: "").uppercase(), Modifier.padding(horizontal = 16.dp, vertical = 6.dp), style = MaterialTheme.typography.titleMedium) }
 }

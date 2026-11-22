@@ -58,6 +58,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.foundation.selection.selectable
+import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -91,34 +93,21 @@ fun GamesScreen() {
         val chipState = rememberLazyListState()
         LaunchedEffect(week) { chipState.animateScrollToItem(maxOf(0, keys.indexOf(week) - 1)) }
         Column(Modifier.fillMaxSize()) {
-            // week selector: underlined tabs like a scoreboard date bar
-            Column(Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.surfaceContainerLow)) {
-                LazyRow(state = chipState, contentPadding = PaddingValues(horizontal = 8.dp)) {
-                    items(keys) { k ->
-                        val on = k == week
-                        Column(Modifier.clickable { selected = k }.padding(horizontal = 12.dp).height(44.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-                            Box(Modifier.weight(1f), contentAlignment = Alignment.Center) {
-                                Text(
-                                    (if (k == "P") "Playoffs" else "Week $k").uppercase(), style = MaterialTheme.typography.labelLarge,
-                                    color = if (on) MaterialTheme.colorScheme.onSurface else MaterialTheme.colorScheme.onSurfaceVariant, maxLines = 1,
-                                )
-                            }
-                            Box(Modifier.width(36.dp).height(3.dp).background(if (on) MaterialTheme.colorScheme.primary else Color.Transparent))
+            // week selector: underlined tabs like a scoreboard date bar, with a "My team" toggle at the end
+            ScrollTabs(
+                labels = keys.map { if (it == "P") "Playoffs" else "Week $it" }, selected = keys.indexOf(week), state = chipState,
+                trailing = if (s.favId != null) ({
+                    val tone = if (onlyFav) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant
+                    Column(Modifier.selectable(selected = onlyFav, role = Role.Switch, onClick = { onlyFav = !onlyFav }).height(44.dp).padding(horizontal = 12.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+                        Row(Modifier.weight(1f), verticalAlignment = Alignment.CenterVertically) {
+                            Icon(Icons.Filled.Star, null, Modifier.size(14.dp), tint = tone)
+                            Spacer(Modifier.width(4.dp))
+                            Text("MY TEAM", style = MaterialTheme.typography.labelLarge, color = tone)
                         }
+                        Box(Modifier.fillMaxWidth().height(3.dp).background(if (onlyFav) MaterialTheme.colorScheme.primary else Color.Transparent))
                     }
-                    if (s.favId != null) item {
-                        Column(Modifier.clickable { onlyFav = !onlyFav }.padding(horizontal = 12.dp).height(44.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-                            Row(Modifier.weight(1f), verticalAlignment = Alignment.CenterVertically) {
-                                Icon(Icons.Filled.Star, null, Modifier.size(14.dp), tint = if (onlyFav) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant)
-                                Spacer(Modifier.width(4.dp))
-                                Text("MY TEAM", style = MaterialTheme.typography.labelLarge, color = if (onlyFav) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant)
-                            }
-                            Box(Modifier.width(36.dp).height(3.dp).background(if (onlyFav) MaterialTheme.colorScheme.primary else Color.Transparent))
-                        }
-                    }
-                }
-                HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant)
-            }
+                }) else null,
+            ) { selected = keys[it] }
             val size = LocalWinSize.current
             if (days.isEmpty()) EmptyState(Icons.Filled.EventBusy, "No games match")
             else LazyVerticalGrid(
@@ -190,9 +179,8 @@ fun GameScreen(id: String) {
                         summaryItems(data, nav)
                     }
                     Column(Modifier.weight(0.58f).fillMaxHeight()) {
-                        TabRow(selectedTabIndex = pane) {
-                            listOf("Plays", "Box score").forEachIndexed { i, label -> Tab(selected = pane == i, onClick = { pane = i }, enabled = !g.isScheduled, text = { Text(label) }) }
-                        }
+                        EqualTabs(listOf("Plays", "Box score"), pane, enabled = { !g.isScheduled }) { pane = it }
+
                         LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(bottom = 24.dp)) {
                             if (g.isScheduled) item { EmptyState(Icons.Filled.SportsFootball, "Not on air yet", "Plays and the box score appear as the game airs.") }
                             else if (pane == 0) playItems(data, playFilter) { playFilter = it }
@@ -202,13 +190,7 @@ fun GameScreen(id: String) {
                 }
             } else CenteredContent(if (size == WinSize.Medium) 720.dp else 760.dp) { LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(bottom = 24.dp)) {
                 item { Box(Modifier.padding(16.dp)) { GameBoard(data.detail, g) { nav.watch(g.id) } } }
-                item {
-                    TabRow(selectedTabIndex = effTab) {
-                        listOf("Summary", "Plays", "Box score").forEachIndexed { i, label ->
-                            Tab(selected = effTab == i, onClick = { tab = i }, enabled = i == 0 || !g.isScheduled, text = { Text(label) })
-                        }
-                    }
-                }
+                item { EqualTabs(listOf("Summary", "Plays", "Box score"), effTab, enabled = { it == 0 || !g.isScheduled }) { tab = it } }
                 when (effTab) {
                     0 -> summaryItems(data, nav)
                     1 -> playItems(data, playFilter) { playFilter = it }
@@ -278,7 +260,7 @@ private fun GameBoard(detail: JSONObject, g: Game, onWatch: () -> Unit) {
                 v.s("name") + (v.sn("town")?.let { " · $it" } ?: ""), Modifier.fillMaxWidth().padding(top = 8.dp),
                 style = MaterialTheme.typography.labelMedium, color = c.onSurfaceVariant, textAlign = TextAlign.Center,
             )
-            if (!g.isScheduled) Button(onClick = onWatch, Modifier.align(Alignment.CenterHorizontally).padding(top = 12.dp)) {
+            if (!g.isScheduled) AppButton(onClick = onWatch, Modifier.align(Alignment.CenterHorizontally).padding(top = 12.dp)) {
                 Icon(if (g.isLive) Icons.Filled.LiveTv else Icons.Filled.PlayCircle, null, Modifier.size(18.dp)); Spacer(Modifier.width(8.dp)); Text(if (g.isLive) "Watch live" else "Watch replay")
             }
         }
@@ -296,12 +278,12 @@ private fun androidx.compose.foundation.lazy.LazyListScope.summaryItems(data: Ga
         d.o("quarters")?.let { LineScore(g, it) }
         val scoring = data.plays.filter { it.scoringTeam != null }
         if (scoring.isNotEmpty()) {
-            Text("Scoring", style = MaterialTheme.typography.titleMedium)
+            SectionHeader("Scoring")
             FilledCard(color = MaterialTheme.colorScheme.surfaceContainerLow) { Column(Modifier.padding(4.dp)) { scoring.forEach { PlayItem(it, g, highlight = false) } } }
         }
         val inactive = d.o("inactive")
         if (inactive != null && (inactive.a("home").length() > 0 || inactive.a("away").length() > 0)) {
-            Text("Inactive players", style = MaterialTheme.typography.titleMedium)
+            SectionHeader("Inactive players")
             FilledCard(color = MaterialTheme.colorScheme.surfaceContainerLow) {
                 Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
                     for ((team, key) in listOf(g.away to "away", g.home to "home")) {
@@ -347,12 +329,8 @@ private fun LineScore(g: Game, q: JSONObject) {
 
 private fun androidx.compose.foundation.lazy.LazyListScope.playItems(data: GameData, filter: Int, setFilter: (Int) -> Unit) {
     val g = data.game
-    item {
-        LazyRow(contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            item { FilterChip(selected = filter == 0, onClick = { setFilter(0) }, label = { Text("All plays") }) }
-            item { FilterChip(selected = filter == 1, onClick = { setFilter(1) }, label = { Text("Scoring") }) }
-        }
-    }
+    item { ScrollTabs(listOf("All plays", "Scoring"), filter) { setFilter(it) } }
+
     val plays = if (filter == 1) data.plays.filter { it.scoringTeam != null } else data.plays
     if (plays.isEmpty()) { item { EmptyState(Icons.Filled.SportsFootball, "No plays yet", "Plays show up here as they finish airing.") }; return }
     // live games read newest first, finished games in order
@@ -403,11 +381,7 @@ private fun androidx.compose.foundation.lazy.LazyListScope.boxItems(data: GameDa
         Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
             val aS = box.o("away")?.o("stats"); val hS = box.o("home")?.o("stats")
             if (aS != null && hS != null) StatCompare(g, aS, hS)
-            SingleChoiceSegmentedButtonRow(Modifier.fillMaxWidth()) {
-                listOf(g.away, g.home).forEachIndexed { i, t ->
-                    SegmentedButton(selected = side == i, onClick = { setSide(i) }, shape = SegmentedButtonDefaults.itemShape(i, 2)) { Text(t.abbr) }
-                }
-            }
+            EqualTabs(listOf(g.away.name, g.home.name), side, Modifier.clip(CardShape)) { setSide(it) }
         }
     }
     val players = box.o(if (side == 0) "away" else "home")?.a("players")?.mapObjs { it }.orEmpty()
@@ -417,7 +391,7 @@ private fun androidx.compose.foundation.lazy.LazyListScope.boxItems(data: GameDa
         if (rows.isEmpty()) continue
         any = true
         item(key = "grp${grp.title}$side") { Column(Modifier.padding(horizontal = 16.dp, vertical = 8.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            Text(grp.title, style = MaterialTheme.typography.titleMedium)
+            SectionHeader(grp.title)
             FilledCard(color = MaterialTheme.colorScheme.surfaceContainerLow) {
                 Column(Modifier.padding(vertical = 8.dp)) {
                     Row(Modifier.fillMaxWidth().padding(horizontal = 12.dp, vertical = 4.dp)) {

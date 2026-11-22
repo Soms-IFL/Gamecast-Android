@@ -5,6 +5,22 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ## [Unreleased]
 
+### Changed
+- **More refined, consistent UI:** every selector is now the same underlined-tab control (Standings views, team and game pages, the box-score team
+  switch, plays filter, Teams divisions, Leaders categories) instead of a mix of pill chips and segmented buttons. Buttons and bottom sheets have
+  squarer corners to match the cards. Section titles share one style (accent bar and capitals) and Settings groups use small capitalised captions.
+  Standings and playoff-odds tables have a grey header band and dividers between rows. The live-game card on Home is flat with a red top edge
+  instead of a tinted gradient. The team page's rating tiles and tags use the same corner size.
+- **Cleaner fullscreen:** the field now fills the whole screen with a small score bug (teams, scores, quarter, clock, down & distance) at the
+  top and the latest play as a caption at the bottom. The controls (play / pause, next play, speed, skip, exit) float over the picture,
+  fade away a few seconds after you stop touching the screen and come back with a tap. Overlays keep clear of a display notch.
+- **Score celebrations:** touchdowns, field goals, safeties and two-point conversions now play a broadcast-style graphic: the picture dims,
+  a band in the scoring team's colours wipes across the field, the team's logo spins in with a ring pulse, the call and the new score slide
+  out beside it and confetti bursts from the logo. Turnovers, penalties and quarter breaks get a small banner that drops in and fades out.
+  The final-score panel fades in with the winner's logo. The animations follow the playback clock, so they work at any speed, pause with the
+  game and restart when you skip to the next play.
+- A paused or finished replay no longer redraws every frame.
+
 ## [0.2.2-alpha] - 2026-11-22
 
 ### Fixed

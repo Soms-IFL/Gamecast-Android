@@ -94,17 +94,19 @@ private fun StandingsTable(title: String?, rows: List<JSONObject>, full: Boolean
             add(Col("DIV", 56.dp, { r -> r.s("divisionRecord") })); add(Col("STRK", 48.dp, { r -> r.s("streak").ifEmpty { "–" } }))
         }
     }
+    val tableW = (24 + 176).dp + cols.fold(0.dp) { a, c -> a + c.width }     // the header band and dividers span the whole scrollable table
     Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-        if (title != null) Text(title, style = MaterialTheme.typography.titleMedium)
+        if (title != null) SectionHeader(title)
         FilledCard(color = MaterialTheme.colorScheme.surfaceContainerLow) {
-            Column(Modifier.horizontalScroll(rememberScrollState()).padding(vertical = 8.dp)) {
-                Row(Modifier.padding(horizontal = 12.dp, vertical = 4.dp), verticalAlignment = Alignment.CenterVertically) {
+            Column(Modifier.horizontalScroll(rememberScrollState())) {
+                Row(Modifier.width(tableW).background(MaterialTheme.colorScheme.surfaceContainerHighest).padding(horizontal = 12.dp, vertical = 6.dp), verticalAlignment = Alignment.CenterVertically) {
                     Text("Team", Modifier.width(176.dp), style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
                     for (c in cols) Text(c.label, Modifier.width(c.width), textAlign = TextAlign.End, style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
                 }
                 rows.forEachIndexed { i, r ->
                     val t = teamOf(r.obj("team"))
-                    Row(Modifier.clickable { onTeam(t.id) }.padding(horizontal = 12.dp, vertical = 10.dp), verticalAlignment = Alignment.CenterVertically) {
+                    if (i > 0) HorizontalDivider(Modifier.width(tableW), color = MaterialTheme.colorScheme.outlineVariant)
+                    Row(Modifier.width(tableW).clickable { onTeam(t.id) }.padding(horizontal = 12.dp, vertical = 10.dp), verticalAlignment = Alignment.CenterVertically) {
                         Row(Modifier.width(176.dp), verticalAlignment = Alignment.CenterVertically) {
                             Text("${r.i("rank", i + 1)}", Modifier.width(20.dp), style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
                             TeamBadge(t, 28.dp); Spacer(Modifier.width(8.dp))
@@ -136,11 +138,8 @@ fun StandingsScreen() {
             d.o("champion")?.let { ch -> item(span = full) { ChampionCard(teamOf(ch), d.i("season")) { nav.team(ch.s("id")) } } }
             item(span = full) { Text("Season ${d.i("season")} · ${d.i("regularSeasonGamesPlayed")} of ${d.i("regularSeasonGames")} regular-season games played", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant) }
             item(span = full) {
-                SingleChoiceSegmentedButtonRow(Modifier.fillMaxWidth().widthIn(max = 560.dp)) {
-                    listOf("Divisions", "League", "Seeds", "Odds").forEachIndexed { i, label ->
-                        SegmentedButton(selected = mode == i, onClick = { mode = i }, shape = SegmentedButtonDefaults.itemShape(i, 4)) { Text(label, maxLines = 1) }
-                    }
-                }
+                EqualTabs(listOf("Divisions", "League", "Seeds", "Odds"), mode, Modifier.clip(CardShape)) { mode = it }
+
             }
             when (mode) {
                 0 -> for (dv in d.a("divisions").mapObjs { it }.sortedBy { divOrder(it.s("name")) }) item(key = "div${dv.s("id")}") {
@@ -183,13 +182,14 @@ private fun OddsTable(ctx: android.content.Context, nav: Nav) {
         val ids = o.teams.keys.sortedWith(compareByDescending<String> { o.teams[it]?.champ ?: 0.0 }.thenByDescending { o.teams[it]?.bowl ?: 0.0 }.thenByDescending { o.teams[it]?.playoffs ?: 0.0 })
         Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
             FilledCard(color = MaterialTheme.colorScheme.surfaceContainerLow) {
-                Column(Modifier.padding(vertical = 8.dp)) {
-                    Row(Modifier.padding(horizontal = 12.dp, vertical = 4.dp)) {
+                Column {
+                    Row(Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.surfaceContainerHighest).padding(horizontal = 12.dp, vertical = 6.dp)) {
                         Text("Team", Modifier.weight(1f), style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
                         for (h in listOf("PLAYOFFS", "BOWL", "TITLE")) Text(h, Modifier.width(if (h == "PLAYOFFS") 72.dp else 52.dp), textAlign = TextAlign.End, style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
                     }
-                    for (id in ids) {
+                    for ((i, id) in ids.withIndex()) {
                         val t = o.teams.getValue(id); val ref = o.refs[id] ?: continue
+                        if (i > 0) HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant)
                         Row(Modifier.fillMaxWidth().clickable { nav.team(id) }.padding(horizontal = 12.dp, vertical = 10.dp), verticalAlignment = Alignment.CenterVertically) {
                             Row(Modifier.weight(1f), verticalAlignment = Alignment.CenterVertically) {
                                 TeamBadge(ref, 28.dp); Spacer(Modifier.width(8.dp))
@@ -233,18 +233,15 @@ fun TeamsScreen() {
         val divs = teams.groupBy { it.division }.toSortedMap(compareBy({ divOrder(it) }, { it }))
         val shown = divs.filterKeys { sel == "all" || it == sel }
         Column(Modifier.fillMaxSize()) {
-            LazyRow(contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                item { FilterChip(selected = sel == "all", onClick = { sel = "all" }, label = { Text("All divisions") }, leadingIcon = if (sel == "all") ({ Icon(Icons.Filled.Check, null, Modifier.size(18.dp)) }) else null) }
-                items(divs.keys.toList()) { name ->
-                    FilterChip(selected = sel == name, onClick = { sel = name }, label = { Text(name) }, leadingIcon = if (sel == name) ({ Icon(Icons.Filled.Check, null, Modifier.size(18.dp)) }) else null)
-                }
-            }
+            val divNames = divs.keys.toList()
+            ScrollTabs(listOf("All") + divNames, if (sel == "all") 0 else divNames.indexOf(sel) + 1) { sel = if (it == 0) "all" else divNames[it - 1] }
+
             LazyVerticalGrid(
                 GridCells.Adaptive(170.dp), Modifier.fillMaxSize(), contentPadding = PaddingValues(16.dp),
                 horizontalArrangement = Arrangement.spacedBy(12.dp), verticalArrangement = Arrangement.spacedBy(12.dp),
             ) {
                 for ((name, list) in shown) {
-                    item(span = { GridItemSpan(maxLineSpan) }) { Text(name, style = MaterialTheme.typography.titleMedium, modifier = Modifier.padding(top = 8.dp)) }
+                    item(span = { GridItemSpan(maxLineSpan) }) { SectionHeader(name) }
                     items(list, key = { it.team.id }) { tl ->
                         FilledCard(onClick = { nav.team(tl.team.id) }) {
                             Row(Modifier.padding(12.dp), verticalAlignment = Alignment.CenterVertically) {
@@ -301,7 +298,7 @@ fun TeamScreen(id: String) {
                         }
                         if (rating != null) Row(Modifier.fillMaxWidth().padding(top = 16.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                             for ((label, v) in listOf("OVERALL" to rating.ovr, "OFFENSE" to rating.off, "DEFENSE" to rating.def)) {
-                                Column(Modifier.weight(1f).clip(RoundedCornerShape(12.dp)).background(Color.White.copy(alpha = 0.16f)).padding(vertical = 10.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+                                Column(Modifier.weight(1f).clip(RoundedCornerShape(4.dp)).background(Color.White.copy(alpha = 0.16f)).padding(vertical = 10.dp), horizontalAlignment = Alignment.CenterHorizontally) {
                                     Text("$v", style = MaterialTheme.typography.headlineMedium, color = Color.White)
                                     Text(label, style = MaterialTheme.typography.labelMedium, color = Color.White.copy(alpha = 0.85f))
                                 }
@@ -312,17 +309,16 @@ fun TeamScreen(id: String) {
             }
             item {
                 Row(Modifier.padding(horizontal = 16.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                    if (isFav) FilledTonalButton(onClick = { s.changeFav(null, 0) }) { Icon(Icons.Filled.Star, null, Modifier.size(18.dp)); Spacer(Modifier.width(8.dp)); Text("My team") }
-                    else OutlinedButton(onClick = { s.changeFav(team.id, team.c1.toArgb()) }) { Icon(Icons.Filled.StarBorder, null, Modifier.size(18.dp)); Spacer(Modifier.width(8.dp)); Text("Make my team") }
+                    if (isFav) AppTonalButton(onClick = { s.changeFav(null, 0) }) { Icon(Icons.Filled.Star, null, Modifier.size(18.dp)); Spacer(Modifier.width(8.dp)); Text("My team") }
+                    else AppOutlinedButton(onClick = { s.changeFav(team.id, team.c1.toArgb()) }) { Icon(Icons.Filled.StarBorder, null, Modifier.size(18.dp)); Spacer(Modifier.width(8.dp)); Text("Make my team") }
                     rec?.let { Text("PF ${it.i("pointsFor")} · PA ${it.i("pointsAgainst")}", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant) }
                 }
             }
             if (s.season == null) item { Box(Modifier.padding(16.dp)) { TeamOddsInline(ctx, team.id) } }
         }
         val tabRow: @Composable () -> Unit = {
-            TabRow(selectedTabIndex = tab) {
-                listOf("Roster", "Schedule").forEachIndexed { i, label -> Tab(selected = tab == i, onClick = { tab = i }, text = { Text(label) }) }
-            }
+            EqualTabs(listOf("Roster", "Schedule"), tab) { tab = it }
+
         }
         val bodyItems: LazyListScope.() -> Unit = {
             if (tab == 0) {
@@ -374,7 +370,7 @@ private fun Modifier.clip28() = this.then(Modifier.clip(CardShape))
 
 @Composable
 private fun Pill(text: String) {
-    Box(Modifier.clip(RoundedCornerShape(50)).background(Color.White.copy(alpha = 0.2f)).padding(horizontal = 12.dp, vertical = 4.dp)) {
+    Box(Modifier.clip(RoundedCornerShape(4.dp)).background(Color.White.copy(alpha = 0.2f)).padding(horizontal = 12.dp, vertical = 4.dp)) {
         Text(text, style = MaterialTheme.typography.labelMedium, color = Color.White)
     }
 }
@@ -401,12 +397,8 @@ fun LeadersScreen() {
         val keys = cats.keyList()
         val active = if (cat == "overview" || cat in keys) cat else "overview"
         Column(Modifier.fillMaxSize()) {
-            LazyRow(contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                item { FilterChip(selected = active == "overview", onClick = { cat = "overview" }, label = { Text("Overview") }, leadingIcon = if (active == "overview") ({ Icon(Icons.Filled.Check, null, Modifier.size(18.dp)) }) else null) }
-                items(keys) { k ->
-                    FilterChip(selected = active == k, onClick = { cat = k }, label = { Text(cats.o(k)?.s("label") ?: k) }, leadingIcon = if (active == k) ({ Icon(Icons.Filled.Check, null, Modifier.size(18.dp)) }) else null)
-                }
-            }
+            ScrollTabs(listOf("Overview") + keys.map { cats.o(it)?.s("label") ?: it }, if (active == "overview") 0 else keys.indexOf(active) + 1) { cat = if (it == 0) "overview" else keys[it - 1] }
+
             if (active == "overview") {
                 val nonEmpty = keys.filter { (cats.o(it)?.a("leaders")?.length() ?: 0) > 0 }
                 if (nonEmpty.isEmpty()) EmptyState(Icons.Filled.MilitaryTech, "No stats yet", "Leaders appear once games have been played.")

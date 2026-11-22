@@ -1,6 +1,18 @@
 package com.iflgamecast.app
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.RowScope
+import androidx.compose.foundation.lazy.LazyListState
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.selection.selectable
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.FilledTonalButton
+import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.OutlinedButton
+import androidx.compose.ui.semantics.Role
 import androidx.compose.animation.core.RepeatMode
 import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.infiniteRepeatable
@@ -198,7 +210,7 @@ fun ErrorState(e: Throwable, onRetry: () -> Unit) {
         Spacer(Modifier.height(4.dp))
         Text(body, style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant, textAlign = TextAlign.Center)
         Spacer(Modifier.height(16.dp))
-        Button(onClick = onRetry) { Icon(Icons.Filled.Refresh, null, Modifier.size(18.dp)); Spacer(Modifier.width(8.dp)); Text("Try again") }
+        AppButton(onClick = onRetry) { Icon(Icons.Filled.Refresh, null, Modifier.size(18.dp)); Spacer(Modifier.width(8.dp)); Text("Try again") }
     }
 }
 
@@ -339,7 +351,7 @@ fun GameList(games: List<Game>, header: String? = null, detail: Boolean = true, 
                 )
             }
             games.forEachIndexed { i, g ->
-                if (i > 0) androidx.compose.material3.HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant)
+                if (i > 0) HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant)
                 GameRow(g, detail) { onGame(g) }
             }
         }
@@ -394,4 +406,69 @@ fun PlayItem(p: Play, game: Game?, highlight: Boolean = p.scoringTeam != null) {
             }
         }
     }
+}
+
+/* ---------------------------------------------------------------- shared refined controls */
+
+val ButtonShape = RoundedCornerShape(6.dp)
+val SheetShape = RoundedCornerShape(topStart = 12.dp, topEnd = 12.dp)
+
+// Buttons with the app's squarer corners (the Material default is a full pill).
+@Composable
+fun AppButton(onClick: () -> Unit, modifier: Modifier = Modifier, enabled: Boolean = true, contentPadding: PaddingValues = ButtonDefaults.ContentPadding, content: @Composable RowScope.() -> Unit) =
+    Button(onClick, modifier, enabled, shape = ButtonShape, contentPadding = contentPadding, content = content)
+
+@Composable
+fun AppTonalButton(onClick: () -> Unit, modifier: Modifier = Modifier, enabled: Boolean = true, contentPadding: PaddingValues = ButtonDefaults.ContentPadding, content: @Composable RowScope.() -> Unit) =
+    FilledTonalButton(onClick, modifier, enabled, shape = ButtonShape, contentPadding = contentPadding, content = content)
+
+@Composable
+fun AppOutlinedButton(onClick: () -> Unit, modifier: Modifier = Modifier, enabled: Boolean = true, contentPadding: PaddingValues = ButtonDefaults.ContentPadding, content: @Composable RowScope.() -> Unit) =
+    OutlinedButton(onClick, modifier, enabled, shape = ButtonShape, contentPadding = contentPadding, content = content)
+
+/** One tab: bold capitals with an accent underline when selected. */
+@Composable
+fun TabCell(label: String, selected: Boolean, modifier: Modifier = Modifier, enabled: Boolean = true, pad: Dp = 12.dp, onClick: () -> Unit) {
+    val c = MaterialTheme.colorScheme
+    Column(
+        modifier.selectable(selected = selected, enabled = enabled, role = Role.Tab, onClick = onClick).height(44.dp).padding(horizontal = pad),
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
+        Box(Modifier.weight(1f), contentAlignment = Alignment.Center) {
+            Text(label.uppercase(), style = MaterialTheme.typography.labelLarge, maxLines = 1, color = if (!enabled) c.outlineVariant else if (selected) c.onSurface else c.onSurfaceVariant)
+        }
+        Box(Modifier.fillMaxWidth().height(3.dp).background(if (selected && enabled) c.primary else Color.Transparent))
+    }
+}
+
+/** A scrolling row of tabs (weeks, divisions, stat categories), with an optional extra control at the end. */
+@Composable
+fun ScrollTabs(
+    labels: List<String>, selected: Int, modifier: Modifier = Modifier, state: LazyListState = rememberLazyListState(),
+    trailing: (@Composable () -> Unit)? = null, onSelect: (Int) -> Unit,
+) {
+    Column(modifier.fillMaxWidth().background(MaterialTheme.colorScheme.surfaceContainerLow)) {
+        LazyRow(state = state, contentPadding = PaddingValues(horizontal = 4.dp)) {
+            itemsIndexed(labels) { i, l -> TabCell(l, i == selected) { onSelect(i) } }
+            if (trailing != null) item { trailing() }
+        }
+        HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant)
+    }
+}
+
+/** A few tabs sharing the width equally (game and team pages). */
+@Composable
+fun EqualTabs(labels: List<String>, selected: Int, modifier: Modifier = Modifier, enabled: (Int) -> Boolean = { true }, onSelect: (Int) -> Unit) {
+    Column(modifier.fillMaxWidth().background(MaterialTheme.colorScheme.surfaceContainerLow)) {
+        Row(Modifier.fillMaxWidth()) {
+            labels.forEachIndexed { i, l -> TabCell(l, i == selected, Modifier.weight(1f), enabled(i), pad = 4.dp) { onSelect(i) } }
+        }
+        HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant)
+    }
+}
+
+/** Small capitalised caption above a group of settings or a block of fields. */
+@Composable
+fun CaptionHeader(text: String, modifier: Modifier = Modifier) {
+    Text(text.uppercase(), modifier, style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
 }
