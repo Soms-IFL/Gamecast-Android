@@ -5,6 +5,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ## [Unreleased]
 
+## [0.2.2-alpha] - 2026-11-22
+
 ### Fixed
 - **Stuck in landscape:** leaving the viewer's fullscreen mode left the screen locked to landscape and the system bars hidden; both are now restored.
 - **Players and ball behind the logo:** the home logo in the middle of the field was a view drawn on top of the field; it is now painted on the
@@ -74,7 +76,8 @@ First alpha of the native Android app (Kotlin, Jetpack Compose, Material 3).
 - The viewer reads game seeds from the server's `/api/state` and `/api/history` endpoints, which are not part of the stable `/api/v1` API.
 - The server address must be `https`.
 
-[Unreleased]: https://github.com/Soms-IFL/Gamecast-Android/compare/v0.2.1-alpha...HEAD
+[Unreleased]: https://github.com/Soms-IFL/Gamecast-Android/compare/v0.2.2-alpha...HEAD
+[0.2.2-alpha]: https://github.com/Soms-IFL/Gamecast-Android/compare/v0.2.1-alpha...v0.2.2-alpha
 [0.2.1-alpha]: https://github.com/Soms-IFL/Gamecast-Android/compare/v0.2.0-alpha...v0.2.1-alpha
 [0.2.0-alpha]: https://github.com/Soms-IFL/Gamecast-Android/compare/v0.1.0-alpha...v0.2.0-alpha
 [0.1.0-alpha]: https://github.com/Soms-IFL/Gamecast-Android/releases/tag/v0.1.0-alpha
