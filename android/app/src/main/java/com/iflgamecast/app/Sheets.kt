@@ -109,7 +109,7 @@ fun PlayerSheet(id: String, onDismiss: () -> Unit, onTeam: (String) -> Unit) {
                         FilledCard(color = MaterialTheme.colorScheme.tertiaryContainer) {
                             Column(Modifier.padding(12.dp)) {
                                 Text("Injured — ${inj.s("part")}", style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.onTertiaryContainer)
-                                Text(if (inj.b("seasonEnding")) "Out for the rest of the season" else "Out ${inj.i("gamesLeft")} more game${if (inj.i("gamesLeft") == 1) "" else "s"}", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onTertiaryContainer)
+                                Text(if (inj.outForSeason()) "Out for the rest of the season" else "Out ${inj.i("gamesLeft")} more game${if (inj.i("gamesLeft") == 1) "" else "s"}", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onTertiaryContainer)
                             }
                         }
                     }

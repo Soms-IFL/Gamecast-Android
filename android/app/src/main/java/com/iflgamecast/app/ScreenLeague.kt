@@ -60,6 +60,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
@@ -82,7 +85,8 @@ private class Col(val label: String, val width: Dp, val value: (JSONObject) -> S
 @Composable
 private fun StandingsTable(title: String?, rows: List<JSONObject>, full: Boolean, onTeam: (String) -> Unit) {
     val s = LocalSettings.current
-    val good = successColor(); val bad = MaterialTheme.colorScheme.error
+    val c = MaterialTheme.colorScheme
+    val good = successColor(); val bad = c.error
     val cols = buildList {
         add(Col("W-L", 56.dp, { r -> "${r.i("wins")}-${r.i("losses")}" + if (r.i("ties") > 0) "-${r.i("ties")}" else "" }))
         if (full) add(Col("PCT", 52.dp, { r -> "%.3f".format(r.d("pct")).removePrefix("0") }))
@@ -94,25 +98,38 @@ private fun StandingsTable(title: String?, rows: List<JSONObject>, full: Boolean
             add(Col("DIV", 56.dp, { r -> r.s("divisionRecord") })); add(Col("STRK", 48.dp, { r -> r.s("streak").ifEmpty { "–" } }))
         }
     }
-    val tableW = (24 + 176).dp + cols.fold(0.dp) { a, c -> a + c.width }     // the header band and dividers span the whole scrollable table
+    val statsW = cols.fold(24.dp) { a, col -> a + col.width }          // stats scroll sideways; the team column stays put
+    val headH = 32.dp; val rowH = 56.dp
     Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
         if (title != null) SectionHeader(title)
-        FilledCard(color = MaterialTheme.colorScheme.surfaceContainerLow) {
-            Column(Modifier.horizontalScroll(rememberScrollState())) {
-                Row(Modifier.width(tableW).background(MaterialTheme.colorScheme.surfaceContainerHighest).padding(horizontal = 12.dp, vertical = 6.dp), verticalAlignment = Alignment.CenterVertically) {
-                    Text("Team", Modifier.width(176.dp), style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                    for (c in cols) Text(c.label, Modifier.width(c.width), textAlign = TextAlign.End, style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                }
-                rows.forEachIndexed { i, r ->
-                    val t = teamOf(r.obj("team"))
-                    if (i > 0) HorizontalDivider(Modifier.width(tableW), color = MaterialTheme.colorScheme.outlineVariant)
-                    Row(Modifier.width(tableW).clickable { onTeam(t.id) }.padding(horizontal = 12.dp, vertical = 10.dp), verticalAlignment = Alignment.CenterVertically) {
-                        Row(Modifier.width(176.dp), verticalAlignment = Alignment.CenterVertically) {
-                            Text("${r.i("rank", i + 1)}", Modifier.width(20.dp), style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        FilledCard(color = c.surfaceContainerLow) {
+            val band = c.surfaceContainerHighest
+            Row(Modifier.drawBehind { drawRect(band, Offset.Zero, Size(size.width, headH.toPx())) }) {
+                // frozen team column: rank, logo and the full team name (city over nickname)
+                Column(Modifier.width(172.dp)) {
+                    Box(Modifier.fillMaxWidth().height(headH).padding(start = 12.dp), contentAlignment = Alignment.CenterStart) {
+                        Text("Team", style = MaterialTheme.typography.labelMedium, color = c.onSurfaceVariant)
+                    }
+                    rows.forEachIndexed { i, r ->
+                        val t = teamOf(r.obj("team"))
+                        if (i > 0) HorizontalDivider(color = c.outlineVariant)
+                        Row(Modifier.fillMaxWidth().height(rowH).clickable { onTeam(t.id) }.padding(start = 12.dp, end = 4.dp), verticalAlignment = Alignment.CenterVertically) {
+                            Text("${r.i("rank", i + 1)}", Modifier.width(20.dp), style = MaterialTheme.typography.labelMedium, color = c.onSurfaceVariant)
                             TeamBadge(t, 28.dp); Spacer(Modifier.width(8.dp))
-                            Text(t.name + if (s.favId == t.id) " ★" else "", maxLines = 1, style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.Medium)
+                            TeamNameCell(t, Modifier.weight(1f), starred = s.favId == t.id)
                         }
-                        for (c in cols) Text(c.value(r), Modifier.width(c.width), textAlign = TextAlign.End, color = c.color?.invoke(r) ?: Color.Unspecified)
+                    }
+                }
+                Column(Modifier.weight(1f).horizontalScroll(rememberScrollState())) {
+                    Row(Modifier.width(statsW).height(headH).padding(horizontal = 12.dp), verticalAlignment = Alignment.CenterVertically) {
+                        for (col in cols) Text(col.label, Modifier.width(col.width), textAlign = TextAlign.End, style = MaterialTheme.typography.labelMedium, color = c.onSurfaceVariant)
+                    }
+                    rows.forEachIndexed { i, r ->
+                        val t = teamOf(r.obj("team"))
+                        if (i > 0) HorizontalDivider(Modifier.width(statsW), color = c.outlineVariant)
+                        Row(Modifier.width(statsW).height(rowH).clickable { onTeam(t.id) }.padding(horizontal = 12.dp), verticalAlignment = Alignment.CenterVertically) {
+                            for (col in cols) Text(col.value(r), Modifier.width(col.width), textAlign = TextAlign.End, color = col.color?.invoke(r) ?: Color.Unspecified)
+                        }
                     }
                 }
             }
@@ -185,7 +202,7 @@ private fun OddsTable(ctx: android.content.Context, nav: Nav) {
                 Column {
                     Row(Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.surfaceContainerHighest).padding(horizontal = 12.dp, vertical = 6.dp)) {
                         Text("Team", Modifier.weight(1f), style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                        for (h in listOf("PLAYOFFS", "BOWL", "TITLE")) Text(h, Modifier.width(if (h == "PLAYOFFS") 72.dp else 52.dp), textAlign = TextAlign.End, style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                        for (h in listOf("PLAYOFFS", "BOWL", "TITLE")) Text(h, Modifier.width(if (h == "PLAYOFFS") 64.dp else 44.dp), textAlign = TextAlign.End, style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
                     }
                     for ((i, id) in ids.withIndex()) {
                         val t = o.teams.getValue(id); val ref = o.refs[id] ?: continue
@@ -193,11 +210,11 @@ private fun OddsTable(ctx: android.content.Context, nav: Nav) {
                         Row(Modifier.fillMaxWidth().clickable { nav.team(id) }.padding(horizontal = 12.dp, vertical = 10.dp), verticalAlignment = Alignment.CenterVertically) {
                             Row(Modifier.weight(1f), verticalAlignment = Alignment.CenterVertically) {
                                 TeamBadge(ref, 28.dp); Spacer(Modifier.width(8.dp))
-                                Text(ref.name + if (s.favId == id) " ★" else "", maxLines = 1, style = MaterialTheme.typography.bodyMedium)
+                                TeamNameCell(ref, Modifier.weight(1f), starred = s.favId == id, compact = true)
                             }
-                            Text(pctText(t.playoffs), Modifier.width(72.dp), textAlign = TextAlign.End)
-                            Text(pctText(t.bowl), Modifier.width(52.dp), textAlign = TextAlign.End)
-                            Text(pctText(t.champ), Modifier.width(52.dp), textAlign = TextAlign.End, fontWeight = FontWeight.Bold)
+                            Text(pctText(t.playoffs), Modifier.width(64.dp), textAlign = TextAlign.End)
+                            Text(pctText(t.bowl), Modifier.width(44.dp), textAlign = TextAlign.End)
+                            Text(pctText(t.champ), Modifier.width(44.dp), textAlign = TextAlign.End, fontWeight = FontWeight.Bold)
                         }
                     }
                 }
@@ -337,7 +354,7 @@ fun TeamScreen(id: String) {
                                             Text("Age ${p.i("age")} · ${p.i("yearsPro")} yr${if (p.i("yearsPro") == 1) "" else "s"} pro", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
                                         }
                                         p.o("injury")?.let { inj ->
-                                            Tag(if (inj.b("seasonEnding")) "OUT – SEASON" else "OUT ${inj.i("gamesLeft")}", MaterialTheme.colorScheme.tertiaryContainer, MaterialTheme.colorScheme.onTertiaryContainer)
+                                            Tag(if (inj.outForSeason()) "OUT – SEASON" else "OUT ${inj.i("gamesLeft")}", MaterialTheme.colorScheme.tertiaryContainer, MaterialTheme.colorScheme.onTertiaryContainer)
                                             Spacer(Modifier.width(8.dp))
                                         }
                                         Text("${p.i("rating")}", style = MaterialTheme.typography.titleMedium, modifier = Modifier.width(32.dp), textAlign = TextAlign.End)

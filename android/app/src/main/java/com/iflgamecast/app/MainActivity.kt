@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.widthIn
+import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -147,7 +148,11 @@ private val DESTS = listOf(
 private fun NavLabel(text: String) {
     val d = LocalDensity.current
     CompositionLocalProvider(LocalDensity provides Density(d.density, minOf(d.fontScale, 1f))) {
-        Text(text.uppercase(), maxLines = 1, softWrap = false, overflow = TextOverflow.Clip, style = MaterialTheme.typography.labelSmall, fontSize = 11.sp)
+        // measured at its natural width (not clipped to the slot) and tightly spaced, so "STANDINGS" is never cut off
+        Text(
+            text.uppercase(), Modifier.wrapContentWidth(unbounded = true), maxLines = 1, softWrap = false, overflow = TextOverflow.Visible,
+            style = MaterialTheme.typography.labelSmall.copy(letterSpacing = 0.sp), fontSize = 10.5.sp,
+        )
     }
 }
 

@@ -5,6 +5,14 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ## [Unreleased]
 
+### Fixed
+- A player out for the season showed "Out 989 more games": the server sent a placeholder length with its season-ending flag set to false.
+  Injuries longer than a season's worth of games are now treated as season-ending ("Out for the rest of the season" / "OUT – SEASON").
+- Standings showed shortened team names ("Kyleton Polar", "New Southington", "Argiroupolis"): the second word wrapped onto a line that was cut off.
+  Names are now shown in full, city over nickname, in the Standings tables and the playoff-odds table. In the Standings tables the team column
+  stays in place while the stats scroll sideways, so W-L, PF, PA and DIFF are no longer hidden off the edge.
+- The "STANDINGS" label in the bottom bar and side rail was cut off on the right; labels are no longer clipped to their slot.
+
 ## [0.2.4-alpha] - 2026-11-22
 
 ### Changed

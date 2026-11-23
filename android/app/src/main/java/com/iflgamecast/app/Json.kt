@@ -26,3 +26,10 @@ fun JSONObject.keyList(): List<String> { val out = ArrayList<String>(); val it =
 
 /** Like optJSONObject but never null: composables use this so a missing field can't crash the UI while composing. */
 fun JSONObject.obj(k: String): JSONObject = optJSONObject(k) ?: JSONObject()
+
+/**
+ * True when a player's injury lasts the rest of the season. The server flags this with `seasonEnding`, but it can send `false` together with
+ * an absurd `gamesLeft` (e.g. 989, a "99 games" placeholder that counts down as games are played). The engine's real injuries last at most
+ * 8 games, so anything longer than a season's worth of games means out for the season.
+ */
+fun JSONObject.outForSeason(): Boolean = b("seasonEnding") || i("gamesLeft") > 12

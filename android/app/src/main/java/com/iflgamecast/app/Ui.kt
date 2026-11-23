@@ -472,3 +472,20 @@ fun EqualTabs(labels: List<String>, selected: Int, modifier: Modifier = Modifier
 fun CaptionHeader(text: String, modifier: Modifier = Modifier) {
     Text(text.uppercase(), modifier, style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
 }
+
+/**
+ * A team's full name over two lines (city, then nickname), so long names such as "Argiroupolis Silvers" or "New Southington Skylines"
+ * are shown in full instead of wrapping and losing their second word in a narrow table column.
+ */
+@Composable
+fun TeamNameCell(t: Team, modifier: Modifier = Modifier, starred: Boolean = false, compact: Boolean = false) {
+    val city = t.city.ifEmpty { t.name }
+    val nick = if (t.city.isNotEmpty() && t.name.startsWith(t.city)) t.name.removePrefix(t.city).trim() else ""
+    Column(modifier) {
+        Text(
+            city + if (starred) " ★" else "", maxLines = 1, softWrap = false, overflow = TextOverflow.Ellipsis,
+            style = if (compact) MaterialTheme.typography.bodySmall else MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.Medium,
+        )
+        if (nick.isNotEmpty()) Text(nick, maxLines = 1, softWrap = false, overflow = TextOverflow.Ellipsis, style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+    }
+}
