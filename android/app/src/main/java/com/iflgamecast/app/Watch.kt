@@ -47,9 +47,11 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.EmojiEvents
 import androidx.compose.material.icons.filled.FastForward
 import androidx.compose.material.icons.filled.Fullscreen
 import androidx.compose.material.icons.filled.FullscreenExit
@@ -113,6 +115,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
@@ -747,20 +750,11 @@ private fun FieldBox(v: VState, modifier: Modifier, fullscreen: Boolean = false)
         val ban = v.banner.value
         if (ban != null) key(ban) {
             if (ban.scoring != null && ban.banner != null) ScoreCelebration(v, ban, Modifier.fillMaxSize())
-            else BannerPill(v, ban, Modifier.align(Alignment.TopCenter).padding(top = if (fullscreen) 60.dp else 12.dp))
+            // in fullscreen the score bug sits at the top: keep the banner clear of it
+            else BannerPill(v, ban, Modifier.align(Alignment.TopCenter).padding(top = if (fullscreen) 84.dp else 12.dp))
         }
-        // final whistle: the winner's logo and the score
-        AnimatedVisibility(v.finalShown.value, enter = fadeIn(tween(350)) + scaleIn(tween(350), 0.92f), exit = fadeOut()) {
-            val sim = v.sim
-            val homeWon = sim.finalHome > sim.finalAway; val awayWon = sim.finalAway > sim.finalHome
-            val w = if (homeWon) sim.home else if (awayWon) sim.away else null
-            Column(Modifier.fillMaxSize().background(Color(0xCC000000)), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center) {
-                if (homeWon || awayWon) TeamBadge(if (homeWon) v.g.home else v.g.away, if (fullscreen) 56.dp else 64.dp)
-                Text(if (w != null) "${w.full} win" else "Final — tie", Modifier.padding(top = 8.dp), style = MaterialTheme.typography.titleLarge, color = Color.White)
-                Text("${sim.away.abbr} ${sim.finalAway} – ${sim.finalHome} ${sim.home.abbr}", style = MaterialTheme.typography.headlineSmall, color = Color.White)
-                if (!v.live) AppButton(onClick = { v.restart() }, Modifier.padding(top = 8.dp)) { Icon(Icons.Filled.Replay, null, Modifier.size(18.dp)); Spacer(Modifier.width(8.dp)); Text("Watch again") }
-            }
-        }
+        // final whistle: both teams' logos and scores, the winner highlighted
+        AnimatedVisibility(v.finalShown.value, enter = fadeIn(tween(350)), exit = fadeOut()) { FinalPanel(v, Modifier.fillMaxSize()) }
         if (!fullscreen) IconButton(
             onClick = { v.fs = true }, Modifier.align(Alignment.TopEnd).padding(4.dp),
             colors = IconButtonDefaults.iconButtonColors(containerColor = Color(0x8C000000), contentColor = Color.White),
@@ -837,17 +831,7 @@ private fun ScoreCelebration(v: VState, ev: SimEvent, modifier: Modifier = Modif
                 val s = segment(p, 0.03f + k * 0.12f, 0.40f + k * 0.12f)
                 if (s > 0f && s < 1f) drawCircle(accent.copy(alpha = 0.8f * (1f - s) * a), size.height * (0.12f + 0.8f * easeOutCubic(s)), c, style = Stroke(3.dp.toPx()))
             }
-            val fly = easeOutCubic(segment(p, 0.02f, 0.6f))
-            val fall = segment(p, 0.15f, 1f)
-            for (b in confetti) {
-                val r = b.speed * size.height * 0.95f * fly
-                val x = c.x + kotlin.math.cos(b.angle) * r * 1.7f
-                val y = c.y + kotlin.math.sin(b.angle) * r + size.height * 0.55f * fall * fall
-                val alpha = (1f - segment(p, 0.55f, 0.92f)) * (if (p < 0.02f) 0f else 1f)
-                if (alpha <= 0f) continue
-                val s = b.size * size.height
-                rotate(b.spin * p, Offset(x, y)) { drawRect(b.color.copy(alpha = alpha), Offset(x - s / 2f, y - s * 0.3f), Size(s, s * 0.6f)) }
-            }
+            drawConfetti(confetti, c, p, size.height)
         }
         // call on the left, logo in the middle, score on the right
         Row(Modifier.align(Alignment.Center).fillMaxWidth().height(bandH), verticalAlignment = Alignment.CenterVertically) {
@@ -892,4 +876,91 @@ private fun BannerPill(v: VState, ev: SimEvent, modifier: Modifier = Modifier) {
         },
         shape = RoundedCornerShape(6.dp), color = if (bad) Color(0xFFB3261E) else Color(0xE6000000), contentColor = Color.White,
     ) { Text((ev.banner ?: "").uppercase(), Modifier.padding(horizontal = 16.dp, vertical = 6.dp), style = MaterialTheme.typography.titleMedium) }
+}
+
+/** Confetti flying out from [c] and falling back, as a function of progress [p] (0..1); [h] is the height it scales with. */
+private fun DrawScope.drawConfetti(bits: List<Bit>, c: Offset, p: Float, h: Float) {
+    val fly = easeOutCubic(segment(p, 0.02f, 0.6f))
+    val fall = segment(p, 0.15f, 1f)
+    for (b in bits) {
+        val r = b.speed * h * 0.95f * fly
+        val x = c.x + kotlin.math.cos(b.angle) * r * 1.7f
+        val y = c.y + kotlin.math.sin(b.angle) * r + h * 0.55f * fall * fall
+        val alpha = (1f - segment(p, 0.55f, 0.92f)) * (if (p < 0.02f) 0f else 1f)
+        if (alpha <= 0f) continue
+        val s = b.size * h
+        rotate(b.spin * p, Offset(x, y)) { drawRect(b.color.copy(alpha = alpha), Offset(x - s / 2f, y - s * 0.3f), Size(s, s * 0.6f)) }
+    }
+}
+
+/**
+ * The result screen once the game is over: both teams' logos and final scores (counting up), the winner enlarged with a trophy and
+ * confetti, a band in the winner's colours naming them, and "Watch again" for replays. Compact fields (portrait phones) get a
+ * one-row layout so everything still fits.
+ */
+@Composable
+private fun FinalPanel(v: VState, modifier: Modifier = Modifier) {
+    val sim = v.sim
+    val winnerSide = if (sim.finalHome > sim.finalAway) 1 else if (sim.finalAway > sim.finalHome) 0 else -1   // 0 = away, 1 = home
+    val winner = if (winnerSide == 1) sim.home else if (winnerSide == 0) sim.away else null
+    val overtime = (sim.events.lastOrNull()?.post?.qtr ?: 0) >= 5
+    val progress = remember { androidx.compose.animation.core.Animatable(0f) }
+    LaunchedEffect(Unit) { progress.animateTo(1f, tween(1600, easing = androidx.compose.animation.core.LinearEasing)) }
+    val confetti = remember { confettiFor(sim.finalHome * 31 + sim.finalAway, listOf(winner?.c1 ?: Color.White, winner?.c2 ?: Color.LightGray, Color.White, Color(0xFFFFD54A))) }
+    val bandColor = winner?.c1 ?: Color(0xFF3A3A3A)
+    val onBand = readableOn(bandColor)
+    val accent = if (winner != null) accentOn(winner.c2, bandColor) else Color.White.copy(alpha = 0.5f)
+
+    BoxWithConstraints(modifier.background(Color(0xE6000000))) {
+        val compact = maxHeight < 230.dp
+        val logo = if (compact) 44.dp else (maxHeight * 0.30f).coerceIn(56.dp, 100.dp)
+        val scoreSp = with(LocalDensity.current) { (if (compact) 28.dp else (maxHeight * 0.15f).coerceIn(30.dp, 60.dp)).toSp() }
+        val bandH = if (compact) 28.dp else (maxHeight * 0.13f).coerceIn(34.dp, 56.dp)
+        val title = (if (winner != null) "${winner.full} win" else "Final — tie").uppercase()
+        val bandFont = bandH.value * 0.5f
+        val fit = ((maxWidth.value - 32f) / (title.length * bandFont * 0.56f)).coerceIn(0.4f, 1f)
+
+        Canvas(Modifier.fillMaxSize()) { drawConfetti(confetti, Offset(size.width / 2f, size.height * 0.36f), progress.value, size.height) }
+
+        @Composable
+        fun side(team: Team, sim: SimTeam, score: Int, mine: Int) {
+            val isWinner = winnerSide == mine
+            val dim = winnerSide >= 0 && !isWinner
+            val shown = (score * easeOutCubic(segment(progress.value, 0.1f, 0.7f))).toInt()
+            val pop = easeOutBack(segment(progress.value, 0f, 0.3f)) * (if (isWinner) 1.08f else if (dim) 0.88f else 1f)
+            val body: @Composable () -> Unit = {
+                Box(contentAlignment = Alignment.TopCenter) {
+                    TeamBadge(team, logo)
+                    if (isWinner && !compact) Icon(Icons.Filled.EmojiEvents, null, Modifier.size(22.dp).offset(y = (-24).dp), tint = Color(0xFFFFD54A))
+                }
+                if (compact) Spacer(Modifier.width(8.dp))
+                Column(horizontalAlignment = if (compact) Alignment.Start else Alignment.CenterHorizontally) {
+                    if (!compact) Text(sim.name, style = MaterialTheme.typography.labelLarge, color = Color.White.copy(alpha = 0.8f), maxLines = 1)
+                    Text("$shown", style = MaterialTheme.typography.displaySmall, fontSize = scoreSp, color = Color.White)
+                }
+            }
+            val m = Modifier.graphicsLayer { scaleX = pop; scaleY = pop; alpha = if (dim) 0.65f else 1f }
+            if (compact) Row(m, verticalAlignment = Alignment.CenterVertically) { body() } else Column(m.padding(top = 24.dp), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(4.dp)) { body() }
+        }
+
+        Column(Modifier.fillMaxSize().padding(vertical = if (compact) 6.dp else 12.dp), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.SpaceEvenly) {
+            Row(Modifier.fillMaxWidth(if (compact) 0.92f else 0.7f), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.SpaceBetween) {
+                side(v.g.away, sim.away, sim.finalAway, 0)
+                Text(if (overtime) "FINAL/OT" else "FINAL", style = MaterialTheme.typography.titleMedium, color = Color.White.copy(alpha = 0.7f))
+                side(v.g.home, sim.home, sim.finalHome, 1)
+            }
+            Box(
+                Modifier.fillMaxWidth().height(bandH)
+                    .graphicsLayer { scaleY = easeOutCubic(segment(progress.value, 0.15f, 0.4f)) }
+                    .background(bandColor)
+                    .drawBehind { drawRect(accent, Offset.Zero, Size(size.width, 2.dp.toPx())); drawRect(accent, Offset(0f, size.height - 2.dp.toPx()), Size(size.width, 2.dp.toPx())) },
+                contentAlignment = Alignment.Center,
+            ) {
+                Text(title, maxLines = 1, softWrap = false, color = onBand, style = MaterialTheme.typography.titleLarge, fontSize = bandFont.sp * fit)
+            }
+            if (!v.live) AppButton(onClick = { v.restart() }, contentPadding = PaddingValues(horizontal = 16.dp, vertical = if (compact) 2.dp else 8.dp)) {
+                Icon(Icons.Filled.Replay, null, Modifier.size(18.dp)); Spacer(Modifier.width(8.dp)); Text("Watch again")
+            }
+        }
+    }
 }

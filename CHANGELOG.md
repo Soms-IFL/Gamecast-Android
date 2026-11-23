@@ -5,6 +5,14 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ## [Unreleased]
 
+### Changed
+- **New result screen:** when a game ends, both teams' logos and final scores (counting up) are shown, the winner enlarged with a trophy and
+  confetti, over a band in the winner's colours that names them ("… WIN"), with "Watch again" for replays. Phones in portrait get a compact
+  one-row version.
+
+### Fixed
+- In fullscreen, banners such as "FLAG" or "TURNOVER ON DOWNS" crept up into the bottom of the score bug; they now sit clear of it.
+
 ## [0.2.3-alpha] - 2026-11-22
 
 ### Changed
