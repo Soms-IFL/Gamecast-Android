@@ -5,6 +5,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ## [Unreleased]
 
+## [0.2.5-alpha] - 2026-11-22
+
 ### Fixed
 - A player out for the season showed "Out 989 more games": the server sent a placeholder length with its season-ending flag set to false.
   Injuries longer than a season's worth of games are now treated as season-ending ("Out for the rest of the season" / "OUT – SEASON").
@@ -112,7 +114,8 @@ First alpha of the native Android app (Kotlin, Jetpack Compose, Material 3).
 - The viewer reads game seeds from the server's `/api/state` and `/api/history` endpoints, which are not part of the stable `/api/v1` API.
 - The server address must be `https`.
 
-[Unreleased]: https://github.com/Soms-IFL/Gamecast-Android/compare/v0.2.4-alpha...HEAD
+[Unreleased]: https://github.com/Soms-IFL/Gamecast-Android/compare/v0.2.5-alpha...HEAD
+[0.2.5-alpha]: https://github.com/Soms-IFL/Gamecast-Android/compare/v0.2.4-alpha...v0.2.5-alpha
 [0.2.4-alpha]: https://github.com/Soms-IFL/Gamecast-Android/compare/v0.2.3-alpha...v0.2.4-alpha
 [0.2.3-alpha]: https://github.com/Soms-IFL/Gamecast-Android/compare/v0.2.2-alpha...v0.2.3-alpha
 [0.2.2-alpha]: https://github.com/Soms-IFL/Gamecast-Android/compare/v0.2.1-alpha...v0.2.2-alpha
